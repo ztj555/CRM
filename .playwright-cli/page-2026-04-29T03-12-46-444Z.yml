@@ -1,0 +1,201 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 姓名
+      - textbox [ref=e7]
+    - generic [ref=e9]:
+      - generic [ref=e10]: 客户经理
+      - textbox [ref=e11]
+    - generic [ref=e13]:
+      - generic [ref=e14]: 贷款顾问
+      - textbox [ref=e15]
+    - generic [ref=e17]:
+      - generic [ref=e18]: 主管
+      - textbox [ref=e19]
+    - generic [ref=e21]:
+      - generic [ref=e22]: 银行
+      - textbox [ref=e23]
+    - generic [ref=e25]:
+      - generic [ref=e26]: 部门
+      - textbox [ref=e27]
+    - generic [ref=e29]:
+      - generic [ref=e30]: 进度
+      - combobox [ref=e31]:
+        - option "请选择" [selected]
+        - option "审核"
+        - option "批款"
+        - option "收款"
+        - option "拒批"
+        - option "违约"
+    - generic [ref=e33]:
+      - generic [ref=e34]: 收款人
+      - combobox [ref=e35]:
+        - option "请选择" [selected]
+        - option "代扣"
+        - option "转账给分公司负责人"
+        - option "POS机收款"
+    - generic [ref=e37]:
+      - generic [ref=e38]: 单件类型
+      - combobox [ref=e39]:
+        - option "请选择" [selected]
+        - option "信用贷"
+        - option "房抵贷"
+        - option "车抵贷"
+        - option "其他"
+    - generic [ref=e41]:
+      - generic [ref=e42]: 渠道人员姓名
+      - textbox [ref=e43]
+    - generic [ref=e45]:
+      - generic [ref=e46]: 时间
+      - combobox [ref=e47]:
+        - option "请选择" [selected]
+        - option "进件日期"
+        - option "批款时间"
+        - option "收款日期"
+        - option "录入日期"
+        - option "确认时间"
+    - generic [ref=e49]:
+      - generic [ref=e50]: 时间范围
+      - combobox [ref=e51]:
+        - option "-不限-" [selected]
+        - option "今日"
+        - option "昨天"
+        - option "最近7天"
+        - option "本月"
+        - option "上月"
+        - option "自定义"
+    - generic [ref=e53]:
+      - generic [ref=e54]: 来源
+      - combobox [ref=e55]:
+        - option "不限" [selected]
+        - option "#全部流量客户#"
+        - option "Excel导入"
+        - option "BXMJ-excel"
+        - option "cs-excel"
+        - option "ny-excel"
+        - option "PA-excel"
+        - option "RYJ-excel"
+        - option "T+1-excel"
+        - option "XY-excel"
+        - option "YYDL-excel"
+        - option "ZX-excel"
+        - option "ZY-excel"
+        - option "乐数云-excel"
+        - option "优乐推-excel"
+        - option "分期乐-excel"
+        - option "千橙广告-excel"
+        - option "原公海0星-excel"
+        - option "原公海公积金-excel"
+        - option "原公海房-excel"
+        - option "原公海社保-excel"
+        - option "原公海车-excel"
+        - option "宜融推单-excel"
+        - option "宜融钱包-excel"
+        - option "有钱花-excel"
+        - option "桔多多-excel"
+        - option "测试-excel原始新数据"
+        - option "融信用-excel"
+        - option "融创渠道1-excel"
+        - option "融创渠道2-excel"
+        - option "融创科技-任享花"
+        - option "融创科技-千橙广告"
+        - option "豆豆钱-excel"
+        - option "钱袋子-excel"
+        - option "银标-excel"
+        - option "银闪花-excel"
+    - button "查询" [ref=e57] [cursor=pointer]
+  - generic [ref=e58]:
+    - generic [ref=e59]:
+      - generic [ref=e60]:
+        - button "+添加在审件" [ref=e61] [cursor=pointer]
+        - button "面签视频审核(新)" [ref=e62] [cursor=pointer]
+        - button "进件银行占比" [ref=e63] [cursor=pointer]
+        - button "销售漏斗模型" [ref=e64] [cursor=pointer]
+        - button "通话价值表" [ref=e65] [cursor=pointer]
+        - button "操作说明" [ref=e66] [cursor=pointer]
+      - button "AI合同(新)" [ref=e67] [cursor=pointer]
+    - generic [ref=e69]:
+      - button "批量删除" [ref=e71] [cursor=pointer]
+      - link "点击刷新查看最新数据" [ref=e72] [cursor=pointer]:
+        - /url: /manage/kefu_common/clearCache.html?cacheKey=kefu_in_the_trialclients_new_172949#city=%E6%9D%AD%E5%B7%9E&truename=&kefuname=&bankname=&bankmanager=&department=&stime=&etime=&timeset=&timetype=&status=0&is_manager=&payee=&checking_type=&is_reviewed=0&is_reportfrom=&department_big=&department_bcompany=&qudao_mname=&source=b01f59001523ccbdd0b91165a90ba377
+        - img "点击刷新查看最新数据" [ref=e73]
+  - table [ref=e77]:
+    - rowgroup [ref=e78]:
+      - row "ID 客户ID 进件日期 客户姓名 客户电话 贷款顾问 部门 进件银行 银行客 户经理 费率 进件额度 （元） 进度 批款额度 （元） 批款时间 收款额 （元） 收款人 收款日期 渠道费 （元） 诚意金 （元） 净收入 （元） 来源 收款银行 录入日期 单件类型 确认人 确认时间 备注 操作" [ref=e79]:
+        - cell "ID" [ref=e80]:
+          - checkbox [ref=e81]
+          - text: ID
+        - cell "客户ID" [ref=e82]
+        - cell "进件日期" [ref=e83]
+        - cell "客户姓名" [ref=e84]
+        - cell "客户电话" [ref=e85]
+        - cell "贷款顾问" [ref=e86]
+        - cell "部门" [ref=e87]
+        - cell "进件银行" [ref=e88]
+        - cell "银行客 户经理" [ref=e89]:
+          - text: 银行客
+          - text: 户经理
+        - cell "费率" [ref=e90]
+        - cell "进件额度 （元）" [ref=e91]:
+          - text: 进件额度
+          - text: （元）
+        - cell "进度" [ref=e92]
+        - cell "批款额度 （元）" [ref=e93]:
+          - text: 批款额度
+          - text: （元）
+        - cell "批款时间" [ref=e94]
+        - cell "收款额 （元）" [ref=e95]:
+          - text: 收款额
+          - text: （元）
+        - cell "收款人" [ref=e96]
+        - cell "收款日期" [ref=e97]
+        - cell "渠道费 （元）" [ref=e98]:
+          - text: 渠道费
+          - text: （元）
+        - cell "诚意金 （元）" [ref=e99]:
+          - text: 诚意金
+          - text: （元）
+        - cell "净收入 （元）" [ref=e100]:
+          - text: 净收入
+          - text: （元）
+        - cell "来源" [ref=e101]
+        - cell "收款银行" [ref=e102]
+        - cell "录入日期" [ref=e103]
+        - cell "单件类型" [ref=e104]
+        - cell "确认人" [ref=e105]
+        - cell "确认时间" [ref=e106]
+        - cell "备注" [ref=e107]
+        - cell "操作" [ref=e108]
+      - row "合计 0.00 0.00 0.00 0.00 0.00 0.00" [ref=e109]:
+        - cell "合计" [ref=e110]:
+          - strong [ref=e111]: 合计
+        - cell [ref=e112]
+        - cell [ref=e113]
+        - cell [ref=e114]
+        - cell [ref=e115]
+        - cell [ref=e116]
+        - cell [ref=e117]
+        - cell [ref=e118]
+        - cell [ref=e119]
+        - cell [ref=e120]
+        - cell "0.00" [ref=e121]
+        - cell [ref=e122]
+        - cell "0.00" [ref=e123]
+        - cell [ref=e124]
+        - cell "0.00" [ref=e125]
+        - cell [ref=e126]
+        - cell [ref=e127]
+        - cell "0.00" [ref=e128]
+        - cell "0.00" [ref=e129]
+        - cell "0.00" [ref=e130]
+        - cell [ref=e131]
+        - cell [ref=e132]
+        - cell [ref=e133]
+        - cell [ref=e134]
+        - cell [ref=e135]
+        - cell [ref=e136]
+        - cell [ref=e137]
+        - cell [ref=e138]
+  - generic [ref=e141]:
+    - text: 总共0条记录
+    - generic [ref=e142]: "1"

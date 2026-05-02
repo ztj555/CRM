@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>系统设置</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/kefuseting.css?v=92_51" />
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage_2025/css/font-awesome.css?v=v=92_51" />
+<script type ="text/javascript"  src ="https://guwen.zhudaicms.com/default/manage/js/jquery-1.7.2.min.js?v=92_5" ></script>
+<style type="text/css">
+.layout-tag {
+    position: relative;
+    white-space: nowrap;
+    padding: 0 10px 0 10px;
+    line-height: 28px;
+    border-radius: 4px;
+    background:#f2dede;
+    color: #333;
+    cursor: pointer;
+}
+.tag-close{
+    margin-left: 4px;
+    font-size: 12px;
+}
+</style>
+ <script type="text/javascript">
+    function zhuaqu_change(value){
+    	if(value=='stars'){
+    		//按星级
+            $('#setting_status').hide();
+    		$('#setting_stars').show();
+    	}else{
+    		//按状态
+    		$('#setting_stars').hide();
+            $('#setting_status').show();
+    	}
+    }
+    
+    function submit_clientstats(client_statsid){
+ 	    var checkboxes = client_statsid.querySelectorAll('input[type=checkbox]:checked'); // 获取所有被选中的复选框元素
+ 	    var sxArray = []; // 创建空数组来保存复选框的值
+ 	    
+ 	    for(var i = 0; i < checkboxes.length; i++){
+ 	    	sxArray.push(checkboxes[i].value); // 将每个复选框的值添加到数组中
+ 	    }
+ 	    var data_json = {
+		'kehu_shuxing':sxArray,
+		};
+		$.post('/manage/kefu_account/client_shuxing_setdo.html', data_json, function (res){
+			if( res==1 ){
+				alert('隐藏设置更新成功！');
+			}else {
+				alert('隐藏设置更新失败，请联系系统工作人员！');
+			}
+		});
+ 	   
+    }
+    
+    /*
+     * 清空公共池
+     */
+    function clearggc(){
+    	if(!confirm('该操作需要非常谨慎，确定要清空公共池吗？')){
+    		return false;
+    	}
+    	$.post('/manage/kefu_clientsggc/ajax_clearggc.html','',function(d){
+    		if(d==1){
+    			alert('当前身份不允许清空公共池!');
+    			//window.location.reload();
+    		}
+    		if(d==2){
+    			alert('公共池已清空！');
+    			//window.location.reload();
+    		}
+    	});
+    }
+    $(function(){
+        $('#is_ggc_open').change(function(){
+            var val = ~~$(this).val(),sel_val = $('#toggc_type').val(),setting_id = sel_val=='stars' ? 'setting_stars' : 'setting_status';
+            val ? $('#'+setting_id).show() : $('#'+setting_id).hide();
+        });
+        
+        //手工添加来源
+        $('#addHandSource').click(function(){
+            var source = $.trim($('#hand_source').val());
+            if(!source){
+                return alert('请输入来源');
+            }
+            $.post('/manage/kefu_account/addhandsource',{'source':source},function(d){
+                if(d.code==1){
+                    //添加成功
+                    var sid = d.data.id;
+                    $('#handsourceDiv').append('<span class="layout-tag" id="handsource_'+sid+'">'+source+'<i class="fa fa-close tag-close" onclick="delHandSource('+sid+',\''+source+'\')"></i></span>');
+                }else{
+                    alert(d.msg);
+                }
+            },'json');
+        });
+    });
+    function delHandSource(id,source){
+        if(confirm('确认删除“'+source+'”来源吗？')){
+            $.post('/manage/kefu_account/delhandsource',{'id':id},function(d){
+                if(d.code==1){
+                    //删除成功                    
+                    $('#handsource_'+id).remove();
+                }else{
+                    alert(d.msg);
+                }
+            },'json');
+        }
+    }
+ </script>
+</head>
+<style>
+	.sys-tit {
+		background: #db5a63;
+		text-align: center;
+		line-height: 40px;
+		color: #fff;
+		font-size: 16px;
+		margin-bottom: 30px;
+	}
+	.form-control{
+		display: inline;
+	}
+	.sys-table{
+		width: 100%;
+	}
+	.sys-table tr td{
+		height:45px;
+		border: 1px solid #eee;
+		padding: 6px;
+	}
+	.form-item{
+		display: flex;
+		align-items: stretch;
+		border: 1px solid #eee;
+	}
+    .form-item-label{
+		padding: 6px;
+        width: 40%;
+        display: flex;
+        align-items: center;
+		border-right: 1px solid #eee;
+		justify-content: flex-end;
+    }
+    .form-item-value{
+		padding: 6px;
+        flex: 1;
+    }
+</style>
+<body>
+	<h2 class="sys-tit">系统设置</h2>
+       <form id="myform" name="myform" method="post" action="/manage/kefu_account/setting_do.html" enctype="multipart/form-data">
+		
+	<div class="form-container">
+		<div class="form-item">
+			<div class="form-item-label">接受新数据：</div>
+			<div class="form-item-value">
+			  <input type="radio"  name="is_closed" value="1" checked="checked" >关闭
+				&nbsp;&nbsp;&nbsp;
+			  <input type="radio"  name="is_closed" value="0"  >开启
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">
+				<div>
+					<div style="text-align: right;">隐藏客户属性：</div>
+					<span style="font-size:12px;">(选中为隐藏，隐藏后客户列表这些属性不展示)</span>
+				</div>
+			</div>
+			<div class="form-item-value" id="client_statsid">
+			  <input type="checkbox" name="client_stats[]" value="ID" >ID&nbsp;&nbsp;
+			  <input type="checkbox" name="client_stats[]" value="标签" >标签&nbsp;&nbsp;
+			  <input type="checkbox" name="client_stats[]" value="保单"  checked >保单&nbsp;&nbsp;
+			  <input type="checkbox" name="client_stats[]" value="代发" >代发&nbsp;&nbsp;
+			  <input type="checkbox" name="client_stats[]" value="芝麻分" >芝麻分&nbsp;&nbsp;
+			  <input type="checkbox" name="client_stats[]" value="信用卡"  checked >信用卡&nbsp;&nbsp;
+			  <input type="checkbox" name="client_stats[]" value="企业主" >企业主&nbsp;&nbsp;
+			  <input type="checkbox" name="client_stats[]" value="贷款类型" >贷款类型&nbsp;&nbsp;
+			  <input type="checkbox" name="client_stats[]" value="城市" >城市&nbsp;&nbsp;
+              <input type="checkbox" name="client_stats[]" value="备注" >备注&nbsp;&nbsp;
+			  <button type="button" style="font-size:12px;" onclick="submit_clientstats(client_statsid);">提交</button>
+			</div>
+		</div>
+				<div class="form-item">
+	        <div class="form-item-value " colspan="2" style="flex:1;text-align: center;color:#C63300;font-weight: bold;background-color:#DDDDDD;">注意：以上设置仅对自己有效，以下设置对公司所有人有效</div>
+	    </div>
+	    <div class="form-item">
+			<div class="form-item-label">顾问晚上10：30之后能否登录系统：</div>
+			<div class="form-item-value">
+			  <input type="radio" name="is_cannight_login" value="1"  >能
+				&nbsp;&nbsp;&nbsp;
+			  <input type="radio" name="is_cannight_login" value="0" checked="checked" >不能
+			  <p style="color:red;">提醒：公司负责人不受开关限制，主管和普通顾问都会受开关限制</p>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">哪些身份可以开启关闭接客开关：</div>
+			<div class="form-item-value">
+			        区长
+			    <select class="form-control" style="width:100px;" name="is_managerbig_editjieke" id="is_managerbig_editjieke">
+					<option  value="0" style="color:red;"  >不允许</option>
+					<option  value="1" style="color:green;" selected>允许</option>
+				</select>
+				主管
+				<select class="form-control" style="width:120px;" name="is_manager_editjieke" id="is_manager_editjieke">
+					<option  value="0" style="color:red;"  >不允许</option>
+					<option  value="1" style="color:green;" selected>允许</option>
+				</select>
+				顾问
+				<select class="form-control" style="width:120px;" name="is_allowgw_closenewdata" id="is_allowgw_closenewdata">
+					<option  value="0" style="color:red;" selected>不允许</option>
+					<option  value="1" style="color:green;" >允许</option>
+				</select>
+			    <p style="color:blue;">提醒：若允许，对应身份能关闭接受新数据，就无法接受到API对接的新数据
+			    <br>
+			    <span style="color:red;">注意：顾问不包含'学徒'和'入司'</span>
+			    </p>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">手机号加*：</div>
+			<div class="form-item-value">
+			  <input type="radio" name="is_manager_seemobile" value="0"  >主管加*
+			  &nbsp;&nbsp;&nbsp;
+			  <input type="radio" name="is_manager_seemobile" value="2"  >顾问加*
+			  &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="is_manager_seemobile" value="3"  >主管管+顾问都加*
+			  &nbsp;&nbsp;&nbsp;
+			  <input type="radio" name="is_manager_seemobile" value="1" checked="checked" >都不加*
+			  <p style="color:red;">提醒(加*号码格式：138*****209)：<br>
+			                                                   主管加*：主管看不到下属客户的号码；<br>
+			                                                   顾问加*：顾问看不到自己客户的号码；<br>
+                                                               主管+顾问加*：主管看不到自己和下属客户的号码；顾问看不到自己客户的号码；<br>
+			                                                   都不加*：号码对所有人可见</p>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">哪些身份可以看到客户数据来源：</div>
+			<div class="form-item-value">
+			        区长
+			    <select class="form-control" style="width:100px;" name="is_can_seesource_managerbig" id="is_can_seesource_managerbig">
+					<option  value="0" style="color:red;"  >不能</option>
+					<option  value="1" style="color:green;" selected>能</option>
+				</select>
+				主管
+				<select class="form-control" style="width:120px;" name="is_can_seesource_manager" id="is_can_seesource_manager">
+					<option  value="0" style="color:red;"  >不能</option>
+					<option  value="1" style="color:green;" selected>能</option>
+				</select>
+				顾问
+				<select class="form-control" style="width:120px;" name="is_can_seesource" id="is_can_seesource">
+					<option  value="0" style="color:red;" >不能</option>
+					<option  value="1" style="color:green;" selected>能</option>
+				</select>
+			    <p style="color:red;">提醒：若能看，对应身份能看到公司客户数据来源</p>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">是否关闭拉黑客户功能：</div>
+			<div class="form-item-value">
+			  <input type="radio" name="is_canblackkehu" value="0" checked="checked" >开启
+				&nbsp;&nbsp;&nbsp;
+			  <input type="radio" name="is_canblackkehu" value="1"  >关闭
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">是否开启抓入公共池：</div>
+			<div class="form-item-value">
+				<select class="form-control" style="width:100px;" name="is_ggc_open" id="is_ggc_open">
+					<option  value="0" selected>关闭</option>
+					<option  value="1" >开启</option>
+				</select>
+				<select class="form-control" style="width:120px;" name="toggc_type" id="toggc_type" onchange="zhuaqu_change(this.value)">
+					<option  value="stars" selected>按星级抓取</option>
+					<option  value="status" >按状态抓取</option>
+				</select>
+				哪些人名下数据会被抓
+				<select class="form-control" style="width:168px;" name="intoggcpeople" id="intoggcpeople">
+					<option  value="0" selected>所有人(负责人除外)</option>
+					<option  value="1" >主管+顾问</option>
+					<option  value="2" >顾问</option>
+				</select>
+				<div id="setting_status" style="display:none">
+   					<span> 待跟进未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;height:22px;" name="daigenjin" id="daigenjin" value="5">天 、
+   					<span> 待签约未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;height:22px;" name="daiqianyue" id="daiqianyue" value="5"><span>天则自动抓入公共池</span><br/>
+   					<span> 已放款未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;height:22px;" name="yifangkuan" id="yifangkuan" value="0">天、
+   					<span> 已上门未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;height:22px;" name="yishangmen" id="yishangmen" value="0"><span>天则自动抓入公共池</span><br/>
+   					<span> 已签约未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;height:22px;" name="yiqianyue" id="yiqianyue" value="0"><span>天则自动抓入公共池</span>
+			    </div> 
+                   
+                   <!-- 按星级抓取展示内容 -->
+			    <div id="setting_stars" style="display:none">
+   					<span> 0星未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;" name="zerostars" id="zerostars" value="1">天，
+   					<span> 1星未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;" name="onestars" id="onestars" value="2">天，
+   					<span> 2星未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;" name="twostars" id="twostars" value="2">天，<br/>
+   					<span> 3星未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;" name="threestars" id="threestars" value="2">天，
+   					<span> 4星未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;" name="fourstars" id="fourstars" value="2"><span>天</span><br/>
+   					<span> 5星未备注超过：</span>
+   					<input type="text" class="form-control" style="width:50px;" name="fivestars" id="fivestars" value="0"><span>天,这些则自动抓入公共池(<span style="color:red;">注：按星级则已放款默认不抓取</span>)</span>
+				</div>
+				<p style="color:red;">提醒：设置为0代表不抓取，负责人和请假顾问的数据也不抓取。</p>
+			    <p style="color:green;">提醒：周末(<span style="color:#FF6699;">周六晚上整晚和周日晚上整晚</span>)和国家节假日(<span style="color:#FF6699;">会适当延迟1-3天</span>)会自动停止抓取，其他日期深夜00:00-08:00之间抓取。   </p>
+			    
+			    <script>
+					document.getElementById('is_ggc_open').addEventListener('change', function() {
+					  var selectedValue = this.value;
+					  var setting_status = document.getElementById('setting_status');
+					  var setting_stars = document.getElementById('setting_stars');
+					 
+					  if (selectedValue === '0') {
+						  setting_status.style.display = 'none'; // 隐藏层
+						  setting_stars.style.display = 'none'; // 隐藏层
+					  } else {
+						  setting_stars.style.display = 'block'; // 显示层
+					  }
+					});
+				</script>
+			    <a href="javascript:clearggc();">清空公共池<span style="color:red;">(谨慎)</span></a>
+			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			    <a href="/manage/kefu_account/hand_to_ggc.html">点击手工抓入池</a>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">允许锁定客户数：</div>
+			<div class="form-item-value"><input type="text" class="form-control" style="width:100px;" name="notoggc_num" id="notoggc_num" value="0"><span>条</span>
+			<span style="color:blue;">0代表无法锁定客户，1条都不行。</span>
+			</div>
+		</div>
+        <div class="form-item">
+			<div class="form-item-label">排行榜权限管理：</div>
+			<div class="form-item-value">
+			    谁能看到排行榜
+			  <select class="form-control" style="width: 160px;" name="is_see_phb" id="is_see_phb">
+					<option  value="0" selected>全都不能(负责人例外)</option>
+                    <option  value="3" >区长</option>
+					<option  value="1" >区长+主管</option>
+					<option  value="2" >区长+主管+普通顾问</option>
+			  </select>
+			   能看到的范围
+			  <select class="form-control" style="width: 150px;" name="is_see_phbmoney" id="is_see_phbmoney">
+					<option  value="0" >不能看创收金额</option>
+					<option  value="1" selected>能看创收金额</option>
+			  </select>
+			  
+		         <br/><br/>
+		                  是否开启只能看到自己部门排行榜：
+				  <input type="radio" name="is_see_phb_onlydepartment" value="1"  >开启
+					&nbsp;&nbsp;&nbsp;
+				  <input type="radio" name="is_see_phb_onlydepartment" value="0" checked="checked" >关闭
+			  
+			  
+			  <br/><br/>
+			  <p style="color:green;">温馨提示：设置后等待20秒首页可见效果.</p>
+              
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">
+				<div>
+					<div style="text-align: right;">客户状态属性：</div>
+					<span style="font-size:12px;">(选中为可用，未选中则不展示在状态下拉中)</span>
+				</div>
+			</div>
+			<div class="form-item-value">
+			  			  <input type="checkbox" name="statusstr[]" value="0"  checked ><span style="color:#0000E3">已受理</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="1" ><span style="color:#FF0000">贷款资质不符</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="2"  checked ><span style="color:#00CC00">待签约</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="3" ><span style="color:#009100">已签约</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="4"  checked ><span style="color:#006030">银行已放款</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="5" ><span style="color:#FF0000">银行已拒绝</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="6" ><span style="color:#55AA00">审核中...</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="7"  checked ><span style="color:#0066CC">待跟进</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="22" ><span style="color:#00CD66">预约上门</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="8"  checked ><span style="color:#00DB00">已上门</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="9" ><span style="color:#FFD700">捣乱申请</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="10" ><span style="color:#891197">重复申请</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="11"  checked ><span style="color:#891197">外地申请</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="12" ><span style="color:#218868">无意向</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="13" ><span style="color:#891197">未接通</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="14" ><span style="color:#891197">客户挂断</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="15" ><span style="color:#891197">占线</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="16" ><span style="color:#891197">关机</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="17"  checked ><span style="color:#891197">空号</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="18" ><span style="color:#891197">无法接通</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="19" ><span style="color:#891197">稍后联系</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="20"  checked ><span style="color:#891197">停机</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="21" ><span style="color:#990099">有意向</span>&nbsp;&nbsp;
+			  			  <input type="checkbox" name="statusstr[]" value="23" ><span style="color:#993399">外地号码</span>&nbsp;&nbsp;
+			  			  <br>
+			  <p style="color:green;">温馨提示：设置之后5分钟内生效，如果需要额外加状态，请找系统工作人员沟通.</p>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">新增手工添加客户时下拉来源：</div>
+			<div class="form-item-value">
+			  <input type="text" name="hand_source" id="hand_source" value="">&nbsp;<input type="button" id="addHandSource" value="添加">
+              <div id="handsourceDiv">
+			                </div>
+              <br>
+              <span style="color:green;">目前已有的来源：系统默认：转介绍,陌拜,预约上门,广告投放,企业微信,公司资源,线上咨询,短信,其他.</span><br>
+			  <span style="color:green;">说明：会展示在手工添加客户界面的'客户来源'下拉中.</span>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">上门扫码二维码：</div>
+			<div class="form-item-value"><span>请用浏览器访问：<a href="https://www.wwei.cn/" target="_blank">https://www.wwei.cn/</a>，然后复制&nbsp;https://guwen.zhudaicms.com/bserve/saoma.html?brand=1833
+			    <br>粘贴到文字输入框，点击绿色按钮'生成二维码'，右侧即可看到二维码，下载下来即可
+			    <br><p style="color:red;">注意：需要通知平台工作人员上传一张LOGO图，不上传扫码打开的页面会缺少LOGO图</p></span>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">公共池权限管理：<br><font color="red">(仅对非负责人)&nbsp;&nbsp;</font></div>
+			<div class="form-item-value">
+			    谁能看到公共池
+			  <select class="form-control" style="width: 150px;" name="is_cansee_ggc" id="is_cansee_ggc">
+					<option  value="0" >全都不能</option>
+					<option  value="3" >区长</option>
+					<option  value="1" >区长+主管</option>
+					<option  value="2" selected>全都能</option>
+			  </select>
+			   能看到的范围
+			  <select class="form-control" style="width: 150px;" name="is_cansee_allggc" id="is_cansee_allggc">
+    				<option  value="0" >仅限部门或区</option>
+    				<option  value="1" selected>全公司公共池</option>
+			  </select>
+              <p style="color:red;"></p>
+			  <p style="color:blue;">
+                a).职位说明：<br/>
+                  &nbsp;&nbsp;1.全不能：所有顾问都不能<br/>
+                  &nbsp;&nbsp;2.区长：仅限区长<br/>
+                  &nbsp;&nbsp;3.区长+主管：仅限区长+主管<br/>
+                  &nbsp;&nbsp;4.全都能：所有顾问 <br/>
+                  
+                <br/>
+                b).范围设置说明：<br/>
+                  &nbsp;&nbsp;1.仅限部门或区：区长仅能查看“所属区”的数据，部长或顾问仅能查看“所属部门”的数据<br/>
+                  &nbsp;&nbsp;2.全公司公共池：整个公司所有公共池数据<br/>
+              </p>
+			  <p style="color:green;">温馨提示：设置后等待20秒首页可见效果.</p>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">客户数量上限设置：</div>
+			<div class="form-item-value">
+			         是否开启顾问名下客户数量限制：
+			    <select class="form-control" style="width: 100px;" name="is_clienttoplimit_open" id="is_clienttoplimit_open">
+					<option  value="0" >关闭</option>
+					<option  value="1" selected>开启</option>
+				</select>
+				<span> 普通顾问的客户数量上限值：</span>
+				<input type="hidden" class="form-control" style="width:50px;" name="hddata_top" id="hddata_top" value="400">
+				<input type="text" class="form-control" style="width:50px;" name="data_top" id="data_top" value="400">人，
+				<span>一级主管(区长)的客户数量上限值：</span>
+				<input type="hidden" class="form-control" style="width:50px;" name="hdgldata_top" id="hdgldata_top" value="400">
+				<input type="text" class="form-control" style="width:50px;" name="gldata_top" id="gldata_top" value="400">人，
+				<span>二级主管(部长)的客户数量上限值：</span>
+				<input type="hidden" class="form-control" style="width:50px;" name="hdgl2data_top" id="hdgl2data_top" value="400">
+				<input type="text" class="form-control" style="width:50px;" name="gl2data_top" id="gl2data_top" value="400">人
+				<br/>
+			    <p style="color:red;">提醒：当员工或管理者名下客户数超过设定值时，无法接受再分配的数据</p>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">登录验证码管理：</div>
+			<div class="form-item-value"><span>当前验证码网址：https://guwen.zhudaicms.com/important/get_guding_yzm.html?t=1752764751&nbsp;&nbsp;<a target="_blank" href="/manage/kefu_important/get_guding_yzm_edit.html?t=1752764751">点击更换</a><br>
+			<p style="color:red;">注意：更换新网址后，之前的验证码网址失效</p></span>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">安全防火墙<br>IP白名单：</div>
+			<div class="form-item-value">
+			      是否开启登录白名单限制：
+			    <select class="form-control" style="width: 100px;" name="is_whiteiplogin_open" id="is_whiteiplogin_open">
+					<option  value="0" selected>关闭</option>
+					<option  value="1" >开启</option>
+				</select><span style="color:red;">注意：一旦开启，如果不是指定IP(一般是公司IP)网络登录，则无法登录系统，<br>
+				                                                                         白名单限制登录有效时间段：上午10：00到次日清晨07：30</span>。
+				                                                                         需要全天24H限制登录吗？  <select class="form-control" style="width: 135px;" name="is_whiteiplogin_allday" id="is_whiteiplogin_allday">
+																			<option  value="0" selected>深夜不限制</option>
+																			<option  value="1" >一天24H限制</option>
+																		</select>
+				
+				<p>添加白名单IP：
+				<input type="text" class="form-control" style="width:145px;" name="whiteip" id="whiteip" value="" placeholder="一次只能输入一个IP">
+			         您当前网络IP：220.184.68.113
+			    <p style="color:green;">IP白名单(不是这些IP的电脑无法登录)：<br>122.234.46.190&nbsp;&nbsp;负责人登录IP自动录入<br>183.158.2.145&nbsp;&nbsp;负责人登录IP自动录入<br>115.196.7.237&nbsp;&nbsp;负责人登录IP自动录入<br></p>
+			    <p>近期10天您公司常用IP：<br>220.184.68.113<br>125.118.178.80<br>183.158.135.170<br>36.24.157.112<br></p>
+			    <p>添加不受登录限制的顾问(一次只添加一个,公司负责人不受限制无需添加)：
+				<input type="text" class="form-control" style="width:120px;" name="white_kefuname" id="white_kefuname" value="" placeholder="请输入顾问姓名">
+			    </p>
+			    <p>不受IP登录限制的顾问有：
+			    <input type="text" class="form-control" style="width:265px;color:green;" name="dbwhiteips" id="dbwhiteips" value="">
+			    </p>
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">顾问能否手机登录系统：</div>
+			<div class="form-item-value">
+			  <input type="radio" name="is_can_mobilelogin" value="1"  >能
+				&nbsp;&nbsp;&nbsp;
+			  <input type="radio" name="is_can_mobilelogin" value="0" checked="checked" >不能
+			</div>
+		</div>
+		<div class="form-item">
+			<div class="form-item-label">数据导出：</div>
+			<div class="form-item-value"><span>为确保数据安全性，只允许老板拥有导出链接，如需导出数据，请联系系统工作人员！</span>
+			</div>
+		</div>
+				<div class="form-item">
+			<div class="form-item-label"></div>
+			<div class="form-item-value"><button class="btn btn-danger">提 交</button></div>
+		</div>
+	</div>
+     </form>
+</body>
+</html>

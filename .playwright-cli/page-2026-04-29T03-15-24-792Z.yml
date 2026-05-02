@@ -1,0 +1,224 @@
+- generic [active] [ref=e1]:
+  - heading "注意：一个图片框只能上传一张图，一个框中多次上传只能替换该图片！" [level=6] [ref=e3]
+  - generic [ref=e4]:
+    - heading "1、上传头像" [level=4] [ref=e5]
+    - generic [ref=e6] [cursor=pointer]:
+      - img
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - heading "2、上传身份证" [level=4] [ref=e9]
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - generic [ref=e12] [cursor=pointer]:
+            - img
+            - generic [ref=e13]:
+              - generic [ref=e14]:
+                - img [ref=e15]
+                - button "Choose File" [ref=e16]
+                - button "Choose File" [ref=e18]
+              - img [ref=e20]
+          - text: 身份证正面
+        - listitem [ref=e21]:
+          - generic [ref=e22] [cursor=pointer]:
+            - img
+            - generic [ref=e23]:
+              - generic [ref=e24]:
+                - img [ref=e25]
+                - button "Choose File" [ref=e26]
+                - button "Choose File" [ref=e28]
+              - img [ref=e30]
+          - text: 身份证反面
+      - heading "3、其证明材料" [level=4] [ref=e31]
+      - list [ref=e32]:
+        - listitem [ref=e33]:
+          - generic [ref=e34] [cursor=pointer]:
+            - img
+            - generic [ref=e35]:
+              - generic [ref=e36]:
+                - img [ref=e37]
+                - button "Choose File" [ref=e38]
+                - button "Choose File" [ref=e40]
+              - img [ref=e42]
+          - text: 毕业证
+        - listitem [ref=e43]:
+          - generic [ref=e44] [cursor=pointer]:
+            - img
+            - generic [ref=e45]:
+              - generic [ref=e46]:
+                - img [ref=e47]
+                - button "Choose File" [ref=e48]
+                - button "Choose File" [ref=e50]
+              - img [ref=e52]
+          - text: 劳动合同
+        - listitem [ref=e53]:
+          - generic [ref=e54] [cursor=pointer]:
+            - img
+            - generic [ref=e55]:
+              - generic [ref=e56]:
+                - img [ref=e57]
+                - button "Choose File" [ref=e58]
+                - button "Choose File" [ref=e60]
+              - img [ref=e62]
+          - text: 银行卡
+        - listitem [ref=e63]:
+          - generic [ref=e64] [cursor=pointer]:
+            - img
+            - generic [ref=e65]:
+              - generic [ref=e66]:
+                - img [ref=e67]
+                - button "Choose File" [ref=e68]
+                - button "Choose File" [ref=e70]
+              - img [ref=e72]
+          - text: 征信报告1
+        - listitem [ref=e73]:
+          - generic [ref=e74] [cursor=pointer]:
+            - img
+            - generic [ref=e75]:
+              - generic [ref=e76]:
+                - img [ref=e77]
+                - button "Choose File" [ref=e78]
+                - button "Choose File" [ref=e80]
+              - img [ref=e82]
+          - text: 体检报告1
+    - heading "4、档案信息" [level=4] [ref=e83]
+    - table [ref=e84]:
+      - rowgroup [ref=e85]:
+        - row "姓名： 徐钰蓉 出生年月日： 请选择 请选择 请选择" [ref=e86]:
+          - cell "姓名：" [ref=e87]
+          - cell "徐钰蓉" [ref=e88]:
+            - textbox [ref=e89]: 徐钰蓉
+          - cell "出生年月日：" [ref=e90]
+          - cell "请选择 请选择 请选择" [ref=e91]:
+            - combobox [ref=e92]:
+              - option "请选择" [selected]
+              - option "1966"
+              - option "1967"
+              - option "1968"
+              - option "1969"
+              - option "1970"
+              - option "1971"
+              - option "1972"
+              - option "1973"
+              - option "1974"
+              - option "1975"
+              - option "1976"
+              - option "1977"
+              - option "1978"
+              - option "1979"
+              - option "1980"
+              - option "1981"
+              - option "1982"
+              - option "1983"
+              - option "1984"
+              - option "1985"
+              - option "1986"
+              - option "1987"
+              - option "1988"
+              - option "1989"
+              - option "1990"
+              - option "1991"
+              - option "1992"
+              - option "1993"
+              - option "1994"
+              - option "1995"
+              - option "1996"
+              - option "1997"
+              - option "1998"
+              - option "1999"
+              - option "2000"
+              - option "2001"
+              - option "2002"
+              - option "2003"
+              - option "2004"
+              - option "2005"
+              - option "2006"
+              - option "2007"
+              - option "2008"
+              - option "2008"
+              - option "2009"
+              - option "2010"
+            - combobox [ref=e93]:
+              - option "请选择" [selected]
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+            - combobox [ref=e94]:
+              - option "请选择" [selected]
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "4"
+              - option "5"
+              - option "6"
+              - option "7"
+              - option "8"
+              - option "9"
+              - option "10"
+              - option "11"
+              - option "12"
+              - option "13"
+              - option "14"
+              - option "15"
+              - option "16"
+              - option "17"
+              - option "18"
+              - option "19"
+              - option "20"
+              - option "21"
+              - option "22"
+              - option "23"
+              - option "24"
+              - option "25"
+              - option "26"
+              - option "27"
+              - option "28"
+              - option "29"
+              - option "30"
+              - option "31"
+        - row "籍贯： 私人手机号码： 19883890925" [ref=e95]:
+          - cell "籍贯：" [ref=e96]
+          - cell [ref=e97]:
+            - textbox [ref=e98]
+          - cell "私人手机号码：" [ref=e99]
+          - cell "19883890925" [ref=e100]:
+            - textbox [ref=e101]: "19883890925"
+        - row "学历： 毕业院校：" [ref=e102]:
+          - cell "学历：" [ref=e103]
+          - cell [ref=e104]:
+            - textbox [ref=e105]
+          - cell "毕业院校：" [ref=e106]
+          - cell [ref=e107]:
+            - textbox [ref=e108]
+        - row "入职时间： 上家公司名称：" [ref=e109]:
+          - cell "入职时间：" [ref=e110]
+          - cell [ref=e111]:
+            - textbox [ref=e112]
+          - cell "上家公司名称：" [ref=e113]
+          - cell [ref=e114]:
+            - textbox [ref=e115]
+        - row "身份证号码： 上家公司职务：" [ref=e116]:
+          - cell "身份证号码：" [ref=e117]
+          - cell [ref=e118]:
+            - textbox [ref=e119]
+          - cell "上家公司职务：" [ref=e120]
+          - cell [ref=e121]:
+            - textbox [ref=e122]
+        - row "贷款行业从业时间： 0 月" [ref=e123]:
+          - cell "贷款行业从业时间：" [ref=e124]
+          - cell "0 月" [ref=e125]:
+            - textbox [ref=e126]: "0"
+            - generic [ref=e127]: 月
+        - row "个人简介：" [ref=e128]:
+          - cell "个人简介：" [ref=e129]
+          - cell [ref=e130]:
+            - textbox [ref=e131]
+    - button "确定" [ref=e133] [cursor=pointer]

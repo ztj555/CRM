@@ -1,0 +1,801 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: 客户
+      - combobox [ref=e6]:
+        - option "手机" [selected]
+        - option "姓名"
+        - option "ID"
+      - textbox "手机可模糊搜索" [ref=e7]
+    - generic [ref=e8]:
+      - generic [ref=e9]: 入池类型
+      - combobox [ref=e10]:
+        - option "-不限-" [selected]
+        - option "顾问丢入池"
+        - option "系统抓入池"
+    - generic [ref=e11]:
+      - generic [ref=e12]: 时间类型
+      - generic [ref=e13]:
+        - combobox [ref=e15]:
+          - option "入池时间" [selected]
+          - option "最后备注时间"
+          - option "实际申请时间"
+        - combobox [ref=e16]:
+          - option "-不限-" [selected]
+          - option "今日"
+          - option "昨天"
+          - option "最近7天"
+          - option "本月"
+          - option "上月"
+          - option "自定义"
+    - generic [ref=e17]:
+      - generic [ref=e18]: 状态
+      - generic [ref=e21] [cursor=pointer]: 请选择选项
+    - generic [ref=e22]:
+      - generic [ref=e23]: 星级
+      - generic [ref=e26] [cursor=pointer]: 请选择选项
+    - generic [ref=e27]:
+      - generic [ref=e28]: 未备注超过
+      - generic [ref=e29]:
+        - textbox [ref=e30]
+        - generic [ref=e31]: 天
+    - generic [ref=e32]:
+      - generic [ref=e33]: 备注关键词
+      - textbox "默认搜索3年内数据" [ref=e35]
+    - generic [ref=e36]:
+      - generic [ref=e37]: 备注次数
+      - generic [ref=e38]:
+        - textbox "最小值" [ref=e39]
+        - textbox "最大值" [ref=e40]
+    - generic [ref=e41]:
+      - generic [ref=e42]: 备注历史
+      - combobox [ref=e45]:
+        - option "从未备注过的顾问" [selected]
+        - option "备注过的顾问"
+    - generic [ref=e46]:
+      - generic [ref=e47]: 锁定客户
+      - combobox [ref=e48]:
+        - option "不限" [selected]
+        - option "已锁定"
+    - generic [ref=e49]:
+      - generic "负责人可见或已设置能看到全公司的公共池数据情况下也可见" [ref=e50]: 所属部门
+      - combobox [ref=e51]:
+        - option "不限" [selected]
+        - option "杭州一区=一区二部2"
+    - generic [ref=e52]:
+      - generic [ref=e53]: 来源
+      - generic [ref=e56] [cursor=pointer]: 请选择选项
+    - generic [ref=e57]:
+      - generic [ref=e58]: 其他条件
+      - generic [ref=e59]:
+        - combobox [ref=e61]:
+          - option "第一个备注顾问" [selected]
+          - option "最后备注顾问"
+        - combobox [ref=e63]
+    - generic [ref=e64]:
+      - generic [ref=e65]: 贷款条件
+      - combobox [ref=e66]:
+        - option "房" [selected]
+        - option "车"
+        - option "公积金"
+        - option "保单"
+        - option "代发"
+        - option "是否有企业"
+      - combobox [ref=e67]:
+        - option "-不限-" [selected]
+        - option "有"
+        - option "无"
+    - generic [ref=e68]:
+      - generic [ref=e69]: 资质关键词
+      - textbox [ref=e71]
+    - generic [ref=e73]:
+      - button "查询" [ref=e74] [cursor=pointer]
+      - generic [ref=e75] [cursor=pointer]: 按标签搜
+  - generic [ref=e79]:
+    - generic [ref=e83] [cursor=pointer]:
+      - textbox "全部公共池数据" [ref=e84]
+      - text: 
+      - generic [ref=e85]: 
+    - link "点击刷新查看最新数据" [ref=e86] [cursor=pointer]:
+      - /url: /manage/kefu_common/clearCache.html?cacheKey=kefu_kefu_clientsggc_new172949_14d12ecf62ad2d7c615d87fa27267484
+      - img "点击刷新查看最新数据" [ref=e87]
+  - generic [ref=e91]:
+    - table [ref=e94]:
+      - rowgroup [ref=e95]:
+        - row "ID 姓名 性别 状态 星级 年龄 备注 顾问 房 车 保单 社保 代发 公积金 芝麻分 信用卡 企业主 申请额度 最后备注时间 点击可根据最后备注时间倒序排列 入池时间 点击可根据入池时间倒序排列 申请时间 贷款类型 来源 城市" [ref=e96]:
+          - columnheader "ID" [ref=e97]:
+            - checkbox [ref=e98]
+            - text: ID
+          - columnheader "姓名" [ref=e99]
+          - columnheader "性别" [ref=e100]
+          - columnheader "状态" [ref=e101]
+          - columnheader "星级" [ref=e102]
+          - columnheader "年龄" [ref=e103]
+          - columnheader "备注" [ref=e104]
+          - columnheader "顾问" [ref=e105]
+          - columnheader "房" [ref=e106]
+          - columnheader "车" [ref=e107]
+          - columnheader "保单" [ref=e108]
+          - columnheader "社保" [ref=e109]
+          - columnheader "代发" [ref=e110]
+          - columnheader "公积金" [ref=e111]
+          - columnheader "芝麻分" [ref=e112]
+          - columnheader "信用卡" [ref=e113]
+          - columnheader "企业主" [ref=e114]
+          - columnheader "申请额度" [ref=e115]
+          - columnheader "最后备注时间 点击可根据最后备注时间倒序排列" [ref=e116]:
+            - generic [ref=e118]:
+              - text: 最后备注时间
+              - link "点击可根据最后备注时间倒序排列" [ref=e119] [cursor=pointer]:
+                - /url: /manage/kefu_clientsggc/index.html?lastupdatetime=yes
+                - img [ref=e120]
+          - columnheader "入池时间 点击可根据入池时间倒序排列" [ref=e121]:
+            - generic [ref=e123]:
+              - text: 入池时间
+              - link "点击可根据入池时间倒序排列" [ref=e124] [cursor=pointer]:
+                - /url: /manage/kefu_clientsggc/index.html?inggctime=yes
+                - img [ref=e125]
+          - columnheader "申请时间" [ref=e126]
+          - columnheader "贷款类型" [ref=e127]
+          - columnheader "来源" [ref=e128]
+          - columnheader "城市" [ref=e129]
+      - rowgroup [ref=e130]:
+        - row "57253995 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 2026-04-28 15:06 2026-04-28 15:08 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e131] [cursor=pointer]:
+          - cell "57253995" [ref=e132]:
+            - checkbox [ref=e133]
+            - text: "57253995"
+          - cell "BXMJ" [ref=e134]:
+            - generic "点击修改客户信息" [ref=e137]: BXMJ
+          - cell [ref=e138]
+          - cell ". 已受理" [ref=e139]:
+            - generic [ref=e141]:
+              - text: .
+              - generic [ref=e142]: 已受理
+          - cell "0星" [ref=e143]
+          - cell "--" [ref=e144]
+          - cell [ref=e145]
+          - cell "杭州公." [ref=e146]
+          - cell "--" [ref=e147]
+          - cell "--" [ref=e148]
+          - cell "--" [ref=e149]
+          - cell "--" [ref=e150]
+          - cell "--" [ref=e151]
+          - cell "--" [ref=e152]
+          - cell "0" [ref=e153]
+          - cell "无" [ref=e154]
+          - cell "否" [ref=e155]
+          - cell "0" [ref=e156]
+          - cell "2026-04-28 15:06" [ref=e157]
+          - cell "2026-04-28 15:08" [ref=e158]
+          - cell "2025-08-07 16:19" [ref=e159]
+          - cell "信用贷" [ref=e160]
+          - cell "BXMJ-excel" [ref=e161]
+          - cell "杭州" [ref=e162]
+        - row "57253994 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e163] [cursor=pointer]:
+          - cell "57253994" [ref=e164]:
+            - checkbox [ref=e165]
+            - text: "57253994"
+          - cell "BXMJ" [ref=e166]:
+            - generic "点击修改客户信息" [ref=e169]: BXMJ
+          - cell [ref=e170]
+          - cell ". 已受理" [ref=e171]:
+            - generic [ref=e173]:
+              - text: .
+              - generic [ref=e174]: 已受理
+          - cell "0星" [ref=e175]
+          - cell "--" [ref=e176]
+          - cell [ref=e177]
+          - cell "杭州公." [ref=e178]
+          - cell "--" [ref=e179]
+          - cell "--" [ref=e180]
+          - cell "--" [ref=e181]
+          - cell "--" [ref=e182]
+          - cell "--" [ref=e183]
+          - cell "--" [ref=e184]
+          - cell "0" [ref=e185]
+          - cell "无" [ref=e186]
+          - cell "否" [ref=e187]
+          - cell "0" [ref=e188]
+          - cell "--" [ref=e189]
+          - cell "2026-01-11 20:50" [ref=e190]
+          - cell "2025-08-07 16:19" [ref=e191]
+          - cell "信用贷" [ref=e192]
+          - cell "BXMJ-excel" [ref=e193]
+          - cell "杭州" [ref=e194]
+        - row "57253993 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e195] [cursor=pointer]:
+          - cell "57253993" [ref=e196]:
+            - checkbox [ref=e197]
+            - text: "57253993"
+          - cell "BXMJ" [ref=e198]:
+            - generic "点击修改客户信息" [ref=e201]: BXMJ
+          - cell [ref=e202]
+          - cell ". 已受理" [ref=e203]:
+            - generic [ref=e205]:
+              - text: .
+              - generic [ref=e206]: 已受理
+          - cell "0星" [ref=e207]
+          - cell "--" [ref=e208]
+          - cell [ref=e209]
+          - cell "杭州公." [ref=e210]
+          - cell "--" [ref=e211]
+          - cell "--" [ref=e212]
+          - cell "--" [ref=e213]
+          - cell "--" [ref=e214]
+          - cell "--" [ref=e215]
+          - cell "--" [ref=e216]
+          - cell "0" [ref=e217]
+          - cell "无" [ref=e218]
+          - cell "否" [ref=e219]
+          - cell "0" [ref=e220]
+          - cell "--" [ref=e221]
+          - cell "2026-01-11 20:50" [ref=e222]
+          - cell "2025-08-07 16:19" [ref=e223]
+          - cell "信用贷" [ref=e224]
+          - cell "BXMJ-excel" [ref=e225]
+          - cell "杭州" [ref=e226]
+        - row "57253992 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e227] [cursor=pointer]:
+          - cell "57253992" [ref=e228]:
+            - checkbox [ref=e229]
+            - text: "57253992"
+          - cell "BXMJ" [ref=e230]:
+            - generic "点击修改客户信息" [ref=e233]: BXMJ
+          - cell [ref=e234]
+          - cell ". 已受理" [ref=e235]:
+            - generic [ref=e237]:
+              - text: .
+              - generic [ref=e238]: 已受理
+          - cell "0星" [ref=e239]
+          - cell "--" [ref=e240]
+          - cell [ref=e241]
+          - cell "杭州公." [ref=e242]
+          - cell "--" [ref=e243]
+          - cell "--" [ref=e244]
+          - cell "--" [ref=e245]
+          - cell "--" [ref=e246]
+          - cell "--" [ref=e247]
+          - cell "--" [ref=e248]
+          - cell "0" [ref=e249]
+          - cell "无" [ref=e250]
+          - cell "否" [ref=e251]
+          - cell "0" [ref=e252]
+          - cell "--" [ref=e253]
+          - cell "2026-01-11 20:50" [ref=e254]
+          - cell "2025-08-07 16:19" [ref=e255]
+          - cell "信用贷" [ref=e256]
+          - cell "BXMJ-excel" [ref=e257]
+          - cell "杭州" [ref=e258]
+        - row "57253991 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e259] [cursor=pointer]:
+          - cell "57253991" [ref=e260]:
+            - checkbox [ref=e261]
+            - text: "57253991"
+          - cell "BXMJ" [ref=e262]:
+            - generic "点击修改客户信息" [ref=e265]: BXMJ
+          - cell [ref=e266]
+          - cell ". 已受理" [ref=e267]:
+            - generic [ref=e269]:
+              - text: .
+              - generic [ref=e270]: 已受理
+          - cell "0星" [ref=e271]
+          - cell "--" [ref=e272]
+          - cell [ref=e273]
+          - cell "杭州公." [ref=e274]
+          - cell "--" [ref=e275]
+          - cell "--" [ref=e276]
+          - cell "--" [ref=e277]
+          - cell "--" [ref=e278]
+          - cell "--" [ref=e279]
+          - cell "--" [ref=e280]
+          - cell "0" [ref=e281]
+          - cell "无" [ref=e282]
+          - cell "否" [ref=e283]
+          - cell "0" [ref=e284]
+          - cell "--" [ref=e285]
+          - cell "2026-01-11 20:50" [ref=e286]
+          - cell "2025-08-07 16:19" [ref=e287]
+          - cell "信用贷" [ref=e288]
+          - cell "BXMJ-excel" [ref=e289]
+          - cell "杭州" [ref=e290]
+        - row "57253990 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e291] [cursor=pointer]:
+          - cell "57253990" [ref=e292]:
+            - checkbox [ref=e293]
+            - text: "57253990"
+          - cell "BXMJ" [ref=e294]:
+            - generic "点击修改客户信息" [ref=e297]: BXMJ
+          - cell [ref=e298]
+          - cell ". 已受理" [ref=e299]:
+            - generic [ref=e301]:
+              - text: .
+              - generic [ref=e302]: 已受理
+          - cell "0星" [ref=e303]
+          - cell "--" [ref=e304]
+          - cell [ref=e305]
+          - cell "杭州公." [ref=e306]
+          - cell "--" [ref=e307]
+          - cell "--" [ref=e308]
+          - cell "--" [ref=e309]
+          - cell "--" [ref=e310]
+          - cell "--" [ref=e311]
+          - cell "--" [ref=e312]
+          - cell "0" [ref=e313]
+          - cell "无" [ref=e314]
+          - cell "否" [ref=e315]
+          - cell "0" [ref=e316]
+          - cell "--" [ref=e317]
+          - cell "2026-01-11 20:50" [ref=e318]
+          - cell "2025-08-07 16:19" [ref=e319]
+          - cell "信用贷" [ref=e320]
+          - cell "BXMJ-excel" [ref=e321]
+          - cell "杭州" [ref=e322]
+        - row "57253989 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e323] [cursor=pointer]:
+          - cell "57253989" [ref=e324]:
+            - checkbox [ref=e325]
+            - text: "57253989"
+          - cell "BXMJ" [ref=e326]:
+            - generic "点击修改客户信息" [ref=e329]: BXMJ
+          - cell [ref=e330]
+          - cell ". 已受理" [ref=e331]:
+            - generic [ref=e333]:
+              - text: .
+              - generic [ref=e334]: 已受理
+          - cell "0星" [ref=e335]
+          - cell "--" [ref=e336]
+          - cell [ref=e337]
+          - cell "杭州公." [ref=e338]
+          - cell "--" [ref=e339]
+          - cell "--" [ref=e340]
+          - cell "--" [ref=e341]
+          - cell "--" [ref=e342]
+          - cell "--" [ref=e343]
+          - cell "--" [ref=e344]
+          - cell "0" [ref=e345]
+          - cell "无" [ref=e346]
+          - cell "否" [ref=e347]
+          - cell "0" [ref=e348]
+          - cell "--" [ref=e349]
+          - cell "2026-01-11 20:50" [ref=e350]
+          - cell "2025-08-07 16:19" [ref=e351]
+          - cell "信用贷" [ref=e352]
+          - cell "BXMJ-excel" [ref=e353]
+          - cell "杭州" [ref=e354]
+        - row "57253988 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e355] [cursor=pointer]:
+          - cell "57253988" [ref=e356]:
+            - checkbox [ref=e357]
+            - text: "57253988"
+          - cell "BXMJ" [ref=e358]:
+            - generic "点击修改客户信息" [ref=e361]: BXMJ
+          - cell [ref=e362]
+          - cell ". 已受理" [ref=e363]:
+            - generic [ref=e365]:
+              - text: .
+              - generic [ref=e366]: 已受理
+          - cell "0星" [ref=e367]
+          - cell "--" [ref=e368]
+          - cell [ref=e369]
+          - cell "杭州公." [ref=e370]
+          - cell "--" [ref=e371]
+          - cell "--" [ref=e372]
+          - cell "--" [ref=e373]
+          - cell "--" [ref=e374]
+          - cell "--" [ref=e375]
+          - cell "--" [ref=e376]
+          - cell "0" [ref=e377]
+          - cell "无" [ref=e378]
+          - cell "否" [ref=e379]
+          - cell "0" [ref=e380]
+          - cell "--" [ref=e381]
+          - cell "2026-01-11 20:50" [ref=e382]
+          - cell "2025-08-07 16:19" [ref=e383]
+          - cell "信用贷" [ref=e384]
+          - cell "BXMJ-excel" [ref=e385]
+          - cell "杭州" [ref=e386]
+        - row "57253987 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e387] [cursor=pointer]:
+          - cell "57253987" [ref=e388]:
+            - checkbox [ref=e389]
+            - text: "57253987"
+          - cell "BXMJ" [ref=e390]:
+            - generic "点击修改客户信息" [ref=e393]: BXMJ
+          - cell [ref=e394]
+          - cell ". 已受理" [ref=e395]:
+            - generic [ref=e397]:
+              - text: .
+              - generic [ref=e398]: 已受理
+          - cell "0星" [ref=e399]
+          - cell "--" [ref=e400]
+          - cell [ref=e401]
+          - cell "杭州公." [ref=e402]
+          - cell "--" [ref=e403]
+          - cell "--" [ref=e404]
+          - cell "--" [ref=e405]
+          - cell "--" [ref=e406]
+          - cell "--" [ref=e407]
+          - cell "--" [ref=e408]
+          - cell "0" [ref=e409]
+          - cell "无" [ref=e410]
+          - cell "否" [ref=e411]
+          - cell "0" [ref=e412]
+          - cell "--" [ref=e413]
+          - cell "2026-01-11 20:50" [ref=e414]
+          - cell "2025-08-07 16:19" [ref=e415]
+          - cell "信用贷" [ref=e416]
+          - cell "BXMJ-excel" [ref=e417]
+          - cell "杭州" [ref=e418]
+        - row "57253986 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e419] [cursor=pointer]:
+          - cell "57253986" [ref=e420]:
+            - checkbox [ref=e421]
+            - text: "57253986"
+          - cell "BXMJ" [ref=e422]:
+            - generic "点击修改客户信息" [ref=e425]: BXMJ
+          - cell [ref=e426]
+          - cell ". 已受理" [ref=e427]:
+            - generic [ref=e429]:
+              - text: .
+              - generic [ref=e430]: 已受理
+          - cell "0星" [ref=e431]
+          - cell "--" [ref=e432]
+          - cell [ref=e433]
+          - cell "杭州公." [ref=e434]
+          - cell "--" [ref=e435]
+          - cell "--" [ref=e436]
+          - cell "--" [ref=e437]
+          - cell "--" [ref=e438]
+          - cell "--" [ref=e439]
+          - cell "--" [ref=e440]
+          - cell "0" [ref=e441]
+          - cell "无" [ref=e442]
+          - cell "否" [ref=e443]
+          - cell "0" [ref=e444]
+          - cell "--" [ref=e445]
+          - cell "2026-01-11 20:50" [ref=e446]
+          - cell "2025-08-07 16:19" [ref=e447]
+          - cell "信用贷" [ref=e448]
+          - cell "BXMJ-excel" [ref=e449]
+          - cell "杭州" [ref=e450]
+        - row "57253985 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e451] [cursor=pointer]:
+          - cell "57253985" [ref=e452]:
+            - checkbox [ref=e453]
+            - text: "57253985"
+          - cell "BXMJ" [ref=e454]:
+            - generic "点击修改客户信息" [ref=e457]: BXMJ
+          - cell [ref=e458]
+          - cell ". 已受理" [ref=e459]:
+            - generic [ref=e461]:
+              - text: .
+              - generic [ref=e462]: 已受理
+          - cell "0星" [ref=e463]
+          - cell "--" [ref=e464]
+          - cell [ref=e465]
+          - cell "杭州公." [ref=e466]
+          - cell "--" [ref=e467]
+          - cell "--" [ref=e468]
+          - cell "--" [ref=e469]
+          - cell "--" [ref=e470]
+          - cell "--" [ref=e471]
+          - cell "--" [ref=e472]
+          - cell "0" [ref=e473]
+          - cell "无" [ref=e474]
+          - cell "否" [ref=e475]
+          - cell "0" [ref=e476]
+          - cell "--" [ref=e477]
+          - cell "2026-01-11 20:50" [ref=e478]
+          - cell "2025-08-07 16:19" [ref=e479]
+          - cell "信用贷" [ref=e480]
+          - cell "BXMJ-excel" [ref=e481]
+          - cell "杭州" [ref=e482]
+        - row "57253984 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e483] [cursor=pointer]:
+          - cell "57253984" [ref=e484]:
+            - checkbox [ref=e485]
+            - text: "57253984"
+          - cell "BXMJ" [ref=e486]:
+            - generic "点击修改客户信息" [ref=e489]: BXMJ
+          - cell [ref=e490]
+          - cell ". 已受理" [ref=e491]:
+            - generic [ref=e493]:
+              - text: .
+              - generic [ref=e494]: 已受理
+          - cell "0星" [ref=e495]
+          - cell "--" [ref=e496]
+          - cell [ref=e497]
+          - cell "杭州公." [ref=e498]
+          - cell "--" [ref=e499]
+          - cell "--" [ref=e500]
+          - cell "--" [ref=e501]
+          - cell "--" [ref=e502]
+          - cell "--" [ref=e503]
+          - cell "--" [ref=e504]
+          - cell "0" [ref=e505]
+          - cell "无" [ref=e506]
+          - cell "否" [ref=e507]
+          - cell "0" [ref=e508]
+          - cell "--" [ref=e509]
+          - cell "2026-01-11 20:50" [ref=e510]
+          - cell "2025-08-07 16:19" [ref=e511]
+          - cell "信用贷" [ref=e512]
+          - cell "BXMJ-excel" [ref=e513]
+          - cell "杭州" [ref=e514]
+        - row "57253983 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e515] [cursor=pointer]:
+          - cell "57253983" [ref=e516]:
+            - checkbox [ref=e517]
+            - text: "57253983"
+          - cell "BXMJ" [ref=e518]:
+            - generic "点击修改客户信息" [ref=e521]: BXMJ
+          - cell [ref=e522]
+          - cell ". 已受理" [ref=e523]:
+            - generic [ref=e525]:
+              - text: .
+              - generic [ref=e526]: 已受理
+          - cell "0星" [ref=e527]
+          - cell "--" [ref=e528]
+          - cell [ref=e529]
+          - cell "杭州公." [ref=e530]
+          - cell "--" [ref=e531]
+          - cell "--" [ref=e532]
+          - cell "--" [ref=e533]
+          - cell "--" [ref=e534]
+          - cell "--" [ref=e535]
+          - cell "--" [ref=e536]
+          - cell "0" [ref=e537]
+          - cell "无" [ref=e538]
+          - cell "否" [ref=e539]
+          - cell "0" [ref=e540]
+          - cell "--" [ref=e541]
+          - cell "2026-01-11 20:50" [ref=e542]
+          - cell "2025-08-07 16:19" [ref=e543]
+          - cell "信用贷" [ref=e544]
+          - cell "BXMJ-excel" [ref=e545]
+          - cell "杭州" [ref=e546]
+        - row "57253982 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e547] [cursor=pointer]:
+          - cell "57253982" [ref=e548]:
+            - checkbox [ref=e549]
+            - text: "57253982"
+          - cell "BXMJ" [ref=e550]:
+            - generic "点击修改客户信息" [ref=e553]: BXMJ
+          - cell [ref=e554]
+          - cell ". 已受理" [ref=e555]:
+            - generic [ref=e557]:
+              - text: .
+              - generic [ref=e558]: 已受理
+          - cell "0星" [ref=e559]
+          - cell "--" [ref=e560]
+          - cell [ref=e561]
+          - cell "杭州公." [ref=e562]
+          - cell "--" [ref=e563]
+          - cell "--" [ref=e564]
+          - cell "--" [ref=e565]
+          - cell "--" [ref=e566]
+          - cell "--" [ref=e567]
+          - cell "--" [ref=e568]
+          - cell "0" [ref=e569]
+          - cell "无" [ref=e570]
+          - cell "否" [ref=e571]
+          - cell "0" [ref=e572]
+          - cell "--" [ref=e573]
+          - cell "2026-01-11 20:50" [ref=e574]
+          - cell "2025-08-07 16:19" [ref=e575]
+          - cell "信用贷" [ref=e576]
+          - cell "BXMJ-excel" [ref=e577]
+          - cell "杭州" [ref=e578]
+        - row "57253981 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e579] [cursor=pointer]:
+          - cell "57253981" [ref=e580]:
+            - checkbox [ref=e581]
+            - text: "57253981"
+          - cell "BXMJ" [ref=e582]:
+            - generic "点击修改客户信息" [ref=e585]: BXMJ
+          - cell [ref=e586]
+          - cell ". 已受理" [ref=e587]:
+            - generic [ref=e589]:
+              - text: .
+              - generic [ref=e590]: 已受理
+          - cell "0星" [ref=e591]
+          - cell "--" [ref=e592]
+          - cell [ref=e593]
+          - cell "杭州公." [ref=e594]
+          - cell "--" [ref=e595]
+          - cell "--" [ref=e596]
+          - cell "--" [ref=e597]
+          - cell "--" [ref=e598]
+          - cell "--" [ref=e599]
+          - cell "--" [ref=e600]
+          - cell "0" [ref=e601]
+          - cell "无" [ref=e602]
+          - cell "否" [ref=e603]
+          - cell "0" [ref=e604]
+          - cell "--" [ref=e605]
+          - cell "2026-01-11 20:50" [ref=e606]
+          - cell "2025-08-07 16:19" [ref=e607]
+          - cell "信用贷" [ref=e608]
+          - cell "BXMJ-excel" [ref=e609]
+          - cell "杭州" [ref=e610]
+        - row "57253980 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e611] [cursor=pointer]:
+          - cell "57253980" [ref=e612]:
+            - checkbox [ref=e613]
+            - text: "57253980"
+          - cell "BXMJ" [ref=e614]:
+            - generic "点击修改客户信息" [ref=e617]: BXMJ
+          - cell [ref=e618]
+          - cell ". 已受理" [ref=e619]:
+            - generic [ref=e621]:
+              - text: .
+              - generic [ref=e622]: 已受理
+          - cell "0星" [ref=e623]
+          - cell "--" [ref=e624]
+          - cell [ref=e625]
+          - cell "杭州公." [ref=e626]
+          - cell "--" [ref=e627]
+          - cell "--" [ref=e628]
+          - cell "--" [ref=e629]
+          - cell "--" [ref=e630]
+          - cell "--" [ref=e631]
+          - cell "--" [ref=e632]
+          - cell "0" [ref=e633]
+          - cell "无" [ref=e634]
+          - cell "否" [ref=e635]
+          - cell "0" [ref=e636]
+          - cell "--" [ref=e637]
+          - cell "2026-01-11 20:50" [ref=e638]
+          - cell "2025-08-07 16:19" [ref=e639]
+          - cell "信用贷" [ref=e640]
+          - cell "BXMJ-excel" [ref=e641]
+          - cell "杭州" [ref=e642]
+        - row "57253979 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e643] [cursor=pointer]:
+          - cell "57253979" [ref=e644]:
+            - checkbox [ref=e645]
+            - text: "57253979"
+          - cell "BXMJ" [ref=e646]:
+            - generic "点击修改客户信息" [ref=e649]: BXMJ
+          - cell [ref=e650]
+          - cell ". 已受理" [ref=e651]:
+            - generic [ref=e653]:
+              - text: .
+              - generic [ref=e654]: 已受理
+          - cell "0星" [ref=e655]
+          - cell "--" [ref=e656]
+          - cell [ref=e657]
+          - cell "杭州公." [ref=e658]
+          - cell "--" [ref=e659]
+          - cell "--" [ref=e660]
+          - cell "--" [ref=e661]
+          - cell "--" [ref=e662]
+          - cell "--" [ref=e663]
+          - cell "--" [ref=e664]
+          - cell "0" [ref=e665]
+          - cell "无" [ref=e666]
+          - cell "否" [ref=e667]
+          - cell "0" [ref=e668]
+          - cell "--" [ref=e669]
+          - cell "2026-01-11 20:50" [ref=e670]
+          - cell "2025-08-07 16:19" [ref=e671]
+          - cell "信用贷" [ref=e672]
+          - cell "BXMJ-excel" [ref=e673]
+          - cell "杭州" [ref=e674]
+        - row "57253978 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e675] [cursor=pointer]:
+          - cell "57253978" [ref=e676]:
+            - checkbox [ref=e677]
+            - text: "57253978"
+          - cell "BXMJ" [ref=e678]:
+            - generic "点击修改客户信息" [ref=e681]: BXMJ
+          - cell [ref=e682]
+          - cell ". 已受理" [ref=e683]:
+            - generic [ref=e685]:
+              - text: .
+              - generic [ref=e686]: 已受理
+          - cell "0星" [ref=e687]
+          - cell "--" [ref=e688]
+          - cell [ref=e689]
+          - cell "杭州公." [ref=e690]
+          - cell "--" [ref=e691]
+          - cell "--" [ref=e692]
+          - cell "--" [ref=e693]
+          - cell "--" [ref=e694]
+          - cell "--" [ref=e695]
+          - cell "--" [ref=e696]
+          - cell "0" [ref=e697]
+          - cell "无" [ref=e698]
+          - cell "否" [ref=e699]
+          - cell "0" [ref=e700]
+          - cell "--" [ref=e701]
+          - cell "2026-01-11 20:50" [ref=e702]
+          - cell "2025-08-07 16:19" [ref=e703]
+          - cell "信用贷" [ref=e704]
+          - cell "BXMJ-excel" [ref=e705]
+          - cell "杭州" [ref=e706]
+        - row "57253977 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e707] [cursor=pointer]:
+          - cell "57253977" [ref=e708]:
+            - checkbox [ref=e709]
+            - text: "57253977"
+          - cell "BXMJ" [ref=e710]:
+            - generic "点击修改客户信息" [ref=e713]: BXMJ
+          - cell [ref=e714]
+          - cell ". 已受理" [ref=e715]:
+            - generic [ref=e717]:
+              - text: .
+              - generic [ref=e718]: 已受理
+          - cell "0星" [ref=e719]
+          - cell "--" [ref=e720]
+          - cell [ref=e721]
+          - cell "杭州公." [ref=e722]
+          - cell "--" [ref=e723]
+          - cell "--" [ref=e724]
+          - cell "--" [ref=e725]
+          - cell "--" [ref=e726]
+          - cell "--" [ref=e727]
+          - cell "--" [ref=e728]
+          - cell "0" [ref=e729]
+          - cell "无" [ref=e730]
+          - cell "否" [ref=e731]
+          - cell "0" [ref=e732]
+          - cell "--" [ref=e733]
+          - cell "2026-01-11 20:50" [ref=e734]
+          - cell "2025-08-07 16:19" [ref=e735]
+          - cell "信用贷" [ref=e736]
+          - cell "BXMJ-excel" [ref=e737]
+          - cell "杭州" [ref=e738]
+        - row "57253976 BXMJ . 已受理 0星 -- 杭州公. -- -- -- -- -- -- 0 无 否 0 -- 2026-01-11 20:50 2025-08-07 16:19 信用贷 BXMJ-excel 杭州" [ref=e739] [cursor=pointer]:
+          - cell "57253976" [ref=e740]:
+            - checkbox [ref=e741]
+            - text: "57253976"
+          - cell "BXMJ" [ref=e742]:
+            - generic "点击修改客户信息" [ref=e745]: BXMJ
+          - cell [ref=e746]
+          - cell ". 已受理" [ref=e747]:
+            - generic [ref=e749]:
+              - text: .
+              - generic [ref=e750]: 已受理
+          - cell "0星" [ref=e751]
+          - cell "--" [ref=e752]
+          - cell [ref=e753]
+          - cell "杭州公." [ref=e754]
+          - cell "--" [ref=e755]
+          - cell "--" [ref=e756]
+          - cell "--" [ref=e757]
+          - cell "--" [ref=e758]
+          - cell "--" [ref=e759]
+          - cell "--" [ref=e760]
+          - cell "0" [ref=e761]
+          - cell "无" [ref=e762]
+          - cell "否" [ref=e763]
+          - cell "0" [ref=e764]
+          - cell "--" [ref=e765]
+          - cell "2026-01-11 20:50" [ref=e766]
+          - cell "2025-08-07 16:19" [ref=e767]
+          - cell "信用贷" [ref=e768]
+          - cell "BXMJ-excel" [ref=e769]
+          - cell "杭州" [ref=e770]
+    - generic [ref=e774]:
+      - generic [ref=e775]:
+        - generic [ref=e776]: 每页
+        - combobox [ref=e777]:
+          - option "10"
+          - option "20" [selected]
+          - option "50"
+          - option "100"
+          - option "200"
+        - generic [ref=e778]: 条
+      - generic [ref=e780]:
+        - generic [ref=e781]: . 共 148535 条记录, 第 1 页/ 共 7427 页 .
+        - generic [ref=e782]:
+          - img [ref=e783]
+          - generic [ref=e784] [cursor=pointer]: "1"
+          - link "2" [ref=e786] [cursor=pointer]:
+            - /url: /manage/kefu_clientsggc/index.html?inggctime=&lastupdatetime=&remark_updatetime_type=0&&page=2
+          - link "3" [ref=e788] [cursor=pointer]:
+            - /url: /manage/kefu_clientsggc/index.html?inggctime=&lastupdatetime=&remark_updatetime_type=0&&page=3
+          - link "4" [ref=e790] [cursor=pointer]:
+            - /url: /manage/kefu_clientsggc/index.html?inggctime=&lastupdatetime=&remark_updatetime_type=0&&page=4
+          - link "5" [ref=e792] [cursor=pointer]:
+            - /url: /manage/kefu_clientsggc/index.html?inggctime=&lastupdatetime=&remark_updatetime_type=0&&page=5
+          - link "6" [ref=e794] [cursor=pointer]:
+            - /url: /manage/kefu_clientsggc/index.html?inggctime=&lastupdatetime=&remark_updatetime_type=0&&page=6
+          - link "7" [ref=e796] [cursor=pointer]:
+            - /url: /manage/kefu_clientsggc/index.html?inggctime=&lastupdatetime=&remark_updatetime_type=0&&page=7
+          - link "...7427" [ref=e798] [cursor=pointer]:
+            - /url: /manage/kefu_clientsggc/index.html?inggctime=&lastupdatetime=&remark_updatetime_type=0&&page=7427
+          - link [ref=e799] [cursor=pointer]:
+            - /url: /manage/kefu_clientsggc/index.html?inggctime=&lastupdatetime=&remark_updatetime_type=0&&page=8
+            - img [ref=e800]
+        - generic [ref=e801]:
+          - text: 跳至
+          - textbox [ref=e802]
+          - text: 页
+          - button "提交" [ref=e803]
+  - generic: . . . . . . . . . .
+  - text:        

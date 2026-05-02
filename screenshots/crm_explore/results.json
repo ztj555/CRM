@@ -1,0 +1,515 @@
+{
+  "nav_links": [
+    {
+      "text": "退出登录",
+      "href": "https://guwen.zhudaicms.com/manage/index/indexlogout.html"
+    }
+  ],
+  "main": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "clients_index": {
+    "url": "https://guwen.zhudaicms.com/manage/kefu_clients/index.html",
+    "text_preview": "客户\n手机\n姓名\nID\n数据类型\n-不限-\n原始数据\n再分配过来的数据\n状态\n请选择选项\n星级\n请选择选项\n未备注超过\n天\n时间类型\n进系统时间\n备注时间\n实际申请时间\n-不限-\n今日\n昨天\n最近7天\n本月\n上月\n自定义\n备注关键词\n锁定客户\n不限\n已锁定\n贷款条件\n房\n车\n公积金\n保单\n代发\n是否有企业\n-不限-\n有\n无\n贷款类型\n-不限-\n信用贷\n车抵贷\n房抵贷\n保单贷\n合作单\n资质关键词\n按标签搜\n\n数据上限提醒：您当前为公司负责人，数据上限无限制！\n\n添加客户\n号码查重(\n新\n)\n激活客户\n主管点评\n团队重要客户\n我的重要客户\n待还款客户\n转移记录\n备忘提醒\n ID\t姓名\t性别\t状态\t星级\t年龄\t备注\t标签\t顾问\t房\t车\t社保\t代发\t公积金\t芝麻分\t企业主\t申请额度\t\n最后备注时间\n\t\n申请时间\n\t贷款类型\t来源\t城市\n共 0 条记录, 第 1 页/ 共 1 页\n1\n跳至  页 ",
+    "actions": [
+      "按标签搜",
+      "数据上限提醒：您当前为公司负责人，数据上限无限制！",
+      "添加客户",
+      "号码查重(新)",
+      "激活客户",
+      "主管点评",
+      "团队重要客户",
+      "我的重要客户",
+      "待还款客户",
+      "转移记录",
+      "备忘提醒",
+      "清除",
+      "取消",
+      "ID",
+      "姓名",
+      "性别",
+      "状态",
+      "星级",
+      "年龄",
+      "备注",
+      "标签",
+      "顾问",
+      "房",
+      "车",
+      "社保",
+      "代发",
+      "公积金",
+      "芝麻分",
+      "企业主",
+      "申请额度",
+      "最后备注时间",
+      "申请时间",
+      "贷款类型",
+      "来源",
+      "城市",
+      "日",
+      "一",
+      "二",
+      "三",
+      "四",
+      "五",
+      "六"
+    ],
+    "table_headers": [
+      "ID",
+      "姓名",
+      "性别",
+      "状态",
+      "星级",
+      "年龄",
+      "备注",
+      "标签",
+      "顾问",
+      "房",
+      "车",
+      "社保",
+      "代发",
+      "公积金",
+      "芝麻分",
+      "企业主",
+      "申请额度",
+      "最后备注时间",
+      "申请时间",
+      "贷款类型",
+      "来源",
+      "城市",
+      "ID",
+      "姓名",
+      "性别",
+      "状态",
+      "星级",
+      "年龄",
+      "备注",
+      "标签",
+      "顾问",
+      "房",
+      "车",
+      "社保",
+      "代发",
+      "公积金",
+      "芝麻分",
+      "企业主",
+      "申请额度",
+      "最后备注时间",
+      "申请时间",
+      "贷款类型",
+      "来源",
+      "城市",
+      "日",
+      "一",
+      "二",
+      "三",
+      "四",
+      "五",
+      "六",
+      "日",
+      "一",
+      "二",
+      "三",
+      "四",
+      "五",
+      "六"
+    ],
+    "form_fields": [
+      "已受理",
+      "无意向",
+      "未接通",
+      "贷款资质不符",
+      "待签约",
+      "已签约",
+      "银行已放款",
+      "银行已拒绝",
+      "审核中...",
+      "待跟进",
+      "预约上门",
+      "已上门",
+      "捣乱申请",
+      "重复申请",
+      "外地申请",
+      "停机",
+      "空号",
+      "有意向",
+      "外地号码",
+      "0星",
+      "1星",
+      "2星",
+      "3星",
+      "4星",
+      "5星",
+      "2%",
+      "3%",
+      "4%",
+      "5%",
+      "6%",
+      "7%",
+      "8%",
+      "9%",
+      "10%",
+      "11%",
+      "12%",
+      "13%",
+      "14%",
+      "15%",
+      "不接受费用",
+      "有限公司",
+      "个体工商户",
+      "真实经营",
+      "银联收款",
+      "1月",
+      "2月",
+      "3月",
+      "4月",
+      "5月",
+      "6月",
+      "7月",
+      "8月",
+      "9月",
+      "10月",
+      "11月",
+      "12月",
+      "有开票纳税",
+      "年流水100万以上",
+      "年流水200万以上",
+      "年流水500万以上",
+      "纳税3万以上",
+      "纳税5万以上",
+      "纳税10万以上",
+      "有社保公积金",
+      "单社保",
+      "有打卡",
+      "有个税",
+      "国企事业单位",
+      "全款房",
+      "按揭房",
+      "抵押房",
+      "公寓房",
+      "抵押民间房",
+      "共有房",
+      "外地按揭房",
+      "自建房",
+      "有车",
+      "按揭车",
+      "8年以上",
+      "抵押车",
+      "保单年缴2400以上",
+      "已婚双签",
+      "已婚单签",
+      "离异单身"
+    ]
+  },
+  "clients_pool": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "clients_reassign": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "clients_important": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "clients_follow": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "clients_add": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "loan_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "loan_add": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "stats_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "stats_team": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "stats_personal": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "report_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "report_daily": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "report_weekly": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "team_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "team_members": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "team_dept": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "notice_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "notice_list": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "settings_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "settings_data": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "kefu_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "admin_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "performance_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "task_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "follow_up": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "reminder_index": {
+    "url": "https://guwen.zhudaicms.com/manage/index/index.html",
+    "text_preview": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户",
+    "actions": [
+      "关闭",
+      "查看详情",
+      "退出登录"
+    ],
+    "table_headers": [],
+    "form_fields": []
+  },
+  "iframes": [
+    "/manage/kefu_clients/index.html"
+  ],
+  "manage_hrefs": [
+    "https://guwen.zhudaicms.com/default/manage/css/tanbox.css?v=92_5",
+    "https://guwen.zhudaicms.com/default/manage_2025/css/font-awesome.css?v=1",
+    "https://guwen.zhudaicms.com/default/manage_2025/css/default.css?v=1",
+    "https://guwen.zhudaicms.com/default/manage_2025/css/style.css?v=2.2",
+    "https://guwen.zhudaicms.com/default/manage/css/style.css?v=2.5",
+    "https://guwen.zhudaicms.com/default/manage_2025/css/layout.css?v=30.20",
+    "https://guwen.zhudaicms.com/default/manage_2025/css/theme.css?v=8.8",
+    "https://guwen.zhudaicms.com/default/manage/css/tanbox.css?v=91.6",
+    "/manage/index/indexlogout.html",
+    "https://guwen.zhudaicms.com/default/manage/css/main.css?v=92_5"
+  ],
+  "main_frame_links": []
+}

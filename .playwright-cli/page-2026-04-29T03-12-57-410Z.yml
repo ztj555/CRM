@@ -1,0 +1,258 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3] [cursor=pointer]: 添加签约客户
+    - generic [ref=e4] [cursor=pointer]: 查看来访客户
+    - generic [ref=e5] [cursor=pointer]: 来访查询
+  - generic [ref=e6]:
+    - text: 当日数据
+    - generic [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+      - text: 收起
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - text: 时间范围：
+      - combobox [ref=e12]:
+        - option "-不限-" [selected]
+        - option "今日"
+        - option "昨天"
+        - option "自定义"
+    - button "查询" [ref=e13] [cursor=pointer]
+    - link [ref=e15] [cursor=pointer]:
+      - /url: /manage/kefu_common/clearCache.html?cacheKey=kefu_kefu_reportform_list172949#d751713988987e9331980363e24189ce
+      - generic "点击刷新查看最新数据":
+        - img [ref=e16]
+  - link "显示全部经理" [ref=e18] [cursor=pointer]:
+    - /url: /manage/kefu_reportformlist/index.html?type=all&timeset=&stime=&etime=
+  - link "显示上级经理" [ref=e20] [cursor=pointer]:
+    - /url: /manage/kefu_reportformlist/index.html?type=no_all&timeset=&stime=&etime=
+  - generic [ref=e21]:
+    - generic [ref=e22]: 当日上门/签约
+    - table [ref=e23]:
+      - rowgroup [ref=e24]:
+        - row "序号 大区 部门 顾问姓名 今日来访 预计明日来访数 合同签约 当日签约率 今日不足 对应策略 点评内容 操作" [ref=e25]:
+          - cell "序号" [ref=e26]
+          - cell "大区 部门" [ref=e27]:
+            - text: 大区
+            - text: 部门
+          - cell "顾问姓名" [ref=e28]
+          - cell "今日来访" [ref=e29]
+          - cell "预计明日来访数" [ref=e30]
+          - cell "合同签约" [ref=e31]
+          - cell "当日签约率" [ref=e32]
+          - cell "今日不足" [ref=e33]
+          - cell "对应策略" [ref=e34]
+          - cell "点评内容" [ref=e35]
+          - cell "操作" [ref=e36]
+        - row "总计 0 0 0 0%" [ref=e37]:
+          - cell "总计" [ref=e38]:
+            - strong [ref=e39]: 总计
+          - cell [ref=e40]
+          - cell [ref=e41]
+          - cell "0" [ref=e42]:
+            - strong [ref=e43]: "0"
+          - cell "0" [ref=e44]:
+            - strong [ref=e45]: "0"
+          - cell "0" [ref=e46]:
+            - strong [ref=e47]: "0"
+          - cell "0%" [ref=e48]:
+            - strong [ref=e49]: 0%
+          - cell [ref=e50]
+          - cell [ref=e51]
+          - cell [ref=e52]
+          - cell [ref=e53]
+        - row "1 杭州一区 一区二部2 徐钰蓉 0 0 0 0% 点评" [ref=e54]:
+          - cell "1" [ref=e55]
+          - cell "杭州一区 一区二部2" [ref=e56]:
+            - text: 杭州一区
+            - text: 一区二部2
+          - cell "徐钰蓉" [ref=e57]
+          - cell "0" [ref=e58] [cursor=pointer]
+          - cell "0" [ref=e59] [cursor=pointer]
+          - cell "0" [ref=e60] [cursor=pointer]
+          - cell "0%" [ref=e61]
+          - cell [ref=e62]
+          - cell [ref=e63]
+          - cell [ref=e64]
+          - cell "点评" [ref=e65] [cursor=pointer]
+    - generic [ref=e66]: 当日进件明细
+    - table [ref=e67]:
+      - rowgroup [ref=e68]:
+        - row "序号 部门 客户 顾问 银行 银行经理 额度 点数" [ref=e69]:
+          - cell "序号" [ref=e70]
+          - cell "部门" [ref=e71]
+          - cell "客户" [ref=e72]
+          - cell "顾问" [ref=e73]
+          - cell "银行" [ref=e74]
+          - cell "银行经理" [ref=e75]
+          - cell "额度" [ref=e76]
+          - cell "点数" [ref=e77]
+        - row "合计 0" [ref=e78]:
+          - cell "合计" [ref=e79]:
+            - strong [ref=e80]: 合计
+          - cell [ref=e81]
+          - cell [ref=e82]
+          - cell [ref=e83]
+          - cell [ref=e84]
+          - cell [ref=e85]
+          - cell "0" [ref=e86]:
+            - strong [ref=e87]: "0"
+          - cell [ref=e88]
+    - generic [ref=e89]: 当日收款明细
+    - table [ref=e90]:
+      - rowgroup [ref=e91]:
+        - row "序号 部门 客户 客服 银行 点数 放款额 渠道费 净收入" [ref=e92]:
+          - cell "序号" [ref=e93]
+          - cell "部门" [ref=e94]
+          - cell "客户" [ref=e95]
+          - cell "客服" [ref=e96]
+          - cell "银行" [ref=e97]
+          - cell "点数" [ref=e98]
+          - cell "放款额" [ref=e99]
+          - cell "渠道费" [ref=e100]
+          - cell "净收入" [ref=e101]
+        - row "总计 0 0 0" [ref=e102]:
+          - cell "总计" [ref=e103]:
+            - strong [ref=e104]: 总计
+          - cell [ref=e105]
+          - cell [ref=e106]
+          - cell [ref=e107]
+          - cell [ref=e108]
+          - cell [ref=e109]
+          - cell "0" [ref=e110]:
+            - strong [ref=e111]: "0"
+          - cell "0" [ref=e112]:
+            - strong [ref=e113]: "0"
+          - cell "0" [ref=e114]:
+            - strong [ref=e115]: "0"
+  - generic [ref=e116]:
+    - text: 当月数据
+    - generic [ref=e117] [cursor=pointer]:
+      - img [ref=e118]
+      - text: 收起
+  - generic [ref=e119]:
+    - generic [ref=e120]: 业务数据（当月累计）
+    - table [ref=e121]:
+      - rowgroup [ref=e122]:
+        - row "部门 上门 签约 签约率 进件笔数 批款笔数 批款率" [ref=e123]:
+          - cell "部门" [ref=e124]
+          - cell "上门" [ref=e125]
+          - cell "签约" [ref=e126]
+          - cell "签约率" [ref=e127]
+          - cell "进件笔数" [ref=e128]
+          - cell "批款笔数" [ref=e129]
+          - cell "批款率" [ref=e130]
+        - row "合计 0 0 0% 0 0 0%" [ref=e131]:
+          - cell "合计" [ref=e132]:
+            - strong [ref=e133]: 合计
+          - cell "0" [ref=e134]:
+            - strong [ref=e135]: "0"
+          - cell "0" [ref=e136]:
+            - strong [ref=e137]: "0"
+          - cell "0%" [ref=e138]:
+            - strong [ref=e139]: 0%
+          - cell "0" [ref=e140]:
+            - strong [ref=e141]: "0"
+          - cell "0" [ref=e142]:
+            - strong [ref=e143]: "0"
+          - cell "0%" [ref=e144]:
+            - strong [ref=e145]: 0%
+    - generic [ref=e146]: 业绩数据（当月累计）
+    - table [ref=e147]:
+      - rowgroup [ref=e148]:
+        - row "部门 在审额度 在审总件数 放款总金额 放款总件数 总收款 渠道费 总净创收" [ref=e149]:
+          - cell "部门" [ref=e150]
+          - cell "在审额度" [ref=e151]
+          - cell "在审总件数" [ref=e152]
+          - cell "放款总金额" [ref=e153]
+          - cell "放款总件数" [ref=e154]
+          - cell "总收款" [ref=e155]
+          - cell "渠道费" [ref=e156]
+          - cell "总净创收" [ref=e157]
+        - row "合计 0 0 0 0 0 0 0" [ref=e158]:
+          - cell "合计" [ref=e159]:
+            - strong [ref=e160]: 合计
+          - cell "0" [ref=e161]:
+            - strong [ref=e162]: "0"
+          - cell "0" [ref=e163]:
+            - strong [ref=e164]: "0"
+          - cell "0" [ref=e165]:
+            - strong [ref=e166]: "0"
+          - cell "0" [ref=e167]:
+            - strong [ref=e168]: "0"
+          - cell "0" [ref=e169]:
+            - strong [ref=e170]: "0"
+          - cell "0" [ref=e171]:
+            - strong [ref=e172]: "0"
+          - cell "0" [ref=e173]:
+            - strong [ref=e174]: "0"
+        - row "一区二部2（徐钰蓉） 0 0 0" [ref=e175]:
+          - cell "一区二部2（徐钰蓉）" [ref=e176]
+          - cell "0" [ref=e177]
+          - cell "0" [ref=e178] [cursor=pointer]
+          - cell [ref=e179]
+          - cell "0" [ref=e180]
+          - cell [ref=e181]
+          - cell [ref=e182]
+          - cell [ref=e183]
+    - generic [ref=e184]: 批/放款未收款明细（当月累计）
+    - table [ref=e185]:
+      - rowgroup [ref=e186]:
+        - row "部门 客户 经理 银行 金额 点数 未收款 渠道费 净收入" [ref=e187]:
+          - cell "部门" [ref=e188]
+          - cell "客户" [ref=e189]
+          - cell "经理" [ref=e190]
+          - cell "银行" [ref=e191]
+          - cell "金额" [ref=e192]
+          - cell "点数" [ref=e193]
+          - cell "未收款" [ref=e194]
+          - cell "渠道费" [ref=e195]
+          - cell "净收入" [ref=e196]
+        - row "总计 0 0% 0 0 0" [ref=e197]:
+          - cell "总计" [ref=e198]:
+            - strong [ref=e199]: 总计
+          - cell [ref=e200]
+          - cell [ref=e201]
+          - cell [ref=e202]
+          - cell "0" [ref=e203]:
+            - strong [ref=e204]: "0"
+          - cell "0%" [ref=e205]:
+            - strong [ref=e206]: 0%
+          - cell "0" [ref=e207]:
+            - strong [ref=e208]: "0"
+          - cell "0" [ref=e209]:
+            - strong [ref=e210]: "0"
+          - cell "0" [ref=e211]:
+            - strong [ref=e212]: "0"
+  - generic [ref=e213]:
+    - text: 在审计明细
+    - generic [ref=e214] [cursor=pointer]:
+      - img [ref=e215]
+      - text: 收起
+  - generic [ref=e216]:
+    - table [ref=e217]:
+      - rowgroup [ref=e218]:
+        - row "序号 部门 进件日期 客户 客服 银行 银行经理 额度 点数" [ref=e219]:
+          - cell "序号" [ref=e220]
+          - cell "部门" [ref=e221]
+          - cell "进件日期" [ref=e222]
+          - cell "客户" [ref=e223]
+          - cell "客服" [ref=e224]
+          - cell "银行" [ref=e225]
+          - cell "银行经理" [ref=e226]
+          - cell "额度" [ref=e227]
+          - cell "点数" [ref=e228]
+        - row "总计 0" [ref=e229]:
+          - cell "总计" [ref=e230]:
+            - strong [ref=e231]: 总计
+          - cell [ref=e232]
+          - cell [ref=e233]
+          - cell [ref=e234]
+          - cell [ref=e235]
+          - cell [ref=e236]
+          - cell [ref=e237]
+          - cell "0" [ref=e238]:
+            - strong [ref=e239]: "0"
+          - cell [ref=e240]
+    - generic [ref=e242]:
+      - text: 总共0条记录
+      - generic [ref=e243]: "1"

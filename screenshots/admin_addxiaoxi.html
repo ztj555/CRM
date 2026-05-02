@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>滚动信息</title>
+	<link href="https://guwen.zhudaicms.com/default/common/bootstrap/css/bootstrap.min.css?v=92_54" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/guwen/kefu_style.css?v=92_5" /><!--共用css-->
+  	<link href="https://guwen.zhudaicms.com/default/manage/css/scroll.css?v=92_54" rel="stylesheet" type="text/css" />
+	<script type="text/javascript"  src="https://guwen.zhudaicms.com/default/manage/js/jquery-1.7.2.min.js?v=92_55"></script>
+</head>
+<body>
+	<div class="container">
+    <div class='input'>
+    	<form action="/manage/gonggao/addxiaoxi_do.html" method="post">
+    		<input id="content" type="text" name="content" placeholder="输入需要发布的滚动消息">
+      		<button id="submit1" type="submit">提交</button>
+    	</form>
+    </div>
+    <div class="text">滚动条展示列表</div>
+		<table class='table table-bordered'>
+			<thead>
+        <tr>
+          <th class='only'>ID</th>
+          <th style='width:30%'>内容</th>
+          <th>是否显示</th>
+          <th>添加时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      	      	<tr>
+          <td>187139</td>
+          <td title="共同创业，不负时光。加油猛猛干！！！">共同创业，不负时光。加油猛猛干！！！</td>
+          <td><span style="color:green;">是</span></td>
+          <td>2026-01-13 19:23:37</td>
+      	  <td>
+      	  	<a href="/manage/gonggao/delxiaoxi.html?id=187139">删除</a>&nbsp;&nbsp;/&nbsp;
+    		<a href="/manage/gonggao/editxiaoxi.html?id=187139">修改</a>
+      	  </td>
+      	</tr>
+      	      </tbody>
+		</table>
+	</div>
+</body>
+</html>

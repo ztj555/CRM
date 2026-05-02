@@ -1,0 +1,189 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: 姓名：
+      - textbox [ref=e7]
+      - generic [ref=e8]: 手机：
+      - textbox [ref=e9]
+      - generic [ref=e10]: 坐席号：
+      - textbox [ref=e11]
+      - generic [ref=e12]: 月份：
+      - textbox [ref=e13]
+      - button "查询" [ref=e14] [cursor=pointer]
+    - generic [ref=e15]:
+      - link "添加顾问" [ref=e16] [cursor=pointer]:
+        - /url: /manage/kefu_underling/add_kefu.html
+      - link "显示管理者" [ref=e17] [cursor=pointer]:
+        - /url: /manage/kefu_underling/index.html?type=parent
+      - link "显示在职经理" [ref=e18] [cursor=pointer]:
+        - /url: /manage/kefu_underling/index.html?type=zaizhi
+      - generic [ref=e19]:
+        - button "批量禁止登录" [ref=e20] [cursor=pointer]
+        - button "批量恢复登录" [ref=e21] [cursor=pointer]
+      - link "显示离职经理" [ref=e22] [cursor=pointer]:
+        - /url: /manage/kefu_underling/index.html?type=lizhi
+      - link "接客开关统计(新)" [ref=e23] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - group [ref=e24]:
+        - button "其他操作" [ref=e25] [cursor=pointer]: 其他操作
+      - generic [ref=e27]:
+        - link [ref=e28] [cursor=pointer]:
+          - /url: /manage/kefu_common/clearCache.html?cacheKey=kefu_kefu_underling172949#0265b943490ffec739f5f0ce9379dccf
+          - generic "点击刷新查看最新数据" [ref=e29]:
+            - img [ref=e30]
+        - link "公司组织架构图(新)" [ref=e31] [cursor=pointer]:
+          - /url: javascript:;
+    - paragraph [ref=e32]: 注：显示全部经理：包含全部在职顾问和当月离职的顾问；显示在职经理：包含全部在职的顾问。
+    - table [ref=e34]:
+      - rowgroup [ref=e35]:
+        - row "全选 姓名 分公司 区 部门 职位 日分配 客户数 日实际 分配数 客户数 当月原始 分配数 当月Excel 分配数 当月 优质率 当月 上门数 上门率 当月 签约率 当月 转换率 已受理 待签约 已签约 已放款 是否 接受新数据 是否禁止 登录 下属数 上级经理 入司日期 操作" [ref=e36]:
+          - cell "全选" [ref=e37]:
+            - text: 全选
+            - checkbox [ref=e38]
+          - cell "姓名" [ref=e39]
+          - cell "分公司 区 部门" [ref=e40]:
+            - text: 分公司
+            - text: 区
+            - text: 部门
+          - cell "职位" [ref=e41]:
+            - text: 职位
+            - link "点击可根据职位倒序排列" [ref=e42] [cursor=pointer]:
+              - /url: "?type=zaizhi&name=&mobile=&seatsid=&date=2026-04&order=job"
+              - img [ref=e43]
+          - cell "日分配 客户数" [ref=e44]:
+            - text: 日分配
+            - text: 客户数
+          - cell "日实际 分配数" [ref=e45]:
+            - text: 日实际
+            - text: 分配数
+          - cell "客户数" [ref=e46]
+          - cell "当月原始 分配数" [ref=e47]:
+            - text: 当月原始
+            - text: 分配数
+          - cell "当月Excel 分配数" [ref=e48]:
+            - text: 当月Excel
+            - text: 分配数
+          - cell "当月 优质率" [ref=e49]:
+            - text: 当月
+            - text: 优质率
+            - img [ref=e51] [cursor=pointer]
+          - cell "当月 上门数 上门率" [ref=e52]:
+            - text: 当月
+            - text: 上门数
+            - text: 上门率
+            - img [ref=e54] [cursor=pointer]
+          - cell "当月 签约率" [ref=e55]:
+            - text: 当月
+            - text: 签约率
+          - cell "当月 转换率" [ref=e56]:
+            - text: 当月
+            - text: 转换率
+            - img [ref=e58] [cursor=pointer]
+          - cell "已受理" [ref=e59]
+          - cell "待签约" [ref=e60]
+          - cell "已签约" [ref=e61]
+          - cell "已放款" [ref=e62]
+          - cell "是否 接受新数据" [ref=e63]:
+            - text: 是否
+            - text: 接受新数据
+          - cell "是否禁止 登录" [ref=e64]:
+            - text: 是否禁止
+            - text: 登录
+          - cell "下属数" [ref=e65]
+          - cell "上级经理" [ref=e66]
+          - cell "入司日期" [ref=e67]:
+            - text: 入司日期
+            - link "点击可根据入职时间倒序排列" [ref=e68] [cursor=pointer]:
+              - /url: "?type=zaizhi&name=&mobile=&seatsid=&date=2026-04&order=ruzhitime"
+              - img [ref=e69]
+          - cell "操作" [ref=e70]
+        - row "合计： 0 0 105 0 4 0% 上门:0 0% 0% 0% 0 0 0 0 0" [ref=e71]:
+          - cell "合计：" [ref=e72]
+          - cell [ref=e73]
+          - cell "0" [ref=e74]
+          - cell "0" [ref=e75]
+          - cell "105" [ref=e76]
+          - cell "0" [ref=e77]
+          - cell "4" [ref=e78]
+          - cell "0%" [ref=e79]
+          - cell "上门:0 0%" [ref=e80]:
+            - generic [ref=e81]:
+              - text: 上门:0
+              - text: 0%
+          - cell "0%" [ref=e82]
+          - cell "0%" [ref=e83]
+          - cell "0" [ref=e84]
+          - cell "0" [ref=e85]
+          - cell "0" [ref=e86]
+          - cell "0" [ref=e87]
+          - cell [ref=e88]
+          - cell "0" [ref=e89]
+          - cell [ref=e90]
+        - row "徐钰蓉 融鑫汇 杭州一区 一区二部2 储备主管 0 0 105 0 4 0% 上门:0 0% 0% 0% 0 0 0 0 接收 不禁止 0 左廷军 2026-03-19" [ref=e91]:
+          - cell [ref=e92]:
+            - checkbox [ref=e93]
+          - cell "徐钰蓉" [ref=e94]
+          - cell "融鑫汇 杭州一区 一区二部2" [ref=e95]:
+            - text: 融鑫汇
+            - text: 杭州一区
+            - text: 一区二部2
+          - cell "储备主管" [ref=e96]
+          - cell "0" [ref=e97]
+          - cell "0" [ref=e98]:
+            - link "0" [ref=e99] [cursor=pointer]:
+              - /url: javascript:;
+          - cell "105" [ref=e100]:
+            - link "105" [ref=e101] [cursor=pointer]:
+              - /url: javascript:;
+          - cell "0" [ref=e102]:
+            - link "0" [ref=e103] [cursor=pointer]:
+              - /url: javascript:;
+          - cell "4" [ref=e104]:
+            - link "4" [ref=e105] [cursor=pointer]:
+              - /url: javascript:;
+          - cell "0%" [ref=e106]
+          - cell "上门:0 0%" [ref=e107]:
+            - text: 上门:0
+            - text: 0%
+          - cell "0%" [ref=e108]
+          - cell "0%" [ref=e109]
+          - cell "0" [ref=e110]:
+            - link "0" [ref=e111] [cursor=pointer]:
+              - /url: javascript:;
+          - cell "0" [ref=e112]:
+            - link "0" [ref=e113] [cursor=pointer]:
+              - /url: javascript:;
+          - cell "0" [ref=e114]:
+            - link "0" [ref=e115] [cursor=pointer]:
+              - /url: javascript:;
+          - cell "0" [ref=e116]:
+            - link "0" [ref=e117] [cursor=pointer]:
+              - /url: javascript:;
+          - cell "接收" [ref=e118]
+          - cell "不禁止" [ref=e119]
+          - cell "0" [ref=e120]:
+            - link "0" [ref=e121] [cursor=pointer]:
+              - /url: /manage/kefu_underling/subordinate_list.html?kid=172949
+          - cell "左廷军" [ref=e122]
+          - cell "2026-03-19" [ref=e123]
+          - cell [ref=e124]:
+            - link [ref=e125] [cursor=pointer]:
+              - /url: javascript:;
+              - img [ref=e126]
+    - generic [ref=e128]:
+      - text: 总共1条记录
+      - generic [ref=e129]: "1"
+    - generic [ref=e130]:
+      - generic [ref=e131]: 1、当天开通接客顾问实时需求数据总数：0，已接收数据:0，未接收：0，系统未关闭人员可接收数据总数：0
+      - generic [ref=e133]:
+        - text: 2、请选择批量操作：
+        - combobox [ref=e134]:
+          - option "请选择" [selected]
+          - option "批量设置日分配客户数"
+        - textbox [ref=e135]
+        - checkbox [ref=e136]
+        - text: 同时为勾选人下级进行相同设置
+        - button "确定" [ref=e137] [cursor=pointer]
+  - generic [ref=e141] [cursor=pointer]:
+    - text: 意见
+    - text: 反馈

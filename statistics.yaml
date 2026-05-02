@@ -1,0 +1,1477 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - list [ref=e3]:
+      - listitem [ref=e4]:
+        - generic [ref=e5] [cursor=pointer]: 数据日统计
+      - listitem [ref=e6]:
+        - generic [ref=e7] [cursor=pointer]: 备注数量日统计
+      - listitem [ref=e8]:
+        - generic [ref=e9] [cursor=pointer]: 我的备注记录
+      - listitem [ref=e10]:
+        - generic [ref=e11] [cursor=pointer]: 即将抓入公共池
+      - listitem [ref=e12]:
+        - generic [ref=e13] [cursor=pointer]: 顾问新数据统计
+  - table [ref=e14]:
+    - rowgroup [ref=e15]:
+      - row "数据统计2026-04-29 11:13:17" [ref=e16]:
+        - cell "数据统计2026-04-29 11:13:17" [ref=e17]
+      - row "新申请 再分配" [ref=e18]:
+        - cell "新申请" [ref=e19]
+        - cell "再分配" [ref=e20]
+      - row "全选 日期( 日 / 月 ) 贷款 申请 量 已受 理 待跟 进 0星 1星 2星 可贷 点占 比 3星 4星 5星 3星 以上 占比 捣乱 申请 再分 配数 量 已受 理 待跟 进 1星 2星 3星 4星 5星 捣乱 申请" [ref=e21]:
+        - cell "全选" [ref=e22]:
+          - checkbox [ref=e23]
+          - text: 全选
+        - cell "日期( 日 / 月 )" [ref=e24]:
+          - text: 日期(
+          - link "日" [ref=e25] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/index.html
+          - text: /
+          - link "月" [ref=e26] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/month_list.html
+          - text: )
+        - cell "贷款 申请 量" [ref=e27]:
+          - text: 贷款
+          - text: 申请
+          - text: 量
+        - cell "已受 理" [ref=e28]:
+          - text: 已受
+          - text: 理
+        - cell "待跟 进" [ref=e29]:
+          - text: 待跟
+          - text: 进
+        - cell "0星" [ref=e30]
+        - cell "1星" [ref=e31]
+        - cell "2星" [ref=e32]
+        - cell "可贷 点占 比" [ref=e33]:
+          - text: 可贷
+          - text: 点占
+          - text: 比
+        - cell "3星" [ref=e34]
+        - cell "4星" [ref=e35]
+        - cell "5星" [ref=e36]
+        - cell "3星 以上 占比" [ref=e37]:
+          - text: 3星
+          - text: 以上
+          - text: 占比
+        - cell "捣乱 申请" [ref=e38]:
+          - text: 捣乱
+          - text: 申请
+        - cell "再分 配数 量" [ref=e39]:
+          - text: 再分
+          - text: 配数
+          - text: 量
+        - cell "已受 理" [ref=e40]:
+          - text: 已受
+          - text: 理
+        - cell "待跟 进" [ref=e41]:
+          - text: 待跟
+          - text: 进
+        - cell "1星" [ref=e42]
+        - cell "2星" [ref=e43]
+        - cell "3星" [ref=e44]
+        - cell "4星" [ref=e45]
+        - cell "5星" [ref=e46]
+        - cell "捣乱 申请" [ref=e47]:
+          - text: 捣乱
+          - text: 申请
+      - row "2026-04-29 (星期三) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e48]:
+        - cell [ref=e49]:
+          - checkbox [ref=e50]
+        - cell "2026-04-29 (星期三)" [ref=e51]:
+          - text: 2026-04-29
+          - text: (星期三)
+        - cell "0" [ref=e52]:
+          - link "0" [ref=e53] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e54]:
+          - link "0" [ref=e55] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&status=99
+        - cell "0" [ref=e56]:
+          - link "0" [ref=e57] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&status=7
+        - cell "0" [ref=e58]:
+          - link "0" [ref=e59] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=0
+        - cell "0" [ref=e60]:
+          - link "0" [ref=e61] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=1
+        - cell "0" [ref=e62]:
+          - link "0" [ref=e63] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=2
+        - cell "0%" [ref=e64]:
+          - link "0%" [ref=e65] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&special=moretwostars
+        - cell "0" [ref=e66]:
+          - link "0" [ref=e67] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=3
+        - cell "0" [ref=e68]:
+          - link "0" [ref=e69] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=4
+        - cell "0" [ref=e70]:
+          - link "0" [ref=e71] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=5
+        - cell "0%" [ref=e72]:
+          - link "0%" [ref=e73] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&special=morethreestaravgmoney
+        - cell "0" [ref=e74]:
+          - link "0" [ref=e75] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&status=9
+        - cell "0" [ref=e76]:
+          - link "0" [ref=e77] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&tjagain=1
+        - cell "0" [ref=e78]:
+          - link "0" [ref=e79] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&status=99&tjagain=1
+        - cell "0" [ref=e80]:
+          - link "0" [ref=e81] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&status=7&tjagain=1
+        - cell "0" [ref=e82]:
+          - link "0" [ref=e83] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=1&tjagain=1
+        - cell "0" [ref=e84]:
+          - link "0" [ref=e85] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=2&tjagain=1
+        - cell "0" [ref=e86]:
+          - link "0" [ref=e87] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=3&tjagain=1
+        - cell "0" [ref=e88]:
+          - link "0" [ref=e89] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=4&tjagain=1
+        - cell "0" [ref=e90]:
+          - link "0" [ref=e91] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&stars=5&tjagain=1
+        - cell "0" [ref=e92]:
+          - link "0" [ref=e93] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-29&status=9&tjagain=1
+      - row "2026-04-28 (星期二) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e94]:
+        - cell [ref=e95]:
+          - checkbox [ref=e96]
+        - cell "2026-04-28 (星期二)" [ref=e97]:
+          - text: 2026-04-28
+          - text: (星期二)
+        - cell "0" [ref=e98]:
+          - link "0" [ref=e99] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e100]:
+          - link "0" [ref=e101] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&status=99
+        - cell "0" [ref=e102]:
+          - link "0" [ref=e103] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&status=7
+        - cell "0" [ref=e104]:
+          - link "0" [ref=e105] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=0
+        - cell "0" [ref=e106]:
+          - link "0" [ref=e107] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=1
+        - cell "0" [ref=e108]:
+          - link "0" [ref=e109] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=2
+        - cell "0%" [ref=e110]:
+          - link "0%" [ref=e111] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&special=moretwostars
+        - cell "0" [ref=e112]:
+          - link "0" [ref=e113] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=3
+        - cell "0" [ref=e114]:
+          - link "0" [ref=e115] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=4
+        - cell "0" [ref=e116]:
+          - link "0" [ref=e117] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=5
+        - cell "0%" [ref=e118]:
+          - link "0%" [ref=e119] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&special=morethreestaravgmoney
+        - cell "0" [ref=e120]:
+          - link "0" [ref=e121] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&status=9
+        - cell "0" [ref=e122]:
+          - link "0" [ref=e123] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&tjagain=1
+        - cell "0" [ref=e124]:
+          - link "0" [ref=e125] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&status=99&tjagain=1
+        - cell "0" [ref=e126]:
+          - link "0" [ref=e127] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&status=7&tjagain=1
+        - cell "0" [ref=e128]:
+          - link "0" [ref=e129] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=1&tjagain=1
+        - cell "0" [ref=e130]:
+          - link "0" [ref=e131] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=2&tjagain=1
+        - cell "0" [ref=e132]:
+          - link "0" [ref=e133] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=3&tjagain=1
+        - cell "0" [ref=e134]:
+          - link "0" [ref=e135] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=4&tjagain=1
+        - cell "0" [ref=e136]:
+          - link "0" [ref=e137] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&stars=5&tjagain=1
+        - cell "0" [ref=e138]:
+          - link "0" [ref=e139] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-28&status=9&tjagain=1
+      - row "2026-04-27 (星期一) 0 0 0 0 0 0 0% 0 0 0 0% 0 54 0 54 0 0 0 0 1 0" [ref=e140]:
+        - cell [ref=e141]:
+          - checkbox [ref=e142]
+        - cell "2026-04-27 (星期一)" [ref=e143]:
+          - text: 2026-04-27
+          - text: (星期一)
+        - cell "0" [ref=e144]:
+          - link "0" [ref=e145] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e146]:
+          - link "0" [ref=e147] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&status=99
+        - cell "0" [ref=e148]:
+          - link "0" [ref=e149] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&status=7
+        - cell "0" [ref=e150]:
+          - link "0" [ref=e151] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=0
+        - cell "0" [ref=e152]:
+          - link "0" [ref=e153] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=1
+        - cell "0" [ref=e154]:
+          - link "0" [ref=e155] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=2
+        - cell "0%" [ref=e156]:
+          - link "0%" [ref=e157] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&special=moretwostars
+        - cell "0" [ref=e158]:
+          - link "0" [ref=e159] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=3
+        - cell "0" [ref=e160]:
+          - link "0" [ref=e161] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=4
+        - cell "0" [ref=e162]:
+          - link "0" [ref=e163] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=5
+        - cell "0%" [ref=e164]:
+          - link "0%" [ref=e165] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&special=morethreestaravgmoney
+        - cell "0" [ref=e166]:
+          - link "0" [ref=e167] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&status=9
+        - cell "54" [ref=e168]:
+          - link "54" [ref=e169] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&tjagain=1
+        - cell "0" [ref=e170]:
+          - link "0" [ref=e171] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&status=99&tjagain=1
+        - cell "54" [ref=e172]:
+          - link "54" [ref=e173] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&status=7&tjagain=1
+        - cell "0" [ref=e174]:
+          - link "0" [ref=e175] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=1&tjagain=1
+        - cell "0" [ref=e176]:
+          - link "0" [ref=e177] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=2&tjagain=1
+        - cell "0" [ref=e178]:
+          - link "0" [ref=e179] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=3&tjagain=1
+        - cell "0" [ref=e180]:
+          - link "0" [ref=e181] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=4&tjagain=1
+        - cell "1" [ref=e182]:
+          - link "1" [ref=e183] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&stars=5&tjagain=1
+        - cell "0" [ref=e184]:
+          - link "0" [ref=e185] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-27&status=9&tjagain=1
+      - row "2026-04-26 (星期日) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e186]:
+        - cell [ref=e187]:
+          - checkbox [ref=e188]
+        - cell "2026-04-26 (星期日)" [ref=e189]:
+          - text: 2026-04-26
+          - text: (星期日)
+        - cell "0" [ref=e190]:
+          - link "0" [ref=e191] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e192]:
+          - link "0" [ref=e193] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&status=99
+        - cell "0" [ref=e194]:
+          - link "0" [ref=e195] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&status=7
+        - cell "0" [ref=e196]:
+          - link "0" [ref=e197] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=0
+        - cell "0" [ref=e198]:
+          - link "0" [ref=e199] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=1
+        - cell "0" [ref=e200]:
+          - link "0" [ref=e201] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=2
+        - cell "0%" [ref=e202]:
+          - link "0%" [ref=e203] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&special=moretwostars
+        - cell "0" [ref=e204]:
+          - link "0" [ref=e205] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=3
+        - cell "0" [ref=e206]:
+          - link "0" [ref=e207] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=4
+        - cell "0" [ref=e208]:
+          - link "0" [ref=e209] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=5
+        - cell "0%" [ref=e210]:
+          - link "0%" [ref=e211] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&special=morethreestaravgmoney
+        - cell "0" [ref=e212]:
+          - link "0" [ref=e213] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&status=9
+        - cell "0" [ref=e214]:
+          - link "0" [ref=e215] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&tjagain=1
+        - cell "0" [ref=e216]:
+          - link "0" [ref=e217] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&status=99&tjagain=1
+        - cell "0" [ref=e218]:
+          - link "0" [ref=e219] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&status=7&tjagain=1
+        - cell "0" [ref=e220]:
+          - link "0" [ref=e221] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=1&tjagain=1
+        - cell "0" [ref=e222]:
+          - link "0" [ref=e223] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=2&tjagain=1
+        - cell "0" [ref=e224]:
+          - link "0" [ref=e225] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=3&tjagain=1
+        - cell "0" [ref=e226]:
+          - link "0" [ref=e227] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=4&tjagain=1
+        - cell "0" [ref=e228]:
+          - link "0" [ref=e229] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&stars=5&tjagain=1
+        - cell "0" [ref=e230]:
+          - link "0" [ref=e231] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-26&status=9&tjagain=1
+      - row "2026-04-25 (星期六) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e232]:
+        - cell [ref=e233]:
+          - checkbox [ref=e234]
+        - cell "2026-04-25 (星期六)" [ref=e235]:
+          - text: 2026-04-25
+          - text: (星期六)
+        - cell "0" [ref=e236]:
+          - link "0" [ref=e237] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e238]:
+          - link "0" [ref=e239] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&status=99
+        - cell "0" [ref=e240]:
+          - link "0" [ref=e241] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&status=7
+        - cell "0" [ref=e242]:
+          - link "0" [ref=e243] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=0
+        - cell "0" [ref=e244]:
+          - link "0" [ref=e245] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=1
+        - cell "0" [ref=e246]:
+          - link "0" [ref=e247] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=2
+        - cell "0%" [ref=e248]:
+          - link "0%" [ref=e249] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&special=moretwostars
+        - cell "0" [ref=e250]:
+          - link "0" [ref=e251] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=3
+        - cell "0" [ref=e252]:
+          - link "0" [ref=e253] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=4
+        - cell "0" [ref=e254]:
+          - link "0" [ref=e255] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=5
+        - cell "0%" [ref=e256]:
+          - link "0%" [ref=e257] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&special=morethreestaravgmoney
+        - cell "0" [ref=e258]:
+          - link "0" [ref=e259] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&status=9
+        - cell "0" [ref=e260]:
+          - link "0" [ref=e261] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&tjagain=1
+        - cell "0" [ref=e262]:
+          - link "0" [ref=e263] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&status=99&tjagain=1
+        - cell "0" [ref=e264]:
+          - link "0" [ref=e265] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&status=7&tjagain=1
+        - cell "0" [ref=e266]:
+          - link "0" [ref=e267] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=1&tjagain=1
+        - cell "0" [ref=e268]:
+          - link "0" [ref=e269] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=2&tjagain=1
+        - cell "0" [ref=e270]:
+          - link "0" [ref=e271] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=3&tjagain=1
+        - cell "0" [ref=e272]:
+          - link "0" [ref=e273] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=4&tjagain=1
+        - cell "0" [ref=e274]:
+          - link "0" [ref=e275] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&stars=5&tjagain=1
+        - cell "0" [ref=e276]:
+          - link "0" [ref=e277] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-25&status=9&tjagain=1
+      - row "2026-04-24 (星期五) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e278]:
+        - cell [ref=e279]:
+          - checkbox [ref=e280]
+        - cell "2026-04-24 (星期五)" [ref=e281]:
+          - text: 2026-04-24
+          - text: (星期五)
+        - cell "0" [ref=e282]:
+          - link "0" [ref=e283] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e284]:
+          - link "0" [ref=e285] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&status=99
+        - cell "0" [ref=e286]:
+          - link "0" [ref=e287] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&status=7
+        - cell "0" [ref=e288]:
+          - link "0" [ref=e289] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=0
+        - cell "0" [ref=e290]:
+          - link "0" [ref=e291] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=1
+        - cell "0" [ref=e292]:
+          - link "0" [ref=e293] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=2
+        - cell "0%" [ref=e294]:
+          - link "0%" [ref=e295] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&special=moretwostars
+        - cell "0" [ref=e296]:
+          - link "0" [ref=e297] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=3
+        - cell "0" [ref=e298]:
+          - link "0" [ref=e299] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=4
+        - cell "0" [ref=e300]:
+          - link "0" [ref=e301] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=5
+        - cell "0%" [ref=e302]:
+          - link "0%" [ref=e303] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&special=morethreestaravgmoney
+        - cell "0" [ref=e304]:
+          - link "0" [ref=e305] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&status=9
+        - cell "0" [ref=e306]:
+          - link "0" [ref=e307] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&tjagain=1
+        - cell "0" [ref=e308]:
+          - link "0" [ref=e309] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&status=99&tjagain=1
+        - cell "0" [ref=e310]:
+          - link "0" [ref=e311] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&status=7&tjagain=1
+        - cell "0" [ref=e312]:
+          - link "0" [ref=e313] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=1&tjagain=1
+        - cell "0" [ref=e314]:
+          - link "0" [ref=e315] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=2&tjagain=1
+        - cell "0" [ref=e316]:
+          - link "0" [ref=e317] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=3&tjagain=1
+        - cell "0" [ref=e318]:
+          - link "0" [ref=e319] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=4&tjagain=1
+        - cell "0" [ref=e320]:
+          - link "0" [ref=e321] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&stars=5&tjagain=1
+        - cell "0" [ref=e322]:
+          - link "0" [ref=e323] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-24&status=9&tjagain=1
+      - row "2026-04-23 (星期四) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e324]:
+        - cell [ref=e325]:
+          - checkbox [ref=e326]
+        - cell "2026-04-23 (星期四)" [ref=e327]:
+          - text: 2026-04-23
+          - text: (星期四)
+        - cell "0" [ref=e328]:
+          - link "0" [ref=e329] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e330]:
+          - link "0" [ref=e331] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&status=99
+        - cell "0" [ref=e332]:
+          - link "0" [ref=e333] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&status=7
+        - cell "0" [ref=e334]:
+          - link "0" [ref=e335] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=0
+        - cell "0" [ref=e336]:
+          - link "0" [ref=e337] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=1
+        - cell "0" [ref=e338]:
+          - link "0" [ref=e339] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=2
+        - cell "0%" [ref=e340]:
+          - link "0%" [ref=e341] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&special=moretwostars
+        - cell "0" [ref=e342]:
+          - link "0" [ref=e343] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=3
+        - cell "0" [ref=e344]:
+          - link "0" [ref=e345] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=4
+        - cell "0" [ref=e346]:
+          - link "0" [ref=e347] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=5
+        - cell "0%" [ref=e348]:
+          - link "0%" [ref=e349] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&special=morethreestaravgmoney
+        - cell "0" [ref=e350]:
+          - link "0" [ref=e351] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&status=9
+        - cell "0" [ref=e352]:
+          - link "0" [ref=e353] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&tjagain=1
+        - cell "0" [ref=e354]:
+          - link "0" [ref=e355] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&status=99&tjagain=1
+        - cell "0" [ref=e356]:
+          - link "0" [ref=e357] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&status=7&tjagain=1
+        - cell "0" [ref=e358]:
+          - link "0" [ref=e359] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=1&tjagain=1
+        - cell "0" [ref=e360]:
+          - link "0" [ref=e361] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=2&tjagain=1
+        - cell "0" [ref=e362]:
+          - link "0" [ref=e363] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=3&tjagain=1
+        - cell "0" [ref=e364]:
+          - link "0" [ref=e365] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=4&tjagain=1
+        - cell "0" [ref=e366]:
+          - link "0" [ref=e367] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&stars=5&tjagain=1
+        - cell "0" [ref=e368]:
+          - link "0" [ref=e369] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-23&status=9&tjagain=1
+      - row "2026-04-22 (星期三) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e370]:
+        - cell [ref=e371]:
+          - checkbox [ref=e372]
+        - cell "2026-04-22 (星期三)" [ref=e373]:
+          - text: 2026-04-22
+          - text: (星期三)
+        - cell "0" [ref=e374]:
+          - link "0" [ref=e375] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e376]:
+          - link "0" [ref=e377] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&status=99
+        - cell "0" [ref=e378]:
+          - link "0" [ref=e379] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&status=7
+        - cell "0" [ref=e380]:
+          - link "0" [ref=e381] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=0
+        - cell "0" [ref=e382]:
+          - link "0" [ref=e383] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=1
+        - cell "0" [ref=e384]:
+          - link "0" [ref=e385] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=2
+        - cell "0%" [ref=e386]:
+          - link "0%" [ref=e387] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&special=moretwostars
+        - cell "0" [ref=e388]:
+          - link "0" [ref=e389] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=3
+        - cell "0" [ref=e390]:
+          - link "0" [ref=e391] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=4
+        - cell "0" [ref=e392]:
+          - link "0" [ref=e393] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=5
+        - cell "0%" [ref=e394]:
+          - link "0%" [ref=e395] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&special=morethreestaravgmoney
+        - cell "0" [ref=e396]:
+          - link "0" [ref=e397] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&status=9
+        - cell "0" [ref=e398]:
+          - link "0" [ref=e399] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&tjagain=1
+        - cell "0" [ref=e400]:
+          - link "0" [ref=e401] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&status=99&tjagain=1
+        - cell "0" [ref=e402]:
+          - link "0" [ref=e403] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&status=7&tjagain=1
+        - cell "0" [ref=e404]:
+          - link "0" [ref=e405] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=1&tjagain=1
+        - cell "0" [ref=e406]:
+          - link "0" [ref=e407] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=2&tjagain=1
+        - cell "0" [ref=e408]:
+          - link "0" [ref=e409] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=3&tjagain=1
+        - cell "0" [ref=e410]:
+          - link "0" [ref=e411] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=4&tjagain=1
+        - cell "0" [ref=e412]:
+          - link "0" [ref=e413] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&stars=5&tjagain=1
+        - cell "0" [ref=e414]:
+          - link "0" [ref=e415] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-22&status=9&tjagain=1
+      - row "2026-04-21 (星期二) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e416]:
+        - cell [ref=e417]:
+          - checkbox [ref=e418]
+        - cell "2026-04-21 (星期二)" [ref=e419]:
+          - text: 2026-04-21
+          - text: (星期二)
+        - cell "0" [ref=e420]:
+          - link "0" [ref=e421] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e422]:
+          - link "0" [ref=e423] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&status=99
+        - cell "0" [ref=e424]:
+          - link "0" [ref=e425] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&status=7
+        - cell "0" [ref=e426]:
+          - link "0" [ref=e427] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=0
+        - cell "0" [ref=e428]:
+          - link "0" [ref=e429] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=1
+        - cell "0" [ref=e430]:
+          - link "0" [ref=e431] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=2
+        - cell "0%" [ref=e432]:
+          - link "0%" [ref=e433] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&special=moretwostars
+        - cell "0" [ref=e434]:
+          - link "0" [ref=e435] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=3
+        - cell "0" [ref=e436]:
+          - link "0" [ref=e437] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=4
+        - cell "0" [ref=e438]:
+          - link "0" [ref=e439] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=5
+        - cell "0%" [ref=e440]:
+          - link "0%" [ref=e441] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&special=morethreestaravgmoney
+        - cell "0" [ref=e442]:
+          - link "0" [ref=e443] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&status=9
+        - cell "0" [ref=e444]:
+          - link "0" [ref=e445] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&tjagain=1
+        - cell "0" [ref=e446]:
+          - link "0" [ref=e447] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&status=99&tjagain=1
+        - cell "0" [ref=e448]:
+          - link "0" [ref=e449] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&status=7&tjagain=1
+        - cell "0" [ref=e450]:
+          - link "0" [ref=e451] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=1&tjagain=1
+        - cell "0" [ref=e452]:
+          - link "0" [ref=e453] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=2&tjagain=1
+        - cell "0" [ref=e454]:
+          - link "0" [ref=e455] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=3&tjagain=1
+        - cell "0" [ref=e456]:
+          - link "0" [ref=e457] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=4&tjagain=1
+        - cell "0" [ref=e458]:
+          - link "0" [ref=e459] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&stars=5&tjagain=1
+        - cell "0" [ref=e460]:
+          - link "0" [ref=e461] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-21&status=9&tjagain=1
+      - row "2026-04-20 (星期一) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e462]:
+        - cell [ref=e463]:
+          - checkbox [ref=e464]
+        - cell "2026-04-20 (星期一)" [ref=e465]:
+          - text: 2026-04-20
+          - text: (星期一)
+        - cell "0" [ref=e466]:
+          - link "0" [ref=e467] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e468]:
+          - link "0" [ref=e469] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&status=99
+        - cell "0" [ref=e470]:
+          - link "0" [ref=e471] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&status=7
+        - cell "0" [ref=e472]:
+          - link "0" [ref=e473] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=0
+        - cell "0" [ref=e474]:
+          - link "0" [ref=e475] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=1
+        - cell "0" [ref=e476]:
+          - link "0" [ref=e477] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=2
+        - cell "0%" [ref=e478]:
+          - link "0%" [ref=e479] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&special=moretwostars
+        - cell "0" [ref=e480]:
+          - link "0" [ref=e481] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=3
+        - cell "0" [ref=e482]:
+          - link "0" [ref=e483] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=4
+        - cell "0" [ref=e484]:
+          - link "0" [ref=e485] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=5
+        - cell "0%" [ref=e486]:
+          - link "0%" [ref=e487] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&special=morethreestaravgmoney
+        - cell "0" [ref=e488]:
+          - link "0" [ref=e489] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&status=9
+        - cell "0" [ref=e490]:
+          - link "0" [ref=e491] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&tjagain=1
+        - cell "0" [ref=e492]:
+          - link "0" [ref=e493] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&status=99&tjagain=1
+        - cell "0" [ref=e494]:
+          - link "0" [ref=e495] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&status=7&tjagain=1
+        - cell "0" [ref=e496]:
+          - link "0" [ref=e497] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=1&tjagain=1
+        - cell "0" [ref=e498]:
+          - link "0" [ref=e499] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=2&tjagain=1
+        - cell "0" [ref=e500]:
+          - link "0" [ref=e501] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=3&tjagain=1
+        - cell "0" [ref=e502]:
+          - link "0" [ref=e503] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=4&tjagain=1
+        - cell "0" [ref=e504]:
+          - link "0" [ref=e505] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&stars=5&tjagain=1
+        - cell "0" [ref=e506]:
+          - link "0" [ref=e507] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-20&status=9&tjagain=1
+      - row "2026-04-19 (星期日) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e508]:
+        - cell [ref=e509]:
+          - checkbox [ref=e510]
+        - cell "2026-04-19 (星期日)" [ref=e511]:
+          - text: 2026-04-19
+          - text: (星期日)
+        - cell "0" [ref=e512]:
+          - link "0" [ref=e513] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e514]:
+          - link "0" [ref=e515] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&status=99
+        - cell "0" [ref=e516]:
+          - link "0" [ref=e517] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&status=7
+        - cell "0" [ref=e518]:
+          - link "0" [ref=e519] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=0
+        - cell "0" [ref=e520]:
+          - link "0" [ref=e521] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=1
+        - cell "0" [ref=e522]:
+          - link "0" [ref=e523] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=2
+        - cell "0%" [ref=e524]:
+          - link "0%" [ref=e525] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&special=moretwostars
+        - cell "0" [ref=e526]:
+          - link "0" [ref=e527] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=3
+        - cell "0" [ref=e528]:
+          - link "0" [ref=e529] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=4
+        - cell "0" [ref=e530]:
+          - link "0" [ref=e531] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=5
+        - cell "0%" [ref=e532]:
+          - link "0%" [ref=e533] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&special=morethreestaravgmoney
+        - cell "0" [ref=e534]:
+          - link "0" [ref=e535] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&status=9
+        - cell "0" [ref=e536]:
+          - link "0" [ref=e537] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&tjagain=1
+        - cell "0" [ref=e538]:
+          - link "0" [ref=e539] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&status=99&tjagain=1
+        - cell "0" [ref=e540]:
+          - link "0" [ref=e541] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&status=7&tjagain=1
+        - cell "0" [ref=e542]:
+          - link "0" [ref=e543] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=1&tjagain=1
+        - cell "0" [ref=e544]:
+          - link "0" [ref=e545] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=2&tjagain=1
+        - cell "0" [ref=e546]:
+          - link "0" [ref=e547] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=3&tjagain=1
+        - cell "0" [ref=e548]:
+          - link "0" [ref=e549] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=4&tjagain=1
+        - cell "0" [ref=e550]:
+          - link "0" [ref=e551] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&stars=5&tjagain=1
+        - cell "0" [ref=e552]:
+          - link "0" [ref=e553] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-19&status=9&tjagain=1
+      - row "2026-04-18 (星期六) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e554]:
+        - cell [ref=e555]:
+          - checkbox [ref=e556]
+        - cell "2026-04-18 (星期六)" [ref=e557]:
+          - text: 2026-04-18
+          - text: (星期六)
+        - cell "0" [ref=e558]:
+          - link "0" [ref=e559] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e560]:
+          - link "0" [ref=e561] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&status=99
+        - cell "0" [ref=e562]:
+          - link "0" [ref=e563] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&status=7
+        - cell "0" [ref=e564]:
+          - link "0" [ref=e565] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=0
+        - cell "0" [ref=e566]:
+          - link "0" [ref=e567] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=1
+        - cell "0" [ref=e568]:
+          - link "0" [ref=e569] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=2
+        - cell "0%" [ref=e570]:
+          - link "0%" [ref=e571] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&special=moretwostars
+        - cell "0" [ref=e572]:
+          - link "0" [ref=e573] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=3
+        - cell "0" [ref=e574]:
+          - link "0" [ref=e575] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=4
+        - cell "0" [ref=e576]:
+          - link "0" [ref=e577] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=5
+        - cell "0%" [ref=e578]:
+          - link "0%" [ref=e579] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&special=morethreestaravgmoney
+        - cell "0" [ref=e580]:
+          - link "0" [ref=e581] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&status=9
+        - cell "0" [ref=e582]:
+          - link "0" [ref=e583] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&tjagain=1
+        - cell "0" [ref=e584]:
+          - link "0" [ref=e585] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&status=99&tjagain=1
+        - cell "0" [ref=e586]:
+          - link "0" [ref=e587] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&status=7&tjagain=1
+        - cell "0" [ref=e588]:
+          - link "0" [ref=e589] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=1&tjagain=1
+        - cell "0" [ref=e590]:
+          - link "0" [ref=e591] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=2&tjagain=1
+        - cell "0" [ref=e592]:
+          - link "0" [ref=e593] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=3&tjagain=1
+        - cell "0" [ref=e594]:
+          - link "0" [ref=e595] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=4&tjagain=1
+        - cell "0" [ref=e596]:
+          - link "0" [ref=e597] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&stars=5&tjagain=1
+        - cell "0" [ref=e598]:
+          - link "0" [ref=e599] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-18&status=9&tjagain=1
+      - row "2026-04-17 (星期五) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e600]:
+        - cell [ref=e601]:
+          - checkbox [ref=e602]
+        - cell "2026-04-17 (星期五)" [ref=e603]:
+          - text: 2026-04-17
+          - text: (星期五)
+        - cell "0" [ref=e604]:
+          - link "0" [ref=e605] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e606]:
+          - link "0" [ref=e607] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&status=99
+        - cell "0" [ref=e608]:
+          - link "0" [ref=e609] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&status=7
+        - cell "0" [ref=e610]:
+          - link "0" [ref=e611] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=0
+        - cell "0" [ref=e612]:
+          - link "0" [ref=e613] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=1
+        - cell "0" [ref=e614]:
+          - link "0" [ref=e615] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=2
+        - cell "0%" [ref=e616]:
+          - link "0%" [ref=e617] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&special=moretwostars
+        - cell "0" [ref=e618]:
+          - link "0" [ref=e619] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=3
+        - cell "0" [ref=e620]:
+          - link "0" [ref=e621] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=4
+        - cell "0" [ref=e622]:
+          - link "0" [ref=e623] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=5
+        - cell "0%" [ref=e624]:
+          - link "0%" [ref=e625] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&special=morethreestaravgmoney
+        - cell "0" [ref=e626]:
+          - link "0" [ref=e627] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&status=9
+        - cell "0" [ref=e628]:
+          - link "0" [ref=e629] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&tjagain=1
+        - cell "0" [ref=e630]:
+          - link "0" [ref=e631] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&status=99&tjagain=1
+        - cell "0" [ref=e632]:
+          - link "0" [ref=e633] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&status=7&tjagain=1
+        - cell "0" [ref=e634]:
+          - link "0" [ref=e635] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=1&tjagain=1
+        - cell "0" [ref=e636]:
+          - link "0" [ref=e637] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=2&tjagain=1
+        - cell "0" [ref=e638]:
+          - link "0" [ref=e639] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=3&tjagain=1
+        - cell "0" [ref=e640]:
+          - link "0" [ref=e641] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=4&tjagain=1
+        - cell "0" [ref=e642]:
+          - link "0" [ref=e643] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&stars=5&tjagain=1
+        - cell "0" [ref=e644]:
+          - link "0" [ref=e645] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-17&status=9&tjagain=1
+      - row "2026-04-16 (星期四) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e646]:
+        - cell [ref=e647]:
+          - checkbox [ref=e648]
+        - cell "2026-04-16 (星期四)" [ref=e649]:
+          - text: 2026-04-16
+          - text: (星期四)
+        - cell "0" [ref=e650]:
+          - link "0" [ref=e651] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e652]:
+          - link "0" [ref=e653] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&status=99
+        - cell "0" [ref=e654]:
+          - link "0" [ref=e655] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&status=7
+        - cell "0" [ref=e656]:
+          - link "0" [ref=e657] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=0
+        - cell "0" [ref=e658]:
+          - link "0" [ref=e659] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=1
+        - cell "0" [ref=e660]:
+          - link "0" [ref=e661] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=2
+        - cell "0%" [ref=e662]:
+          - link "0%" [ref=e663] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&special=moretwostars
+        - cell "0" [ref=e664]:
+          - link "0" [ref=e665] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=3
+        - cell "0" [ref=e666]:
+          - link "0" [ref=e667] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=4
+        - cell "0" [ref=e668]:
+          - link "0" [ref=e669] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=5
+        - cell "0%" [ref=e670]:
+          - link "0%" [ref=e671] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&special=morethreestaravgmoney
+        - cell "0" [ref=e672]:
+          - link "0" [ref=e673] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&status=9
+        - cell "0" [ref=e674]:
+          - link "0" [ref=e675] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&tjagain=1
+        - cell "0" [ref=e676]:
+          - link "0" [ref=e677] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&status=99&tjagain=1
+        - cell "0" [ref=e678]:
+          - link "0" [ref=e679] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&status=7&tjagain=1
+        - cell "0" [ref=e680]:
+          - link "0" [ref=e681] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=1&tjagain=1
+        - cell "0" [ref=e682]:
+          - link "0" [ref=e683] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=2&tjagain=1
+        - cell "0" [ref=e684]:
+          - link "0" [ref=e685] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=3&tjagain=1
+        - cell "0" [ref=e686]:
+          - link "0" [ref=e687] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=4&tjagain=1
+        - cell "0" [ref=e688]:
+          - link "0" [ref=e689] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&stars=5&tjagain=1
+        - cell "0" [ref=e690]:
+          - link "0" [ref=e691] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-16&status=9&tjagain=1
+      - row "2026-04-15 (星期三) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e692]:
+        - cell [ref=e693]:
+          - checkbox [ref=e694]
+        - cell "2026-04-15 (星期三)" [ref=e695]:
+          - text: 2026-04-15
+          - text: (星期三)
+        - cell "0" [ref=e696]:
+          - link "0" [ref=e697] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e698]:
+          - link "0" [ref=e699] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&status=99
+        - cell "0" [ref=e700]:
+          - link "0" [ref=e701] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&status=7
+        - cell "0" [ref=e702]:
+          - link "0" [ref=e703] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=0
+        - cell "0" [ref=e704]:
+          - link "0" [ref=e705] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=1
+        - cell "0" [ref=e706]:
+          - link "0" [ref=e707] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=2
+        - cell "0%" [ref=e708]:
+          - link "0%" [ref=e709] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&special=moretwostars
+        - cell "0" [ref=e710]:
+          - link "0" [ref=e711] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=3
+        - cell "0" [ref=e712]:
+          - link "0" [ref=e713] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=4
+        - cell "0" [ref=e714]:
+          - link "0" [ref=e715] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=5
+        - cell "0%" [ref=e716]:
+          - link "0%" [ref=e717] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&special=morethreestaravgmoney
+        - cell "0" [ref=e718]:
+          - link "0" [ref=e719] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&status=9
+        - cell "0" [ref=e720]:
+          - link "0" [ref=e721] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&tjagain=1
+        - cell "0" [ref=e722]:
+          - link "0" [ref=e723] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&status=99&tjagain=1
+        - cell "0" [ref=e724]:
+          - link "0" [ref=e725] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&status=7&tjagain=1
+        - cell "0" [ref=e726]:
+          - link "0" [ref=e727] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=1&tjagain=1
+        - cell "0" [ref=e728]:
+          - link "0" [ref=e729] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=2&tjagain=1
+        - cell "0" [ref=e730]:
+          - link "0" [ref=e731] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=3&tjagain=1
+        - cell "0" [ref=e732]:
+          - link "0" [ref=e733] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=4&tjagain=1
+        - cell "0" [ref=e734]:
+          - link "0" [ref=e735] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&stars=5&tjagain=1
+        - cell "0" [ref=e736]:
+          - link "0" [ref=e737] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-15&status=9&tjagain=1
+      - row "2026-04-14 (星期二) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e738]:
+        - cell [ref=e739]:
+          - checkbox [ref=e740]
+        - cell "2026-04-14 (星期二)" [ref=e741]:
+          - text: 2026-04-14
+          - text: (星期二)
+        - cell "0" [ref=e742]:
+          - link "0" [ref=e743] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e744]:
+          - link "0" [ref=e745] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&status=99
+        - cell "0" [ref=e746]:
+          - link "0" [ref=e747] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&status=7
+        - cell "0" [ref=e748]:
+          - link "0" [ref=e749] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=0
+        - cell "0" [ref=e750]:
+          - link "0" [ref=e751] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=1
+        - cell "0" [ref=e752]:
+          - link "0" [ref=e753] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=2
+        - cell "0%" [ref=e754]:
+          - link "0%" [ref=e755] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&special=moretwostars
+        - cell "0" [ref=e756]:
+          - link "0" [ref=e757] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=3
+        - cell "0" [ref=e758]:
+          - link "0" [ref=e759] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=4
+        - cell "0" [ref=e760]:
+          - link "0" [ref=e761] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=5
+        - cell "0%" [ref=e762]:
+          - link "0%" [ref=e763] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&special=morethreestaravgmoney
+        - cell "0" [ref=e764]:
+          - link "0" [ref=e765] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&status=9
+        - cell "0" [ref=e766]:
+          - link "0" [ref=e767] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&tjagain=1
+        - cell "0" [ref=e768]:
+          - link "0" [ref=e769] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&status=99&tjagain=1
+        - cell "0" [ref=e770]:
+          - link "0" [ref=e771] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&status=7&tjagain=1
+        - cell "0" [ref=e772]:
+          - link "0" [ref=e773] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=1&tjagain=1
+        - cell "0" [ref=e774]:
+          - link "0" [ref=e775] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=2&tjagain=1
+        - cell "0" [ref=e776]:
+          - link "0" [ref=e777] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=3&tjagain=1
+        - cell "0" [ref=e778]:
+          - link "0" [ref=e779] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=4&tjagain=1
+        - cell "0" [ref=e780]:
+          - link "0" [ref=e781] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&stars=5&tjagain=1
+        - cell "0" [ref=e782]:
+          - link "0" [ref=e783] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-14&status=9&tjagain=1
+      - row "2026-04-13 (星期一) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e784]:
+        - cell [ref=e785]:
+          - checkbox [ref=e786]
+        - cell "2026-04-13 (星期一)" [ref=e787]:
+          - text: 2026-04-13
+          - text: (星期一)
+        - cell "0" [ref=e788]:
+          - link "0" [ref=e789] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e790]:
+          - link "0" [ref=e791] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&status=99
+        - cell "0" [ref=e792]:
+          - link "0" [ref=e793] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&status=7
+        - cell "0" [ref=e794]:
+          - link "0" [ref=e795] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=0
+        - cell "0" [ref=e796]:
+          - link "0" [ref=e797] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=1
+        - cell "0" [ref=e798]:
+          - link "0" [ref=e799] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=2
+        - cell "0%" [ref=e800]:
+          - link "0%" [ref=e801] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&special=moretwostars
+        - cell "0" [ref=e802]:
+          - link "0" [ref=e803] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=3
+        - cell "0" [ref=e804]:
+          - link "0" [ref=e805] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=4
+        - cell "0" [ref=e806]:
+          - link "0" [ref=e807] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=5
+        - cell "0%" [ref=e808]:
+          - link "0%" [ref=e809] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&special=morethreestaravgmoney
+        - cell "0" [ref=e810]:
+          - link "0" [ref=e811] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&status=9
+        - cell "0" [ref=e812]:
+          - link "0" [ref=e813] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&tjagain=1
+        - cell "0" [ref=e814]:
+          - link "0" [ref=e815] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&status=99&tjagain=1
+        - cell "0" [ref=e816]:
+          - link "0" [ref=e817] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&status=7&tjagain=1
+        - cell "0" [ref=e818]:
+          - link "0" [ref=e819] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=1&tjagain=1
+        - cell "0" [ref=e820]:
+          - link "0" [ref=e821] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=2&tjagain=1
+        - cell "0" [ref=e822]:
+          - link "0" [ref=e823] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=3&tjagain=1
+        - cell "0" [ref=e824]:
+          - link "0" [ref=e825] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=4&tjagain=1
+        - cell "0" [ref=e826]:
+          - link "0" [ref=e827] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&stars=5&tjagain=1
+        - cell "0" [ref=e828]:
+          - link "0" [ref=e829] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-13&status=9&tjagain=1
+      - row "2026-04-12 (星期日) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e830]:
+        - cell [ref=e831]:
+          - checkbox [ref=e832]
+        - cell "2026-04-12 (星期日)" [ref=e833]:
+          - text: 2026-04-12
+          - text: (星期日)
+        - cell "0" [ref=e834]:
+          - link "0" [ref=e835] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e836]:
+          - link "0" [ref=e837] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&status=99
+        - cell "0" [ref=e838]:
+          - link "0" [ref=e839] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&status=7
+        - cell "0" [ref=e840]:
+          - link "0" [ref=e841] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=0
+        - cell "0" [ref=e842]:
+          - link "0" [ref=e843] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=1
+        - cell "0" [ref=e844]:
+          - link "0" [ref=e845] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=2
+        - cell "0%" [ref=e846]:
+          - link "0%" [ref=e847] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&special=moretwostars
+        - cell "0" [ref=e848]:
+          - link "0" [ref=e849] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=3
+        - cell "0" [ref=e850]:
+          - link "0" [ref=e851] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=4
+        - cell "0" [ref=e852]:
+          - link "0" [ref=e853] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=5
+        - cell "0%" [ref=e854]:
+          - link "0%" [ref=e855] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&special=morethreestaravgmoney
+        - cell "0" [ref=e856]:
+          - link "0" [ref=e857] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&status=9
+        - cell "0" [ref=e858]:
+          - link "0" [ref=e859] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&tjagain=1
+        - cell "0" [ref=e860]:
+          - link "0" [ref=e861] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&status=99&tjagain=1
+        - cell "0" [ref=e862]:
+          - link "0" [ref=e863] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&status=7&tjagain=1
+        - cell "0" [ref=e864]:
+          - link "0" [ref=e865] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=1&tjagain=1
+        - cell "0" [ref=e866]:
+          - link "0" [ref=e867] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=2&tjagain=1
+        - cell "0" [ref=e868]:
+          - link "0" [ref=e869] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=3&tjagain=1
+        - cell "0" [ref=e870]:
+          - link "0" [ref=e871] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=4&tjagain=1
+        - cell "0" [ref=e872]:
+          - link "0" [ref=e873] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&stars=5&tjagain=1
+        - cell "0" [ref=e874]:
+          - link "0" [ref=e875] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-12&status=9&tjagain=1
+      - row "2026-04-11 (星期六) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e876]:
+        - cell [ref=e877]:
+          - checkbox [ref=e878]
+        - cell "2026-04-11 (星期六)" [ref=e879]:
+          - text: 2026-04-11
+          - text: (星期六)
+        - cell "0" [ref=e880]:
+          - link "0" [ref=e881] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e882]:
+          - link "0" [ref=e883] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&status=99
+        - cell "0" [ref=e884]:
+          - link "0" [ref=e885] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&status=7
+        - cell "0" [ref=e886]:
+          - link "0" [ref=e887] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=0
+        - cell "0" [ref=e888]:
+          - link "0" [ref=e889] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=1
+        - cell "0" [ref=e890]:
+          - link "0" [ref=e891] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=2
+        - cell "0%" [ref=e892]:
+          - link "0%" [ref=e893] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&special=moretwostars
+        - cell "0" [ref=e894]:
+          - link "0" [ref=e895] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=3
+        - cell "0" [ref=e896]:
+          - link "0" [ref=e897] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=4
+        - cell "0" [ref=e898]:
+          - link "0" [ref=e899] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=5
+        - cell "0%" [ref=e900]:
+          - link "0%" [ref=e901] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&special=morethreestaravgmoney
+        - cell "0" [ref=e902]:
+          - link "0" [ref=e903] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&status=9
+        - cell "0" [ref=e904]:
+          - link "0" [ref=e905] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&tjagain=1
+        - cell "0" [ref=e906]:
+          - link "0" [ref=e907] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&status=99&tjagain=1
+        - cell "0" [ref=e908]:
+          - link "0" [ref=e909] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&status=7&tjagain=1
+        - cell "0" [ref=e910]:
+          - link "0" [ref=e911] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=1&tjagain=1
+        - cell "0" [ref=e912]:
+          - link "0" [ref=e913] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=2&tjagain=1
+        - cell "0" [ref=e914]:
+          - link "0" [ref=e915] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=3&tjagain=1
+        - cell "0" [ref=e916]:
+          - link "0" [ref=e917] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=4&tjagain=1
+        - cell "0" [ref=e918]:
+          - link "0" [ref=e919] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&stars=5&tjagain=1
+        - cell "0" [ref=e920]:
+          - link "0" [ref=e921] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-11&status=9&tjagain=1
+      - row "2026-04-10 (星期五) 0 0 0 0 0 0 0% 0 0 0 0% 0 0 0 0 0 0 0 0 0 0" [ref=e922]:
+        - cell [ref=e923]:
+          - checkbox [ref=e924]
+        - cell "2026-04-10 (星期五)" [ref=e925]:
+          - text: 2026-04-10
+          - text: (星期五)
+        - cell "0" [ref=e926]:
+          - link "0" [ref=e927] [cursor=pointer]:
+            - /url: ""
+        - cell "0" [ref=e928]:
+          - link "0" [ref=e929] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&status=99
+        - cell "0" [ref=e930]:
+          - link "0" [ref=e931] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&status=7
+        - cell "0" [ref=e932]:
+          - link "0" [ref=e933] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=0
+        - cell "0" [ref=e934]:
+          - link "0" [ref=e935] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=1
+        - cell "0" [ref=e936]:
+          - link "0" [ref=e937] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=2
+        - cell "0%" [ref=e938]:
+          - link "0%" [ref=e939] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&special=moretwostars
+        - cell "0" [ref=e940]:
+          - link "0" [ref=e941] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=3
+        - cell "0" [ref=e942]:
+          - link "0" [ref=e943] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=4
+        - cell "0" [ref=e944]:
+          - link "0" [ref=e945] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=5
+        - cell "0%" [ref=e946]:
+          - link "0%" [ref=e947] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&special=morethreestaravgmoney
+        - cell "0" [ref=e948]:
+          - link "0" [ref=e949] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&status=9
+        - cell "0" [ref=e950]:
+          - link "0" [ref=e951] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&tjagain=1
+        - cell "0" [ref=e952]:
+          - link "0" [ref=e953] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&status=99&tjagain=1
+        - cell "0" [ref=e954]:
+          - link "0" [ref=e955] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&status=7&tjagain=1
+        - cell "0" [ref=e956]:
+          - link "0" [ref=e957] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=1&tjagain=1
+        - cell "0" [ref=e958]:
+          - link "0" [ref=e959] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=2&tjagain=1
+        - cell "0" [ref=e960]:
+          - link "0" [ref=e961] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=3&tjagain=1
+        - cell "0" [ref=e962]:
+          - link "0" [ref=e963] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=4&tjagain=1
+        - cell "0" [ref=e964]:
+          - link "0" [ref=e965] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&stars=5&tjagain=1
+        - cell "0" [ref=e966]:
+          - link "0" [ref=e967] [cursor=pointer]:
+            - /url: /manage/kefu_statistics/detail.html?day=2026-04-10&status=9&tjagain=1
+      - row "全选 批量更新 总共62条记录 1 2 3 4" [ref=e968]:
+        - cell "全选 批量更新" [ref=e969]:
+          - generic [ref=e970]:
+            - generic [ref=e971]:
+              - checkbox "全选" [ref=e972]
+              - text: 全选
+            - button "批量更新" [ref=e973] [cursor=pointer]
+        - cell "总共62条记录 1 2 3 4" [ref=e974]:
+          - generic [ref=e976]:
+            - text: 总共62条记录
+            - generic [ref=e977]: "1"
+            - link "2" [ref=e978] [cursor=pointer]:
+              - /url: /manage/kefu_statistics/index.html?timeset=&stime=&etime=&tgtype=source&page=2
+            - link "3" [ref=e979] [cursor=pointer]:
+              - /url: /manage/kefu_statistics/index.html?timeset=&stime=&etime=&tgtype=source&page=3
+            - link "4" [ref=e980] [cursor=pointer]:
+              - /url: /manage/kefu_statistics/index.html?timeset=&stime=&etime=&tgtype=source&page=4
+  - generic [ref=e984] [cursor=pointer]:
+    - text: 意见
+    - text: 反馈

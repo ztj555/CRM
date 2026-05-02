@@ -1,0 +1,111 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: 客户
+      - combobox [ref=e6]:
+        - option "手机" [selected]
+        - option "姓名"
+        - option "ID"
+      - textbox "手机可模糊搜索" [ref=e7]
+    - generic [ref=e8]:
+      - generic [ref=e9]: 状态
+      - generic [ref=e12] [cursor=pointer]: 请选择选项
+    - generic [ref=e13]:
+      - generic [ref=e14]: 星级
+      - generic [ref=e17] [cursor=pointer]: 请选择选项
+    - generic [ref=e18]:
+      - generic [ref=e19]: 未备注超过
+      - generic [ref=e20]:
+        - textbox [ref=e21]
+        - generic [ref=e22]: 天
+    - generic [ref=e23]:
+      - generic [ref=e24]: 备注关键词
+      - textbox "默认搜索3年内数据" [ref=e26]
+    - generic [ref=e27]:
+      - generic [ref=e28]: 时间类型
+      - combobox [ref=e29]:
+        - option "进系统时间" [selected]
+        - option "备注时间"
+        - option "实际申请时间"
+      - combobox [ref=e30]:
+        - option "-不限-" [selected]
+        - option "今日"
+        - option "昨天"
+        - option "最近7天"
+        - option "本月"
+        - option "上月"
+        - option "自定义"
+    - generic [ref=e31]:
+      - generic [ref=e32]: 备注历史
+      - combobox [ref=e34]:
+        - option "从未备注过的顾问" [selected]
+        - option "备注过的顾问"
+    - generic [ref=e35]:
+      - generic [ref=e36]: 归属顾问
+      - combobox [ref=e37]:
+        - option "不限" [selected]
+    - generic [ref=e38]:
+      - generic [ref=e39]: 贷款条件
+      - combobox [ref=e40]:
+        - option "房" [selected]
+        - option "车"
+        - option "公积金"
+        - option "保单"
+        - option "代发"
+        - option "是否有企业"
+      - combobox [ref=e41]:
+        - option "-不限-" [selected]
+        - option "有"
+        - option "无"
+    - generic [ref=e42]:
+      - generic [ref=e43]: 资质关键词
+      - textbox [ref=e45]
+    - button "查询" [ref=e48] [cursor=pointer]
+  - generic [ref=e51]:
+    - generic [ref=e53]:
+      - button "从必跟进中移除" [ref=e54] [cursor=pointer]
+      - text: 注:新增了跟进记录，就不再是必跟进客户!
+    - link "点击刷新查看最新数据" [ref=e56] [cursor=pointer]:
+      - /url: /manage/kefu_common/clearCache.html?cacheKey=kefu_bigenjin_new_172949#43f48e02e8c65d86cf0a4ee10010fc8a
+      - img "点击刷新查看最新数据" [ref=e57]
+  - generic [ref=e61]:
+    - table [ref=e64]:
+      - rowgroup [ref=e65]:
+        - row "ID 姓名 性别 状态 星级 年龄 备注 标签 顾问 房 车 保单 社保 代发 公积金 芝麻分 信用卡 企业主 入必时间 贷款类型 来源 城市" [ref=e66]:
+          - columnheader "ID" [ref=e67]:
+            - checkbox [ref=e68]
+            - text: ID
+          - columnheader "姓名" [ref=e69]
+          - columnheader "性别" [ref=e70]
+          - columnheader "状态" [ref=e71]
+          - columnheader "星级" [ref=e72]
+          - columnheader "年龄" [ref=e73]
+          - columnheader "备注" [ref=e74]
+          - columnheader "标签" [ref=e75]
+          - columnheader "顾问" [ref=e76]
+          - columnheader "房" [ref=e77]
+          - columnheader "车" [ref=e78]
+          - columnheader "保单" [ref=e79]
+          - columnheader "社保" [ref=e80]
+          - columnheader "代发" [ref=e81]
+          - columnheader "公积金" [ref=e82]
+          - columnheader "芝麻分" [ref=e83]
+          - columnheader "信用卡" [ref=e84]
+          - columnheader "企业主" [ref=e85]
+          - columnheader "入必时间" [ref=e86]
+          - columnheader "贷款类型" [ref=e87]
+          - columnheader "来源" [ref=e88]
+          - columnheader "城市" [ref=e89]
+      - rowgroup
+    - generic [ref=e95]:
+      - generic [ref=e96]: . 共 0 条记录, 第 1 页/ 共 1 页 .
+      - generic [ref=e97]:
+        - img [ref=e98]
+        - generic [ref=e99] [cursor=pointer]: "1"
+        - img [ref=e100]
+      - generic [ref=e101]:
+        - text: 跳至
+        - textbox [ref=e102]
+        - text: 页
+        - button "提交" [ref=e103]
+  - text:        

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>客帮手-数据统计</title>
+		<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/guwen/kefu_style.css?v=92_51" /><!--共用css-->
+        <link href="https://guwen.zhudaicms.com/default/manage/css/calendar.css?v=92_5" rel="stylesheet" type="text/css" />
+        <link href="https://guwen.zhudaicms.com/default/common/bootstrap/css/bootstrap.min.css?v=92_5" rel="stylesheet" type="text/css" />
+        <link href="https://guwen.zhudaicms.com/default/manage/css/guwen/gobank_zhanbi.css?v=92_51" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/echarts-all.js"></script><!-- 统计图插件 -->
+        <script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/calendar.js?v=92_5"></script>
+        <script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/calendar-zh.js?v=92_5"></script>
+        <script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/calendar-setup.js?v=92_5"></script>
+        <script>
+        	$(document).ready(function() {
+				//点击按钮滑动距离
+				$("#panel_top").click(function(){
+					var oH = $("#call_d").offset().top;  //获取距离窗口顶部的高度
+					$("html,body").animate({scrollTop:oH},500);
+				});
+                //动态获取部门
+                $("#department_big").change( function(){
+                    var brand = $('#brand').val();
+                    var city = $('#city').val();
+                    var department_bcompany = $('#department_bcompany').val();
+                    var department_big = $('#department_big option:selected').val();
+                    if(department_big==''){
+                        $("#department").find("option:gt(0)").remove();
+                        $('#department').val('');
+                    }
+                    var json_str = {
+                        'brand':brand,
+                        'department_city':city,
+                        'department_bcompany':department_bcompany,
+                        'department_big':department_big
+                    };
+                    $.post('/manage/kefu_trialclients/getdepartment.html',json_str,function(d){
+                        $("#department").find("option:gt(0)").remove();
+                        for(var i in d){
+                            if(d !=''){
+                                $("#department").append('<option value='+d[i].department+'>'+d[i].department+'</option>');
+                            }
+                        }
+                        $('#department').val('');
+                    },'json');
+                });
+			});
+            function checkval(){
+                var time=$('input:radio[name="timeset"]:checked').val();
+                var stime=$('#stime').val();
+                var etime=$('#etime').val();
+                if(time == 'self'){
+                    if(stime == '' || etime == ''){
+                        alert("自定义时间范围不能为空！");
+                        return false;
+                    }
+                }
+
+            }
+            //分页弹窗点击相应按钮时触发
+            $(document).on('click', "div#acs_page a, div#acs_page button#pagebtn", function() {
+                var obj_type = $(this).attr('page');
+                var timeset = $('#timeset:checked').val();
+                var stime = $('#stime').val();
+                var etime = $('#etime').val();
+                var json_data = {
+                    'timeset' : timeset,
+                    'stime' : stime,
+                    'etime' : etime,
+                    'page' : obj_type=='pagebtn' ? $(this).siblings('input#pageno').val() : obj_type,
+                    'department' : $('#department option:selected').val(),
+                    'department_big' : $('#department_big option:selected').val(),
+                };
+                ajax_rebank_content(json_data);
+
+            });
+            function ajax_rebank_content(json_data) {
+                $.post('/manage/kefu_trialclients/ajax_rebank_content.html', json_data, function(content){
+                    $('#bank_content_list').html(content);
+                    $('html, body').animate({
+                        scrollTop: $("#bank_content_list").offset().top
+                    }, 2000);
+                },'html');
+            }
+            
+            function Open(text, url) {
+                window.parent.Open(text, url);
+            }
+        </script>
+        <style>
+            .financial{
+                margin: 15px 15px 0px!important;
+            }
+            .panel-body{
+                padding: 0 0 30px!important;
+            }
+            .panel{
+               margin-bottom: 0!important;
+            }
+        </style>
+	</head>
+	<body style="user-select:text;">
+    <div class="panel call_list" style="padding: 0;">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+function swc_btn(type)
+{
+	if(type == 'starszhanbi'){
+		window.location.href="/manage/kefu_statistics/stars_zhanbi.html";
+	}else if(type =='loginlog'){
+		window.location.href="/manage/kefu_statistics/loginlog.html";
+	}else if(type == 'movelog'){
+		window.location.href="/manage/kefu_statistics/movelog.html";
+	}else if(type == 'importlog'){
+		window.location.href="/manage/kefu_statistics/import_log.html";
+	}else if(type =='saoma'){
+		window.location.href="/manage/kefu_statistics/visit_ranking.html";
+	}else if(type =='datenew'){
+		window.location.href="/manage/kefu_statistics/kefu_detail.html";
+	}else if(type =='remarknumlog'){
+		window.location.href="/manage/kefu_statistics/kefu_remarknum.html";
+	}else if(type =='remarklog'){
+		window.location.href="/manage/kefu_statistics/get_remark_detaillog.html";
+	}else if(type =='nextdaytoggc'){
+		window.location.href="/manage/kefu_statistics/nextday_toggc.html";
+	}else if(type =='everydaydata'){
+		window.location.href="/manage/kefu_statistics/index.html";
+	}else if(type =='smssendlog'){
+		window.location.href="/manage/kefu_statistics/smssend_log.html";
+	}else if(type =='operatorlog'){
+		window.location.href="/manage/kefu_statistics/operatorlog.html";
+	}else if(type =='apisource'){
+		window.location.href="/manage/kefu_statistics/api_sourcelist.html";
+	}else if(type =='sherong'){
+		window.location.href="/manage/kefu_statistics/sherongtongji.html";
+	}
+}
+
+</script>
+<style>
+	#navbar{border-radius: 0;min-height: 30px;margin-top: 5px;}
+	#navbar li a{padding-top: 9px;padding-bottom: 9px;padding:6px; border-right:1px #ddd solid;font-size: 12px; cursor: pointer;}
+	#navbar .active a{background-color: #d9534f;color: white;}
+	.nav.navbar-nav{
+		float: left;
+		margin: 0;
+	}
+	.nav.navbar-nav li{
+		float: left;
+	}
+</style>
+<nav class="navbar navbar-default" id="navbar">
+	<ul class="nav navbar-nav">
+	    <li onclick="swc_btn('everydaydata')" class=""><a>数据日统计</a></li>
+	    		<li onclick="swc_btn('starszhanbi')" class="active"><a>来源统计</a></li>
+		<li onclick="swc_btn('sherong')" class=""><a>社融统计</a></li>
+		<li onclick="swc_btn('apisource')" class=""><a>API对接</a></li>
+		<li onclick="swc_btn('loginlog')" class=""><a>顾问登录日志</a></li>
+		<li onclick="swc_btn('importlog')" class=""><a>Excel导入日志</a></li>
+		<li onclick="swc_btn('smssendlog')" class=""><a>短信发送日志</a></li> 
+						<li onclick="swc_btn('operatorlog')" class=""><a>顾问操作日志</a></li>
+		<li onclick="swc_btn('movelog')" class=""><a>客户转移日志</a></li>
+		<li onclick="swc_btn('saoma')" class=""><a>上门扫码统计</a></li>
+				<li onclick="swc_btn('remarknumlog')" class=""><a>备注数量日统计</a></li>
+		<li onclick="swc_btn('remarklog')" class=""><a>我的备注记录</a></li>
+		<li onclick="swc_btn('nextdaytoggc')" class=""><a>即将抓入公共池</a></li>
+		<li onclick="swc_btn('datenew')" class=""><a>顾问新数据统计</a></li>
+	</ul>
+</nav>
+
+
+        <form class="top_lab clearfix" action="?" method="get" onsubmit="return checkval();">
+            <div class="form-inline col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 addon_out" style="padding:2px;">
+                        <label>&nbsp;&nbsp;&nbsp;来源：</label>
+                        <label>
+					    <select name="source" id="source" >
+						    <option value="">不限</option>
+														<option value="#全部流量客户#" >#全部流量客户#</option>
+														<option value="Excel导入" >Excel导入</option>
+														<option value="BXMJ-excel" >BXMJ-excel</option>
+														<option value="cs-excel" >cs-excel</option>
+														<option value="ny-excel" >ny-excel</option>
+														<option value="PA-excel" >PA-excel</option>
+														<option value="RYJ-excel" >RYJ-excel</option>
+														<option value="T+1-excel" >T+1-excel</option>
+														<option value="XY-excel" >XY-excel</option>
+														<option value="YYDL-excel" >YYDL-excel</option>
+														<option value="ZX-excel" >ZX-excel</option>
+														<option value="ZY-excel" >ZY-excel</option>
+														<option value="乐数云-excel" >乐数云-excel</option>
+														<option value="优乐推-excel" >优乐推-excel</option>
+														<option value="分期乐-excel" >分期乐-excel</option>
+														<option value="千橙广告-excel" >千橙广告-excel</option>
+														<option value="原公海0星-excel" >原公海0星-excel</option>
+														<option value="原公海公积金-excel" >原公海公积金-excel</option>
+														<option value="原公海房-excel" >原公海房-excel</option>
+														<option value="原公海社保-excel" >原公海社保-excel</option>
+														<option value="原公海车-excel" >原公海车-excel</option>
+														<option value="宜融推单-excel" >宜融推单-excel</option>
+														<option value="宜融钱包-excel" >宜融钱包-excel</option>
+														<option value="有钱花-excel" >有钱花-excel</option>
+														<option value="桔多多-excel" >桔多多-excel</option>
+														<option value="测试-excel原始新数据" >测试-excel原始新数据</option>
+														<option value="融信用-excel" >融信用-excel</option>
+														<option value="融创渠道1-excel" >融创渠道1-excel</option>
+														<option value="融创渠道2-excel" >融创渠道2-excel</option>
+														<option value="融创科技-任享花" >融创科技-任享花</option>
+														<option value="融创科技-千橙广告" >融创科技-千橙广告</option>
+														<option value="豆豆钱-excel" >豆豆钱-excel</option>
+														<option value="钱袋子-excel" >钱袋子-excel</option>
+														<option value="银标-excel" >银标-excel</option>
+														<option value="银闪花-excel" >银闪花-excel</option>
+												    </select>
+                        </label>
+                        <label><input type="radio" name="timeset" value="lastmonth" id="timeset" />上月</label>
+                        <label><input type="radio" name="timeset" value="thismonth" id="timeset" />本月</label>
+                        <label><input type="radio" name="timeset" value="lately7days" id="timeset" />最近7天</label>
+                        <label><input type="radio" name="timeset" value="yesterday" id="timeset" />昨日</label>
+                        <label><input type="radio" name="timeset" value="today" id="timeset" checked/>今日</label>
+                        <label><input type="radio" name="timeset" value="self" id="timeset" />自定义</label>
+                    	<input type="text" class="form-control input-sm" id="stime" style="width: 105px;" name="stime" placeholder="开始时间" onclick="return showCalendar('stime', 'y-mm-dd');" value="" autocomplete="off"/><label class="label_center">到</label>
+                        <input type="text" class="form-control input-sm" id="etime" style="width: 105px;" name="etime" placeholder="结束时间" onclick="return showCalendar('etime', 'y-mm-dd');" value="" autocomplete="off"/>
+                        <input class="form-control btn btn-primary btn-sm" type='submit' name='submit-btn' value='查询'  style="margin-left: 15px;"/>
+                    </div>
+                    	
+                </div>
+            </form>
+    </div>
+		 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div class="financial">
+        <div class="panel panel-default">
+          <div class="panel-heading">渠道质量分析图&nbsp;&nbsp;
+            <button type="button" class="btn btn-danger btn-sm" onClick="Open('来源统计','/manage/kefu_statistics/get_source_statistics.html')">查看旧版本</button>
+            <!-- &nbsp;&nbsp;<a href="#" onClick="Open('数据商家列表','/qudao_data/index_brand.html');">数据商家</a> -->
+             
+            <a class="pull-right" id="panel_top">查看详情</a></div>
+          <div class="panel-body">
+              <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+              <div class="col-md-12 graph">
+                  <div id="main" class="clearfix" style="height:600px;width:80%;margin: auto;margin-top: 20px;background-color: #C8E5BC;"></div>
+              </div>
+          </div>
+        </div>
+    </div>
+    <div class="call_list" id="call_d" style="padding:0 15px;">
+        <div class="panel panel-default">
+          <div class="panel-heading">星级统计详情</div>
+          <div class="panel-body tab_in" id="bank_content_list">
+            <div class="panel tab_down">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                    <th>渠道</th>
+                    <th>总量</th>
+                    <th>外地</th>
+                    <th>0星</th>
+                    <th>0星占比</th>
+                    <th>1星</th>
+                    <th>1星占比</th>
+                    <th>2星</th>
+                    <th>2星占比</th>
+                    <th>3星</th>
+                    <th>4星</th>
+                    <th>5星</th>
+                    <th>3星及以上占比</th>
+                    <th>上门数</th>
+                    <th>上门占比</th>
+                    <th>签约数</th>
+                    <th>签约占比</th>
+                    <th>号码重复数</th>
+                    <th>号码重复占比</th>
+                    </thead>
+                    <tbody>
+                    <tr class="btn_back">
+                        <td><b>渠道总计：1</b></td>
+                        <td><b>23</b></td>
+                        <td><b>0</b></td>
+                        <td><b>23</b></td>
+                        <td><b>100.00%</b></td>
+                        <td><b>0</b></td>
+                        <td><b>0.00%</b></td>
+                        <td><b>0</b></td>
+                        <td><b>0.00%</b></td>
+                        <td><b>0</b></td>
+                        <td><b>0</b></td>
+                        <td><b>0</b></td>
+                        <td><b>0.00%</b></td>
+                        <td><b>0</b></td>
+                        <td><b>0.00%</b></td>
+                        <td><b>0</b></td>
+                        <td><b>0.00%</b></td>
+                        <td><b>0</b></td>
+                        <td><b>0.00%</b></td>
+                    </tr>
+                                        <tr class="btn_back">
+                        <td>PA-excel</td>
+                        <td><a href="javascript:;" onClick="Open('来源客户统计','/manage/kefu_statistics/get_source_statistics_detail.html?stime=2026-04-30&etime=2026-04-30&source=PA-excel')">23</a></td>
+                        <td><a href="javascript:;" onClick="Open('外地客户','/manage/kefu_statistics/get_source_statistics_detail.html?stime=2026-04-30&etime=2026-04-30&source=PA-excel&status=11')">0</a></td>
+                        <td><a href="javascript:;" onClick="Open('0星占比客户','/manage/kefu_statistics/get_source_statistics_detail.html?stime=2026-04-30&etime=2026-04-30&source=PA-excel&stars=0')">23</a></td>
+                        <td>100.00%</td>
+                        <td>0</td>
+                        <td>0.00%</td>
+                        <td>0</td>
+                        <td>0.00%</td>
+                        <td><a href="javascript:;" onClick="Open('3星占比客户','/manage/kefu_statistics/get_source_statistics_detail.html?stime=2026-04-30&etime=2026-04-30&source=PA-excel&stars=3')">0</a></td>
+                        <td><a href="javascript:;" onClick="Open('4星占比客户','/manage/kefu_statistics/get_source_statistics_detail.html?stime=2026-04-30&etime=2026-04-30&source=PA-excel&stars=4')">0</a></td>
+                        <td><a href="javascript:;" onClick="Open('5星占比客户','/manage/kefu_statistics/get_source_statistics_detail.html?stime=2026-04-30&etime=2026-04-30&source=PA-excel&stars=5')">0</a></td>
+                        <td>0.00%</td>
+                        <td>0</td>
+                        <td>0.00%</td>
+                        <td>0</td>
+                        <td>0.00%</td>
+                        <td><a href="javascript:;" onClick="Open('重复数据统计','/manage/kefu_statistics/get_source_statistics_detail.html?stime=2026-04-30&etime=2026-04-30&&source=PA-excel&mobile_repeat_num=2')">0</a></td>
+                        <td>0.00%</td>
+                    </tr>
+                                        <tr class="btn_back"></tr>
+                    </tbody>
+                </table>
+                <div class="page_bottom" style="height:200px;">
+                    <div align="left" style="color:#008800;">温馨提示1：可以给申请贷款的客户发送短信，如需要联系系统工作人员开通 &nbsp;&nbsp;<span title="【获客平台】尊贵的周亮泽，您好，您的资金申请已由专业顾问范小鹏,电话：15600000002 受理，预计1小时内会联系您，请留意电话。" style="color:black;">鼠标放这展示短信内容</span></div>
+                    <div align="left" style="color:#008800;">温馨提示2：可以指定来源分配给指定顾问，如需要请&nbsp;&nbsp;<a href="javascript:void(0);" onClick="Open('来源指定分配','/manage/kefu_statistics/source_to_kefu.html')">点击这里</a></div>
+                    <div align="left" style="color:#008800;">温馨提示3：如来源错误需要修改，请点击这里&nbsp;&nbsp;<a href="javascript:void(0);" onClick="Open('来源修改','/manage/kefu_statistics/source_edit.html')">点击这里</a></div>
+                    <div align="left" style="color:#008800;">温馨提示5：如需删除2个月内错误新数据，请点击这里&nbsp;&nbsp;<a href="javascript:void(0);" onClick="Open('错误新数据删除','/manage/kefu_statistics/error_newdata_del.html')">点击这里</a></div>
+                    <div align="left" style="color:#008800;">温馨提示6：如需较大批量删除数据(仅限负责人操作)，请点击这里&nbsp;&nbsp;<a href="javascript:void(0);" onClick="Open('较大批量删除数据','/manage/kefu_statistics/large_del.html')">点击这里</a></div>
+                    <div align="left" style="color:#008800;">温馨提示7：对于集团公司，API对接的数据，可以对接一次然后同步分发给多个同城分公司，如需要请联系系统工作人员配置。</div>
+                    <div align="left" style="color:#008800;">温馨提示8：提供免费的数据渠道系统，便于分析提升优化数据质量，如需要请联系系统工作人员开通。</div>
+                    <div align="center" id='acs_page'>以上已展示全部信息</div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+	</body>
+    <script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/guwen/stars_zhanbi.js?1333"> </script>
+</html>

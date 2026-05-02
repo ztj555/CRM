@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>客帮手-我的客户</title>
+  <link href="https://guwen.zhudaicms.com/default/manage_2025/css/default.css" rel="stylesheet" />
+<link href="https://guwen.zhudaicms.com/default/manage_2025/css/customer.css?v=37" rel="stylesheet" />
+<link href="https://guwen.zhudaicms.com/default/manage_2025/css/table.css?v=19" rel="stylesheet" />
+<link href="https://guwen.zhudaicms.com/default/manage_2025/css/font-awesome.css" rel="stylesheet">
+<link href="https://guwen.zhudaicms.com/default/manage_2025/css/customerSelect.css?v=2" rel="stylesheet" />
+<link href="https://guwen.zhudaicms.com/default/manage_2025/css/datePicker.css" rel="stylesheet" />
+<link href="https://guwen.zhudaicms.com/default/manage_2025/css/theme.css?v=8.8" rel="stylesheet" />
+<link href="https://guwen.zhudaicms.com/default/manage_2025/css/common.css" rel="stylesheet"/>
+<link href="https://guwen.zhudaicms.com/default/manage_2025/css/dropdown-checkbox.css?v=1.11" rel="stylesheet" />
+
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage_2025/js/jquery.js"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage_2025/js/datePicker.js"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage_2025/js/scrollbar.js?v=1.0"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage_2025/js/customerSelect.js"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage_2025/js/theme.js?v=8.2"></script>
+<script src="https://guwen.zhudaicms.com/default/manage_2025/js/dropdown-checkbox.js?v=1.6"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/guwen/kefu_common.js?v=92_513"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage_2025/js/adjustPagination.js?v=3.3"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage_2025/js/sticky_header.js?v=1.9"></script>
+<script type="text/javascript">
+function Open(text, url) {
+    /**
+    if(url.indexOf('?') > 0) {
+        window.parent.Open(text, url + "&is_again=0");
+    } else {
+        window.parent.Open(text, url);
+    }*/
+    window.parent.Open(text, url);
+}
+function timeTypeChange(tag){
+     if($(tag).val() == 'customize'){
+         $("#time-detail").show()
+     }else{
+         $("#time-detail").hide()
+     }
+}
+$(function(){
+    $("#search-expend").click(function () {
+        if ($(this).text() == "展开") {
+            $(this).text("收起")
+        } else {
+            $(this).text("展开")
+        }
+        $(".input-group-more").toggleClass("input-group-hide");
+     });
+     scrollFactory("row", "#scroll-top", ".table-box", ".table");
+     scrollFactory("row", "#scroll-bottom", ".table-box", ".table");
+});
+$(function(){
+    $("#stime").datepicker({showButtonPanel:true});
+    $("#etime").datepicker({showButtonPanel: true});
+
+    $("#stars-search").dropdownCheckbox();
+    $("#status-search").dropdownCheckbox({
+        default: ""    });
+    $("#source-search").dropdownCheckbox({
+        default: ""    });
+    $("#department-search").dropdownCheckbox({
+        default: ""    });
+});
+//清空标签的选择
+function clearSearchTagForm(){
+    const form = document.getElementById('search-tag-form');
+    const checkboxs = form.querySelectorAll('input[type="checkbox"]');
+    // 清除所有单选按钮的选择
+    checkboxs.forEach(checkbox => checkbox.checked = false);
+}
+//显示隐藏标签选择弹框
+function troggleSearchTagModel(show){
+    if(show){
+        $("#search-tag-model").fadeIn(500) 
+    }else{
+        $("#search-tag-model").fadeOut(500) 
+    }
+}
+</script>
+
+  <link href="https://guwen.zhudaicms.com/default/manage_2025/css/receivingSwitch.css?v=3.3" rel="stylesheet">
+  <script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/guwen/kefu_myclients.js?v=92_51"></script>
+  <style>
+    .input-group-addon{
+        padding-right: 0;
+    }
+    
+    /*新闪烁样式开始*/
+	@keyframes blink {
+	  0% { opacity: 1; }
+	  50% { opacity: 0; }
+	  100% { opacity: 1; }
+	}
+	.blinking-text {
+	  animation: blink 1s infinite;
+	  color:red;
+	}
+	/*新闪烁样式结束*/
+  </style>
+ <!-- 老系统的JS代码 -->
+ <script type="text/javascript">
+   //转移---begin
+   var allKefuInfo = null,allKefuData={};
+   if(allKefuInfo){
+       for(var i in allKefuInfo){
+           allKefuData[allKefuInfo[i]['id']] = allKefuInfo[i]['name'];
+       }
+   }
+   function transferKefu(){
+       var target_kid = ~~$('#target_kid').val(),checkList  = $('input[name=checkone]:checked'),lid = [];
+       if(!target_kid){
+           return alert('请选择转移的顾问');
+       }
+       if(!checkList.length){
+           return alert('请选择需转移的客户信息');
+       }
+       for(var i=0;i<checkList.length;i++){
+           lid.push($(checkList[i]).val());
+       }
+       if(confirm("确定转移"+checkList.length+"条记录给<<"+allKefuData[target_kid]+">>顾问吗？")){
+           $.ajax({
+               url:'/manage/kefu_clients/transfer',
+               type:'POST',
+               data:{'target_kid':target_kid,'lid':lid.join(',')},
+               cache:false,
+               dataType:'json',
+               success:function(d){
+                   if(d['code']<0){
+                   	alert(d['msg']);
+                   }else{
+                   	alert('操作成功!');
+                   	location.reload();
+                   }
+               },
+               error:function(){
+                   alert('请求异常，请刷新再试!');
+               }
+           });
+       }
+   }
+   //转移---end
+   function pageSizeChange(tag){
+        var url = new URL("?", window.location.href);
+        url.searchParams.set($(tag).attr("name"), $(tag).val()); 
+        window.location.href = url.toString()
+   }
+   
+   //每页展示多少条专用JS
+   var count = 1; 
+	$(function(){
+		$('#num').change(function(){
+			var num = $('#num').val();
+			window.location.href="/manage/kefu_clients/index.html?ordertime=&lastupdatetime=&num="+num;
+		});		
+		/* 处理搜狗谷歌浏览器兼容 */
+		// $("input[type='checkbox']").attr("checked",false); 
+		$('#chboxarr').val('');
+	
+		$("#loan_money_rang").change(function(){
+			if($("#loan_money_rang").val() == "customize"){
+				$("#loan_money").show();
+			}else{
+				$("#loan_money").hide();
+			}
+		});
+	});
+    // 接待切换switch逻辑代码开始
+    $(function () {
+        var $container = $(".receiving-container"),is_allowgw_closenewdata,is_closed;
+        function loadData(){
+            $.ajax({
+                url:'/manage/kefu_clients/ajaxdata',
+                type:'POST',
+                cache:false,
+                dataType:'json',
+                success:function(d){
+                    if(~~d.code==1){
+                        is_allowgw_closenewdata = d.data.is_allowgw_closenewdata;
+                        is_closed = d.data.is_closed;
+                        
+                        if(is_allowgw_closenewdata==1){
+                            if(is_closed==0){
+                                $container.addClass("receiving-active");
+                            }
+                            $container.show();
+                        }
+                    }
+                },
+                error:function(){
+                   alert('加载页面部分数据失败，请重新刷新页面!');
+                }
+            });
+        }
+        $container.click(function () {
+            if(typeof(is_allowgw_closenewdata)=='undefined'){
+                return;
+            }
+            $.ajax({
+                url:'/manage/kefu_clients/closenewdata',
+                type:'POST',
+                data:{'is_closed': is_closed ? 0 : 1},
+                cache:false,
+                dataType:'json',
+                success:function(d){
+                    if(~~d.code==1){
+                        is_closed = d.data.is_closed;
+                        if(is_closed==0){
+                            $container.addClass("receiving-active");
+                        } else {
+                            $container.removeClass("receiving-active");
+                        }
+                    }else{
+                        alert(d.msg);
+                    }
+                },
+                error:function(){
+                   alert('加载页面部分数据失败，请重新刷新页面!');
+                }
+            });
+            
+        });
+        loadData();
+    });
+	// 接待切换switch逻辑代码结束
+</script>
+</head>
+
+<body class="table-body">
+    <div class="search-container">
+        <form action="/manage/kefu_clients/search_myclients.html" method="get" id="search-form">
+            <div class="input-group">
+                <span class="input-group-addon" name="user_status" id="basic-addon2" >客户</span>
+                <select class="search-select" name="clientField" style="width: 80px;flex: unset;">
+				    <option value="mobile" >手机</option>
+					<option value="truename" >姓名</option>
+					<option value="id" >ID</option>
+                </select>
+                <input type="text" class="form-control" name="clientFieldValue" id="basic-url1" style="flex: 1;margin-left: 6px;" placeholder="手机可模糊搜索" value="" aria-describedby="basic-addon3" style="height:25px;width:80px;margin-left:6px;" />
+			 </div>
+            <div class="input-group">
+                <span class="input-group-addon" name="datatype" id="basic-addon2">数据类型</span>
+                
+                <select class="search-select" name="datatype">
+					<option value="all">-不限-</option>
+                    <option value="first" >原始数据</option>
+					<option value="again" >再分配过来的数据</option>
+				</select>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">状态</span>
+                <div class="dropdown-container" id="status-search">
+                    <div class="dropdown-header dropdownHeader">
+                        <div class="dropdown-text placeholder dropdownText">请选择选项</div>
+                        <img src="https://guwen.zhudaicms.com/default/manage_2025/image/dropdown-checkbox/arrow-down.png?v=1" class="dropdown-arrow" alt="">
+                    </div>
+                    <div class="dropdown-content dropdownContent">
+                        <div class="checkbox-container checkboxContainer">
+                            <div class="checkbox-item" style="width: 100%;" title="已受理">
+                                <input type="checkbox" id="status_1" value="0">
+                                <label id="status_1">已受理</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="无意向">
+                                <input type="checkbox" id="status_2" value="12">
+                                <label id="status_2">无意向</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="未接通">
+                                <input type="checkbox" id="status_3" value="13">
+                                <label id="status_3">未接通</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="贷款资质不符">
+                                <input type="checkbox" id="status_4" value="1">
+                                <label id="status_4">贷款资质不符</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="待签约">
+                                <input type="checkbox" id="status_5" value="2">
+                                <label id="status_5">待签约</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="已签约">
+                                <input type="checkbox" id="status_7" value="3">
+                                <label id="status_7">已签约</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="银行已放款">
+                                <input type="checkbox" id="status_8" value="4">
+                                <label id="status_8">银行已放款</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="银行已拒绝">
+                                <input type="checkbox" id="status_9" value="5">
+                                <label id="status_9">银行已拒绝</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="审核中...">
+                                <input type="checkbox" id="status_10" value="6">
+                                <label id="status_10">审核中...</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="待跟进">
+                                <input type="checkbox" id="status_11" value="7">
+                                <label id="status_11">待跟进</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="预约上门">
+                                <input type="checkbox" id="status_12" value="22">
+                                <label id="status_12">预约上门</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="已上门">
+                                <input type="checkbox" id="status_13" value="8">
+                                <label id="status_13">已上门</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="捣乱申请">
+                                <input type="checkbox" id="status_14" value="9">
+                                <label id="status_14">捣乱申请</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="重复申请">
+                                <input type="checkbox" id="status_15" value="10">
+                                <label id="status_15">重复申请</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="外地申请">
+                                <input type="checkbox" id="status_16" value="11">
+                                <label id="status_16">外地申请</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="停机">
+                                <input type="checkbox" id="status_17" value="20">
+                                <label id="status_17">停机</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="空号">
+                                <input type="checkbox" id="status_17" value="17">
+                                <label id="status_17">空号</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="有意向">
+                                <input type="checkbox" id="status_18" value="21">
+                                <label id="status_18">有意向</label>
+                            </div>
+                            <div class="checkbox-item" style="width: 100%;" title="外地号码">
+                                <input type="checkbox" id="status_19" value="23">
+                                <label id="status_19">外地号码</label>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" name="stars" id="basic-addon2">星级</span>
+                <div class="dropdown-container" id="stars-search">
+                    <div class="dropdown-header dropdownHeader">
+                        <span class="dropdown-text placeholder dropdownText">请选择选项</span>
+                        <img src="https://guwen.zhudaicms.com/default/manage_2025/image/dropdown-checkbox/arrow-down.png?v=1" class="dropdown-arrow" alt="">
+                    </div>
+                    <div class="dropdown-content dropdownContent" >
+                        <div class="checkbox-container checkboxContainer">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="option2" value="0" >
+                                <label for="option2">0星</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="option3" value="1" >
+                                <label for="option3">1星</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="option4" value="2" >
+                                <label for="option4">2星</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="option5" value="3" >
+                                <label for="option5">3星</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="option6" value="4" >
+                                <label for="option6">4星</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="option7" value="5" >
+                                <label for="option7">5星</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">未备注超过</span>
+                <div style="flex: 1;display: flex;align-items: center;">
+                    <input type="text" class="form-control" id='notupdate_clients' name="notupdate_clients" value="" aria-describedby="basic-addon3" style="height:25px" />
+                    <div style="margin-left: 4px;font-size: 14px;color: rgba(0, 0, 0, 0.65);">天</div>
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">时间类型</span>
+                <select class="search-select" name="timeField" style="width:60px;">
+					<option value="time"  >进系统时间</option>
+					<option value="remark_time"  >备注时间</option>
+					<option value="true_loan_time"  >实际申请时间</option>
+				</select>
+				<select class="search-select" style="margin-left: 6px;" id="time_dy" name="timeFieldValue" onchange="timeTypeChange(this)">
+					<option value="all">-不限-</option>
+					<option value="today"  >今日</option>
+					<option value="yesterday"  >昨天</option>
+					<option value="lastweek"  >最近7天</option>
+					<option value="thismonth"  >本月</option>
+					<option value="lastmonth"  >上月</option>
+					<option value="customize"  >自定义</option>
+				</select>
+            </div>
+                        <div class="input-group" id="time-detail" style="display: none;">
+                <div style="flex: 1;display: flex;">
+                    <input type="text" id="stime" name="stime" placeholder="开始时间" value="" readonly class="form-control" style="line-height: 25px;height: 25px;" aria-describedby="basic-addon3"  />
+                </div>
+                <div style="margin: 0 4px;">
+                                     到
+                </div>
+                <div style="flex: 1;display: flex;">
+                    <input type="text" id="etime" name="etime" placeholder="结束时间" value="" readonly  class="form-control" style="line-height: 25px;height: 25px;" aria-describedby="basic-addon3"  />
+                </div>
+            </div>
+             
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">备注关键词</span>
+                <div style="flex: 1;display: flex;">
+                    <input type="text" class="form-control" placeholder="默认搜索3年内数据" name="remark" value="" aria-describedby="basic-addon3" style="height:25px" />
+                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" name="is_noto_ggc" id="basic-addon2">锁定客户</span>
+                <select class="search-select" name="is_noto_ggc" id="is_noto_ggc" >
+					<option value="all">不限</option>
+					<option value="1" >已锁定</option>
+				</select>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">贷款条件</span>
+                <select class="search-select" name="loanField">
+                    <option value="house"  >房</option>
+                    <option value="car"  >车</option>
+                    <option value="gongjijin" >公积金</option>
+                    <option value="baodan_is"  >保单</option>
+                    <option value="work_wage_give_type"  >代发</option>
+                    <option value="company"  >是否有企业</option>
+                </select>
+                <select class="search-select" style="width: 80px;margin-left: 6px;" name="loanFieldValue">
+                    <option value="all">-不限-</option>
+                    <option value="有"  >有</option>
+                    <option value="无"  >无</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">贷款类型</span>
+                <select class="search-select" name="loan_type">
+					<option value="all">-不限-</option>
+					<option value="信用贷" >信用贷</option>
+					<option value="车抵贷" >车抵贷</option>
+					<option value="房抵贷" >房抵贷</option>
+					<option value="保单贷" >保单贷</option>
+					<option value="合作单" >合作单</option>
+				</select>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">资质关键词</span>
+                <div style="flex: 1;display: flex;">
+                    <input type="text" class="form-control" name="zizhi" value="" aria-describedby="basic-addon3" style="height:25px" />
+                </div>
+            </div>
+            <div class="search-bottom-container">
+                <div class="search-btn-container-right">
+                    <input type="hidden" name="id" value=""/>
+                    <input type="button" value="查询" class="search-btn search-btn-2" id="searchButton">
+                    <div class="search-btn search-btn-1" onclick="troggleSearchTagModel(true)">按标签搜</div>
+                    <!-- <div class="search-expend" id="search-expend">展开</div> -->
+                </div>
+            </div>
+            <div class="search-bottom-container" style="width: 100%;">
+                <div class="search-btn-container">
+                                        <p class="col-md-12 col-sm-12 col-xs-12 col_color"><span class="surplus"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="table-btn-container">
+        <div class="table-btn-left" style="display: flex;">
+                    <div class="fix-btn" onClick="adduser();" style="margin-right: 10px;">
+                <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/btn3.png" class="table-btn-right-btn" alt="">
+                                  添加客户
+            </div>
+            <form method="post" onsubmit="return addggc();" action="/manage/kefu_againclientslist/addggc_do.html">
+				<input type="hidden" id="chboxarr" name="chboxarr" value="">
+				<input type="submit" value="加入公共池" class="table-btn-1"/>
+			</form>
+                <span style="color:red; margin-left:20px;"></span>
+        </div>
+        <div class="table-btn-right">
+            <div class="receiving-container" title="这里您可以开启或关闭接受新数据" style="display:none;">
+                <svg width="38" height="24" fill="none" aria-hidden="false" class="receiving-doing">
+                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="currentColor" font-size="12">关闭中</text>
+                </svg>
+                <svg width="38" height="24" fill="none" aria-hidden="true" class="receiving-close">
+                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="currentColor" font-size="12">接客中</text>
+                </svg>
+                <span class="receiving-switch-position">
+                    <svg width="60" height="24" fill="none" aria-hidden="true" class="receiving-switch-position-light">
+                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="currentColor" font-size="12">关闭中</text>
+                    </svg>
+                    <svg width="60" height="24" fill="none" aria-hidden="true" class="receiving-switch-position-dark">
+                        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="currentColor" font-size="12">接客中</text>
+                    </svg>
+                </span>
+            </div>
+            <div class="fix-btn" title="可以查询公司库里是否有一样的号码" onClick="Open('号码查重','/manage/kefu_clients/mobile_search.html')">
+                <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/btn9.png" class="table-btn-right-btn" alt="">
+                                    号码查重(<span class="blinking-text" title="新发布的功能">新</span>)
+            </div>
+                        <div class="fix-btn" title="本月公司累计激活数据量:0条" onClick="Open('激活客户','/manage/kefu_clients/jihuo_clients.html')">
+                <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/btn2.png" class="table-btn-right-btn" alt="">
+                                  激活客户
+                            </div>
+                        <div class="fix-btn" onclick="Open('主管点评','/manage/kefu_againclientslist/manager_reviews.html')">
+                <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/btn1.png" class="table-btn-right-btn" alt="">
+                                  主管点评
+                            </div>
+                        <div class="fix-btn" onClick="Open('团队重要客户','/gwcommon/index/team_important_list.html')">
+                <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/btn7.png" class="table-btn-right-btn" alt="">
+                                  团队重要客户
+            </div>
+			            <div class="fix-btn" onClick="Open('我的重要客户','/manage/kefu_clients/important_list.html')">
+                <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/btn2.png" class="table-btn-right-btn" alt="">
+                                  我的重要客户
+            </div>
+            <div class="fix-btn" onClick="Open('待还款客户','/manage/kefu_clients/repaymoney_list.html')">
+                <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/btn2.png" class="table-btn-right-btn" alt="">
+                                  待还款客户
+            </div>
+            <div class="fix-btn" onClick="Open('客户转移记录','/manage/kefu_movelog/index.html')">
+                <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/btn6.png" class="table-btn-right-btn" alt="">
+                                   转移记录
+            </div>
+            <div class="fix-btn" onClick="Open('备忘提醒','/manage/kefu_clients/memo_reminder.html')">
+                <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/btn4.png" class="table-btn-right-btn" alt="">
+                                  备忘提醒
+            </div>
+            <a title="点击刷新查看最新数据" href="/manage/kefu_common/clearCache.html?cacheKey=kefu_kefu_clients_new160947#9d0118642e71e13189b5e4b0c683c4a6">
+             <img src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/refresh.png" class="table-btn-right-btn-refresh" alt="点击刷新查看最新数据">
+            </a>
+        </div>
+    </div>
+    <div id="scroll-top" style="display:flex;justify-content:end;"></div>
+    <div class="table-content-container">
+
+        <div class="table-box">
+
+            <div class="table-box-content" style="flex: 1;height: 100%;">
+                <table class="table" style=" border-collapse: collapse;table-layout: fixed;width: 100%;">
+                    <thead class="th-container">
+                        <tr class="th-row">
+                            <th style="text-align:left;padding-left:20px;width:90px;">
+                            <input type="checkbox" id="checkall1" name="checkall" onClick="cheall(1)" />
+                                                          ID
+                                                        </th>
+                            <th style="width:70px;">姓名</th>
+                            <th style="width:50px;">性别</th>
+                            <th style="width:80px;">状态</th>
+                            <th style="width:50px;">星级</th>
+                            <th style="width:50px;">年龄</th>
+                            <th style="width:360px;">备注</th>
+                                                        <th style="width:100px;">标签</th>
+                                                        <th style="width:60px;">顾问</th>
+                            <th style="width:38px;">房</th>
+                            <th style="width:38px;">车</th>
+                                                        <th style="width:38px;">社保</th>
+                                                        <th style="width:38px;">代发</th>
+                                                        <th style="width:50px;">公积金</th>
+                                                        <th style="width:50px;">芝麻分</th>
+                                                                                                                <th style="width:50px;">企业主</th>
+                                                        <th style="width:60px;">申请额度</th>
+                            <th style="width:112px;">
+                                <div style="display: flex;align-items: center;justify-content: space-around;">
+                                    <div style="display: flex;align-items: center;">
+                                                                        最后备注时间
+                                                                            <a href="/manage/kefu_clients/index.html?lastupdatetime=yes" title="点击可根据最后备注时间倒序排列" style="line-height: 16px;height: 16px;width: 16px;"><img style="width: 100%;height: 100%;" src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/arrow-down.png?v=1"></a>
+                                     
+                                    </div>
+                                </div>
+                            </th>
+                            <th style="width:112px;">
+                                <div style="display: flex;align-items: center;justify-content: space-around;">
+                                    <div style="display: flex;align-items: center;">
+                                                                            申请时间
+                                                                            <a href="/manage/kefu_clients/index.html?ordertime=yes" title="点击可根据申请时间倒序排列" style="line-height: 16px;height: 16px;width: 16px;"><img style="width: 100%;height: 100%;" src="https://guwen.zhudaicms.com/default/manage_2025/image/customer/arrow-down.png?v=1"></a>
+                                                                    </div>
+                            </div>
+                            </th>
+                                                        <th style="width:60px;">贷款类型</th>
+                                                        <th style="width:112px;">来源</th>
+                                                        <th style="width:50px;">城市</th>
+                                                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                                          </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="scroll-bottom" style="display:flex;justify-content:end;"></div>
+        <div class="page-container">
+                        <div  style="display: flex;align-items: center;justify-content: space-around;width: 100%;white-space: nowrap;" >
+                <div style="display: flex; align-items: center;">
+                    <div class="total">共 0 条记录, 第 1 页/ 共 1 页</div><div class="page-item-container"><img src="/default/manage_2025/image/table/arrow-left.png" class="page-arrow"><div class="page-item page-item-active">1</div><img src="/default/manage_2025/image/table/arrow-right.png" class="page-arrow"></div><div class="page-select"> 跳至  <input type="text" value="" style="width:40px" id="pageNum"> 页 <input type="button" value="提交" id="pageJump" style="height:22px;line-height:22px;padding:0 6px;"></div>
+    <script type="text/javascript">
+    $("#pageJump").click(function(){
+        var page = ~~$("#pageNum").val();
+        if(page<1){
+            page=1;
+        }else if(page>0){
+            page=0;
+        }
+        location.href="/manage/kefu_clients/index.html?ordertime=&lastupdatetime=&page="+page;
+    });
+    </script>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- 标签搜索弹框开始 -->
+    <form action="/manage/kefu_tuanduiclients/biaoqian_search.html" id="search-tag-form" method="post" onsubmit="">
+    <input type="hidden" name="pagetype" id="pagetype" value="myclients">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--新增搜索标签-我的客户列表-->
+<div class="model-container" style="display: none;" id="search-tag-model">
+       <div class="model-content" style="width: 60vw;height: 80vh;">
+           <div class="model-header">
+                           标签搜索
+           </div>
+           <div class="model-body">
+               <div class="model-body-title">
+                                    费用
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="feiyong[]" value="10" />2%</label>
+					<label><input type="checkbox" name="feiyong[]" value="11" />3%</label>
+					<label><input type="checkbox" name="feiyong[]" value="12" />4%</label>
+					<label><input type="checkbox" name="feiyong[]" value="13" />5%</label>
+					<label><input type="checkbox" name="feiyong[]" value="14" />6%</label>
+					<label><input type="checkbox" name="feiyong[]" value="15" />7%</label>
+					<label><input type="checkbox" name="feiyong[]" value="16" />8%</label>
+					<label><input type="checkbox" name="feiyong[]" value="17" />9%</label>
+					<label><input type="checkbox" name="feiyong[]" value="18" />10%</label>
+					<label><input type="checkbox" name="feiyong[]" value="19" />11%</label>
+					<label><input type="checkbox" name="feiyong[]" value="100" />12%</label>
+					<label><input type="checkbox" name="feiyong[]" value="101" />13%</label>
+					<label><input type="checkbox" name="feiyong[]" value="102" />14%</label>
+					<label><input type="checkbox" name="feiyong[]" value="103" />15%</label>
+					<label><input type="checkbox" name="feiyong[]" value="104" />不接受费用</label>
+               </div>
+               <div class="model-body-title">
+                    营业执照
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="zhizhao[]" value="70"  />有限公司</label>
+				   <label><input type="checkbox" name="zhizhao[]" value="71"  />个体工商户</label>
+               </div>
+               <div class="model-body-title">
+                                  经营情况
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="jingying[]" value="80"  />真实经营</label>
+					<label><input type="checkbox" name="jingying[]" value="81"  />银联收款</label>
+               </div>
+               <div class="model-body-title">
+                                   需求时间
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="needtime[]" value="90"   />1月</label>
+					<label><input type="checkbox" name="needtime[]" value="91"   />2月</label>
+					<label><input type="checkbox" name="needtime[]" value="92"   />3月</label>
+					<label><input type="checkbox" name="needtime[]" value="93"   />4月</label>
+					<label><input type="checkbox" name="needtime[]" value="94"   />5月</label>
+					<label><input type="checkbox" name="needtime[]" value="95"   />6月</label>
+					<label><input type="checkbox" name="needtime[]" value="96"   />7月</label>
+					<label><input type="checkbox" name="needtime[]" value="97"   />8月</label>
+					<label><input type="checkbox" name="needtime[]" value="98"   />9月</label>
+					<label><input type="checkbox" name="needtime[]" value="99"   />10月</label>
+					<label><input type="checkbox" name="needtime[]" value="901"   />11月</label>
+					<label><input type="checkbox" name="needtime[]" value="902"   />12月</label>
+               </div>
+               <div class="model-body-title">
+                                  开票纳税流水
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="nashui[]" value="110"   />有开票纳税</label>
+					<label><input type="checkbox" name="nashui[]" value="111"   />年流水100万以上</label>
+					<label><input type="checkbox" name="nashui[]" value="112"   />年流水200万以上</label>
+				    <label><input type="checkbox" name="nashui[]" value="113"   />年流水500万以上</label>
+				    <label><input type="checkbox" name="nashui[]" value="114"   />纳税3万以上</label>
+				    <label><input type="checkbox" name="nashui[]" value="115"   />纳税5万以上</label>
+				    <label><input type="checkbox" name="nashui[]" value="116"   />纳税10万以上</label>
+               </div>
+               <div class="model-body-title">
+                                  工薪族
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="work[]" value="20"   />有社保公积金</label>
+				   <label><input type="checkbox" name="work[]" value="21"   />单社保</label>
+				   <label><input type="checkbox" name="work[]" value="22"   />有打卡</label>
+				   <label><input type="checkbox" name="work[]" value="23"   />有个税</label>
+				   <label><input type="checkbox" name="work[]" value="24"   />国企事业单位</label>
+               </div>
+               <div class="model-body-title">
+                                  房产
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="house[]" value="30"  />全款房</label>
+					<label><input type="checkbox" name="house[]" value="31"  />按揭房</label>
+					<label><input type="checkbox" name="house[]" value="32"  />抵押房</label>
+					<label><input type="checkbox" name="house[]" value="33"  />公寓房</label>
+					<label><input type="checkbox" name="house[]" value="34"  />抵押民间房</label>
+					<label><input type="checkbox" name="house[]" value="35"  />共有房</label>
+					<label><input type="checkbox" name="house[]" value="36"  />外地按揭房</label>
+					<label><input type="checkbox" name="house[]" value="37"  />自建房</label>
+               </div>
+               <div class="model-body-title">
+                                  车产
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="car[]" value="40"   />有车</label>
+					<label><input type="checkbox" name="car[]" value="41"   />按揭车</label>
+					<label><input type="checkbox" name="car[]" value="42"   />8年以上</label>
+				    <label><input type="checkbox" name="car[]" value="43"   />抵押车</label>
+               </div>
+               <div class="model-body-title">
+                                  保单
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="baodan[]" value="50"  />保单年缴2400以上</label>
+               </div>
+               <div class="model-body-title">
+                                  婚姻情况
+               </div>
+               <div class="model-body-select">
+                   <label><input type="checkbox" name="marriage[]" value="60"  />已婚双签</label>
+					<label><input type="checkbox" name="marriage[]" value="61"  />已婚单签</label>
+					<label><input type="checkbox" name="marriage[]" value="62"  />离异单身</label>
+               </div>
+           </div>
+           <div class="model-bottom">
+               <div class="model-clear-btn model-btn" onclick="clearSearchTagForm()">
+                                       清除
+               </div>
+               <div style="display: flex;align-items: center;">
+                  <div class="model-cancel-btn model-btn" onclick="troggleSearchTagModel(false)">
+                                           取消
+                  </div>
+                  <input type="submit" value="确定" class="model-confirm-btn model-btn">
+                </div>
+            </div>
+        </div>
+</div>
+
+    </form>
+</body>
+</html>

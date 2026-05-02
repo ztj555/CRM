@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>业绩目标管理</title>
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/guwen/kefu_style.css?v=92_5" />
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/common/bootstrap/css/bootstrap.min.css?v=92_5" />
+<link rel="stylesheet" href="https://guwen.zhudaicms.com/default/manage/css/guwen/circliful.css?v=92_5" />
+	<script type="text/javascript">
+		function Open(text, url) 
+		{
+			if (self != top) { //在iframe中
+				if(url.indexOf('?') > 0) {
+					window.parent.Open(text, url + "&is_again=");
+				} else {
+					window.parent.Open(text, url);
+				}
+			}else{
+				//不在iframe中
+				location.href=url;
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div class="text-center navigation">
+		<span><a onclick="Open('个人资料','/manage/kefu_trialclients/the_personal_data.html?kefuid=160947&is_adm=&ranking_type=')">个人资料</a></span>
+		<span><a onclick="Open('个人在审件统计','/manage/kefu_trialclients/shenjiantongji.html?kefuid=160947&is_adm=&ranking_type=')">个人数据</a></span>
+				<span><a onclick="Open('业绩目标管理','/manage/kefu_clients/performance_target.html?kefuid=160947&is_adm=')" class="active">业绩目标管理</a></span>
+			</div>
+	<div class="circliful panel-body">
+					<div class="col-md-12 nav">
+				<div class="btn-group" id="nav_group">
+										<button type="button" class="btn btn-info" onClick="Open('顾问业绩目标管理','/manage/kefu_clients/performance_target.html?kefuid=160947&is_adm=')">团队计划</button>					<button type="button" class="btn btn-default" onClick="Open('顾问业绩目标管理','/manage/kefu_clients/performance_target.html?target_type=self&kefuid=160947&is_adm=')">个人计划</button>
+				</div>
+			</div>
+						<div class="col-md-12">业绩目标设置 <button class="btn btn-primary btn-sm" onClick="Open('业绩目标设置','/manage/kefu_clients/performance_target_set.html')">设置创收目标</button> </div>
+							<ul class="col-md-12 caption">
+			<li>
+				<h4 class="text-center">创收进度</h4>
+				<div class="myStat list3" data-dimension="150" data-text="0%" data-info="0万" data-width="10" data-fontsize="24" data-percent="0" data-fgcolor="#272727" data-bgcolor="#dcdcdc"></div>
+				<div class="text_inner">
+					<p>当月创收目标：0万</p>
+					<p>距离月目标还差：0万</p>
+					<p>当前进度：按计划进行</p>
+				</div>
+			</li>
+			<li>
+				<h4 class="text-center">通时进度</h4>
+				<div class="myStat list3" data-dimension="150" data-text="0%" data-info="0小时" data-width="10" data-fontsize="24" data-percent="0" data-fgcolor="#272727" data-bgcolor="#dcdcdc"></div>
+				<div class="text_inner">
+					<p>当月通时目标：0时</p>
+					<p>距离月目标还差：0时</p>
+					<p>当前进度：按计划进行</p>
+				</div>
+			</li>
+			<li>
+				<h4 class="text-center">通次进度</h4>
+				<div class="myStat list3" data-dimension="150" data-text="0%" data-info="0" data-width="10" data-fontsize="24" data-percent="0" data-fgcolor="#272727" data-bgcolor="#dcdcdc"></div>
+				<div class="text_inner">
+					<p>当月通次目标：0</p>
+					<p>距离月目标还差：0</p>
+					<p>当前进度：按计划进行</p>
+				</div>
+			</li>
+			<li>
+				<h4 class="text-center">上门数进度</h4>
+				<div class="myStat list3" data-dimension="150" data-text="0%" data-info="0人" data-width="10" data-fontsize="24" data-percent="0" data-fgcolor="#272727" data-bgcolor="#dcdcdc"></div>
+				<div class="text_inner">
+					<p>当月上门目标：0个</p>
+					<p>距离月目标还差：0个</p>
+					<p>当前进度：按计划进行</p>
+				</div>
+			</li>
+			<li>
+				<h4 class="text-center">签约数进度</h4>
+				<div class="myStat list3" data-dimension="150" data-text="0%" data-info="0个" data-width="10" data-fontsize="24" data-percent="0" data-fgcolor="#272727" data-bgcolor="#dcdcdc"></div>
+				<div class="text_inner">
+					<p>当月签约目标：0个</p>
+					<p>距离月目标还差：0个</p>
+					<p>当前进度：按计划进行</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!--原型百分比统计图-->
+	<!--条形甘特图-->
+	<div class="panel-body gantt_chart">
+		<div class="col-md-12">
+			<h4 class="title">本月计划甘特图<span>&nbsp;&nbsp;<button class="btn btn-success"></button>提前完成</span>&nbsp;&nbsp;<span><button class="btn btn-black" style="border-color: #272727;background-color: #272727"></button>按计划完成</span>&nbsp;&nbsp;<span><button class="btn btn-danger"></button>进度延迟</span> </h4>
+			<table class="table table-bordered">
+				<tr>
+					<td rowspan="2">目标</td>
+					<td class="list_in" colspan="31" style="text-align: center">2026-04</td>
+				</tr>
+				<tr class="moth_data">
+										<td>1</td>
+										<td>2</td>
+										<td>3</td>
+										<td>4</td>
+										<td>5</td>
+										<td>6</td>
+										<td>7</td>
+										<td>8</td>
+										<td>9</td>
+										<td>10</td>
+										<td>11</td>
+										<td>12</td>
+										<td>13</td>
+										<td>14</td>
+										<td>15</td>
+										<td>16</td>
+										<td>17</td>
+										<td>18</td>
+										<td>19</td>
+										<td>20</td>
+										<td>21</td>
+										<td>22</td>
+										<td>23</td>
+										<td>24</td>
+										<td>25</td>
+										<td>26</td>
+										<td>27</td>
+										<td>28</td>
+										<td>29</td>
+										<td><span style="font-size: 12px;">今<br>天</span></td>
+									</tr>
+				<tr>
+					<td>创收目标</td>
+					<td class="list_in" colspan="31">
+						<div class="progress">
+							<div class="progress-bar progress-bar-danger" style="background-color:#272727;width: 0%;">0万</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>通话时长</td>
+					<td class="list_in" colspan="31">
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="background-color:#272727;width: 0%;">0小时</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>通话次数</td>
+					<td class="list_in" colspan="31">
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" style="background-color:#272727;width: 0%;">0</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>上门数</td>
+					<td class="list_in" colspan="31">
+						<div class="progress">
+							<div class="progress-bar progress-bar-black" style="background-color:#272727;width: 0%;">0</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>签约数</td>
+					<td class="list_in" colspan="31">
+						<div class="progress">
+							<div class="progress-bar progress-bar-black" style="background-color:#272727;width: 0%;">0</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!--条形甘特图-->
+</body>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/jquery-1.7.2.min.js?v=92_5"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/jquery.circliful.min.js?v=92_5" ></script>
+<script>
+	//nav
+	$('#nav_group .btn').on('click',function(){
+		$(this).addClass('btn-info').removeClass('btn-default').siblings().addClass('btn-default').removeClass('btn-info');
+	});
+	//圆形进度统计图
+	$('.myStat').circliful();
+</script>
+</html>

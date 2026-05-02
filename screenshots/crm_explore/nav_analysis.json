@@ -1,0 +1,63 @@
+{
+  "menu": {
+    "navItems": [],
+    "leftNav": [],
+    "topNav": [],
+    "allText": "RXH\n融鑫汇\n融鑫汇总账号\n18335162275\n所在部门\n杭州一区\n切换账号\n请选择\n金晟\n左廷军\n韩俊\n数据缓存1\n我的客户\n再分配客户\n公共池客户(\n148875\n)\n必跟进客户\n在审件管理\n业绩排行榜\n日志报表\n工作简报\n数据统计\n创收分析\n团队客户\n团队管理(10)\n离职人数据分配(0)\n通话管理\n消息公告：共同创业，不负时光。加油猛猛干！！！   2026-01-13 19:23\n绩效目标\n公告\n设置\n我的客户"
+  },
+  "clickable": [
+    {
+      "text": "融鑫汇总账号",
+      "onclick": "Open('档案信息','/manage/kefu_account/info.html')",
+      "tag": "DIV",
+      "className": "user-name"
+    },
+    {
+      "text": "绩效目标",
+      "onclick": "Open('绩效目标','/manage/kefu_clients/performance_target.html')",
+      "tag": "DIV",
+      "className": "layout-notify-right-item"
+    },
+    {
+      "text": "公告",
+      "onclick": "Open('公告','/manage/kefu_dailysimple/notice.html')",
+      "tag": "DIV",
+      "className": "layout-notify-right-item"
+    },
+    {
+      "text": "个人中心",
+      "onclick": "Open('个人中心','/manage/kefu_account/info.html')",
+      "tag": "DIV",
+      "className": "menu-tools-tip-item"
+    },
+    {
+      "text": "修改密码",
+      "onclick": "Open('修改密码','/manage/kefu_account/editpassword.html')",
+      "tag": "DIV",
+      "className": "menu-tools-tip-item"
+    },
+    {
+      "text": "发布公告",
+      "onclick": "Open('发布公告','/manage/gonggao/publishgonggao.html')",
+      "tag": "DIV",
+      "className": "menu-tools-tip-item"
+    },
+    {
+      "text": "发布滚动条",
+      "onclick": "Open('发布滚动条','/manage/gonggao/addxiaoxi.html')",
+      "tag": "DIV",
+      "className": "menu-tools-tip-item"
+    },
+    {
+      "text": "系统设置",
+      "onclick": "Open('系统设置','/manage/kefu_account/setting.html')",
+      "tag": "DIV",
+      "className": "menu-tools-tip-item"
+    },
+    {
+      "text": "退出登录",
+      "href": "https://guwen.zhudaicms.com/manage/index/indexlogout.html",
+      "tag": "A"
+    }
+  ]
+}

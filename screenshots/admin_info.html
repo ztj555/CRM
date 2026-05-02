@@ -1,0 +1,563 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>档案信息完善</title>
+
+<link href="https://guwen.zhudaicms.com/default/common/bootstrap/css/bootstrap.min.css?v=92_5" rel="stylesheet" type="text/css" />
+<link href="https://guwen.zhudaicms.com/default/manage/css/calendar.css?v=92_5" rel="stylesheet" type="text/css" />
+<link href="https://guwen.zhudaicms.com/default/manage/css/guwen/kefu_info.css?v=92_51" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/js/jquery.js?v=92_5"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/calendar.js?v=92_5"></script>  
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/calendar-zh.js?v=92_5"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/calendar-setup.js?v=92_5"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/ajaxfileupload.min.js?v=92_5"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/zoomify.min.js?v=92_5"></script><!--图片放大查看-->
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/js/bootstrap.min.js?v=92_5"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/guwen/kefu_info.js?v=92_5_2"></script><!--头像上传js-->
+<script>
+function check(){
+	var is_check_img = $("#is_check_img").val();
+	var name = $("#name").val();
+	var born_year = $("#born_year").val();
+	var born_month = $("#born_month").val();
+	var born_day = $("#born_day").val();
+	var native_place = $("#native_place").val();
+	var self_tel = $("#self_tel").val();
+	var degree = $("#degree").val();
+	var graduated_school = $("#graduated_school").val();
+	var in_company_time = $("#in_company_time").val();
+	var last_company_name = $("#last_company_name").val();
+	var idcard_number = $("#idcard_number").val();
+	var last_company_duty = $("#last_company_duty").val();
+	var loanword_month = $("#loanword_month").val();
+	var sc = $("input[type='checkbox'][name='sc[]']:checked").length;
+	var remark = $("#remark").val();
+	var reg2 = /^((13[0-9]{9})|(14[0-9]{9})|(15[0-9]{9})|(18[0-9]{9}))$/;
+	var kefuid = '160947';
+	var flag = true;
+
+	if(name == ''){
+		alert("请填写姓名！");
+		return false;
+	}
+//	if(born_year == ''){
+//		alert("请选择出生年份！");
+//		return false;
+//	}
+//	if(born_month == ''){
+//		alert("请选择出生月份！");
+//		return false;
+//	}
+//	if(born_day == ''){
+//		alert("请选择出生日期！");
+//		return false;
+//	}
+//	if(native_place == ''){
+//		alert("请填写籍贯！");
+//		return false;
+//	}
+//	if(self_tel == ''){
+//		alert("请填写私人手机号码！");
+//		return false;
+//	}
+//	if(degree == ''){
+//		alert("请填写学历！");
+//		return false;
+//	}
+//	if(graduated_school == ''){
+//		alert("请填写毕业院校！");
+//		return false;
+//	}
+//	if(in_company_time == ''){
+//		alert("请填选择入职时间！");
+//		return false;
+//	}
+//	if(last_company_name == ''){
+//		alert("请填写上家公司名称！");
+//		return false;
+//	}
+//	if(idcard_number == ''){
+//		alert("请填写身份证号码！");
+//		return false;
+//	}
+//	if(last_company_duty == ''){
+//		alert("请填写上家公司职务！");
+//		return false;
+//	}
+//	if(loanword_month == ''){
+//		alert("请填写贷款行业从业时间！");
+//		return false;
+//	}
+	/*if(sc == 0){
+		alert("请选择擅长业务类型！");
+		return false;
+	}else if(sc > 3){
+		alert("擅长业务类型不能选择三个以上！");
+		return false;
+	}*/
+//	if(remark == ''){
+//		alert("请填写个人简介！");
+//		return false;
+//	}
+
+//	if(is_check_img == 1){
+//
+//		var graduate_img = $("#graduate_img").attr('src'); //毕业证
+//		var credit_img = $("#credit_img").attr('src'); //征信报告
+//		var tijian_img = $("#tijian_img").attr('src'); //体检报告
+//		var laodong_img = $("#laodong_img").attr('src'); //劳动合同
+//		if(graduate_img == ''){
+//			alert('请上传毕业证');
+//			return false;
+//		}
+//		if(credit_img == ''){
+//			alert('请上传征信报告');
+//			return false;
+//		}
+//		if(tijian_img == ''){
+//			alert('请上传体检报告');
+//			return false;
+//		}
+//		if(laodong_img == ''){
+//			alert('请上传劳动合同');
+//			return false;
+//		}
+//
+//	}
+//	$.ajax({
+//        type: "POST",
+//        async:false, // 设置同步方式
+//        url: "/manage/kefu_account/ajax_check_idcard.html",
+//        data: {idcard_number:idcard_number,kefuid:kefuid},
+//        dataType: "json",
+//        success: function(d){
+//        	if(d==1){
+//            	alert('请上传头像！');
+//            	flag = false;
+//        	}else if(d==2){
+//            	alert('请上传身份证正面！');
+//            	flag = false;
+//        	}else if(d==3){
+//            	alert('请上传身份证反面！');
+//            	flag = false;
+//        	}else if(d==4){
+//            	alert('请联系管理员。 信息提交不成功！');
+//            	flag = false;
+//        	}
+//        }
+//	});
+//	if(!flag){
+//		return false;
+//	}
+	$("#sub").attr("disabled","disabled");
+	$("#sub").css("background","#aaaaaa");
+	$('#sub').val('提交中...');
+	return true;
+}
+var int;
+$(function(){
+	$(".del_img").click(function(){
+		$(this).prev().prev().attr('src','');
+
+		if(!confirm("确认删除吗")){
+			return false;
+		}
+
+		$(this).prev().prev().attr('src','');
+		$(this).parent().siblings(".pic").hide();
+		$(this).parent().siblings(".pic").attr('src','');
+
+		var update_key = $(this).prev().val();
+		$.post('/manage/kefu_account/ajax_kefu_del_img.html',{'update_key':update_key},function(d){
+			if(d==1){
+				alert('删除成功！');
+                window.location.reload();
+            }else{
+				var status = '删除失败！';
+				console.log(status);
+			}
+		});
+	});
+	
+	//图片放大查看
+	$('.addimg_sm .pic').zoomify();	
+	
+	
+	$('#born_year').val();
+	$('#born_month').val();
+	$('#born_day').val();
+	
+});
+
+</script>
+</head>
+<body>
+	<!--头像上传开始-->
+<div><h6 style="color:red">&nbsp;&nbsp;注意：一个图片框只能上传一张图，一个框中多次上传只能替换该图片！</h6></div>
+<div class="contanr myform" id="crop-avatar">
+	<h4 class="title_text">1、上传头像</h4>
+    <!-- Current avatar -->
+    <div class="avatar-view" title="上传头像" style="margin-left: 40px;">
+      <img src="" id="head_img">
+    </div>
+    <!-- Cropping modal -->
+    <div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <form class="avatar-form" action="/manage/kefu_uploadimg/upload_do.html" enctype="multipart/form-data" method="post">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal" type="button">&times;</button>
+              <h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
+            </div>
+            <div class="modal-body">
+              <div class="avatar-body">
+
+                <!-- Upload image and data -->
+                <div class="avatar-upload">
+                  <input class="avatar-src" name="avatar_src" type="hidden">
+                  <input class="avatar-data" name="avatar_data" type="hidden">
+                  <input id="kefu_id" type="hidden" value="160947">
+                  <label for="avatarInput">本地上传</label>
+                  <input class="avatar-input" id="avatarInput" name="avatar_file" type="file">
+                </div>
+
+                <!-- Crop and preview -->
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="avatar-wrapper"></div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="avatar-preview preview-lg"></div>
+                  </div>
+                </div>
+
+                <div class="row avatar-btns">
+                  <div class="col-md-9">
+                    <div class="btn-group">
+                      <button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees">左旋转</button>
+                      <button class="btn btn-primary" data-method="rotate" data-option="-15" type="button">-15度</button>
+                      <button class="btn btn-primary" data-method="rotate" data-option="-30" type="button">-30度</button>
+                      <button class="btn btn-primary" data-method="rotate" data-option="-45" type="button">-45度</button>
+                    </div>
+                    <div class="btn-group">
+                      <button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees">右旋转</button>
+                      <button class="btn btn-primary" data-method="rotate" data-option="15" type="button">15度</button>
+                      <button class="btn btn-primary" data-method="rotate" data-option="30" type="button">30度</button>
+                      <button class="btn btn-primary" data-method="rotate" data-option="45" type="button">45度</button>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary btn-block avatar-save" type="submit">确定</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    	
+    <!-- /.modal -->
+
+    <!-- Loading state -->
+    <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+</div>
+<!--头像上传结束-->
+
+<form id="myform" class="myform" name="myform" method="post" action="/manage/kefu_account/info_do.html" enctype='multipart/form-data' onsubmit="return check()">
+	<input type="hidden" value="0" id="pd">
+	<input type="hidden" value="1" id="is_check_img"/>
+	<input type="hidden" id="kefuid" value="160947">
+	<div class="myinformation-editimg">
+		<!--<h4 class="title_text">1、上传头像<span>*（必填）</span></h4>
+		<ul class="uploadimg">
+			<li>
+				<a href="https://admin.zhudai.com/ci_zhudai_admin/zjietu/index.php?id=160947" target="_blank">
+					<div class="addimg" style="width:150px;height:150px;">
+						<img src="" class="pic img-thumbnail" id="pic" >
+					</div>
+				</a>
+			</li>
+		</ul>-->
+		<h4 class="title_text">2、上传身份证</h4>
+		<ul class="uploadimg">
+			<li>
+				<div class="addimg addimg_sm">
+					<img src="" class="pic img-thumbnail" id="idcard_img" >
+						<div class="contenr">
+							<div class="upload">
+								<img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj1.png">
+								<input type="file" class="hidefile" name="idcard_img" id="idcard_img_upload">
+							</div>
+							<input type="hidden" value="idcard_img">
+							<div class="colse del_img"><img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj2.png"></div>
+						</div>
+				</div>
+				身份证正面
+			</li>
+			<li>
+				<div class="addimg addimg_sm">
+					<img src="" class="pic img-thumbnail" id="idcard_img_fan" >
+					<div class="contenr">
+						<div class="upload">
+							<img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj1.png">
+							<input type="file" class="hidefile" name="idcard_img_fan" id="idcard_img_fan_upload">
+						</div>
+						<input type="hidden" value="idcard_img_fan">
+						<div class="colse del_img"><img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj2.png"></div>
+					</div>
+				</div>
+				身份证反面
+			</li>
+		</ul>
+		<h4 class="title_text">3、其证明材料</h4>
+		<ul class="uploadimg">
+			<li>
+				<div class="addimg addimg_sm">
+					<img src="" class="pic img-thumbnail" id="graduate_img" >
+						<div class="contenr">
+							<div class="upload">
+								<img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj1.png">
+								<input type="file" class="hidefile" name="graduate_img" id="graduate_img_upload">
+							</div>
+							<input type="hidden" value="graduate_img">
+							<div class="colse del_img"><img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj2.png"></div>
+						</div>
+				</div>
+				毕业证
+			</li>
+			<li>
+				<div class="addimg addimg_sm">
+					<img src="" class="pic img-thumbnail" id="laodong_img" >
+					<div class="contenr">
+						<div class="upload">
+							<img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj1.png">
+							<input type="file" class="hidefile" name="laodong_img" id="laodong_img_upload">
+						</div>
+						<input type="hidden" value="laodong_img">
+						<div class="colse del_img"><img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj2.png"></div>
+					</div>
+				</div>
+				劳动合同
+			</li>
+			<li>
+				<div class="addimg addimg_sm">
+					<img src="" class="pic img-thumbnail" id="bankcard_img" >
+					<div class="contenr">
+						<div class="upload">
+							<img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj1.png">
+							<input type="file" class="hidefile"  name="bankcard_img" id="bankcard_img_upload">
+						</div>
+						<input type="hidden" value="bankcard_img">
+						<div class="colse del_img"><img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj2.png"></div>
+					</div>
+				</div>
+				银行卡
+			</li>
+						<li>
+				<div class="addimg addimg_sm">
+					<img src="" class="pic img-thumbnail" id="credit_img" >
+					<div class="contenr">
+						<div class="upload">
+							<img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj1.png">
+							<input type="file" class="hidefile"  name="credit_img" id="credit_img_upload">
+
+						</div>
+						<input type="hidden" value="credit_img">
+						<div class="colse del_img"><img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj2.png"></div>
+					</div>
+				</div>
+				征信报告1
+			</li>
+									<li>
+				<div class="addimg addimg_sm">
+					<img src="" class="pic img-thumbnail" id="tijian_img" >
+					<div class="contenr">
+						<div class="upload">
+							<img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj1.png">
+							<input type="file" class="hidefile"  name="tijian_img" id="tijian_img_upload">
+	
+						</div>
+						<input type="hidden" value="tijian_img">
+						<div class="colse del_img"><img src="https://guwen.zhudaicms.com/default/manage/images/icon_picj2.png"></div>
+					</div>
+				</div>
+				体检报告1
+			</li>
+					</ul>
+	</div>
+	<div style="clear: both;"></div>
+	<h4 class="title_text">4、档案信息</h4>
+	<table class="ssss">
+		<tr>
+			<td class="textr">姓名：</td>
+			<td class="textl"><input type="text" name="name" id="name" value="融鑫汇总账号"></td>
+			<td class="textr">出生年月日：</td>
+			<td class="textl">
+				<select name="born_year" id="born_year" class="select1">
+		    	   <option value="">请选择</option>
+		    	   <option value="1966">1966</option>
+		    	   <option value="1967">1967</option>
+		    	   <option value="1968">1968</option>
+		    	   <option value="1969">1969</option>
+		    	   <option value="1970">1970</option>
+		    	   <option value="1971">1971</option>
+		    	   <option value="1972">1972</option>
+		    	   <option value="1973">1973</option>
+		    	   <option value="1974">1974</option>
+		    	   <option value="1975">1975</option>
+		    	   <option value="1976">1976</option>
+		    	   <option value="1977">1977</option>
+		    	   <option value="1978">1978</option>
+		    	   <option value="1979">1979</option>
+		    	   <option value="1980">1980</option>
+		    	   <option value="1981">1981</option>
+		    	   <option value="1982">1982</option>
+		    	   <option value="1983">1983</option>
+		    	   <option value="1984">1984</option>
+		    	   <option value="1985">1985</option>
+	                <option value="1986">1986</option>
+	                <option value="1987">1987</option>
+	                <option value="1988">1988</option>
+	                <option value="1989">1989</option>
+	                <option value="1990">1990</option>
+	                <option value="1991">1991</option>
+	                <option value="1992">1992</option>
+	                <option value="1993">1993</option>
+	                <option value="1994">1994</option>
+	                <option value="1995">1995</option>
+	                <option value="1996">1996</option>
+	                <option value="1997">1997</option>
+	                <option value="1998">1998</option>
+	                <option value="1999">1999</option>
+	                <option value="2000">2000</option>
+	                <option value="2001">2001</option>
+	                <option value="2002">2002</option>
+	                <option value="2003">2003</option>
+	                <option value="2004">2004</option>
+	                <option value="2005">2005</option>
+	                <option value="2006">2006</option>
+	                <option value="2007">2007</option>
+	                <option value="2008">2008</option>
+	                <option value="2008">2008</option>
+	                <option value="2009">2009</option>
+	                <option value="2010">2010</option>
+		    	</select>
+		    	<select name="born_month" id="born_month" class="select1">
+		    	   <option value="">请选择</option>
+		    	   <option value="1">1</option>
+		    	   <option value="2">2</option>
+		    	   <option value="3">3</option>
+		    	   <option value="4">4</option>
+		    	   <option value="5">5</option>
+		    	   <option value="6">6</option>
+		    	   <option value="7">7</option>
+		    	   <option value="8">8</option>
+		    	   <option value="9">9</option>
+		    	   <option value="10">10</option>
+		    	   <option value="11">11</option>
+		    	   <option value="12">12</option>
+		    	</select>
+		    	<select name="born_day" id="born_day" class="select1">
+		    	   <option value="">请选择</option>
+		    	   <option value="1">1</option>
+		    	   <option value="2">2</option>
+		    	   <option value="3">3</option>
+		    	   <option value="4">4</option>
+		    	   <option value="5">5</option>
+		    	   <option value="6">6</option>
+		    	   <option value="7">7</option>
+		    	   <option value="8">8</option>
+		    	   <option value="9">9</option>
+		    	   <option value="10">10</option>
+		    	   <option value="11">11</option>
+		    	   <option value="12">12</option>
+		    	   <option value="13">13</option>
+		    	   <option value="14">14</option>
+		    	   <option value="15">15</option>
+		    	   <option value="16">16</option>
+		    	   <option value="17">17</option>
+		    	   <option value="18">18</option>
+		    	   <option value="19">19</option>
+		    	   <option value="20">20</option>
+		    	   <option value="21">21</option>
+		    	   <option value="22">22</option>
+		    	   <option value="23">23</option>
+		    	   <option value="24">24</option>
+		    	   <option value="25">25</option>
+		    	   <option value="26">26</option>
+		    	   <option value="27">27</option>
+		    	   <option value="28">28</option>
+		    	   <option value="29">29</option>
+		    	   <option value="30">30</option>
+		    	   <option value="31">31</option>
+		    	</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="textr">籍贯：</td>
+			<td class="textl"><input type="text" name="native_place" id="native_place" value=""></td>
+			<td class="textr">私人手机号码：</td>
+			<td class="textl"><input type="text" name="self_tel" id="self_tel" value="18335162275"></td>
+		</tr>
+		<tr>
+			<td class="textr">学历：</td>
+			<td class="textl"><input type="text" name="degree" id="degree" value=""></td>
+			<td class="textr">毕业院校：</td>
+			<td class="textl"><input type="text" name="graduated_school" id="graduated_school" value=""/></td>
+		</tr>
+		<tr>
+			<td class="textr">入职时间：</td>
+			<td class="textl"><input type="text" size="12" id="in_company_time" name="in_company_time" value="" onclick="return showCalendar('in_company_time', 'y-mm-dd');" readonly="readonly"/></td>
+			<td class="textr">上家公司名称：</td>
+			<td class="textl"><input type="text" name="last_company_name" id="last_company_name" value=""></td>
+		</tr>
+		<tr>
+			<td class="textr">身份证号码：</td>
+			<td class="textl"><input type="text" name="idcard_number" id="idcard_number" value=""></td>
+			<td class="textr">上家公司职务：</td>
+			<td class="textl"><input type="text" name="last_company_duty" id="last_company_duty" value=""></td>
+		</tr>
+		<tr>
+			<td class="textr">贷款行业从业时间：</td>
+			<td class="textl" style="position:relative;z-index:1;">
+				<input type="text" name="loanword_month" id="loanword_month" value="0">
+				<div class="absdiv">月</div>
+			</td>
+		</tr>
+		<!--<tr>
+			<td class="textr">擅长业务类型：</td>
+			<td class="textl" colspan="3">
+			<div class="spe">
+							<label><input type="checkbox" name="sc[]" value="车贷" style="width:2%;height:15px;" >车贷&nbsp;&nbsp;</label>
+							<label><input type="checkbox" name="sc[]" value="工薪贷" style="width:2%;height:15px;" >工薪贷&nbsp;&nbsp;</label>
+							<label><input type="checkbox" name="sc[]" value="经营贷" style="width:2%;height:15px;" >经营贷&nbsp;&nbsp;</label>
+							<label><input type="checkbox" name="sc[]" value="保单贷" style="width:2%;height:15px;" >保单贷&nbsp;&nbsp;</label>
+							<label><input type="checkbox" name="sc[]" value="房贷" style="width:2%;height:15px;" >房贷&nbsp;&nbsp;</label>
+							<label><input type="checkbox" name="sc[]" value="抵押贷" style="width:2%;height:15px;" >抵押贷&nbsp;&nbsp;</label>
+							<label><input type="checkbox" name="sc[]" value="房抵贷" style="width:2%;height:15px;" >房抵贷&nbsp;&nbsp;</label>
+							<label><input type="checkbox" name="sc[]" value="车抵贷" style="width:2%;height:15px;" >车抵贷&nbsp;&nbsp;</label>
+							<label><input type="checkbox" name="sc[]" value="公积金贷" style="width:2%;height:15px;" >公积金贷&nbsp;&nbsp;</label>
+						</div>
+			</td>
+		</tr>-->
+		<tr>
+			<td class="textr">个人简介：</td>
+			<td class="textl" style="position:relative;z-index:1;" colspan="3">
+				<textarea style="width:92%;height:80px;" name="remark" id="remark"></textarea>
+			</td>
+		</tr>
+	</table>
+	<div class="addsub">
+		<input type="submit" value="确定" class="red" id="sub" style="cursor:pointer">
+	</div>
+	</form>
+	
+
+
+<!--头像上传结束-->
+</body>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/common/oss_js_h5/plupload-2.1.2/js/plupload.full.min.js?v=92_5"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/common/oss_js_h5/upload_mykefu.js?v=92_5"></script>
+</html>

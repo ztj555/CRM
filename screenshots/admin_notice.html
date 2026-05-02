@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<title>系统首页</title> 
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/guwen/kefu_style.css?v=92_5" />
+<script  class ="jsbin" src="https://guwen.zhudaicms.com/default/manage/js/jquery-1.7.2.min.js?v=92_5"></script>
+
+<!-- end -->
+<style type="text/css">
+html, button, input, select, textarea{font-family:"Microsoft YaHei",Arial,sans-serif}
+ul,li{margin:0;padding:0}
+body{background:#e5e5e5;margin:0;padding:0;width:100%;}
+li{list-style:none;}
+a{text-decoration:none;}
+.blow{width:99%;background:#fff;margin-top:8px}
+.blow .well_p{text-align: center;line-height: 34px;}
+.blow .well_p p{width: 320px;margin: 0 auto;}
+.blow .well_p p img{float: left;width: 34px;height: 34px;}
+.blow .well_p span{color: #009BE3;text-decoration: underline;cursor: pointer;}
+.record{width:100%;display:none}
+.publicli{margin-bottom:15px;}
+.record li a{width:55%;display:inline-block; color:#ee5567;padding-left:15px;}
+.record li span{color:#999999;}
+.page{background:#e5e5e5;width:100%;margin-top:25px;height:auto;line-height:25px;}
+/* 分页样式 */
+#pagination span{background:#f9322e none repeat scroll 0 0;color:#fff}
+#pagination a,#pagination span{padding:3px 10px; border:1px solid #e5e5e5; display:inline-block; margin-right:7px; color:#000;}
+#pagination a:hover{color:#f9322e;}
+.record li .lookover{margin-left:35px; color: #999999;}
+</style>
+<script type="text/javascript">
+function Open(text, url) {
+	window.parent.Open(text, url);
+}
+</script>
+</head>
+
+<body>
+    <div class="blow" >
+            	<div class="well_p">
+    		<p>您有1条公告未确认收到，<span onClick="Open('未确认收到公告','/manage/kefu_dailysimple/notice.html?is_see=0');">请点击查看</span></p>
+    	</div>
+                <div style="width:100%;border-top:5px solid #f2f2f2;font-size:12px;">
+            <!-- 系统通知 -->
+            <ul class="record" style="display:block;margin-top:10px" id="record1">
+                            <li class="publicli">
+                    <a href="javascript:;" onClick="Open('这是测...','/manage/kefu_dailysimple/notice_info.html?id=137919');">这是测试公告</a>
+                    <span>2026-01-13 19:41:45</span>
+                    <span class="lookover">点击量：3</span>
+                </li>
+                         </ul>
+            <!-- end -->
+	        <div class="page" style="text-align:center;">
+		     <div class="pagination" id="pagination"  style=\"margin:0;width:100%;\">总共1条记录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='current' style='background:#f9322e;color:#fff'>1</span></div>
+		    </div>
+        </div>
+    </div>
+     <!-- footer -->
+     <meta charset="utf-8"/>
+<div id="main">
+	<div id="pop" style="display:none;">
+  		<div id="popHead">
+			<a id="popClose" title="关闭">关闭</a>
+	       	<h2>客帮手：助力小微，贷动中国</h2>
+		</div>
+		<div id="popContent">
+			<p style="text-align:center;" id="lrtsk"></p>
+	  	</div>
+	</div>
+</div>  
+<!-- end -->
+</body>
+</html>

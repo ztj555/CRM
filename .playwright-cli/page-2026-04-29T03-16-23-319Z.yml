@@ -1,0 +1,134 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4] [cursor=pointer]: 个人资料
+    - generic [ref=e6] [cursor=pointer]: 个人数据
+    - generic [ref=e8] [cursor=pointer]: 业绩目标管理
+  - generic [ref=e9]:
+    - generic [ref=e11]:
+      - button "团队计划" [ref=e12] [cursor=pointer]
+      - button "个人计划" [ref=e13] [cursor=pointer]
+    - generic [ref=e14]:
+      - text: 业绩目标设置
+      - button "设置创收目标" [ref=e15] [cursor=pointer]
+    - list [ref=e16]:
+      - listitem [ref=e17]:
+        - heading "创收进度" [level=4] [ref=e18]
+        - generic [ref=e19]:
+          - generic [ref=e20]: 0%
+          - generic [ref=e21]: 0万
+        - generic [ref=e23]:
+          - paragraph [ref=e24]: 当月创收目标：0万
+          - paragraph [ref=e25]: 距离月目标还差：0万
+          - paragraph [ref=e26]: 当前进度：按计划进行
+      - listitem [ref=e27]:
+        - heading "通时进度" [level=4] [ref=e28]
+        - generic [ref=e29]:
+          - generic [ref=e30]: 0%
+          - generic [ref=e31]: 0小时
+        - generic [ref=e33]:
+          - paragraph [ref=e34]: 当月通时目标：0时
+          - paragraph [ref=e35]: 距离月目标还差：0时
+          - paragraph [ref=e36]: 当前进度：按计划进行
+      - listitem [ref=e37]:
+        - heading "通次进度" [level=4] [ref=e38]
+        - generic [ref=e39]:
+          - generic [ref=e40]: 0%
+          - generic [ref=e41]: "0"
+        - generic [ref=e43]:
+          - paragraph [ref=e44]: 当月通次目标：0
+          - paragraph [ref=e45]: 距离月目标还差：0
+          - paragraph [ref=e46]: 当前进度：按计划进行
+      - listitem [ref=e47]:
+        - heading "上门数进度" [level=4] [ref=e48]
+        - generic [ref=e49]:
+          - generic [ref=e50]: 0%
+          - generic [ref=e51]: 0人
+        - generic [ref=e53]:
+          - paragraph [ref=e54]: 当月上门目标：0个
+          - paragraph [ref=e55]: 距离月目标还差：0个
+          - paragraph [ref=e56]: 当前进度：按计划进行
+      - listitem [ref=e57]:
+        - heading "签约数进度" [level=4] [ref=e58]
+        - generic [ref=e59]:
+          - generic [ref=e60]: 0%
+          - generic [ref=e61]: 0个
+        - generic [ref=e63]:
+          - paragraph [ref=e64]: 当月签约目标：0个
+          - paragraph [ref=e65]: 距离月目标还差：0个
+          - paragraph [ref=e66]: 当前进度：按计划进行
+  - generic [ref=e68]:
+    - heading "本月计划甘特图 提前完成 按计划完成 进度延迟" [level=4] [ref=e69]:
+      - text: 本月计划甘特图
+      - generic [ref=e70]:
+        - button [ref=e71] [cursor=pointer]
+        - text: 提前完成
+      - generic [ref=e72]:
+        - button [ref=e73] [cursor=pointer]
+        - text: 按计划完成
+      - generic [ref=e74]:
+        - button [ref=e75] [cursor=pointer]
+        - text: 进度延迟
+    - table [ref=e76]:
+      - rowgroup [ref=e77]:
+        - row "目标 2026-04" [ref=e78]:
+          - cell "目标" [ref=e79]
+          - cell "2026-04" [ref=e80]
+        - row "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 今 天 30" [ref=e81]:
+          - cell "1" [ref=e82]
+          - cell "2" [ref=e83]
+          - cell "3" [ref=e84]
+          - cell "4" [ref=e85]
+          - cell "5" [ref=e86]
+          - cell "6" [ref=e87]
+          - cell "7" [ref=e88]
+          - cell "8" [ref=e89]
+          - cell "9" [ref=e90]
+          - cell "10" [ref=e91]
+          - cell "11" [ref=e92]
+          - cell "12" [ref=e93]
+          - cell "13" [ref=e94]
+          - cell "14" [ref=e95]
+          - cell "15" [ref=e96]
+          - cell "16" [ref=e97]
+          - cell "17" [ref=e98]
+          - cell "18" [ref=e99]
+          - cell "19" [ref=e100]
+          - cell "20" [ref=e101]
+          - cell "21" [ref=e102]
+          - cell "22" [ref=e103]
+          - cell "23" [ref=e104]
+          - cell "24" [ref=e105]
+          - cell "25" [ref=e106]
+          - cell "26" [ref=e107]
+          - cell "27" [ref=e108]
+          - cell "28" [ref=e109]
+          - cell "今 天" [ref=e110]:
+            - generic [ref=e111]:
+              - text: 今
+              - text: 天
+          - cell "30" [ref=e112]
+        - row "创收目标 0万" [ref=e113]:
+          - cell "创收目标" [ref=e114]
+          - cell "0万" [ref=e115]:
+            - generic [ref=e116]:
+              - generic: 0万
+        - row "通话时长 0小时" [ref=e117]:
+          - cell "通话时长" [ref=e118]
+          - cell "0小时" [ref=e119]:
+            - generic [ref=e120]:
+              - generic: 0小时
+        - row "通话次数 0" [ref=e121]:
+          - cell "通话次数" [ref=e122]
+          - cell "0" [ref=e123]:
+            - generic [ref=e124]:
+              - generic: "0"
+        - row "上门数 0" [ref=e125]:
+          - cell "上门数" [ref=e126]
+          - cell "0" [ref=e127]:
+            - generic [ref=e128]:
+              - generic: "0"
+        - row "签约数 0" [ref=e129]:
+          - cell "签约数" [ref=e130]
+          - cell "0" [ref=e131]:
+            - generic [ref=e132]:
+              - generic: "0"

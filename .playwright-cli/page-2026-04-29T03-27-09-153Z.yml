@@ -1,0 +1,903 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: RXH
+      - generic "融鑫汇" [ref=e7]
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e11]:
+          - generic "点击更换头像" [ref=e12]
+          - generic [ref=e14]:
+            - generic [ref=e16] [cursor=pointer]: 徐钰蓉
+            - generic [ref=e17]: "19883890925"
+        - generic [ref=e18]: 所在部门
+        - generic [ref=e19]: 杭州一区 -一区二部2
+      - generic [ref=e22]:
+        - generic [ref=e23] [cursor=pointer]: 我的客户
+        - generic [ref=e24] [cursor=pointer]:
+          - text: 再分配客户(
+          - generic [ref=e25]: "54"
+          - text: )
+        - generic [ref=e26] [cursor=pointer]:
+          - text: 公共池客户(
+          - generic [ref=e27]: "148535"
+          - text: )
+        - generic [ref=e28] [cursor=pointer]: 必跟进客户
+        - generic [ref=e29] [cursor=pointer]: 在审件管理
+        - generic [ref=e30] [cursor=pointer]: 日志报表
+        - generic [ref=e31] [cursor=pointer]: 工作简报
+        - generic [ref=e32] [cursor=pointer]: 数据统计
+        - generic [ref=e33] [cursor=pointer]: 创收分析
+        - generic [ref=e34] [cursor=pointer]: 团队客户
+        - generic [ref=e35] [cursor=pointer]: 团队管理(1)
+        - generic [ref=e36] [cursor=pointer]: 离职人数据分配(0)
+        - generic [ref=e37] [cursor=pointer]: 通话管理
+  - generic [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e43]:
+        - text: 消息公告：
+        - generic [ref=e44]: 共同创业，不负时光。加油猛猛干！！！ 2026-01-13 19:23
+      - generic [ref=e45]:
+        - generic [ref=e46] [cursor=pointer]: 绩效目标
+        - generic [ref=e47] [cursor=pointer]: 公告
+        - generic [ref=e48] [cursor=pointer]: 设置
+        - generic [ref=e49] [cursor=pointer]:
+          - img
+          - img [ref=e50]
+          - img [ref=e52]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - text: 
+        - generic [ref=e59] [cursor=pointer]:
+          - text: 我的客户
+          - generic [ref=e60]: 
+        - text: 
+      - iframe [ref=e62]:
+        - generic [active] [ref=f1e1]:
+          - generic [ref=f1e3]:
+            - generic [ref=f1e4]:
+              - generic [ref=f1e5]: 客户
+              - combobox [ref=f1e6]:
+                - option "手机" [selected]
+                - option "姓名"
+                - option "ID"
+              - textbox "手机可模糊搜索" [ref=f1e7]
+            - generic [ref=f1e8]:
+              - generic [ref=f1e9]: 数据类型
+              - combobox [ref=f1e10]:
+                - option "-不限-" [selected]
+                - option "原始数据"
+                - option "再分配过来的数据"
+            - generic [ref=f1e11]:
+              - generic [ref=f1e12]: 状态
+              - generic [ref=f1e15] [cursor=pointer]: 请选择选项
+            - generic [ref=f1e16]:
+              - generic [ref=f1e17]: 星级
+              - generic [ref=f1e20] [cursor=pointer]: 请选择选项
+            - generic [ref=f1e21]:
+              - generic [ref=f1e22]: 未备注超过
+              - generic [ref=f1e23]:
+                - textbox [ref=f1e24]
+                - generic [ref=f1e25]: 天
+            - generic [ref=f1e26]:
+              - generic [ref=f1e27]: 时间类型
+              - combobox [ref=f1e28]:
+                - option "进系统时间" [selected]
+                - option "备注时间"
+                - option "实际申请时间"
+              - combobox [ref=f1e29]:
+                - option "-不限-" [selected]
+                - option "今日"
+                - option "昨天"
+                - option "最近7天"
+                - option "本月"
+                - option "上月"
+                - option "自定义"
+            - generic [ref=f1e30]:
+              - generic [ref=f1e31]: 备注关键词
+              - textbox "默认搜索3年内数据" [ref=f1e33]
+            - generic [ref=f1e34]:
+              - generic [ref=f1e35]: 锁定客户
+              - combobox [ref=f1e36]:
+                - option "不限" [selected]
+                - option "已锁定"
+            - generic [ref=f1e37]:
+              - generic [ref=f1e38]: 贷款条件
+              - combobox [ref=f1e39]:
+                - option "房" [selected]
+                - option "车"
+                - option "公积金"
+                - option "保单"
+                - option "代发"
+                - option "是否有企业"
+              - combobox [ref=f1e40]:
+                - option "-不限-" [selected]
+                - option "有"
+                - option "无"
+            - generic [ref=f1e41]:
+              - generic [ref=f1e42]: 贷款类型
+              - combobox [ref=f1e43]:
+                - option "-不限-" [selected]
+                - option "信用贷"
+                - option "车抵贷"
+                - option "房抵贷"
+                - option "保单贷"
+                - option "合作单"
+            - generic [ref=f1e44]:
+              - generic [ref=f1e45]: 资质关键词
+              - textbox [ref=f1e47]
+            - generic [ref=f1e49]:
+              - button "查询" [ref=f1e50] [cursor=pointer]
+              - generic [ref=f1e51] [cursor=pointer]: 按标签搜
+            - paragraph [ref=f1e54]:
+              - generic [ref=f1e55]: 数据上限400条提醒：我的客户（51）再分配客户（54）剩余（295）
+          - generic [ref=f1e56]:
+            - generic [ref=f1e57]:
+              - generic [ref=f1e58] [cursor=pointer]: 添加客户
+              - button "加入公共池" [ref=f1e60] [cursor=pointer]
+            - generic [ref=f1e61]:
+              - generic "可以查询公司库里是否有一样的号码" [ref=f1e62] [cursor=pointer]:
+                - text: 号码查重(
+                - generic "新发布的功能" [ref=f1e63]: 新
+                - text: )
+              - generic [ref=f1e64] [cursor=pointer]: 主管点评
+              - generic [ref=f1e65] [cursor=pointer]: 我的重要客户
+              - generic [ref=f1e66] [cursor=pointer]: 待还款客户
+              - generic [ref=f1e67] [cursor=pointer]: 转移记录
+              - generic [ref=f1e68] [cursor=pointer]: 备忘提醒
+              - link "点击刷新查看最新数据" [ref=f1e69] [cursor=pointer]:
+                - /url: /manage/kefu_common/clearCache.html?cacheKey=kefu_kefu_clients_new172949#9d0118642e71e13189b5e4b0c683c4a6
+                - img "点击刷新查看最新数据" [ref=f1e70]
+          - generic [ref=f1e74]:
+            - table [ref=f1e77]:
+              - rowgroup [ref=f1e78]:
+                - row "ID 姓名 性别 状态 星级 年龄 备注 顾问 房 车 保单 社保 代发 公积金 芝麻分 信用卡 企业主 申请额度 最后备注时间 点击可根据最后备注时间倒序排列 申请时间 点击可根据申请时间倒序排列 贷款类型 来源 城市" [ref=f1e79]:
+                  - columnheader "ID" [ref=f1e80]:
+                    - checkbox [ref=f1e81]
+                    - text: ID
+                  - columnheader "姓名" [ref=f1e82]
+                  - columnheader "性别" [ref=f1e83]
+                  - columnheader "状态" [ref=f1e84]
+                  - columnheader "星级" [ref=f1e85]
+                  - columnheader "年龄" [ref=f1e86]
+                  - columnheader "备注" [ref=f1e87]
+                  - columnheader "顾问" [ref=f1e88]
+                  - columnheader "房" [ref=f1e89]
+                  - columnheader "车" [ref=f1e90]
+                  - columnheader "保单" [ref=f1e91]
+                  - columnheader "社保" [ref=f1e92]
+                  - columnheader "代发" [ref=f1e93]
+                  - columnheader "公积金" [ref=f1e94]
+                  - columnheader "芝麻分" [ref=f1e95]
+                  - columnheader "信用卡" [ref=f1e96]
+                  - columnheader "企业主" [ref=f1e97]
+                  - columnheader "申请额度" [ref=f1e98]
+                  - columnheader "最后备注时间 点击可根据最后备注时间倒序排列" [ref=f1e99]:
+                    - generic [ref=f1e101]:
+                      - text: 最后备注时间
+                      - link "点击可根据最后备注时间倒序排列" [ref=f1e102] [cursor=pointer]:
+                        - /url: /manage/kefu_clients/index.html?lastupdatetime=yes
+                        - img [ref=f1e103]
+                  - columnheader "申请时间 点击可根据申请时间倒序排列" [ref=f1e104]:
+                    - generic [ref=f1e106]:
+                      - text: 申请时间
+                      - link "点击可根据申请时间倒序排列" [ref=f1e107] [cursor=pointer]:
+                        - /url: /manage/kefu_clients/index.html?ordertime=yes
+                        - img [ref=f1e108]
+                  - columnheader "贷款类型" [ref=f1e109]
+                  - columnheader "来源" [ref=f1e110]
+                  - columnheader "城市" [ref=f1e111]
+              - rowgroup [ref=f1e112]:
+                - row "88280419 童永平 . 待跟进 6星 -- 1、接了就挂 虞淇喻顾问 2026-04-20 11:12:14 2、未接 虞淇喻顾问 2026-04-19 14:10:52 3、未接 虞淇喻顾问 2026-04-17 09:53:48 4、未接 虞淇喻顾问 2026-04-16 17:37:27 5、贷款即挂 虞淇喻顾问 2026-04-15 14:55:16 6、5万-10万有私家车;两通长响未接发短信客户微信违规不让添... -- 2026-04-15 11:45:28 徐钰蓉 -- 有 -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-04-15 11:45 信用贷 T+1-excel 杭州" [ref=f1e113] [cursor=pointer]:
+                  - cell "88280419" [ref=f1e114]:
+                    - checkbox [ref=f1e115]
+                    - text: "88280419"
+                  - cell "童永平" [ref=f1e116]:
+                    - generic "点击修改客户信息" [ref=f1e119]: 童永平
+                  - cell [ref=f1e120]
+                  - cell ". 待跟进" [ref=f1e121]:
+                    - generic [ref=f1e123]:
+                      - text: .
+                      - generic [ref=f1e124]: 待跟进
+                  - cell "6星" [ref=f1e125]
+                  - cell "--" [ref=f1e126]
+                  - cell "1、接了就挂 虞淇喻顾问 2026-04-20 11:12:14 2、未接 虞淇喻顾问 2026-04-19 14:10:52 3、未接 虞淇喻顾问 2026-04-17 09:53:48 4、未接 虞淇喻顾问 2026-04-16 17:37:27 5、贷款即挂 虞淇喻顾问 2026-04-15 14:55:16 6、5万-10万有私家车;两通长响未接发短信客户微信违规不让添... -- 2026-04-15 11:45:28" [ref=f1e127]:
+                    - text: 1、接了就挂 虞淇喻顾问 2026-04-20 11:12:14
+                    - text: 2、未接 虞淇喻顾问 2026-04-19 14:10:52
+                    - text: 3、未接 虞淇喻顾问 2026-04-17 09:53:48
+                    - text: 4、未接 虞淇喻顾问 2026-04-16 17:37:27
+                    - text: 5、贷款即挂 虞淇喻顾问 2026-04-15 14:55:16
+                    - text: 6、5万-10万有私家车;两通长响未接发短信客户微信违规不让添... -- 2026-04-15 11:45:28
+                  - cell "徐钰蓉" [ref=f1e128]
+                  - cell "--" [ref=f1e129]
+                  - cell "有" [ref=f1e130]
+                  - cell "--" [ref=f1e131]
+                  - cell "--" [ref=f1e132]
+                  - cell "--" [ref=f1e133]
+                  - cell "--" [ref=f1e134]
+                  - cell "0" [ref=f1e135]
+                  - cell "无" [ref=f1e136]
+                  - cell "否" [ref=f1e137]
+                  - cell "0" [ref=f1e138]
+                  - cell "2026-04-27 09:38" [ref=f1e139]
+                  - cell "2026-04-15 11:45" [ref=f1e140]
+                  - cell "信用贷" [ref=f1e141]
+                  - cell "T+1-excel" [ref=f1e142]
+                  - cell "杭州" [ref=f1e143]
+                - row "84242174 黄挺挺 . 待跟进 0星 -- 1、不需要了 金晟顾问 2026-03-16 09:52:08 2、不需要了 金晟顾问 2026-03-12 14:07:47 3、杭州市下城区丞佶贸易商行 -- 2026-03-12 11:56:42 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e144] [cursor=pointer]:
+                  - cell "84242174" [ref=f1e145]:
+                    - checkbox [ref=f1e146]
+                    - text: "84242174"
+                  - cell "黄挺挺" [ref=f1e147]:
+                    - generic "点击修改客户信息" [ref=f1e150]: 黄挺挺
+                  - cell [ref=f1e151]
+                  - cell ". 待跟进" [ref=f1e152]:
+                    - generic [ref=f1e154]:
+                      - text: .
+                      - generic [ref=f1e155]: 待跟进
+                  - cell "0星" [ref=f1e156]
+                  - cell "--" [ref=f1e157]
+                  - cell "1、不需要了 金晟顾问 2026-03-16 09:52:08 2、不需要了 金晟顾问 2026-03-12 14:07:47 3、杭州市下城区丞佶贸易商行 -- 2026-03-12 11:56:42" [ref=f1e158]:
+                    - text: 1、不需要了 金晟顾问 2026-03-16 09:52:08
+                    - text: 2、不需要了 金晟顾问 2026-03-12 14:07:47
+                    - text: 3、杭州市下城区丞佶贸易商行 -- 2026-03-12 11:56:42
+                  - cell "徐钰蓉" [ref=f1e159]
+                  - cell "--" [ref=f1e160]
+                  - cell "--" [ref=f1e161]
+                  - cell "--" [ref=f1e162]
+                  - cell "--" [ref=f1e163]
+                  - cell "--" [ref=f1e164]
+                  - cell "--" [ref=f1e165]
+                  - cell "0" [ref=f1e166]
+                  - cell "无" [ref=f1e167]
+                  - cell "否" [ref=f1e168]
+                  - cell "0" [ref=f1e169]
+                  - cell "2026-04-27 09:38" [ref=f1e170]
+                  - cell "2026-03-12 11:56" [ref=f1e171]
+                  - cell "信用贷" [ref=f1e172]
+                  - cell "BXMJ-excel" [ref=f1e173]
+                  - cell "杭州" [ref=f1e174]
+                - row "84242173 何勤 . 待跟进 0星 -- 1、不需要 左廷军顾问 2026-03-30 11:38:18 2、不需要 左廷军顾问 2026-03-28 10:52:52 3、贷款即挂 左廷军顾问 2026-03-22 15:32:37 4、响铃后无人接听 左廷军顾问 2026-03-17 10:25:41 5、不需要 左廷军顾问 2026-03-12 19:39:36 6、浙江省地矿建设有限公司 -- 2026-03-12 11:56:42 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e175] [cursor=pointer]:
+                  - cell "84242173" [ref=f1e176]:
+                    - checkbox [ref=f1e177]
+                    - text: "84242173"
+                  - cell "何勤" [ref=f1e178]:
+                    - generic "点击修改客户信息" [ref=f1e181]: 何勤
+                  - cell [ref=f1e182]
+                  - cell ". 待跟进" [ref=f1e183]:
+                    - generic [ref=f1e185]:
+                      - text: .
+                      - generic [ref=f1e186]: 待跟进
+                  - cell "0星" [ref=f1e187]
+                  - cell "--" [ref=f1e188]
+                  - cell "1、不需要 左廷军顾问 2026-03-30 11:38:18 2、不需要 左廷军顾问 2026-03-28 10:52:52 3、贷款即挂 左廷军顾问 2026-03-22 15:32:37 4、响铃后无人接听 左廷军顾问 2026-03-17 10:25:41 5、不需要 左廷军顾问 2026-03-12 19:39:36 6、浙江省地矿建设有限公司 -- 2026-03-12 11:56:42" [ref=f1e189]:
+                    - text: 1、不需要 左廷军顾问 2026-03-30 11:38:18
+                    - text: 2、不需要 左廷军顾问 2026-03-28 10:52:52
+                    - text: 3、贷款即挂 左廷军顾问 2026-03-22 15:32:37
+                    - text: 4、响铃后无人接听 左廷军顾问 2026-03-17 10:25:41
+                    - text: 5、不需要 左廷军顾问 2026-03-12 19:39:36
+                    - text: 6、浙江省地矿建设有限公司 -- 2026-03-12 11:56:42
+                  - cell "徐钰蓉" [ref=f1e190]
+                  - cell "--" [ref=f1e191]
+                  - cell "--" [ref=f1e192]
+                  - cell "--" [ref=f1e193]
+                  - cell "--" [ref=f1e194]
+                  - cell "--" [ref=f1e195]
+                  - cell "--" [ref=f1e196]
+                  - cell "0" [ref=f1e197]
+                  - cell "无" [ref=f1e198]
+                  - cell "否" [ref=f1e199]
+                  - cell "0" [ref=f1e200]
+                  - cell "2026-04-27 09:38" [ref=f1e201]
+                  - cell "2026-03-12 11:56" [ref=f1e202]
+                  - cell "信用贷" [ref=f1e203]
+                  - cell "BXMJ-excel" [ref=f1e204]
+                  - cell "杭州" [ref=f1e205]
+                - row "84242172 徐家卓 . 待跟进 0星 -- 1、未接 虞淇喻顾问 2026-03-18 09:27:07 2、贷款即挂 虞淇喻顾问 2026-03-16 19:11:45 3、盲加V 虞淇喻顾问 2026-03-12 17:50:03 4、不需要了 谢谢 虞淇喻顾问 2026-03-12 14:21:42 5、浙江信铠水利有限公司 -- 2026-03-12 11:56:42 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e206] [cursor=pointer]:
+                  - cell "84242172" [ref=f1e207]:
+                    - checkbox [ref=f1e208]
+                    - text: "84242172"
+                  - cell "徐家卓" [ref=f1e209]:
+                    - generic "点击修改客户信息" [ref=f1e212]: 徐家卓
+                  - cell [ref=f1e213]
+                  - cell ". 待跟进" [ref=f1e214]:
+                    - generic [ref=f1e216]:
+                      - text: .
+                      - generic [ref=f1e217]: 待跟进
+                  - cell "0星" [ref=f1e218]
+                  - cell "--" [ref=f1e219]
+                  - cell "1、未接 虞淇喻顾问 2026-03-18 09:27:07 2、贷款即挂 虞淇喻顾问 2026-03-16 19:11:45 3、盲加V 虞淇喻顾问 2026-03-12 17:50:03 4、不需要了 谢谢 虞淇喻顾问 2026-03-12 14:21:42 5、浙江信铠水利有限公司 -- 2026-03-12 11:56:42" [ref=f1e220]:
+                    - text: 1、未接 虞淇喻顾问 2026-03-18 09:27:07
+                    - text: 2、贷款即挂 虞淇喻顾问 2026-03-16 19:11:45
+                    - text: 3、盲加V 虞淇喻顾问 2026-03-12 17:50:03
+                    - text: 4、不需要了 谢谢 虞淇喻顾问 2026-03-12 14:21:42
+                    - text: 5、浙江信铠水利有限公司 -- 2026-03-12 11:56:42
+                  - cell "徐钰蓉" [ref=f1e221]
+                  - cell "--" [ref=f1e222]
+                  - cell "--" [ref=f1e223]
+                  - cell "--" [ref=f1e224]
+                  - cell "--" [ref=f1e225]
+                  - cell "--" [ref=f1e226]
+                  - cell "--" [ref=f1e227]
+                  - cell "0" [ref=f1e228]
+                  - cell "无" [ref=f1e229]
+                  - cell "否" [ref=f1e230]
+                  - cell "0" [ref=f1e231]
+                  - cell "2026-04-27 09:38" [ref=f1e232]
+                  - cell "2026-03-12 11:56" [ref=f1e233]
+                  - cell "信用贷" [ref=f1e234]
+                  - cell "BXMJ-excel" [ref=f1e235]
+                  - cell "杭州" [ref=f1e236]
+                - row "84242171 孟思怡 . 待跟进 0星 -- 1、贷款即挂 韩俊顾问 2026-03-12 14:13:13 2、杭州康伴宠汇有限公司 -- 2026-03-12 11:56:42 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e237] [cursor=pointer]:
+                  - cell "84242171" [ref=f1e238]:
+                    - checkbox [ref=f1e239]
+                    - text: "84242171"
+                  - cell "孟思怡" [ref=f1e240]:
+                    - generic "点击修改客户信息" [ref=f1e243]: 孟思怡
+                  - cell [ref=f1e244]
+                  - cell ". 待跟进" [ref=f1e245]:
+                    - generic [ref=f1e247]:
+                      - text: .
+                      - generic [ref=f1e248]: 待跟进
+                  - cell "0星" [ref=f1e249]
+                  - cell "--" [ref=f1e250]
+                  - cell "1、贷款即挂 韩俊顾问 2026-03-12 14:13:13 2、杭州康伴宠汇有限公司 -- 2026-03-12 11:56:42" [ref=f1e251]:
+                    - text: 1、贷款即挂 韩俊顾问 2026-03-12 14:13:13
+                    - text: 2、杭州康伴宠汇有限公司 -- 2026-03-12 11:56:42
+                  - cell "徐钰蓉" [ref=f1e252]
+                  - cell "--" [ref=f1e253]
+                  - cell "--" [ref=f1e254]
+                  - cell "--" [ref=f1e255]
+                  - cell "--" [ref=f1e256]
+                  - cell "--" [ref=f1e257]
+                  - cell "--" [ref=f1e258]
+                  - cell "0" [ref=f1e259]
+                  - cell "无" [ref=f1e260]
+                  - cell "否" [ref=f1e261]
+                  - cell "0" [ref=f1e262]
+                  - cell "2026-04-27 09:38" [ref=f1e263]
+                  - cell "2026-03-12 11:56" [ref=f1e264]
+                  - cell "信用贷" [ref=f1e265]
+                  - cell "BXMJ-excel" [ref=f1e266]
+                  - cell "杭州" [ref=f1e267]
+                - row "84242170 汪伟力 . 待跟进 0星 -- 1、未接 张召顾问 2026-03-16 17:19:44 2、不需要了 张召顾问 2026-03-13 09:31:46 3、未接 张召顾问 2026-03-12 19:12:24 4、不需要了 张召顾问 2026-03-12 14:02:30 5、杭州矢崎配件有限公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e268] [cursor=pointer]:
+                  - cell "84242170" [ref=f1e269]:
+                    - checkbox [ref=f1e270]
+                    - text: "84242170"
+                  - cell "汪伟力" [ref=f1e271]:
+                    - generic "点击修改客户信息" [ref=f1e274]: 汪伟力
+                  - cell [ref=f1e275]
+                  - cell ". 待跟进" [ref=f1e276]:
+                    - generic [ref=f1e278]:
+                      - text: .
+                      - generic [ref=f1e279]: 待跟进
+                  - cell "0星" [ref=f1e280]
+                  - cell "--" [ref=f1e281]
+                  - cell "1、未接 张召顾问 2026-03-16 17:19:44 2、不需要了 张召顾问 2026-03-13 09:31:46 3、未接 张召顾问 2026-03-12 19:12:24 4、不需要了 张召顾问 2026-03-12 14:02:30 5、杭州矢崎配件有限公司 -- 2026-03-12 11:56:41" [ref=f1e282]:
+                    - text: 1、未接 张召顾问 2026-03-16 17:19:44
+                    - text: 2、不需要了 张召顾问 2026-03-13 09:31:46
+                    - text: 3、未接 张召顾问 2026-03-12 19:12:24
+                    - text: 4、不需要了 张召顾问 2026-03-12 14:02:30
+                    - text: 5、杭州矢崎配件有限公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e283]
+                  - cell "--" [ref=f1e284]
+                  - cell "--" [ref=f1e285]
+                  - cell "--" [ref=f1e286]
+                  - cell "--" [ref=f1e287]
+                  - cell "--" [ref=f1e288]
+                  - cell "--" [ref=f1e289]
+                  - cell "0" [ref=f1e290]
+                  - cell "无" [ref=f1e291]
+                  - cell "否" [ref=f1e292]
+                  - cell "0" [ref=f1e293]
+                  - cell "2026-04-27 09:38" [ref=f1e294]
+                  - cell "2026-03-12 11:56" [ref=f1e295]
+                  - cell "信用贷" [ref=f1e296]
+                  - cell "BXMJ-excel" [ref=f1e297]
+                  - cell "杭州" [ref=f1e298]
+                - row "84242169 谢梁 . 待跟进 0星 -- 1、不需要了 金晟顾问 2026-03-30 15:34:22 2、不需要了 金晟顾问 2026-03-12 14:08:43 3、浙江省对外服务有限公司人力资源服务分公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e299] [cursor=pointer]:
+                  - cell "84242169" [ref=f1e300]:
+                    - checkbox [ref=f1e301]
+                    - text: "84242169"
+                  - cell "谢梁" [ref=f1e302]:
+                    - generic "点击修改客户信息" [ref=f1e305]: 谢梁
+                  - cell [ref=f1e306]
+                  - cell ". 待跟进" [ref=f1e307]:
+                    - generic [ref=f1e309]:
+                      - text: .
+                      - generic [ref=f1e310]: 待跟进
+                  - cell "0星" [ref=f1e311]
+                  - cell "--" [ref=f1e312]
+                  - cell "1、不需要了 金晟顾问 2026-03-30 15:34:22 2、不需要了 金晟顾问 2026-03-12 14:08:43 3、浙江省对外服务有限公司人力资源服务分公司 -- 2026-03-12 11:56:41" [ref=f1e313]:
+                    - text: 1、不需要了 金晟顾问 2026-03-30 15:34:22
+                    - text: 2、不需要了 金晟顾问 2026-03-12 14:08:43
+                    - text: 3、浙江省对外服务有限公司人力资源服务分公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e314]
+                  - cell "--" [ref=f1e315]
+                  - cell "--" [ref=f1e316]
+                  - cell "--" [ref=f1e317]
+                  - cell "--" [ref=f1e318]
+                  - cell "--" [ref=f1e319]
+                  - cell "--" [ref=f1e320]
+                  - cell "0" [ref=f1e321]
+                  - cell "无" [ref=f1e322]
+                  - cell "否" [ref=f1e323]
+                  - cell "0" [ref=f1e324]
+                  - cell "2026-04-27 09:38" [ref=f1e325]
+                  - cell "2026-03-12 11:56" [ref=f1e326]
+                  - cell "信用贷" [ref=f1e327]
+                  - cell "BXMJ-excel" [ref=f1e328]
+                  - cell "杭州" [ref=f1e329]
+                - row "84242168 潘慧玲 . 待跟进 0星 -- 1、贷款即挂 金晟顾问 2026-04-16 17:51:45 2、带个孩子叽叽哇哇的 左廷军顾问 2026-03-23 17:22:30 3、不需要 左廷军顾问 2026-03-18 09:36:14 4、不需要 左廷军顾问 2026-03-12 19:40:49 5、衣加衣服饰 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e330] [cursor=pointer]:
+                  - cell "84242168" [ref=f1e331]:
+                    - checkbox [ref=f1e332]
+                    - text: "84242168"
+                  - cell "潘慧玲" [ref=f1e333]:
+                    - generic "点击修改客户信息" [ref=f1e336]: 潘慧玲
+                  - cell [ref=f1e337]
+                  - cell ". 待跟进" [ref=f1e338]:
+                    - generic [ref=f1e340]:
+                      - text: .
+                      - generic [ref=f1e341]: 待跟进
+                  - cell "0星" [ref=f1e342]
+                  - cell "--" [ref=f1e343]
+                  - cell "1、贷款即挂 金晟顾问 2026-04-16 17:51:45 2、带个孩子叽叽哇哇的 左廷军顾问 2026-03-23 17:22:30 3、不需要 左廷军顾问 2026-03-18 09:36:14 4、不需要 左廷军顾问 2026-03-12 19:40:49 5、衣加衣服饰 -- 2026-03-12 11:56:41" [ref=f1e344]:
+                    - text: 1、贷款即挂 金晟顾问 2026-04-16 17:51:45
+                    - text: 2、带个孩子叽叽哇哇的 左廷军顾问 2026-03-23 17:22:30
+                    - text: 3、不需要 左廷军顾问 2026-03-18 09:36:14
+                    - text: 4、不需要 左廷军顾问 2026-03-12 19:40:49
+                    - text: 5、衣加衣服饰 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e345]
+                  - cell "--" [ref=f1e346]
+                  - cell "--" [ref=f1e347]
+                  - cell "--" [ref=f1e348]
+                  - cell "--" [ref=f1e349]
+                  - cell "--" [ref=f1e350]
+                  - cell "--" [ref=f1e351]
+                  - cell "0" [ref=f1e352]
+                  - cell "无" [ref=f1e353]
+                  - cell "否" [ref=f1e354]
+                  - cell "0" [ref=f1e355]
+                  - cell "2026-04-27 09:38" [ref=f1e356]
+                  - cell "2026-03-12 11:56" [ref=f1e357]
+                  - cell "信用贷" [ref=f1e358]
+                  - cell "BXMJ-excel" [ref=f1e359]
+                  - cell "杭州" [ref=f1e360]
+                - row "84242167 周跃森 . 待跟进 0星 -- 1、未接 虞淇喻顾问 2026-03-18 09:22:27 2、未接 虞淇喻顾问 2026-03-16 19:31:28 3、还在用 目前不需要置换1-2厘的 虞淇喻顾问 2026-03-12 19:08:38 4、盲加V 虞淇喻顾问 2026-03-12 17:50:43 5、通话中 虞淇喻顾问 2026-03-12 14:22:25 6、浙江省建工集团有限责任公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e361] [cursor=pointer]:
+                  - cell "84242167" [ref=f1e362]:
+                    - checkbox [ref=f1e363]
+                    - text: "84242167"
+                  - cell "周跃森" [ref=f1e364]:
+                    - generic "点击修改客户信息" [ref=f1e367]: 周跃森
+                  - cell [ref=f1e368]
+                  - cell ". 待跟进" [ref=f1e369]:
+                    - generic [ref=f1e371]:
+                      - text: .
+                      - generic [ref=f1e372]: 待跟进
+                  - cell "0星" [ref=f1e373]
+                  - cell "--" [ref=f1e374]
+                  - cell "1、未接 虞淇喻顾问 2026-03-18 09:22:27 2、未接 虞淇喻顾问 2026-03-16 19:31:28 3、还在用 目前不需要置换1-2厘的 虞淇喻顾问 2026-03-12 19:08:38 4、盲加V 虞淇喻顾问 2026-03-12 17:50:43 5、通话中 虞淇喻顾问 2026-03-12 14:22:25 6、浙江省建工集团有限责任公司 -- 2026-03-12 11:56:41" [ref=f1e375]:
+                    - text: 1、未接 虞淇喻顾问 2026-03-18 09:22:27
+                    - text: 2、未接 虞淇喻顾问 2026-03-16 19:31:28
+                    - text: 3、还在用 目前不需要置换1-2厘的 虞淇喻顾问 2026-03-12 19:08:38
+                    - text: 4、盲加V 虞淇喻顾问 2026-03-12 17:50:43
+                    - text: 5、通话中 虞淇喻顾问 2026-03-12 14:22:25
+                    - text: 6、浙江省建工集团有限责任公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e376]
+                  - cell "--" [ref=f1e377]
+                  - cell "--" [ref=f1e378]
+                  - cell "--" [ref=f1e379]
+                  - cell "--" [ref=f1e380]
+                  - cell "--" [ref=f1e381]
+                  - cell "--" [ref=f1e382]
+                  - cell "0" [ref=f1e383]
+                  - cell "无" [ref=f1e384]
+                  - cell "否" [ref=f1e385]
+                  - cell "0" [ref=f1e386]
+                  - cell "2026-04-27 09:38" [ref=f1e387]
+                  - cell "2026-03-12 11:56" [ref=f1e388]
+                  - cell "信用贷" [ref=f1e389]
+                  - cell "BXMJ-excel" [ref=f1e390]
+                  - cell "杭州" [ref=f1e391]
+                - row "84242166 胡超峰 . 待跟进 0星 -- 1、贷款即挂 韩俊顾问 2026-03-12 14:14:18 2、浙江宸泰建筑设计研究院有限公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e392] [cursor=pointer]:
+                  - cell "84242166" [ref=f1e393]:
+                    - checkbox [ref=f1e394]
+                    - text: "84242166"
+                  - cell "胡超峰" [ref=f1e395]:
+                    - generic "点击修改客户信息" [ref=f1e398]: 胡超峰
+                  - cell [ref=f1e399]
+                  - cell ". 待跟进" [ref=f1e400]:
+                    - generic [ref=f1e402]:
+                      - text: .
+                      - generic [ref=f1e403]: 待跟进
+                  - cell "0星" [ref=f1e404]
+                  - cell "--" [ref=f1e405]
+                  - cell "1、贷款即挂 韩俊顾问 2026-03-12 14:14:18 2、浙江宸泰建筑设计研究院有限公司 -- 2026-03-12 11:56:41" [ref=f1e406]:
+                    - text: 1、贷款即挂 韩俊顾问 2026-03-12 14:14:18
+                    - text: 2、浙江宸泰建筑设计研究院有限公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e407]
+                  - cell "--" [ref=f1e408]
+                  - cell "--" [ref=f1e409]
+                  - cell "--" [ref=f1e410]
+                  - cell "--" [ref=f1e411]
+                  - cell "--" [ref=f1e412]
+                  - cell "--" [ref=f1e413]
+                  - cell "0" [ref=f1e414]
+                  - cell "无" [ref=f1e415]
+                  - cell "否" [ref=f1e416]
+                  - cell "0" [ref=f1e417]
+                  - cell "2026-04-27 09:38" [ref=f1e418]
+                  - cell "2026-03-12 11:56" [ref=f1e419]
+                  - cell "信用贷" [ref=f1e420]
+                  - cell "BXMJ-excel" [ref=f1e421]
+                  - cell "杭州" [ref=f1e422]
+                - row "84242165 傅必成 . 待跟进 0星 -- 1、不需要了 张召顾问 2026-03-16 17:52:52 2、不需要了 张召顾问 2026-03-13 09:31:59 3、不需要了 张召顾问 2026-03-12 19:13:11 4、不需要了 张召顾问 2026-03-12 14:06:36 5、云尖 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e423] [cursor=pointer]:
+                  - cell "84242165" [ref=f1e424]:
+                    - checkbox [ref=f1e425]
+                    - text: "84242165"
+                  - cell "傅必成" [ref=f1e426]:
+                    - generic "点击修改客户信息" [ref=f1e429]: 傅必成
+                  - cell [ref=f1e430]
+                  - cell ". 待跟进" [ref=f1e431]:
+                    - generic [ref=f1e433]:
+                      - text: .
+                      - generic [ref=f1e434]: 待跟进
+                  - cell "0星" [ref=f1e435]
+                  - cell "--" [ref=f1e436]
+                  - cell "1、不需要了 张召顾问 2026-03-16 17:52:52 2、不需要了 张召顾问 2026-03-13 09:31:59 3、不需要了 张召顾问 2026-03-12 19:13:11 4、不需要了 张召顾问 2026-03-12 14:06:36 5、云尖 -- 2026-03-12 11:56:41" [ref=f1e437]:
+                    - text: 1、不需要了 张召顾问 2026-03-16 17:52:52
+                    - text: 2、不需要了 张召顾问 2026-03-13 09:31:59
+                    - text: 3、不需要了 张召顾问 2026-03-12 19:13:11
+                    - text: 4、不需要了 张召顾问 2026-03-12 14:06:36
+                    - text: 5、云尖 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e438]
+                  - cell "--" [ref=f1e439]
+                  - cell "--" [ref=f1e440]
+                  - cell "--" [ref=f1e441]
+                  - cell "--" [ref=f1e442]
+                  - cell "--" [ref=f1e443]
+                  - cell "--" [ref=f1e444]
+                  - cell "0" [ref=f1e445]
+                  - cell "无" [ref=f1e446]
+                  - cell "否" [ref=f1e447]
+                  - cell "0" [ref=f1e448]
+                  - cell "2026-04-27 09:38" [ref=f1e449]
+                  - cell "2026-03-12 11:56" [ref=f1e450]
+                  - cell "信用贷" [ref=f1e451]
+                  - cell "BXMJ-excel" [ref=f1e452]
+                  - cell "杭州" [ref=f1e453]
+                - row "84242164 莫继松 . 待跟进 0星 -- 1、通话中 金晟顾问 2026-03-16 10:02:32 2、无法接通 金晟顾问 2026-03-13 09:35:39 3、通话中 金晟顾问 2026-03-12 14:10:05 4、一族服饰(杭州)淘宝店 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e454] [cursor=pointer]:
+                  - cell "84242164" [ref=f1e455]:
+                    - checkbox [ref=f1e456]
+                    - text: "84242164"
+                  - cell "莫继松" [ref=f1e457]:
+                    - generic "点击修改客户信息" [ref=f1e460]: 莫继松
+                  - cell [ref=f1e461]
+                  - cell ". 待跟进" [ref=f1e462]:
+                    - generic [ref=f1e464]:
+                      - text: .
+                      - generic [ref=f1e465]: 待跟进
+                  - cell "0星" [ref=f1e466]
+                  - cell "--" [ref=f1e467]
+                  - cell "1、通话中 金晟顾问 2026-03-16 10:02:32 2、无法接通 金晟顾问 2026-03-13 09:35:39 3、通话中 金晟顾问 2026-03-12 14:10:05 4、一族服饰(杭州)淘宝店 -- 2026-03-12 11:56:41" [ref=f1e468]:
+                    - text: 1、通话中 金晟顾问 2026-03-16 10:02:32
+                    - text: 2、无法接通 金晟顾问 2026-03-13 09:35:39
+                    - text: 3、通话中 金晟顾问 2026-03-12 14:10:05
+                    - text: 4、一族服饰(杭州)淘宝店 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e469]
+                  - cell "--" [ref=f1e470]
+                  - cell "--" [ref=f1e471]
+                  - cell "--" [ref=f1e472]
+                  - cell "--" [ref=f1e473]
+                  - cell "--" [ref=f1e474]
+                  - cell "--" [ref=f1e475]
+                  - cell "0" [ref=f1e476]
+                  - cell "无" [ref=f1e477]
+                  - cell "否" [ref=f1e478]
+                  - cell "0" [ref=f1e479]
+                  - cell "2026-04-27 09:38" [ref=f1e480]
+                  - cell "2026-03-12 11:56" [ref=f1e481]
+                  - cell "信用贷" [ref=f1e482]
+                  - cell "BXMJ-excel" [ref=f1e483]
+                  - cell "杭州" [ref=f1e484]
+                - row "84242163 丁凯达 . 待跟进 0星 -- 1、无人接听 左廷军顾问 2026-03-28 17:47:19 2、回电 不用不用 左廷军顾问 2026-03-23 11:42:22 3、语音留言小助理 左廷军顾问 2026-03-23 11:33:59 4、响铃后无人接听 左廷军顾问 2026-03-17 10:26:39 5、语音留言小助理 左廷军顾问 2026-03-12 19:42:06 6、浙江网新电气有限公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e485] [cursor=pointer]:
+                  - cell "84242163" [ref=f1e486]:
+                    - checkbox [ref=f1e487]
+                    - text: "84242163"
+                  - cell "丁凯达" [ref=f1e488]:
+                    - generic "点击修改客户信息" [ref=f1e491]: 丁凯达
+                  - cell [ref=f1e492]
+                  - cell ". 待跟进" [ref=f1e493]:
+                    - generic [ref=f1e495]:
+                      - text: .
+                      - generic [ref=f1e496]: 待跟进
+                  - cell "0星" [ref=f1e497]
+                  - cell "--" [ref=f1e498]
+                  - cell "1、无人接听 左廷军顾问 2026-03-28 17:47:19 2、回电 不用不用 左廷军顾问 2026-03-23 11:42:22 3、语音留言小助理 左廷军顾问 2026-03-23 11:33:59 4、响铃后无人接听 左廷军顾问 2026-03-17 10:26:39 5、语音留言小助理 左廷军顾问 2026-03-12 19:42:06 6、浙江网新电气有限公司 -- 2026-03-12 11:56:41" [ref=f1e499]:
+                    - text: 1、无人接听 左廷军顾问 2026-03-28 17:47:19
+                    - text: 2、回电 不用不用 左廷军顾问 2026-03-23 11:42:22
+                    - text: 3、语音留言小助理 左廷军顾问 2026-03-23 11:33:59
+                    - text: 4、响铃后无人接听 左廷军顾问 2026-03-17 10:26:39
+                    - text: 5、语音留言小助理 左廷军顾问 2026-03-12 19:42:06
+                    - text: 6、浙江网新电气有限公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e500]
+                  - cell "--" [ref=f1e501]
+                  - cell "--" [ref=f1e502]
+                  - cell "--" [ref=f1e503]
+                  - cell "--" [ref=f1e504]
+                  - cell "--" [ref=f1e505]
+                  - cell "--" [ref=f1e506]
+                  - cell "0" [ref=f1e507]
+                  - cell "无" [ref=f1e508]
+                  - cell "否" [ref=f1e509]
+                  - cell "0" [ref=f1e510]
+                  - cell "2026-04-27 09:38" [ref=f1e511]
+                  - cell "2026-03-12 11:56" [ref=f1e512]
+                  - cell "信用贷" [ref=f1e513]
+                  - cell "BXMJ-excel" [ref=f1e514]
+                  - cell "杭州" [ref=f1e515]
+                - row "84242162 王振宇 . 待跟进 0星 -- 1、未接 虞淇喻顾问 2026-03-18 09:24:20 2、未接 虞淇喻顾问 2026-03-16 19:12:04 3、盲加V 虞淇喻顾问 2026-03-12 17:51:20 4、说到宁波没有没有没有 不要了 秒挂 虞淇喻顾问 2026-03-12 14:23:28 5、杭州政德文化策划有限公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e516] [cursor=pointer]:
+                  - cell "84242162" [ref=f1e517]:
+                    - checkbox [ref=f1e518]
+                    - text: "84242162"
+                  - cell "王振宇" [ref=f1e519]:
+                    - generic "点击修改客户信息" [ref=f1e522]: 王振宇
+                  - cell [ref=f1e523]
+                  - cell ". 待跟进" [ref=f1e524]:
+                    - generic [ref=f1e526]:
+                      - text: .
+                      - generic [ref=f1e527]: 待跟进
+                  - cell "0星" [ref=f1e528]
+                  - cell "--" [ref=f1e529]
+                  - cell "1、未接 虞淇喻顾问 2026-03-18 09:24:20 2、未接 虞淇喻顾问 2026-03-16 19:12:04 3、盲加V 虞淇喻顾问 2026-03-12 17:51:20 4、说到宁波没有没有没有 不要了 秒挂 虞淇喻顾问 2026-03-12 14:23:28 5、杭州政德文化策划有限公司 -- 2026-03-12 11:56:41" [ref=f1e530]:
+                    - text: 1、未接 虞淇喻顾问 2026-03-18 09:24:20
+                    - text: 2、未接 虞淇喻顾问 2026-03-16 19:12:04
+                    - text: 3、盲加V 虞淇喻顾问 2026-03-12 17:51:20
+                    - text: 4、说到宁波没有没有没有 不要了 秒挂 虞淇喻顾问 2026-03-12 14:23:28
+                    - text: 5、杭州政德文化策划有限公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e531]
+                  - cell "--" [ref=f1e532]
+                  - cell "--" [ref=f1e533]
+                  - cell "--" [ref=f1e534]
+                  - cell "--" [ref=f1e535]
+                  - cell "--" [ref=f1e536]
+                  - cell "--" [ref=f1e537]
+                  - cell "0" [ref=f1e538]
+                  - cell "无" [ref=f1e539]
+                  - cell "否" [ref=f1e540]
+                  - cell "0" [ref=f1e541]
+                  - cell "2026-04-27 09:38" [ref=f1e542]
+                  - cell "2026-03-12 11:56" [ref=f1e543]
+                  - cell "信用贷" [ref=f1e544]
+                  - cell "BXMJ-excel" [ref=f1e545]
+                  - cell "杭州" [ref=f1e546]
+                - row "84242161 王靖霖 . 待跟进 0星 -- 1、贷款即挂 韩俊顾问 2026-03-12 14:15:09 2、医惠科技有限公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e547] [cursor=pointer]:
+                  - cell "84242161" [ref=f1e548]:
+                    - checkbox [ref=f1e549]
+                    - text: "84242161"
+                  - cell "王靖霖" [ref=f1e550]:
+                    - generic "点击修改客户信息" [ref=f1e553]: 王靖霖
+                  - cell [ref=f1e554]
+                  - cell ". 待跟进" [ref=f1e555]:
+                    - generic [ref=f1e557]:
+                      - text: .
+                      - generic [ref=f1e558]: 待跟进
+                  - cell "0星" [ref=f1e559]
+                  - cell "--" [ref=f1e560]
+                  - cell "1、贷款即挂 韩俊顾问 2026-03-12 14:15:09 2、医惠科技有限公司 -- 2026-03-12 11:56:41" [ref=f1e561]:
+                    - text: 1、贷款即挂 韩俊顾问 2026-03-12 14:15:09
+                    - text: 2、医惠科技有限公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e562]
+                  - cell "--" [ref=f1e563]
+                  - cell "--" [ref=f1e564]
+                  - cell "--" [ref=f1e565]
+                  - cell "--" [ref=f1e566]
+                  - cell "--" [ref=f1e567]
+                  - cell "--" [ref=f1e568]
+                  - cell "0" [ref=f1e569]
+                  - cell "无" [ref=f1e570]
+                  - cell "否" [ref=f1e571]
+                  - cell "0" [ref=f1e572]
+                  - cell "2026-04-27 09:38" [ref=f1e573]
+                  - cell "2026-03-12 11:56" [ref=f1e574]
+                  - cell "信用贷" [ref=f1e575]
+                  - cell "BXMJ-excel" [ref=f1e576]
+                  - cell "杭州" [ref=f1e577]
+                - row "84242160 范智力 . 待跟进 0星 -- 1、不需要了 张召顾问 2026-03-16 17:20:00 2、不需要了 张召顾问 2026-03-13 09:32:10 3、不需要了 张召顾问 2026-03-12 19:13:57 4、通话中 张召顾问 2026-03-12 14:06:58 5、杭州分浪科技有限公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e578] [cursor=pointer]:
+                  - cell "84242160" [ref=f1e579]:
+                    - checkbox [ref=f1e580]
+                    - text: "84242160"
+                  - cell "范智力" [ref=f1e581]:
+                    - generic "点击修改客户信息" [ref=f1e584]: 范智力
+                  - cell [ref=f1e585]
+                  - cell ". 待跟进" [ref=f1e586]:
+                    - generic [ref=f1e588]:
+                      - text: .
+                      - generic [ref=f1e589]: 待跟进
+                  - cell "0星" [ref=f1e590]
+                  - cell "--" [ref=f1e591]
+                  - cell "1、不需要了 张召顾问 2026-03-16 17:20:00 2、不需要了 张召顾问 2026-03-13 09:32:10 3、不需要了 张召顾问 2026-03-12 19:13:57 4、通话中 张召顾问 2026-03-12 14:06:58 5、杭州分浪科技有限公司 -- 2026-03-12 11:56:41" [ref=f1e592]:
+                    - text: 1、不需要了 张召顾问 2026-03-16 17:20:00
+                    - text: 2、不需要了 张召顾问 2026-03-13 09:32:10
+                    - text: 3、不需要了 张召顾问 2026-03-12 19:13:57
+                    - text: 4、通话中 张召顾问 2026-03-12 14:06:58
+                    - text: 5、杭州分浪科技有限公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e593]
+                  - cell "--" [ref=f1e594]
+                  - cell "--" [ref=f1e595]
+                  - cell "--" [ref=f1e596]
+                  - cell "--" [ref=f1e597]
+                  - cell "--" [ref=f1e598]
+                  - cell "--" [ref=f1e599]
+                  - cell "0" [ref=f1e600]
+                  - cell "无" [ref=f1e601]
+                  - cell "否" [ref=f1e602]
+                  - cell "0" [ref=f1e603]
+                  - cell "2026-04-27 09:38" [ref=f1e604]
+                  - cell "2026-03-12 11:56" [ref=f1e605]
+                  - cell "信用贷" [ref=f1e606]
+                  - cell "BXMJ-excel" [ref=f1e607]
+                  - cell "杭州" [ref=f1e608]
+                - row "84242159 王露莹 . 待跟进 0星 -- 1、接了就挂 金晟顾问 2026-03-28 15:18:45 2、1 金晟顾问 2026-03-18 09:47:31 3、未接 金晟顾问 2026-03-12 14:12:06 4、钉钉（中国）信息技术有限公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e609] [cursor=pointer]:
+                  - cell "84242159" [ref=f1e610]:
+                    - checkbox [ref=f1e611]
+                    - text: "84242159"
+                  - cell "王露莹" [ref=f1e612]:
+                    - generic "点击修改客户信息" [ref=f1e615]: 王露莹
+                  - cell [ref=f1e616]
+                  - cell ". 待跟进" [ref=f1e617]:
+                    - generic [ref=f1e619]:
+                      - text: .
+                      - generic [ref=f1e620]: 待跟进
+                  - cell "0星" [ref=f1e621]
+                  - cell "--" [ref=f1e622]
+                  - cell "1、接了就挂 金晟顾问 2026-03-28 15:18:45 2、1 金晟顾问 2026-03-18 09:47:31 3、未接 金晟顾问 2026-03-12 14:12:06 4、钉钉（中国）信息技术有限公司 -- 2026-03-12 11:56:41" [ref=f1e623]:
+                    - text: 1、接了就挂 金晟顾问 2026-03-28 15:18:45
+                    - text: 2、1 金晟顾问 2026-03-18 09:47:31
+                    - text: 3、未接 金晟顾问 2026-03-12 14:12:06
+                    - text: 4、钉钉（中国）信息技术有限公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e624]
+                  - cell "--" [ref=f1e625]
+                  - cell "--" [ref=f1e626]
+                  - cell "--" [ref=f1e627]
+                  - cell "--" [ref=f1e628]
+                  - cell "--" [ref=f1e629]
+                  - cell "--" [ref=f1e630]
+                  - cell "0" [ref=f1e631]
+                  - cell "无" [ref=f1e632]
+                  - cell "否" [ref=f1e633]
+                  - cell "0" [ref=f1e634]
+                  - cell "2026-04-27 09:38" [ref=f1e635]
+                  - cell "2026-03-12 11:56" [ref=f1e636]
+                  - cell "信用贷" [ref=f1e637]
+                  - cell "BXMJ-excel" [ref=f1e638]
+                  - cell "杭州" [ref=f1e639]
+                - row "84242158 方能之 . 待跟进 0星 -- 1、不需要了 金晟顾问 2026-04-16 17:52:21 2、贷款即挂 左廷军顾问 2026-03-23 20:43:27 3、不需要了 左廷军顾问 2026-03-18 09:44:07 4、无人接听 左廷军顾问 2026-03-12 19:43:11 5、杭银理财有限责任公司 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e640] [cursor=pointer]:
+                  - cell "84242158" [ref=f1e641]:
+                    - checkbox [ref=f1e642]
+                    - text: "84242158"
+                  - cell "方能之" [ref=f1e643]:
+                    - generic "点击修改客户信息" [ref=f1e646]: 方能之
+                  - cell [ref=f1e647]
+                  - cell ". 待跟进" [ref=f1e648]:
+                    - generic [ref=f1e650]:
+                      - text: .
+                      - generic [ref=f1e651]: 待跟进
+                  - cell "0星" [ref=f1e652]
+                  - cell "--" [ref=f1e653]
+                  - cell "1、不需要了 金晟顾问 2026-04-16 17:52:21 2、贷款即挂 左廷军顾问 2026-03-23 20:43:27 3、不需要了 左廷军顾问 2026-03-18 09:44:07 4、无人接听 左廷军顾问 2026-03-12 19:43:11 5、杭银理财有限责任公司 -- 2026-03-12 11:56:41" [ref=f1e654]:
+                    - text: 1、不需要了 金晟顾问 2026-04-16 17:52:21
+                    - text: 2、贷款即挂 左廷军顾问 2026-03-23 20:43:27
+                    - text: 3、不需要了 左廷军顾问 2026-03-18 09:44:07
+                    - text: 4、无人接听 左廷军顾问 2026-03-12 19:43:11
+                    - text: 5、杭银理财有限责任公司 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e655]
+                  - cell "--" [ref=f1e656]
+                  - cell "--" [ref=f1e657]
+                  - cell "--" [ref=f1e658]
+                  - cell "--" [ref=f1e659]
+                  - cell "--" [ref=f1e660]
+                  - cell "--" [ref=f1e661]
+                  - cell "0" [ref=f1e662]
+                  - cell "无" [ref=f1e663]
+                  - cell "否" [ref=f1e664]
+                  - cell "0" [ref=f1e665]
+                  - cell "2026-04-27 09:38" [ref=f1e666]
+                  - cell "2026-03-12 11:56" [ref=f1e667]
+                  - cell "信用贷" [ref=f1e668]
+                  - cell "BXMJ-excel" [ref=f1e669]
+                  - cell "杭州" [ref=f1e670]
+                - row "84242157 金官兴 . 待跟进 0星 -- 1、未接 虞淇喻顾问 2026-03-18 09:22:38 2、未接 虞淇喻顾问 2026-03-16 19:32:16 3、盲加V 虞淇喻顾问 2026-03-12 17:52:13 4、不用了 谢谢 虞淇喻顾问 2026-03-12 14:24:23 5、杭州市余杭区建筑工程质量安全监督站(杭州市余杭区市政公... -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e671] [cursor=pointer]:
+                  - cell "84242157" [ref=f1e672]:
+                    - checkbox [ref=f1e673]
+                    - text: "84242157"
+                  - cell "金官兴" [ref=f1e674]:
+                    - generic "点击修改客户信息" [ref=f1e677]: 金官兴
+                  - cell [ref=f1e678]
+                  - cell ". 待跟进" [ref=f1e679]:
+                    - generic [ref=f1e681]:
+                      - text: .
+                      - generic [ref=f1e682]: 待跟进
+                  - cell "0星" [ref=f1e683]
+                  - cell "--" [ref=f1e684]
+                  - cell "1、未接 虞淇喻顾问 2026-03-18 09:22:38 2、未接 虞淇喻顾问 2026-03-16 19:32:16 3、盲加V 虞淇喻顾问 2026-03-12 17:52:13 4、不用了 谢谢 虞淇喻顾问 2026-03-12 14:24:23 5、杭州市余杭区建筑工程质量安全监督站(杭州市余杭区市政公... -- 2026-03-12 11:56:41" [ref=f1e685]:
+                    - text: 1、未接 虞淇喻顾问 2026-03-18 09:22:38
+                    - text: 2、未接 虞淇喻顾问 2026-03-16 19:32:16
+                    - text: 3、盲加V 虞淇喻顾问 2026-03-12 17:52:13
+                    - text: 4、不用了 谢谢 虞淇喻顾问 2026-03-12 14:24:23
+                    - text: 5、杭州市余杭区建筑工程质量安全监督站(杭州市余杭区市政公... -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e686]
+                  - cell "--" [ref=f1e687]
+                  - cell "--" [ref=f1e688]
+                  - cell "--" [ref=f1e689]
+                  - cell "--" [ref=f1e690]
+                  - cell "--" [ref=f1e691]
+                  - cell "--" [ref=f1e692]
+                  - cell "0" [ref=f1e693]
+                  - cell "无" [ref=f1e694]
+                  - cell "否" [ref=f1e695]
+                  - cell "0" [ref=f1e696]
+                  - cell "2026-04-27 09:38" [ref=f1e697]
+                  - cell "2026-03-12 11:56" [ref=f1e698]
+                  - cell "信用贷" [ref=f1e699]
+                  - cell "BXMJ-excel" [ref=f1e700]
+                  - cell "杭州" [ref=f1e701]
+                - row "84242156 陈鹦鹉 . 待跟进 0星 -- 1、不需要了 韩俊顾问 2026-03-12 14:16:27 2、杭州市西湖区鼎鼎通信经营部 -- 2026-03-12 11:56:41 徐钰蓉 -- -- -- -- -- -- 0 无 否 0 2026-04-27 09:38 2026-03-12 11:56 信用贷 BXMJ-excel 杭州" [ref=f1e702] [cursor=pointer]:
+                  - cell "84242156" [ref=f1e703]:
+                    - checkbox [ref=f1e704]
+                    - text: "84242156"
+                  - cell "陈鹦鹉" [ref=f1e705]:
+                    - generic "点击修改客户信息" [ref=f1e708]: 陈鹦鹉
+                  - cell [ref=f1e709]
+                  - cell ". 待跟进" [ref=f1e710]:
+                    - generic [ref=f1e712]:
+                      - text: .
+                      - generic [ref=f1e713]: 待跟进
+                  - cell "0星" [ref=f1e714]
+                  - cell "--" [ref=f1e715]
+                  - cell "1、不需要了 韩俊顾问 2026-03-12 14:16:27 2、杭州市西湖区鼎鼎通信经营部 -- 2026-03-12 11:56:41" [ref=f1e716]:
+                    - text: 1、不需要了 韩俊顾问 2026-03-12 14:16:27
+                    - text: 2、杭州市西湖区鼎鼎通信经营部 -- 2026-03-12 11:56:41
+                  - cell "徐钰蓉" [ref=f1e717]
+                  - cell "--" [ref=f1e718]
+                  - cell "--" [ref=f1e719]
+                  - cell "--" [ref=f1e720]
+                  - cell "--" [ref=f1e721]
+                  - cell "--" [ref=f1e722]
+                  - cell "--" [ref=f1e723]
+                  - cell "0" [ref=f1e724]
+                  - cell "无" [ref=f1e725]
+                  - cell "否" [ref=f1e726]
+                  - cell "0" [ref=f1e727]
+                  - cell "2026-04-27 09:38" [ref=f1e728]
+                  - cell "2026-03-12 11:56" [ref=f1e729]
+                  - cell "信用贷" [ref=f1e730]
+                  - cell "BXMJ-excel" [ref=f1e731]
+                  - cell "杭州" [ref=f1e732]
+            - generic [ref=f1e736]:
+              - generic [ref=f1e737]:
+                - generic [ref=f1e738]: 每页
+                - combobox [ref=f1e739]:
+                  - option "10"
+                  - option "20" [selected]
+                  - option "50"
+                  - option "100"
+                  - option "200"
+                - generic [ref=f1e740]: 条
+              - generic [ref=f1e742]:
+                - generic [ref=f1e743]: . 共 51 条记录, 第 1 页/ 共 3 页 .
+                - generic [ref=f1e744]:
+                  - img [ref=f1e745]
+                  - generic [ref=f1e746] [cursor=pointer]: "1"
+                  - link "2" [ref=f1e748] [cursor=pointer]:
+                    - /url: /manage/kefu_clients/index.html?ordertime=&lastupdatetime=&page=2
+                  - link "3" [ref=f1e750] [cursor=pointer]:
+                    - /url: /manage/kefu_clients/index.html?ordertime=&lastupdatetime=&page=3
+                  - img [ref=f1e751]
+                - generic [ref=f1e752]:
+                  - text: 跳至
+                  - textbox [ref=f1e753]
+                  - text: 页
+                  - button "提交" [ref=f1e754]
+          - generic: . . . . . . . . . .
+          - text:        

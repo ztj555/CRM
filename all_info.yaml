@@ -1,0 +1,210 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2] [cursor=pointer]:
+    - list [ref=e3]:
+      - listitem [ref=e4]: 基本信息
+      - listitem [ref=e5]: 身份信息
+      - listitem [ref=e6]: 房产信息
+      - listitem [ref=e7]: 车产信息
+      - listitem [ref=e8]: 保单社保公积金
+      - listitem [ref=e9]: 信用信息
+      - listitem [ref=e10]: 负债情况
+      - listitem [ref=e11]: 需求信息
+      - listitem [ref=e12]: 全部信息
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - heading "基本信息BASIC INFORMATION" [level=1] [ref=e15]
+        - list [ref=e16]:
+          - listitem [ref=e17]:
+            - generic [ref=e18]: 姓名：
+            - generic [ref=e19]: 童永平
+          - listitem [ref=e20]:
+            - generic [ref=e21]: 手机号码：
+            - generic [ref=e22]:
+              - text: "15757142750"
+              - paragraph [ref=e23]:
+                - link "点击拨打" [ref=e24]:
+                  - /url: "##"
+          - listitem [ref=e25]:
+            - generic [ref=e26]: 来源：
+            - generic [ref=e27]: T+1-excel
+          - listitem [ref=e28]:
+            - generic [ref=e29]: 城市：
+            - generic [ref=e30]: 杭州
+          - listitem [ref=e31]:
+            - generic [ref=e32]: 年龄：
+            - generic [ref=e33]: 0 岁
+          - listitem [ref=e34]:
+            - generic [ref=e35]: 婚姻：
+            - generic [ref=e36]: 未婚/离异
+          - listitem [ref=e37]:
+            - generic [ref=e38]: 申请额度：
+            - generic [ref=e39]: 0 万元
+          - listitem [ref=e40]:
+            - generic [ref=e41]: 来源类型：
+            - generic [ref=e42]: 信用贷
+      - generic [ref=e43]:
+        - heading "车产信息VEHICLE PRODUCTION INFORMATION" [level=1] [ref=e44]
+        - list [ref=e45]:
+          - listitem [ref=e46]:
+            - generic [ref=e47]: 名下车产情况：
+            - generic [ref=e48]: 有
+          - listitem [ref=e49]:
+            - generic [ref=e50]: 使用年限：
+            - generic [ref=e51]: 0 年
+          - listitem [ref=e52]:
+            - generic [ref=e53]: 车辆价值：
+            - generic [ref=e54]: 0 万
+          - listitem [ref=e55]:
+            - generic [ref=e56]: 当前保单缴费次数：
+            - generic [ref=e57]: 0 次
+      - generic [ref=e58]:
+        - heading "信用信息CREDIT INFORMATION" [level=1] [ref=e59]
+        - list [ref=e60]:
+          - listitem [ref=e61]:
+            - generic [ref=e62]: 微粒贷额度：
+            - generic [ref=e63]: 无
+  - generic [ref=e64]:
+    - list [ref=e65]:
+      - listitem [ref=e66] [cursor=pointer]: 客户跟踪
+      - listitem [ref=e67] [cursor=pointer]: 通话录音
+      - listitem [ref=e68] [cursor=pointer]: 面签视频
+      - listitem [ref=e69] [cursor=pointer]: 分配记录
+      - listitem [ref=e70] [cursor=pointer]:
+        - img [ref=e71]
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - text: ID:88280419
+        - generic [ref=e75]:
+          - text: 星级
+          - img [ref=e76] [cursor=pointer]
+          - text: ":"
+          - combobox [ref=e77]:
+            - option "请选择" [selected]
+            - option "0星"
+            - option "1星"
+            - option "2星"
+            - option "3星"
+            - option "4星"
+            - option "5星"
+        - generic [ref=e78]:
+          - text: 状态
+          - img [ref=e79] [cursor=pointer]
+          - text: ":"
+          - combobox [ref=e80]:
+            - option "请选择"
+            - option
+            - option
+            - option
+            - option [selected]
+            - option
+            - option
+            - option
+            - option
+        - generic [ref=e81]: "当前顾问: 徐钰蓉"
+        - button "备忘新增▼" [ref=e82] [cursor=pointer]
+        - button "标为重要客户" [ref=e84] [cursor=pointer]
+        - button "锁定客户" [ref=e86] [cursor=pointer]
+        - button "加入公共池" [ref=e88] [cursor=pointer]
+        - button "拉黑" [ref=e90] [cursor=pointer]
+        - button "加入必跟进" [ref=e92] [cursor=pointer]
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - text: 客户标签
+          - link "+标签" [ref=e96] [cursor=pointer]:
+            - /url: javascript:;
+        - generic [ref=e97]:
+          - text: 客户资质
+          - textbox "有利于客户放款的条件可以记录在这里，如 社保15年，公积金单边1200，按揭房7年前还清了，全款车..." [disabled] [ref=e98]
+          - link "修改" [ref=e99] [cursor=pointer]:
+            - /url: javascript:void(0);
+          - link "修改历史" [ref=e100] [cursor=pointer]:
+            - /url: javascript:void(0);
+        - generic [ref=e101]:
+          - text: 快捷输入
+          - generic [ref=e102]:
+            - button "未接" [ref=e103] [cursor=pointer]
+            - button "不需要了" [ref=e104] [cursor=pointer]
+            - button "通话中" [ref=e105] [cursor=pointer]
+            - button "拒接" [ref=e106] [cursor=pointer]
+            - button "1" [ref=e107] [cursor=pointer]
+            - button "接了就挂" [ref=e108] [cursor=pointer]
+            - button "无法接通" [ref=e109] [cursor=pointer]
+            - button "用户正忙" [ref=e110] [cursor=pointer]
+            - button "贷款即挂" [ref=e111] [cursor=pointer]
+            - button "空号" [ref=e112] [cursor=pointer]
+            - button "停机" [ref=e113] [cursor=pointer]
+            - button "关机" [ref=e114] [cursor=pointer]
+            - button "外地号码" [ref=e115] [cursor=pointer]
+            - button "现在不方便接听" [ref=e116] [cursor=pointer]
+            - button "不是本人申请" [ref=e117] [cursor=pointer]
+            - button "微信待通过" [ref=e118] [cursor=pointer]
+            - button "已发短信" [ref=e119] [cursor=pointer]
+            - button "已加微信" [ref=e120] [cursor=pointer]
+        - generic [ref=e121]:
+          - text: 新增记录
+          - textbox [ref=e122]
+          - button "确定" [ref=e123] [cursor=pointer]
+          - generic [ref=e125]:
+            - text: 记录提示：1、户籍地在哪 2、上班还是做生意 3、工资多少/营业执照多长时间 4、是否有社保和公积金 5、自己和配偶是否有房车和保单 6、负债和征信情况
+            - text: 7、初步判断可以做哪些银行 8、预约什么时候上门
+        - generic [ref=e127]:
+          - generic [ref=e128]: 备忘记录
+          - list [ref=e129]:
+            - listitem [ref=e130]: 暂无备忘记录
+          - generic [ref=e131]: 顾问记录
+          - list [ref=e132]:
+            - listitem [ref=e133]:
+              - generic:
+                - generic [ref=e134]:
+                  - emphasis [ref=e135]: "1"
+                  - text: .
+                - generic "接了就挂" [ref=e137]: 接了就挂 虞淇喻顾问 2026-04-20 11:12:14
+            - listitem [ref=e138]:
+              - generic:
+                - generic [ref=e139]:
+                  - emphasis [ref=e140]: "2"
+                  - text: .
+                - generic "未接" [ref=e142]: 未接 虞淇喻顾问 2026-04-19 14:10:52
+            - listitem [ref=e143]:
+              - generic:
+                - generic [ref=e144]:
+                  - emphasis [ref=e145]: "3"
+                  - text: .
+                - generic "未接" [ref=e147]: 未接 虞淇喻顾问 2026-04-17 09:53:48
+            - listitem [ref=e148]:
+              - generic:
+                - generic [ref=e149]:
+                  - emphasis [ref=e150]: "4"
+                  - text: .
+                - generic "未接" [ref=e152]: 未接 虞淇喻顾问 2026-04-16 17:37:27
+            - listitem [ref=e153]:
+              - generic:
+                - generic [ref=e154]:
+                  - emphasis [ref=e155]: "5"
+                  - text: .
+                - generic "贷款即挂" [ref=e157]: 贷款即挂 虞淇喻顾问 2026-04-15 14:55:16
+            - listitem [ref=e158]:
+              - generic:
+                - generic [ref=e159]:
+                  - emphasis [ref=e160]: "6"
+                  - text: .
+                - generic "5万-10万有私家车;两通长响未接发短信客户微信违规不让添加;还是长响未接;换号还是未接通再发个短信;还是长响未接;还是长响未接;还是长响未接再发个短信;" [ref=e162]:
+                  - text: 5万-10万有私家车;两通长响未接发短信客户微信违规不让添加;还是长响未接;换号还是未接通再发个短信;还是长响未接;还是长响未接;还是长响未接再发个短信;
+                  - text: 2026-04-15 11:45:28
+            - listitem
+            - listitem
+          - generic [ref=e163]: 主管点评
+          - list [ref=e164]:
+            - listitem [ref=e165]: 暂无主管点评
+          - generic [ref=e166]: 添加附件
+          - list [ref=e167]:
+            - listitem [ref=e168]:
+              - list [ref=e170]:
+                - listitem [ref=e171]:
+                  - generic [ref=e172] [cursor=pointer]:
+                    - button "Choose File" [ref=e173]
+                    - button "Choose File" [ref=e175]
+                  - text: 添加附件
+  - generic [ref=e180] [cursor=pointer]:
+    - text: 意见
+    - text: 反馈

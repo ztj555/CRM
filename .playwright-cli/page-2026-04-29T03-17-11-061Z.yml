@@ -1,0 +1,99 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: ID
+      - textbox [ref=e7]
+    - generic [ref=e8]:
+      - generic [ref=e9]: 姓名
+      - textbox [ref=e11]
+    - generic [ref=e12]:
+      - generic [ref=e13]: 手机
+      - textbox [ref=e15]
+    - generic [ref=e16]:
+      - generic [ref=e17]: 归属顾问
+      - textbox [ref=e19]
+    - generic [ref=e20]:
+      - generic [ref=e21]: 状态
+      - generic [ref=e24] [cursor=pointer]: 请选择选项
+    - generic [ref=e25]:
+      - generic [ref=e26]: 星级
+      - generic [ref=e29] [cursor=pointer]: 请选择选项
+    - generic [ref=e30]:
+      - generic [ref=e31]: 时间类型
+      - combobox [ref=e32]:
+        - option "申请时间" [selected]
+        - option "备注时间"
+      - combobox [ref=e33]:
+        - option "-不限-" [selected]
+        - option "今日"
+        - option "昨天"
+        - option "最近7天"
+        - option "本月"
+        - option "上月"
+        - option "自定义"
+    - generic [ref=e34]:
+      - generic [ref=e35]: 分配类型
+      - combobox [ref=e36]:
+        - option "-不限-" [selected]
+        - option "原始分配"
+        - option "全部再分配数据"
+        - option "再分配数据_离职客服"
+        - option "再分配数据_备注2月未更新"
+        - option "再分配数据_错误城市"
+    - button "查询" [ref=e39] [cursor=pointer]
+  - link "点击刷新查看最新数据" [ref=e44] [cursor=pointer]:
+    - /url: /manage/kefu_common/clearCache.html?cacheKey=kefu_dimissionlist_172949#53200e57c4ccd64378017b367b5d3b4e
+    - img "点击刷新查看最新数据" [ref=e45]
+  - generic [ref=e49]:
+    - table [ref=e52]:
+      - rowgroup [ref=e53]:
+        - row "ID 姓名 性别 状态 星级 年龄 备注 标签 顾问 房 车 保单 社保 代发 公积金 芝麻分 信用卡 企业主 申请额度 最后备注时间 点击可根据最后备注时间倒序排列 申请时间 点击可根据申请时间倒序排列 贷款类型 来源 城市" [ref=e54]:
+          - columnheader "ID" [ref=e55]:
+            - checkbox [ref=e56]
+            - text: ID
+          - columnheader "姓名" [ref=e57]
+          - columnheader "性别" [ref=e58]
+          - columnheader "状态" [ref=e59]
+          - columnheader "星级" [ref=e60]
+          - columnheader "年龄" [ref=e61]
+          - columnheader "备注" [ref=e62]
+          - columnheader "标签" [ref=e63]
+          - columnheader "顾问" [ref=e64]
+          - columnheader "房" [ref=e65]
+          - columnheader "车" [ref=e66]
+          - columnheader "保单" [ref=e67]
+          - columnheader "社保" [ref=e68]
+          - columnheader "代发" [ref=e69]
+          - columnheader "公积金" [ref=e70]
+          - columnheader "芝麻分" [ref=e71]
+          - columnheader "信用卡" [ref=e72]
+          - columnheader "企业主" [ref=e73]
+          - columnheader "申请额度" [ref=e74]
+          - columnheader "最后备注时间 点击可根据最后备注时间倒序排列" [ref=e75]:
+            - generic [ref=e77]:
+              - text: 最后备注时间
+              - link "点击可根据最后备注时间倒序排列" [ref=e78] [cursor=pointer]:
+                - /url: /manage/kefu_clients/index.html?lastupdatetime=yes
+                - img [ref=e79]
+          - columnheader "申请时间 点击可根据申请时间倒序排列" [ref=e80]:
+            - generic [ref=e82]:
+              - text: 申请时间
+              - link "点击可根据申请时间倒序排列" [ref=e83] [cursor=pointer]:
+                - /url: /manage/kefu_clients/index.html?ordertime=yes
+                - img [ref=e84]
+          - columnheader "贷款类型" [ref=e85]
+          - columnheader "来源" [ref=e86]
+          - columnheader "城市" [ref=e87]
+      - rowgroup
+    - generic [ref=e93]:
+      - generic [ref=e94]: . 共 0 条记录, 第 1 页/ 共 1 页 .
+      - generic [ref=e95]:
+        - img [ref=e96]
+        - generic [ref=e97] [cursor=pointer]: "1"
+        - img [ref=e98]
+      - generic [ref=e99]:
+        - text: 跳至
+        - textbox [ref=e100]
+        - text: 页
+        - button "提交" [ref=e101]
+  - text:        

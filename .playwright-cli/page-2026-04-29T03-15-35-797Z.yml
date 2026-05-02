@@ -1,0 +1,291 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "More" [ref=e6] [cursor=pointer]:
+        - /url: /manage/kefu_statistics/index.html
+      - text: 今日概况
+      - link [ref=e8] [cursor=pointer]:
+        - /url: /manage/kefu_common/clearCache.html?cacheKey=kefu_kefu_dailysimple172949
+    - generic [ref=e9]:
+      - table [ref=e10]:
+        - rowgroup [ref=e11]:
+          - row "今 日 工 作 新申请 未处理 再分配 未处理 进件笔数" [ref=e12]:
+            - cell "今 日 工 作" [ref=e13]:
+              - text: 今
+              - text: 日
+              - text: 工
+              - text: 作
+            - rowheader "新申请" [ref=e14]
+            - columnheader "未处理" [ref=e15]
+            - columnheader "再分配" [ref=e16]
+            - columnheader "未处理" [ref=e17]
+            - columnheader "进件笔数" [ref=e18]
+          - row "0 0 0 0 0" [ref=e19]:
+            - cell "0" [ref=e20]:
+              - link "0" [ref=e21] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e22]:
+              - link "0" [ref=e23] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e24]:
+              - link "0" [ref=e25] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e26]:
+              - link "0" [ref=e27] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e28]:
+              - link "0" [ref=e29] [cursor=pointer]:
+                - /url: "#"
+          - row "进件金额 批款笔数 批款金额 创收 已确认业绩" [ref=e30]:
+            - columnheader "进件金额" [ref=e31]
+            - columnheader "批款笔数" [ref=e32]
+            - columnheader "批款金额" [ref=e33]
+            - columnheader "创收" [ref=e34]
+            - columnheader "已确认业绩" [ref=e35]
+          - row "0.00 0 0.00 0.00 0.00" [ref=e36]:
+            - cell "0.00" [ref=e37]:
+              - link "0.00" [ref=e38] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e39]:
+              - link "0" [ref=e40] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e41]:
+              - link "0.00" [ref=e42] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e43]:
+              - link "0.00" [ref=e44] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e45]:
+              - link "0.00" [ref=e46] [cursor=pointer]:
+                - /url: "#"
+      - table [ref=e47]:
+        - rowgroup [ref=e48]:
+          - row "昨 天 工 作 新申请 未处理 再分配 未处理 进件笔数" [ref=e49]:
+            - cell "昨 天 工 作" [ref=e50]:
+              - text: 昨
+              - text: 天
+              - text: 工
+              - text: 作
+            - rowheader "新申请" [ref=e51]
+            - columnheader "未处理" [ref=e52]
+            - columnheader "再分配" [ref=e53]
+            - columnheader "未处理" [ref=e54]
+            - columnheader "进件笔数" [ref=e55]
+          - row "0 0 0 0 0" [ref=e56]:
+            - cell "0" [ref=e57]:
+              - link "0" [ref=e58] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e59]:
+              - link "0" [ref=e60] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e61]:
+              - link "0" [ref=e62] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e63]:
+              - link "0" [ref=e64] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e65]:
+              - link "0" [ref=e66] [cursor=pointer]:
+                - /url: "#"
+          - row "进件金额 批款笔数 批款金额 创收 已确认业绩" [ref=e67]:
+            - columnheader "进件金额" [ref=e68]
+            - columnheader "批款笔数" [ref=e69]
+            - columnheader "批款金额" [ref=e70]
+            - columnheader "创收" [ref=e71]
+            - columnheader "已确认业绩" [ref=e72]
+          - row "0.00 0 0.00 0.00 0.00" [ref=e73]:
+            - cell "0.00" [ref=e74]:
+              - link "0.00" [ref=e75] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e76]:
+              - link "0" [ref=e77] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e78]:
+              - link "0.00" [ref=e79] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e80]:
+              - link "0.00" [ref=e81] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e82]:
+              - link "0.00" [ref=e83] [cursor=pointer]:
+                - /url: "#"
+      - table [ref=e84]:
+        - rowgroup [ref=e85]:
+          - row "主管点评 累计点评 未回复" [ref=e86]:
+            - cell "主管点评" [ref=e87]
+            - rowheader "累计点评" [ref=e88]
+            - columnheader "未回复" [ref=e89]
+          - row "0 0" [ref=e90]:
+            - cell "0" [ref=e91]:
+              - link "0" [ref=e92] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e93]:
+              - link "0" [ref=e94] [cursor=pointer]:
+                - /url: "#"
+  - generic [ref=e96]:
+    - generic [ref=e97]:
+      - link "More" [ref=e98] [cursor=pointer]:
+        - /url: /manage/kefu_statistics/month_list.html
+      - text: 本月工作
+      - link [ref=e100] [cursor=pointer]:
+        - /url: /manage/kefu_common/clearCache.html?cacheKey=kefu_kefu_dailysimple172949
+    - generic [ref=e101]:
+      - table [ref=e102]:
+        - rowgroup [ref=e103]:
+          - row "本月原始分配数 (不包含离职) 未处理 再分配 未处理 已签约" [ref=e104]:
+            - columnheader "本月原始分配数 (不包含离职)" [ref=e105]:
+              - text: 本月原始分配数
+              - text: (不包含离职)
+            - columnheader "未处理" [ref=e106]
+            - columnheader "再分配" [ref=e107]
+            - columnheader "未处理" [ref=e108]
+            - columnheader "已签约" [ref=e109]
+          - row "0 0 54 54 0" [ref=e110]:
+            - cell "0" [ref=e111]:
+              - link "0" [ref=e112] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e113]:
+              - link "0" [ref=e114] [cursor=pointer]:
+                - /url: "#"
+            - cell "54" [ref=e115]:
+              - link "54" [ref=e116] [cursor=pointer]:
+                - /url: "#"
+            - cell "54" [ref=e117]:
+              - link "54" [ref=e118] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e119]:
+              - link "0" [ref=e120] [cursor=pointer]:
+                - /url: "#"
+      - table [ref=e121]:
+        - rowgroup [ref=e122]:
+          - row "进件笔数 进件金额 批款笔数 批款金额 创收" [ref=e123]:
+            - columnheader "进件笔数" [ref=e124]
+            - columnheader "进件金额" [ref=e125]
+            - columnheader "批款笔数" [ref=e126]
+            - columnheader "批款金额" [ref=e127]
+            - columnheader "创收" [ref=e128]
+          - row "0 0.00 0 0.00 0.00" [ref=e129]:
+            - cell "0" [ref=e130]:
+              - link "0" [ref=e131] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e132]:
+              - link "0.00" [ref=e133] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e134]:
+              - link "0" [ref=e135] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e136]:
+              - link "0.00" [ref=e137] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e138]:
+              - link "0.00" [ref=e139] [cursor=pointer]:
+                - /url: "#"
+      - table [ref=e140]:
+        - rowgroup [ref=e141]:
+          - row "未确认业绩 已确认业绩 本月未过 考核人数 系统暂停 顾问人数 本月原始分配数 (包含离职)" [ref=e142]:
+            - columnheader "未确认业绩" [ref=e143]
+            - columnheader "已确认业绩" [ref=e144]
+            - columnheader "本月未过 考核人数" [ref=e145]:
+              - text: 本月未过
+              - text: 考核人数
+            - columnheader "系统暂停 顾问人数" [ref=e146]:
+              - text: 系统暂停
+              - text: 顾问人数
+            - columnheader "本月原始分配数 (包含离职)" [ref=e147]:
+              - text: 本月原始分配数
+              - text: (包含离职)
+          - row "0.00 0.00 0 0 4" [ref=e148]:
+            - cell "0.00" [ref=e149]:
+              - link "0.00" [ref=e150] [cursor=pointer]:
+                - /url: "#"
+            - cell "0.00" [ref=e151]:
+              - link "0.00" [ref=e152] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e153]:
+              - link "0" [ref=e154] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e155]:
+              - link "0" [ref=e156] [cursor=pointer]:
+                - /url: "#"
+            - cell "4" [ref=e157]:
+              - link "4" [ref=e158] [cursor=pointer]:
+                - /url: "#"
+  - generic [ref=e160]:
+    - generic [ref=e161]: 本周概况（2026-04-27/2026-04-29）
+    - generic [ref=e163]:
+      - table [ref=e164]:
+        - rowgroup [ref=e165]:
+          - row "本 周 工 作 新申请 未处理 再分配 未处理 进件笔数" [ref=e166]:
+            - cell "本 周 工 作" [ref=e167]:
+              - text: 本
+              - text: 周
+              - text: 工
+              - text: 作
+            - rowheader "新申请" [ref=e168]
+            - columnheader "未处理" [ref=e169]
+            - columnheader "再分配" [ref=e170]
+            - columnheader "未处理" [ref=e171]
+            - columnheader "进件笔数" [ref=e172]
+          - row "0 0 54 54 0" [ref=e173]:
+            - cell "0" [ref=e174]:
+              - link "0" [ref=e175] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e176]:
+              - link "0" [ref=e177] [cursor=pointer]:
+                - /url: "#"
+            - cell "54" [ref=e178]:
+              - link "54" [ref=e179] [cursor=pointer]:
+                - /url: "#"
+            - cell "54" [ref=e180]:
+              - link "54" [ref=e181] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e182]:
+              - link "0" [ref=e183] [cursor=pointer]:
+                - /url: "#"
+          - row "进件金额 批款笔数 批款金额 创收 已确认业绩" [ref=e184]:
+            - columnheader "进件金额" [ref=e185]
+            - columnheader "批款笔数" [ref=e186]
+            - columnheader "批款金额" [ref=e187]
+            - columnheader "创收" [ref=e188]
+            - columnheader "已确认业绩" [ref=e189]
+          - row "0 0 0 0 0" [ref=e190]:
+            - cell "0" [ref=e191]:
+              - link "0" [ref=e192] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e193]:
+              - link "0" [ref=e194] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e195]:
+              - link "0" [ref=e196] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e197]:
+              - link "0" [ref=e198] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e199]:
+              - link "0" [ref=e200] [cursor=pointer]:
+                - /url: "#"
+      - table [ref=e201]:
+        - rowgroup [ref=e202]:
+          - row "周 报 原始分配数 3星以上 3星以上占比 上门数 签约数" [ref=e203]:
+            - cell "周 报" [ref=e204]:
+              - text: 周
+              - text: 报
+            - rowheader "原始分配数" [ref=e205]
+            - columnheader "3星以上" [ref=e206]
+            - columnheader "3星以上占比" [ref=e207]
+            - columnheader "上门数" [ref=e208]
+            - columnheader "签约数" [ref=e209]
+          - row "0 0 0% 0 0" [ref=e210]:
+            - cell "0" [ref=e211]:
+              - link "0" [ref=e212] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e213]:
+              - link "0" [ref=e214] [cursor=pointer]:
+                - /url: "#"
+            - cell "0%" [ref=e215]
+            - cell "0" [ref=e216]:
+              - link "0" [ref=e217] [cursor=pointer]:
+                - /url: "#"
+            - cell "0" [ref=e218]:
+              - link "0" [ref=e219] [cursor=pointer]:
+                - /url: "#"

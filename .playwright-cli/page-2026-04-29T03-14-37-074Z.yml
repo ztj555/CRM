@@ -1,0 +1,76 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - list [ref=e4]:
+        - listitem [ref=e5]:
+          - generic [ref=e6] [cursor=pointer]: 进件银行占比
+        - listitem [ref=e7]:
+          - generic [ref=e8] [cursor=pointer]: 顾问画像图
+        - listitem [ref=e9]:
+          - generic [ref=e10] [cursor=pointer]: 销售漏斗模型
+        - listitem [ref=e11]:
+          - generic [ref=e12] [cursor=pointer]: 通话价值表
+    - heading "进件银行占比：" [level=3] [ref=e13]
+    - generic [ref=e16]:
+      - generic [ref=e17]: 时间跨度：
+      - generic [ref=e18]:
+        - radio "当年" [ref=e19]
+        - text: 当年
+      - generic [ref=e20]:
+        - radio "当季" [ref=e21]
+        - text: 当季
+      - generic [ref=e22]:
+        - radio "当月" [checked] [ref=e23]
+        - text: 当月
+      - generic [ref=e24]:
+        - radio "上月" [ref=e25]
+        - text: 上月
+      - generic [ref=e26]:
+        - radio "自定义" [ref=e27]
+        - text: 自定义
+      - textbox "开始时间" [ref=e28]
+      - generic [ref=e29]: 到
+      - textbox "结束时间" [ref=e30]
+      - button "查询" [ref=e31] [cursor=pointer]
+  - generic [ref=e33]:
+    - generic [ref=e34]:
+      - text: Top10 金融机构
+      - generic [ref=e35] [cursor=pointer]: 查看全部
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - button "批款金额" [ref=e38] [cursor=pointer]
+        - button "创收金额" [ref=e39] [cursor=pointer]
+        - button "批款件数" [ref=e40] [cursor=pointer]
+        - button "创收件数" [ref=e41] [cursor=pointer]
+        - button "来源创收" [ref=e42] [cursor=pointer]
+        - button "API新数据创收" [ref=e43] [cursor=pointer]
+      - paragraph [ref=e50]: 单位：元
+  - generic [ref=e52]:
+    - generic [ref=e53]: 全部金融机构进件详情
+    - generic [ref=e55]:
+      - table [ref=e56]:
+        - rowgroup [ref=e57]:
+          - row "序号 金融机构 批款额（元） 批款件数（件） 批款额占比 批款件数占比 创收（元） 创收件数（件） 创收占比 创收件数占比" [ref=e58]:
+            - columnheader "序号" [ref=e59]
+            - columnheader "金融机构" [ref=e60]
+            - columnheader "批款额（元）" [ref=e61]
+            - columnheader "批款件数（件）" [ref=e62]
+            - columnheader "批款额占比" [ref=e63]
+            - columnheader "批款件数占比" [ref=e64]
+            - columnheader "创收（元）" [ref=e65]
+            - columnheader "创收件数（件）" [ref=e66]
+            - columnheader "创收占比" [ref=e67]
+            - columnheader "创收件数占比" [ref=e68]
+        - rowgroup [ref=e69]:
+          - row "总计 0 0 0 0" [ref=e70]:
+            - cell "总计" [ref=e71]
+            - cell [ref=e72]
+            - cell "0" [ref=e73]
+            - cell "0" [ref=e74]
+            - cell [ref=e75]
+            - cell [ref=e76]
+            - cell "0" [ref=e77]
+            - cell "0" [ref=e78]
+            - cell [ref=e79]
+            - cell [ref=e80]
+      - generic [ref=e82]: 没有搜索到合适的记录！

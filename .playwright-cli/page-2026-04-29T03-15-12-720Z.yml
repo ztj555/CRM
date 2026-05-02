@@ -1,0 +1,62 @@
+- generic [active] [ref=e1]:
+  - list [ref=e3]:
+    - listitem [ref=e4] [cursor=pointer]: 个人通话
+    - listitem [ref=e5] [cursor=pointer]: 点拨通下载
+    - listitem [ref=e6] [cursor=pointer]: 常见问题解决方法
+  - generic [ref=e8]:
+    - generic [ref=e10]:
+      - generic [ref=e12]:
+        - generic [ref=e13]: 选择时间
+        - combobox [ref=e14]:
+          - option "今天" [selected]
+          - option "昨天"
+          - option "最近7天"
+          - option "本月"
+          - option "上个月"
+          - option "自定义"
+      - generic [ref=e16]:
+        - generic [ref=e17]: 姓名
+        - textbox [ref=e18]
+      - generic [ref=e20]:
+        - generic [ref=e21]: 手机号
+        - textbox [ref=e22]
+      - generic [ref=e24]:
+        - generic [ref=e25]: 岗位筛选
+        - combobox [ref=e26]:
+          - option "不限" [selected]
+          - option "学徒"
+          - option "顾问"
+          - option "二级主管"
+      - generic [ref=e27]:
+        - radio [checked] [ref=e28]
+        - text: 显示全部
+        - radio [ref=e29]
+        - text: 通话录音与记录不符
+      - generic [ref=e30]:
+        - button "搜索" [ref=e31] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: 刷新通话数据
+    - generic [ref=e33]:
+      - generic [ref=e34]: 注：有效通话次数：排除同事间通话、以及与公共号码（如10086）间通话之后，通话时长>0的通话次数；
+      - table [ref=e36]:
+        - rowgroup [ref=e37]:
+          - row "日期 姓名 区-部门 岗位 通话录音 通话总数 有效通话次数 两分钟以上通话数 三分钟以上通话数 通话总时长 去电数 去电时长 来电数 来电时长 版本号 机型" [ref=e38]:
+            - columnheader "日期" [ref=e39]
+            - columnheader "姓名" [ref=e40]
+            - columnheader "区-部门" [ref=e41]
+            - columnheader "岗位" [ref=e42]
+            - columnheader "通话录音" [ref=e43]
+            - columnheader "通话总数" [ref=e44]
+            - columnheader "有效通话次数" [ref=e45]
+            - columnheader "两分钟以上通话数" [ref=e46]
+            - columnheader "三分钟以上通话数" [ref=e47]
+            - columnheader "通话总时长" [ref=e48]
+            - columnheader "去电数" [ref=e49]
+            - columnheader "去电时长" [ref=e50]
+            - columnheader "来电数" [ref=e51]
+            - columnheader "来电时长" [ref=e52]
+            - columnheader "版本号" [ref=e53]
+            - columnheader "机型" [ref=e54]
+        - rowgroup [ref=e55]:
+          - row "没有搜索到合适的记录！" [ref=e56]:
+            - cell "没有搜索到合适的记录！" [ref=e57]:
+              - generic [ref=e58]: 没有搜索到合适的记录！

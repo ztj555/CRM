@@ -1,0 +1,4528 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<meta charset="utf-8"/>
+<title>客户资料</title>
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/common/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/guwen/kefu_style.css?v=92_5" /><!--共用css-->
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/infocss.css?v=92_52">
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/lrtk.css" />
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/viewer.css"><!-- 图片放大插件  -->
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/calendar.css" /><!-- 日期插件 -->
+
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/bombbox.css"><!-- 贷款弹框 -->
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/guwen/client_info_new2.css?v=2">
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage/css/laydate.css" /><!-- 日期插件 -->
+<link rel="stylesheet" type="text/css" href="https://guwen.zhudaicms.com/default/manage_2025/css/common.css"/>
+
+<script  class ="jsbin" src="https://guwen.zhudaicms.com/default/manage/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/usertwo_new2.js?202311252220"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/love_location_array.js"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/location.js"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/calendar.js"></script>  
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/calendar-zh.js"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/calendar-setup.js"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/viewer.js"></script><!-- 图片放大插件 -->
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/laydate.js"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/guwen/kefu_common.js?v=92_513"></script>
+<style>
+.showdetailsinfo{
+	position: relative;
+}
+/* 低风险号码样式 */
+.common-tips-container{
+    width:95px;
+	background:#fff;
+	text-align:center;
+    padding:0 4px;
+    font-size:12px;
+    color: #008800;
+    border:1px #008800 solid;
+    position: absolute;
+    top:-23px;
+    left:0px;
+    border-radius: 5px;
+}
+
+.common-tips-top-right:after {
+    bottom: -5px;
+    left: 16px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    content: " ";
+    transform: rotate(45deg);
+    border: 1px solid #008800;
+    border-top: 0;
+    border-left: 0;
+    background-color: #fff;
+}
+/* 多人联系过样式 */
+.common-tips-container1{
+    width:200px;
+	background:#E63F00;
+	text-align:center;
+    padding:0 4px;
+    font-size:12px;
+    color: #f00;
+    border:1px #E63F00 solid;
+    position: absolute;
+    top:-23px;
+    left:0px;
+    border-radius: 5px;
+}
+
+.common-tips-top-right1:after {
+    bottom: -5px;
+    left: 16px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    content: " ";
+    transform: rotate(45deg);
+    border: 1px solid #E63F00;
+    border-top: 0;
+    border-left: 0;
+    background-color: #fff;
+}
+
+/* 高风险号码样式 */
+.common-tips-container2{
+    width:98px;
+	background:#fff;
+	text-align:center;
+    padding:0 4px;
+    font-size:12px;
+    color: #f00;
+    border:1px #f00 solid;
+    position: absolute;
+    top:-23px;
+    left:0px;
+    border-radius: 5px;
+}
+
+.common-tips-top-right2:after {
+    bottom: -5px;
+    left: 16px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    content: " ";
+    transform: rotate(45deg);
+    border: 1px solid #f00;
+    border-top: 0;
+    border-left: 0;
+    background-color: #fff;
+}
+.hisul li{
+	height: auto;
+}
+#lk_content td{
+	height: 25px;
+}
+.border-radius-6{
+	border-radius: 5px;
+}
+
+.vlist-page {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+	background-color: #ffeef4;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 10px;
+	color: #333;
+}
+
+.vlist-page-wrap {
+	width: 100%;
+	background-color: #fff;
+	border-radius: 4px;
+}
+
+.vlist-tip {
+	font-size: 14px;
+	flex: 1;
+	color: #e24b4b;
+	display: flex;
+	align-items: center;
+}
+.view-img{
+	margin-left: 6px;
+	cursor: pointer;
+	color: #212121;
+	font-size: 12px;
+}
+.vlist-table-card {
+	width: 100%;
+	background-color: #ffffff;
+	border-radius: 4px;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02);
+	overflow: hidden;
+}
+
+.vlist-page-wrap table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+
+.vlist-page-wrap th,
+.vlist-page-wrap td {
+	padding: 10px 18px;
+	text-align: left;
+	font-size: 14px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.vlist-page-wrap th {
+	background-color: #E8E8E8;
+	font-weight: bold;
+	padding: 4px 18px;
+	text-align: center;
+}
+.vlist-page-wrap td{
+	text-align: center;
+}
+.vlist-page-wrap tr:last-child td {
+	border-bottom: none;
+	
+}
+
+.vlist-col-video {
+	width: 220px;
+}
+
+.vlist-col-name {
+	width: 180px;
+}
+
+.vlist-video-cell {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.vlist-video-thumb {
+	position: relative;
+	width: 140px;
+	height: 90px;
+	border-radius: 4px;
+	overflow: hidden;
+	background-color: #ddd;
+	flex-shrink: 0;
+}
+
+.vlist-video-thumb-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.vlist-play-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 32px;
+	height: 32px;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.vlist-play-icon::before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 7px 0 7px 12px;
+	border-color: transparent transparent transparent #000000;
+	margin-left: 2px;
+}
+
+.vlist-video-name {
+	margin-left: 12px;
+	font-size: 13px;
+	color: #666;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.vlist-text-primary {
+	color: #333;
+}
+
+.vlist-text-muted {
+	color: #666;
+}
+
+@media (max-width: 768px) {
+	.vlist-page {
+		padding: 10px;
+	}
+
+	.vlist-table-card {
+		font-size: 13px;
+	}
+
+	.vlist-col-video {
+		width: 160px;
+	}
+
+	.vlist-video-thumb {
+		width: 140px;
+		height: 78px;
+	}
+
+	.vlist-page-wrap th,
+	.vlist-page-wrap td {
+		padding: 10px 12px;
+	}
+}
+</style>
+<script type="text/javascript">
+/**
+ * 调用父级页面更新我的客户和再分配客户统计数
+ */
+function parentnum(){
+	$.post('/manage/kefu_clients/ajax_separationsnum.html',function(data){
+	    if(data!=''){
+			//我的客户
+			window.parent.$('#myclient_num').html(data.num);
+			//再分配客户统计
+			window.parent.$('#againclient_num').html(data.num1);
+			//公共池
+			//window.parent.$('#ggcclient_num').html(data.num2);
+		} 
+	},'json')
+}
+
+$(function(){
+	$(".infomation-menu li").click(function(){
+		for(var i=1;i<11;i++){
+			$("#infomation-info"+i).css('display','none');
+		}
+		var j = $(this).val();
+		if(j > 1){
+			var truename = $('#truename').val();
+			var mobile = $('#mobile').val();
+			//var reg2 = /^(1[0-9]{10})$/;
+			var sourceselect = $('#sourceselect').val();
+			var province = $("#profile2_location").find("option:selected").text();//所在省份 
+			var city = $("#profile2_sublocation").find("option:selected").text();//所在城市
+			if(truename=='' || mobile=='' || sourceselect == '请选择'){
+				alert('请完善基本资料后在进行其他操作');
+				$("#infomation-info"+1).css('display','block');
+			}else if(sourceselect == '其他' && source==''){
+		    		alert('来源不能为空!');
+		    		$("#infomation-info"+1).css('display','block');
+		    }else if(province=='请选择'){
+				alert('请选择所在地省份');
+				$("#infomation-info"+1).css('display','block');
+			}else if(city=='请选择'){
+				alert('请选择所在地城市');
+				$("#infomation-info"+1).css('display','block');
+			}else{
+				$(this).addClass("on").siblings().removeClass("on");
+				$("#infomation-info"+j).css('display','block');
+				if(j==5){
+					var cartext = $('#car').val();
+					if(cartext==2){
+						definfo('carinfo',2,2);
+					}
+				}
+			}
+		}else if(j == 1){
+			$(this).addClass("on").siblings().removeClass("on");
+			$("#infomation-info"+j).css('display','block');
+		}
+	});
+	
+	
+	var num = $(".showdetailsinfo");
+	for(var i=0;i<num.length;i++){
+		if(num.eq(i).text() == '' || num.eq(i).text() == 0){
+			num.eq(i).parent().css('display','none');
+		}else{
+			num.eq(i).parent().css('display','block');
+		}
+	}
+
+	var num1 = $("input[type='text']");
+	for(var i=0;i<num1.length;i++){
+		if(num1.eq(i).val() == 0){
+			if(num1.eq(i).attr('id') != 'credit_check_twomonth_num' && num1.eq(i).attr('id') != 'credit_check_thirdmonth_num' && num1.eq(i).attr('id') != 'credit_check_sixdmonth_num'){
+				num1.eq(i).val("");
+			}
+		}
+	}
+	
+	var truename = $('#truename').val();
+	if(truename == ''){
+		$("#infomation-info10").css('display','none');
+		$("#infomation-info1").css('display','block');
+		$('#jbxx').addClass("on");
+		$('#qbxx').removeClass("on");
+	}
+	
+	$('#sourceselect').change(function(){
+   	 var s = $('#sourceselect').val();
+   	 if(s == '其他'){
+   		 $('#source').show();
+   	 }else{
+   		 $('#source').hide();
+   	 }
+    });
+    
+    var source = $('#source').val();
+    $('#sourceselect').val(source);
+    
+    var s = $('#sourceselect').val();
+    if(s != source && source != ''){
+   	 $('#sourceselect').val('其他');
+   	 $('#source').show();
+    }
+    
+    $(".eximg").hover(function(){
+    	$(this).attr('src', 'https://guwen.zhudaicms.com/default/manage/images/explain_icon02.jpg');
+    	var i = $(this).attr('id');
+    	$("#ex"+i).show();
+    },function(){
+    	$(this).attr('src', 'https://guwen.zhudaicms.com/default/manage/images/explain_icon01.jpg');
+    	var i = $(this).attr('id');
+    	$("#ex"+i).hide();
+    });
+    
+    $('#baodan_company').val('');
+    $('#car_insurance_company').val('');
+    $('#baodan_jiaofeitype').val('');
+    $('#youxiaoyear').val('');
+});
+
+function openinfo(obj,infoid){
+	$(obj).css('display','none');
+	$(obj).next().css('display','block');
+	
+	$("#"+infoid).css('display','block');
+	
+	if($(obj).parent().next().css('display','block')){
+		$(obj).parent().next().css('display','none')
+	}
+}
+
+function closeinfo(obj,infoid){
+	$(obj).prev().css('display','block');
+	$(obj).css('display','none');
+	
+	$("#"+infoid).css('display','none');
+}
+function editinfo(obj){
+	$("#"+obj).css('display','block');
+	if($("#"+obj).next().css('display','block')){
+		$("#"+obj).next().css('display','none');
+		$("#"+obj).prev().children(".o").css('display','block');
+		$("#"+obj).prev().children(".c").css('display','none');
+	}
+}
+
+//取消编辑
+function endedit(obj,objc){
+	$("#"+obj).css('display','none');
+	$("#"+obj).prev().children(".o").css('display','none');
+	$("#"+obj).prev().children(".c").css('display','block');
+	$("#"+objc).css('display','block');
+	document.getElementById(objc+'c').contentWindow.location.reload(true);
+	
+}
+
+function havesign(obj){
+	if(obj == 1){
+		$("#sign").css('display','');
+	}else{
+		$("#sign").css('display','none');
+	}
+}
+
+function haveintopieces(obj){
+	if(obj == 1){
+		$("#intopieces").css('display','');
+	}else{
+		$("#intopieces").css('display','none');
+	}
+}
+
+function definfo(obj,k,i){
+	for(var j=1;j<k+1;j++){
+		$("."+obj+j).css('display','none');
+		$('.car_status').hide();
+	}
+	if(obj == 'credit'){
+		if(i == 2){
+			i=1;
+		}else{
+			i=i;
+		}	
+	}else if(obj=='carinfo'){
+		if(i==1){
+			$('#car_type').css('display','none');
+		}else{
+			$('#car_type').css('display','');
+
+		}
+	}
+	
+	$("."+obj+i).css('display','');
+	var car_status = $('#car_status').val();
+	if(car_status == 2){
+		$('.car_status').hide();
+	}else{
+		$('.car_status').show();
+	}
+}
+
+function definfo_new2(obj,k,i){
+	for(var j=1;j<k+1;j++){
+		$("."+obj+j).css('display','none');
+	}
+	$("."+obj+i).css('display','');
+}
+
+
+function chexradio(obj,cheid,rediclass){
+	var i;
+	$("."+rediclass+".radioche").removeClass("radioche");
+	$(obj).addClass("radioche");
+	if($(obj).html() == '先生' || $(obj).html() == '未婚/离异'){
+		i = 1;
+	}else if($(obj).html() == '女士' || $(obj).html() == '已婚'){
+		i = 2;
+	}
+	$("#"+cheid).val(i);
+}
+
+function infobottom(obj,i){
+	$(".infobottom ul li.wbac").removeClass("wbac");
+	$(obj).addClass("wbac");
+	for(var j=1;j<10;j++){
+		$("#bottominfo"+j).css('display','none');
+	}
+	
+	$("#bottominfo"+i).css('display','block');
+	if(i==1){
+		$("#fenpei").css('display','none');
+		$("#hisul5").css('display','none');
+		var status = $('#status').val();
+		if(status == 2){
+			$("#followedup").css('display','block');
+		}
+		$(".uploandiv").css('display','block');
+		$("#bottop").css('display','block');
+	}else{
+		$("#fenpei").css('display','block');
+		$("#hisul5").css('display','block');
+		$("#followedup").css('display','none');
+		$(".uploandiv").css('display','none');
+		$("#bottop").css('display','none');
+	}
+    switch(i){
+        case 8:
+            load_videolist();
+            break;
+        case 9:
+            load_signvideolist();
+            break;
+    }
+	if(i == 6){
+		var pipei_data = "";
+		var user_complete = "";
+		if(pipei_data == 1){
+			alert('【匹配成功】该用户资料完整度为'+user_complete+'，详细填写用户档案，完整度大于80%后，将极大提高产品匹配的精准率。点击继续。');
+		}else{
+			alert('【匹配失败】没有适合该客户的产品或客户关键信息缺失。该用户资料完整度为'+user_complete+'，完整度大于80%后，将极大提高产品匹配的精准率。点击返回。');
+		}
+	}
+	if(i == 9){
+		$(".tabs-content").css("background","#ffeef4")
+	}else{
+		$(".tabs-content").css("background","#ffffff")
+	}
+}
+
+function build_second(first_value,second_id,second_array)
+{
+	document.getElementById(second_id).innerHTML = "";
+	var k=1000;
+	for( key in second_array[first_value]){
+		var sOption = document.createElement("OPTION");
+		sOption.text = second_array[first_value][key];
+		sOption.value = key;
+		document.getElementById(second_id).options.add(sOption,k);
+	}
+	k--;
+}
+
+function cloinfobot(obj){
+	var url = $(obj).attr("src");
+	if(url == 'https://guwen.zhudaicms.com/default/manage/images/cloxia.png'){
+		$(obj).attr("src","https://guwen.zhudaicms.com/default/manage/images/opexia.png");
+		$(obj).parent().parent().parent().addClass("opxia");
+		$("#infomation").css('height',($(window).height()-80)+'px');
+		// if($(".infobottom ul li.wbac").text() == "客户跟踪"){
+		// 	$("#bottop").css('display','block');
+		// 	for(var j=1;j<5;j++){
+		// 		$("#bottominfo"+j).css('display','none');
+		// 	}
+		// 	$("#bottominfo"+9).css('display','none');
+		// }
+		
+		
+	}else if(url == 'https://guwen.zhudaicms.com/default/manage/images/opexia.png'){
+		$(obj).attr("src","https://guwen.zhudaicms.com/default/manage/images/cloxia.png");
+		$(obj).parent().parent().parent().removeClass("opxia");
+		$("#infomation").css('height','309px');
+		// if($(".infobottom ul li.wbac").text() == "客户跟踪"){
+		// 	for(var j=1;j<5;j++){
+		// 		$("#bottominfo"+j).css('display','none');
+		// 	}
+		// 	$("#bottominfo1").css('display','block');
+		// }
+
+	}
+}
+function opexia(obj){
+	$(obj).css('display','none');
+	$(obj).prev().css('display','block');
+	$("#infomation").css('height','309px');
+}
+
+function hidecarinfo(){
+	var car_status = $('#car_status').val();
+	if(car_status==1){
+		$('#car_repayment_month').attr("disabled",false);
+		$('#car_mortgage_money').attr("disabled",false);
+		$('.car_status').show();
+	}else{
+		$('#car_repayment_month').attr("disabled",true);
+		$('#car_mortgage_money').attr("disabled",true);
+		$('#car_repayment_month').val('');
+		$('#car_mortgage_money').val('');
+	}
+
+}
+$(document).ready(function(){
+	 //初始化图片放大
+	 $('.images').viewer();
+	 /* end */
+	 var house = $('#houseval').val();
+	 if(house!='无'){
+		 definfo('houseinfo',2,2); 
+	 }
+	 var car = $('#carval').val();
+	 if(car=='有车产'){
+		 definfo('carinfo',2,2); 
+	 }else{
+		 definfo('carinfo',2,1);
+	 }
+     var car_new = $('#car').val();
+     if(car_new==2){
+    	 definfo('carinfo',2,2);
+     }else{
+		 definfo('carinfo',2,1);
+	 }
+
+	var house_new = $('#house').find('option:selected').attr('_style');
+	if(house_new==2){
+		definfo('houseinfo',2,2);
+	}else if(house_new==1){
+		definfo('houseinfo',2,1);
+	}
+     var car_status = $('#car_status').val();
+ 	 if(car_status==2){
+ 		$('#car_repayment_month').attr("disabled",true);
+ 		$('#car_mortgage_money').attr("disabled",true);
+ 		$('#car_repayment_month').val('');
+ 		$('#car_mortgage_money').val('');
+ 	 }else{
+ 		$('#car_repayment_month').attr("disabled",false);
+ 		$('#car_mortgage_money').attr("disabled",false);
+ 	 }
+
+	 var identity = $('#work_identity').find("option:selected").val();
+	 if(identity=='1'){
+		 definfo('jobinfo',3,1);
+	 }else if(identity=='2'){
+		 definfo('jobinfo',3,2);
+	 }else if(identity=='3'){
+		 definfo('jobinfo',3,3);
+	 }
+	 var baodan_is = $('#baodan_is').find("option:selected").val();
+	 if(baodan_is=='有'){
+		 $(".havepolicy").css('display','');
+	 }
+	 var faceval = $("#faceval").val();
+	 if(faceval==1){
+		 $("#daytime").css('display','');
+	 }
+	 var sprovince = $("#profile_location").find("option:selected").text();
+	 if(sprovince==''){
+	    $("#profile_location").val('0');
+	 }
+	 var credit_overdue = $('#credit_overdue').find("option:selected").val();
+	 if(credit_overdue=='有逾期'){
+		$(".credits").css('display','');
+	 }
+     var havesign = $("input[name='havesign']:checked").val();
+     if(havesign==1){
+         $("#sign").css('display','');
+     }
+     var haveintopieces = $("input[name='haveintopieces']:checked").val(); 
+     if(haveintopieces==1){
+    	 $("#intopieces").css('display',''); 
+     }
+     var starsval = $('#starsval').val();
+     //初始化星级和状态
+     var statusnumval = $("#status").find("option:selected").val();
+	 $('#statusnumval').val(statusnumval);
+     //银行放款展示
+    $("#addbankloan").bind("click", function(){
+ 	    $("input[name='bankname[]']").each(function(index,item){
+ 		$(this).val()=='';
+ 		});
+ 		$("input[name='bankmoney[]']").each(function(index,item){
+ 		$(this).val()=='';
+ 		});
+     	$('.system-mask').show();
+  		$('.system-popup-box').show();
+ 	});
+	 $(document).on("click", ".add-cash-history", function(){
+		$("input[name='bankname[]']").each(function(index,item){
+ 		$(this).val()=='';
+ 		});
+ 		$("input[name='bankmoney[]']").each(function(index,item){
+ 		$(this).val()=='';
+ 		});
+     	$('.system-mask').show();
+  		$('.system-popup-box').show();
+	});
+	});
+	
+	//取消邀约贷款弹出框_start
+	function btn_cancel(){
+		$('#call_for').hide();
+		return ;
+		//按取消后恢复上一次的星级和状态_start
+	    var id = $('#id').val();
+		var stars = $('#oldstars').val();//上一步的星级
+		var status = $('#oldstatus').val();//上一步的状态
+		$.post('/manage/kefu_clients/ajax_update_stars.html',{'id':id,'stars':stars},function(d){
+			var jsonObj = eval('(' + d + ')');
+			if(jsonObj.xinxi=='ok'){
+				$('#stars option[value='+stars+']').attr("selected",true);//动态还原上一步的星级
+				$('#status option[value='+status+']').attr("selected",true);//动态还原上一步的状态
+			}
+	    }); 
+		parentnum();//更新我的客户和再分配客户统计数
+		//按取消后恢复上一次的星级状态_end
+	}
+	//取消邀约贷款弹出框_end
+	
+	//取消银行放款
+	function xqbankmoney(){
+		$('.system-mask').hide();
+		$('.system-popup-box').hide();
+		var status = $('#oldstatus').val();
+        var id = $('#id').val();
+        if(status == 4){
+            return false;
+        }
+		 $.post('/manage/kefu_clients/ajax_update_status.html',{'id':id,'status':status},function(d){
+             if(d.status == 1){
+					$('#status').val(status);
+					$("#statusnumval").val(status);//时刻跟新隐藏域
+				 	/* alert('状态修改成功!'); */
+				}else{
+			        alert('系统错误');
+				} 
+			},'json');
+	}
+   //动态提交银行放款信息表单
+  function tjbankmoney(){
+	   	var flag = true;
+		  $("input[name='bankname[]']").each(function(index,item){
+		 	if($(this).val()==''){
+		 		alert('银行名称不能为空！');
+		 		flag = false;
+		 	}
+		  });
+		  if(!flag){
+			  return false;
+		  }
+		  $("input[name='bankmoney[]']").each(function(index,item){
+			 	if($(this).val()==''){
+			 		alert('银行金额不能为空！');
+			 		flag = false;
+			 	}
+			 	
+			 	if(isNaN($(this).val())){
+			 		alert('银行金额必须为数字！');
+			 		flag = false;
+			 	}
+		  });
+		  if(!flag){
+			  return false;
+		  }
+  }
+  //新增银行栏目
+ function addbankinfo(){
+    var bankloantpl = '<li>'+'<span>'+'<label>'+'放款银行： '+'</label>'+'<input type="text" name="bankname[]" placeholder="" class="input-box">'+'</span>'+'<span class="form-one-m">'+'<label>'+'放款金额： '+'</label>'+'<input type="text" name="bankmoney[]" placeholder="" class="input-box">'+'&nbsp;'+'<span style="color:red;font-weight:bold;">'+'&nbsp元'+'</span>'+'&nbsp;&nbsp;'+'&nbsp<i class="icon-box add-icon" onclick="addbankinfo();">'+'</i>'+' <i class="icon-box delete-icon" onclick="delbankinfo($(this));">'+'</i>'+'</span>'+'</li>';
+    $('.list-form ol').append(bankloantpl);
+ }
+ function delbankinfo(obj){
+	 obj.parent().parent().remove();
+ }
+function addremark(){
+	var remark = $('#addremark').val();
+     if(remark==''){
+    	alert('新增记录不能为空！');
+    	return false;
+    } 
+	var id = $('#id').val();
+	if(id==''){
+		alert('请先填写基本信息!');
+		return false;
+	}
+	$('#sb_remark').attr('disabled',true);//禁用按钮，防止重复提交
+	$.post('/manage/kefu_clients/ajax_addremark.html',{'id':id,'remark':remark},function(d){
+		if(d.msg=='1'){
+			var count = 1;
+		    var remark = '<li style="border-bottom:1px dashed #666;height:auto;float:left;width:100%">'+'<div style="width:100%">'+'<div style="width:3%;float:left;"><em class="number">'+count+"</em>.</div>"+'<div style="float:left;width:97%;display:block;word-break: break-all;word-wrap: break-word;">'+'<a title="'+d.remark_all+'" style="color:black;text-decoration:none;cursor:auto">'+d.remark_all+'<span style="margin:0 2% 0 5%">'+d.kefuname+'</span>'+d.time+'</a>'+'</div>'+'</div>'+'</li>';
+		    var length = $('#hisul li').length;
+		    if(length>0){
+		    	 $('#hisul li:first').before(remark);
+				    $('#hisul li:gt(0)').each(function(i){
+				    	count++;
+				    	$(this).find('em').html(count);
+				    });
+		    }
+		    else{
+		    	$('#hisul').append(remark);
+		    }
+		    $('#addremark').val('');
+		}else if(d.msg==2){
+			alert('系统错误！');
+		}else if(d.msg==4){
+			alert('该客户不是直接名下客户不能直接备注');
+		}else{
+			alert('亲，你的备注已经存在，请勿重复添加!');
+			$('#addremark').val('');
+		}
+		$('#sb_remark').attr('disabled',false);//解禁按钮
+	},'json');
+	parentnum();//更新我的客户和再分配客户统计数
+}
+
+//快捷输入
+$(function(){
+    $("#quickInput button").click(function(){
+        $("#addremark").val(($("#addremark").val() ? $("#addremark").val()+';' :'')+$.trim($(this).text()));
+    });
+});
+
+function sendsms(){
+	var smscontent = $('#smscontent').val();
+	var mobile = $('#smsmobile').val();
+	var truename = $('#smsname').val();
+	if(smscontent == 0) {
+		alert('请选择短信内容！');
+		return false;
+	}
+	var id = $('#id').val();
+	$.post('/manage/kefu_common/sendsms.html',{'id':id,'truename':truename,'mobile':mobile,'smscontent':smscontent},function(d){
+		if(d.msg=='1'){
+			var count = 1;
+		    var sms= '<li style="border-bottom:1px dashed #666;">'+'<div style="width:100%">'+'	<div style="width:3%;float:left;">'+'<em class="number">'+count+"</em>. "+'</div>'+'<div style="float:left;width:45%;">'+'<a title="'+d.content_all+'" style="color:black;text-decoration:none;cursor:auto">'+d.content+'</a>'+'</div>'+d.time+'</div>'+'</li>';
+		    var length = $('#hisul1 li').length;
+		    if(length>0){
+	    	 $('#hisul1 li:first').before(sms);
+   			    $('#hisul1 li:gt(0)').each(function(i){
+   			    	count++;
+   			    	$(this).find('em').html(count);
+   			    });
+		    }else{
+		    	$('#hisul1').append(sms);
+		    }
+		    $('#smscontent').val(0);
+			alert('短信发送成功');
+		}else{
+			alert('系统错误！');
+		}
+	},'json');
+}
+function house(obj,house){
+	if($(obj).val() == '未被抵押/无按揭'){
+		$("."+house).css('display','none');
+	}else{
+		$("."+house).css('display','');
+	}
+}
+function car(obj,car){
+	if($(obj).val() == '未被抵押/无按揭'){
+		$("."+car).css('display','none');
+	}else{
+		$("."+car).css('display','');
+	}
+}
+ function update_status(val){
+	var status = $('#status').val();
+	var id = $('#id').val();
+	 if(id==''){
+		 alert('请先填写基本信息!');
+		 return false; 
+	 }
+	if(status=='请选择'){
+		alert('请选择状态');
+	    return false;
+	}
+	if(status == 4){
+		$(".alrloan").css('display','');
+		$("#loan_remark").css('display','');
+		$("#hisul3").css('display','');
+	}else{
+		$(".alrloan").css('display','none');
+		$("#loan_remark").css('display','none');
+		$("#hisul3").css('display','none');
+	}
+	
+	if(status==10){
+	 	var i = confirm('状态确实为修改为重复申请吗？');
+	 	if(i==false){
+	 		var num = $("#statusnumval").val();
+	 		$("#status").val(num);
+	 		return false;
+	 	}
+	}
+	if(status==4){
+ 	    $("input[name='bankname[]']").each(function(index,item){
+	    $(this).val()=='';
+	    });
+	    $("input[name='bankmoney[]']").each(function(index,item){
+	    $(this).val()=='';
+	    });
+		$('.system-mask').show();
+		$('.system-popup-box').show();
+		$('#addbankloan').show();
+	}else{
+		//新增放款按钮（状态等于银行已放款才出现）
+		$('#addbankloan').hide();
+	}
+
+     if(status == 4){
+         return false;
+     }
+	 $.post('/manage/kefu_clients/ajax_update_status.html',{'id':id,'status':status},function(d){
+         if(d.status == 1){
+			 $("#statusnumval").val(status);//时刻跟新隐藏域
+		 	 //alert('状态修改成功!'); 
+		 	 /*
+		 	 if(status == 7){  // 状态为待跟进的时候，短信发送成功，弹窗提示
+				 if(d.is_pop == 0){
+                     $("#daigenjin").find("#daigenj_msg").html(d.msg);
+                     $("#daigenjin").show();
+				 }
+
+		 	 }
+		 	 */
+
+		}else{
+	        alert('系统错误');
+		} 
+	},'json');
+	if(val == 2){
+		$("#followedup").css('display','');
+		$("input[type='radio'][name='godoor'][value=2]").attr("checked",'checked');
+		alert('客户为待签约，请继续选择是否已邀约上门，如未选择，系统将默认该客户未邀约上门！');
+	}else{
+		$("#followedup").css('display','none');
+	}
+	 if(val == 8 || val == 3 || val == 5 || val == 6 || val == 4){
+		$("#facetalk_day_todo").css('display','');
+	}else{
+		$("#facetalk_day_todo").css('display','none');
+	}
+	parentnum();//更新我的客户和再分配客户统计数
+}
+ function daytime(val)
+ {
+	 if(val == 1){
+		 $("#daytime").css('display','');
+	 } else {
+		 $("#daytime").css('display','none');
+	 }
+ }
+ function update_stars()
+ {
+     var id = $('#id').val();
+	 var stars = $('#stars').val();
+	 if(id==''){
+		 alert('请先填写基本信息!');
+		 return false; 
+	 }
+	 if(stars=='请选择'){
+		 alert('请选择星级');
+		 return false;
+	 }
+	 
+	 $.post('/manage/kefu_clients/ajax_update_stars.html',{'id':id,'stars':stars},function(d){
+	    var jsonObj = eval('(' + d + ')');
+		if(jsonObj.xinxi=='ok'){
+			//alert('星级更新成功.');
+			//时刻跟新隐藏域
+			//$("#statusnumval").val(status);
+		}else if(jsonObj.xinxi=='error'){
+		    alert('系统错误');
+		}else{
+			alert(jsonObj.str);
+			$('#stars').val(jsonObj.stars);
+		}
+    }); 
+	parentnum();//更新我的客户和再分配客户统计数
+}
+function policy(obj){
+	if(obj == '有'){
+		$(".havepolicy").css('display','');
+		$('.chchange_baodan_status').hide();
+	}else{
+		$(".havepolicy").css('display','none');
+	}
+}
+function credit(obj){
+	if(obj == 1){
+		$(".credit").css('display','');
+	}else{
+		$(".credit").css('display','none');
+	}
+}
+function credits(obj){
+	if(obj == '良好无逾期'){
+		$(".credits").css('display','none');
+	}else{
+		$(".credits").css('display','');
+	}
+}
+function addfacetalk(){
+	 var id = $('#id').val();
+	 var facetalk_is = $("input[name='godoor']:checked").val();
+	 var facetalk_day = $('#stime').val();
+	 var facetalk_hour = $('#facetalk_hour').val();
+	 var minute = $('#minute03').val();
+	 if(facetalk_is==1){
+		 if(facetalk_day==''){
+			 alert('预约面谈日期不能为空！');
+			 return false;
+		 }
+		 if(facetalk_hour==''){
+			 alert('预约面谈时间不能为空！');
+			 return false;
+		 }
+	 }
+	var dataStr = '';
+	if(facetalk_is==1) {
+		dataStr = {'id':id,'facetalk_is':facetalk_is,'facetalk_day':facetalk_day,'facetalk_hour':facetalk_hour,'minute':minute};
+	} else {
+		dataStr = {'id':id,'facetalk_is':facetalk_is};
+	}
+	$.post('/manage/kefu_clients/ajax_addfacetalk.html', dataStr ,function(d){
+		if(d=='1') {
+			alert('修改成功');
+		} else {
+			alert('系统错误');
+		}
+	});
+	parentnum();//更新我的客户和再分配客户统计数
+}
+function addfacetalk02(){
+	var id = $('#id').val();
+	var arrival_time = $('#etime').val();
+	var hour = $('#hour02').val();
+	var minute = $('#minute02').val();
+	if(arrival_time==''){
+		alert('上门时间不能为空！');
+		return false;
+	}
+	$.post('/manage/kefu_clients/ajax_update_ft_atime.html',{'id':id,'arrival_time':arrival_time,'hour':hour,'minute':minute},function(d){
+		if(d=='1'){
+			alert('修改成功');
+		}else{
+			alert('系统错误');
+		}
+	});
+	parentnum();//更新我的客户和再分配客户统计数
+}
+
+/* 主管点评 */
+function addreview(){
+	var id = $('#id').val();
+	var mename = $('#mename').val();
+	var review = $('#review').val();
+    if(review==''){
+    	alert('新增点评不能为空！');
+    	return false;
+     } 
+	if(id==''){
+		alert('请先填写基本信息!');
+		return false;
+	}
+	$.post('/manage/kefu_clients/ajax_addreview.html',{'id':id,'mename':mename,'review':review},function(d){
+		if(d.msg=='1'){
+			window.location.reload();
+		}else if(d.msg=='2'){
+			alert('系统错误！');
+		}else{
+			alert('亲，你的备注已经存在，请勿重复添加!');
+			$('#review').val('');
+		}
+	},'json');
+	parentnum();//更新我的客户和再分配客户统计数
+}
+/* 点评回复 */
+var huifu = 0;
+function show_huifu(huifu_id){
+
+	if(huifu%2==0){
+		$('#'+huifu_id) .css('display','');
+		$('#huifu'+huifu_id).focus();
+		huifu++;
+	}else{
+		$('#'+huifu_id).css('display','none');
+		huifu++;
+	}
+}
+function addkefu_huifu(id){
+	var loan_id = $('#id').val();
+	var huifu = $('#huifu'+id).val();
+	var id = id;
+	if(huifu==''){
+		alert('请先填写点评回复内容！');
+		return false;
+	}
+	if(id==''){
+		alert('亲~还没有主管点评你！');
+		return false;
+	}
+	$.post('/manage/kefu_clients/ajax_addreply.html',{'loan_id':loan_id,'huifu':huifu,'id':id},function(d){
+		var huifu = '<li style="border-bottom:1px dashed #666;height:auto;float:left;width:100%" >'+'<div style="width:100%">'+'<div style="color:#0873c0;float:left;width:97%;display:block;word-break: break-all;word-wrap: break-word;">'+ '回复：'+'<a title="'+d.huifu_all+'" style="color:#0873c0;text-decoration:none;cursor:auto">'+d.huifu_all+'<span style="margin:0 2% 0 5%">'+d.kefu_name+'</span>' +d.huifu_time+ '</a>'+ '</div>'+'</div>'+'</li>';
+			$('#s').before(huifu);
+
+		$('#huifu').val('');
+	},'json');
+	parentnum();//更新我的客户和再分配客户统计数
+
+}
+/* 备忘录 */
+var f = 0;
+function showforget(){
+	if(f%2==0){
+		$('#kefuforget').css('display','');
+		$('#showkefuforget').val('新增备忘▼');
+		f++;
+	}else{
+		$('#kefuforget').css('display','none');
+		$('#showkefuforget').val('新增备忘▲');
+		f++;
+	}
+}
+function addkefuforget(){
+	var id = $('#id').val();
+	var forgetdata = $('#forgettime').val();
+	var remarkhour = $('#hour').val();
+	var remarkminute = $('#minute').val();
+	var forgetremark = $('#addforget').val();
+	if(forgetdata==''){
+		alert('请选择备忘日期！');
+		return false;
+		
+	}
+	if(forgetremark==''){
+		alert('请填写备忘内容！');
+		return false;
+	}
+	
+	$.post('/manage/kefu_clients/ajax_add_forgetremark.html',{'id':id,'forgetdata':forgetdata,'remarkhour':remarkhour,'remarkminute':remarkminute,'forgetremark':forgetremark},function(d){
+		if(d.msg=='1'){
+		    alert('添加成功');
+		    location.reload(); 
+		    $('#addforget').val('');
+		}else if(d.msg==3){
+			alert('系统错误！');
+		}else if(d.msg==2){
+			alert('亲，你的备注已经存在，请勿重复添加!');
+			$('#addforget').val('');
+		}
+	 },'json'); 
+	parentnum();//更新我的客户和再分配客户统计数
+	
+}
+/* 备忘录end */
+
+//新增邀约信息_start
+function add_yaoyuemsg(){
+	var yaoyuemsg = $('#yaoyuemsg').val();
+	if(yaoyuemsg==''){
+		alert('请先填写邀约信息!');
+		return false;
+	}
+	var id = $('#id').val();
+	if(id==''){
+		alert('请先填写基本信息!');
+		return false;
+	}
+	yaoyuemsg = yaoyuemsg+'(邀约信息)';
+	//PS：新增邀约信息是录入到备注里
+	$.post('/manage/kefu_clients/ajax_addremark.html',{'id':id,'remark':yaoyuemsg},function(d){
+		if(d.msg=='1'){
+			var count = 1;
+		    var remark = '<li style="border-bottom:1px dashed #666;height:auto;float:left;width:100%">'+'<div style="width:100%">'+'<div style="width:3%;float:left;"><em class="number">'+count+"</em>.</div>"+'<div style="float:left;width:97%;display:block;word-break: break-all;word-wrap: break-word;">'+'<a title="'+d.remark_all+'" style="color:black;text-decoration:none;cursor:auto">'+d.remark_all+'<span style="margin:0 2% 0 5%">'+d.kefuname+'</span>'+d.time+'</a>'+'</div>'+'</div>'+'</li>';
+		    var length = $('#hisul li').length;
+		    if(length>0){
+		    	 $('#hisul li:first').before(remark);
+				    $('#hisul li:gt(0)').each(function(i){
+				    	count++;
+				    	$(this).find('em').html(count);
+				    });
+		    }
+		    else{
+		    	$('#hisul').append(remark);
+		    }
+		    $('#addremark').val('');
+		    $('#call_for').hide();
+		}else if(d.msg==2){
+			alert('系统错误！');
+		}else if(d.msg==4){
+			alert('该客户不是直接名下的客户不能直接备注!');
+		}else{
+			alert('亲，你的邀约备注已经存在，请勿重复添加!');
+			$('#addremark').val('');
+		}
+	},'json');
+	parentnum();//更新我的客户和再分配客户统计数
+}
+//新增邀约信息_end
+
+</script>
+
+<script>
+function closealarm(obj){
+	var is_close = obj.find("option:selected").text();//关闭
+	is_close = is_close=='是'?'1':'0';
+	var id = obj.val();
+	var loan_id = $('#id').val();
+	var datastr = {'id':id,'is_close':is_close,'loan_id':loan_id};
+	$.post('/manage/kefu_clients/ajax_close_alarm.html', datastr, function(d) {
+		if(d=='1'){
+		 	alert('修改成功!');
+		}else{
+	        alert('系统错误');
+		} 
+	});	
+}
+</script>
+	<script>
+        function call_send(mobile){
+            //如果是iframe嵌套 发起电话号码
+            window.parent.zdt.ws.send(mobile)
+//			如果js同级 用
+//            window.zdt.ws.send(mobile)
+        }
+	</script>
+<script type="text/javascript">
+//附件删除
+$(function(){
+	$(".newaddimg").hover(function(){
+		$(this).children().eq(1).attr('class','del_img');//解决插件的兼容性
+		$(this).children().eq(1).show();
+	},function(){
+		$(this).children().eq(1).attr('class','del_img');//解决插件的兼容性
+		$(this).children().eq(1).hide();
+	});
+	$(".del_img").click(function(){
+	if(!confirm("确认删除吗")){
+		return false;
+	}
+	$(this).parent().parent().remove();
+	var imgno = $(this).prev().attr('_no');
+	var loan_id = $('#id').val();
+	$.post('/manage/kefu_account/ajax_del_img.html',{'imgno':imgno,'loan_id':loan_id},function(d){
+		if(d==1){
+	    	 alert('删除成功！');
+	    	 window.location.reload();
+		}else{
+			console.log('删除失败！');
+		}
+	});		
+  });
+
+
+});
+//新更改的样式
+$(function(){
+	var house_status = $('#house_status').val();
+	if(house_status == '抵押给银行' || house_status == '购房按揭中'){
+		$('.house_status').show();
+	}else {
+		$('.house_status').hide();
+	}
+	var car_status = $('#car_status').val();
+	if(car_status==1){
+		$('.car_status').hide();
+	}else if(car_status==2 ){
+		$('.car_status').show();
+	}else{
+		$('.car_status').hide();
+	}
+	var baodan_status = $('#baodan_status').val();
+	if(baodan_status == '正常在供'){
+		$('.chchange_baodan_status').show();
+	}else {
+		$('.chchange_baodan_status').hide();
+	}
+	//有无房抵贷款
+	var credit_house_is  = $('input[name="credit_house_is"]:checked').val();
+	if(credit_house_is == 1){
+		$('.credit_house_status').show();
+	}else {
+		$('.credit_house_status').hide();
+	}
+	//有无信用贷款
+	var credit_situation  = $('input[name="credit_situation"]:checked').val();
+	if(credit_situation == '有'){
+		$('.creditloan').show();
+	}else {
+		$('.creditloan').hide();
+	}
+	//当前是否逾期
+	var creditoverdue_is  = $('input[name="creditoverdue_is"]:checked').val();
+	if(creditoverdue_is == '1'){
+		$('.creditoverdue').show();
+	}else {
+		$('.creditoverdue').hide();
+	}
+	//信用卡情况
+	var creditcard_situation  = $('input[name="creditcard_situation"]:checked').val();
+	if(creditcard_situation == '有'){
+		$('.credit_situation_cs').show();
+	}else {
+		$('.credit_situation_cs').hide();
+	}
+	//身份信息
+	var work_identity = $('#work_identity').val();
+	if(work_identity == 1){
+		definfo('jobinfo',3,1);
+	}else if(work_identity == 2){
+		definfo('jobinfo',3,2);
+	}else if(work_identity == 3){
+		definfo('jobinfo',3,3);
+	}else if(work_identity == 4){
+		definfo('jobinfo',3,4);
+	}
+	//名下车产情况
+	var car = $('#car').val();
+	if(car == 1){
+		definfo('carinfo',3,1);
+	}else if(car == 2){
+		definfo('carinfo',3,2);
+	}
+
+	$('#pipei_closed').click(function(){
+		$('#pipei_tk').hide();
+	});
+});
+</script>
+<!--上存图片-->
+<script type="text/javascript">
+function checkval(){
+	var f = $("#pic").attr("src");
+	if(f == ''){
+		alert("请要上存的附件图片！");
+		return false;
+	}else{
+		$('.sub').css('width','190px');
+		$('.sub').val('资料上传中，请耐心等待...');
+		return true;
+	}
+}
+function Open(text, url ,isCloseCurTab) {
+	window.parent.Open(text, url, isCloseCurTab);
+
+}
+
+/**
+ * 加入公共池
+ */
+function noto_ggc(id,val){
+	$.ajax({
+        url:'/manage/kefu_clients/ajax_change_noto_ggc.html',
+        type:'POST',
+        data:{'id':id,'is_noto_ggc':val},
+        dataType:'json',
+        cache:false,
+        success:function(d){
+        	console.log(d);
+            if(d['code']==1){
+                var total = ~~d['data']['total'],
+                    num = ~~d['data']['num'];
+                    msg = d['data']['msg'];
+                if(num>=total){
+                	alert(msg);
+                }else{
+                	alert('您有'+total+'个名额锁定名下客户不被公共池抓走，现已锁定'+num+'个客户，还剩下'+(total-num)+'个名额。');
+                }
+                window.location.reload();
+            }else{
+                alert(d['msg']);
+            }
+        },
+        error:function(){
+            alert('系统异常,请稍后再试!');
+        }
+    });
+}
+
+/*
+ * 拉黑/取消拉黑
+ */
+function black_user(id,is_black){
+	$.ajax({
+        url:'/manage/kefu_clients/ajax_black_user.html',
+        type:'POST',
+        data:{'id':id,'is_black':is_black},
+        dataType:'json',
+        cache:false,
+        success:function(d){
+        	console.log(d);
+            if(d['code']==1){
+                msg = d['data']['msg'];
+                alert(msg);
+                window.location.reload();
+            }else{
+                alert(d['msg']);
+            }
+        },
+        error:function(){
+            alert('系统异常,请稍后再试!');
+        }
+    });
+}
+
+/*
+ * 加入我的客户
+ */
+function addtomyclient(){
+	var id = $("#id").val();
+	$.post('/manage/kefu_clients/ajax_addtomyclient.html',{'id':id},function(d){
+		if(d == 1){
+			alert('加入成功！');
+			window.location.reload();
+		}else{
+			alert('加入失败，请联系系统工作人员！');
+			window.location.reload();
+		}
+	});
+}
+
+/*
+ * 加入重要客户
+ */
+function important_user(){
+	var id = $("#id").val();
+	$.post('/manage/kefu_clients/ajax_important_user.html',{'id':id},function(d){
+		if(d == 30){
+			alert('您的收藏夹已满，您需要先清理部分收藏的重要客户数据！');
+		}else{
+			window.location.reload();
+		}
+	});
+}
+
+function bigenjin(){
+    var id = $("#id").val();
+    $.ajax({
+        url:'/manage/kefu_bigenjin/ajax_bigenjin_user.html',
+        type:'post',
+        data:{'id':id},
+        dataType:'json',
+        cache:false,
+        success:function(d){
+            window.location.reload();
+        },
+        error:function(){
+            alert('系统异常,请稍后再试!');
+        }
+    });
+}
+
+function checkMobileExists(target,val){
+    var val = $.trim(val);
+    $(target).css({'background-color':''});
+    
+    if(val.length==11){
+        $.ajax({
+            url:'/manage/kefu_clients/checkMobileExists.html',
+            type:'GET',
+            data:{'mobile':val},
+            dataType:'json',
+            cache:false,
+            success:function(d){
+                if(d['code']==1){
+                    if(~~d['data']){
+                    	$(target).css({'background-color':'red'});
+                        alert('该客户已经存在公司系统里!');                        
+                    }
+                }else{
+                    alert(d['msg']);
+                }
+            },
+            error:function(){
+                alert('系统异常,请稍后再试!');
+            }
+        });
+    }
+}
+
+$(function(){
+    var is_load_video=0;
+	window.load_videolist = function(){
+	    if(is_load_video){
+	       return;
+	    }
+	    $.post('/manage/kefu_clients/get_video_list',{'id':},function(d){
+            if(d.code==1){
+                var htmlArr = [],rows;
+                for(var i=0;i<d.data.length;i++){
+                    rows = d.data[i];
+                    htmlArr.push('<tr class="customer-table-trt"><td>'+rows['id']+'</td><td>'+rows['date_format']+'</td><td>'+rows['time_format']+'</td><td>'+rows['duration_str']+'</td><td>'+rows['kefuname']+'</td><td>'+rows['belog_to']+'</td><td>'+rows['now_job']+'</td><td><img src="https://guwen.zhudaicms.com/default/manage_2025/image/voice.png" alt="" src="https://guwen.zhudaicms.com/default/manage_2025/image/voice.png" style="width: 20px;height: 20px;cursor: pointer;" title="点击听录音" onclick="createAudioPlayer(\'https://'+rows['osspath']+'\')"/></td></tr>');
+                }
+                $('#videoList').html(htmlArr.join(""));
+                is_load_video = 1;
+            }
+        },'json');
+	}
+    window.load_signvideolist = function(){
+        $.post('/manage/kefu_clients/get_signvideo_list',{'id':},function(d){
+            if(d.code==1){
+                var htmlArr = [],
+                    rows,
+                    imageurl;
+                if(d.data.length){
+                    for(var i=0;i<d.data.length;i++){
+                        rows = d.data[i];
+                        imageurl = rows.imageurl ? "//"+rows.imageurl : "/default/images/face.png";
+                        htmlArr.push(
+                            `<tr>
+                                <td>
+                                    <div class="vlist-video-cell">
+                                        <div class="vlist-video-thumb">
+                                           
+                                                <img class="vlist-video-thumb-img video-item"  src="${imageurl}" alt="视频封面">
+                                                <div class="vlist-play-icon video-play" data-video-src="https://${rows.videourl}" data-poster="${imageurl}"></div>
+                                            
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="vlist-text-primary">${rows.truename}</td>
+                                <td class="vlist-text-muted">${rows.kefuname}</td>
+                                <td class="vlist-text-muted">${rows.money}万</td>
+                                <td class="vlist-text-muted">${rows.status}</td>
+                                <td class="vlist-text-muted">${rows.check_remark}</td>
+                                <td class="vlist-text-muted">${rows.time}</td>
+                            </tr>`
+                        );
+                    }
+                }else{
+                    htmlArr.push(`<tr><td colspan="7">暂无视频</td></tr>`);
+                }
+                $('#signvideoList').html(htmlArr.join(""));
+            }
+        },'json');
+    }
+});
+</script>
+<!--上存图片结束-->
+	<script>
+	/**  注释掉页面不可复制的JS控制
+	$(function() {
+            $("#infomation").find("input").attr('oncopy', 'return false;');//不可复制
+            $("#infomation").attr('onselectstart', 'return false;');
+            $("#infomation").attr('oncontextmenu','return false;');
+        });
+	*/
+	</script>
+<script>
+	$(document).ready(function () {
+		var maxH = 0
+		$(".tabs-content").each(function(){
+		if($(this).outerHeight() > maxH){
+			maxH = $(this).outerHeight()
+		}
+		
+		})
+		$("#tabs-content").css("height",maxH+'px')
+		
+	})
+</script>
+</head>
+<body>
+	<!--弹出框开始-->
+	<div class="product_box" id="pipei_tk" style="display:none;">
+		<div class="box_inner">
+			<div class="box_top">
+				<h4>匹配产品</h4><span id="pipei_closed">×</span>
+			</div>
+		 	<table border="0" cellpadding="0" cellspacing="0" class="customer-table">
+	            <tr class="customer-table-tr">
+	                <td width="3%">产品名称</td>
+		   			<td width="3%">产品类型</td>
+		   			<td width="5%">月利息</td>
+		   			<td width="3%">还款方式</td>
+		   			<td width="3%">放款时间</td>
+		   			<td width="3%">预审额度(元)</td>
+	            </tr>
+	               
+	        </table>
+	    </div>
+	</div>
+	<!--弹出框结束-->
+	<div class="infomation" id="infomation" style="height:309px">
+		<ul class="infomation-menu">
+			<li value="1" id='jbxx'>基本信息</li>
+			<li value="2">身份信息</li>
+			<li value="3">房产信息</li>
+			<li value="4">车产信息</li>
+			<li value="5">保单社保公积金</li>
+			<li value="6">信用信息</li>
+			<li value="7">负债情况</li>
+			<li value="9">需求信息</li>
+			<li class="on" value="10" style="border:none;font-weight:bold" id='qbxx'>全部信息</li>
+		</ul>
+		<!-- 基本信息 -->
+		<div class="infomation-info" id="infomation-info1">
+			<h1 class="infomation-info-top">基本信息<span>BASIC INFORMATION</span></h1>
+			<table class="infomation-info-main">
+				<tr>
+					<td class="attribute"><span class="starcolor">* </span>姓名：</td>
+					<!--<td class="attribute-content"><input type="text" class="maininfo" id="truename" type="text"  placeholder="姓名" value=""></td>-->
+					<td class="attribute-content"><input type="text" class="maininfo" id="truename" type="text" placeholder="姓名" value=""></td>
+					<td class="attribute"><span class="starcolor">* </span>手机号码：</td>
+										<td class="attribute-content"><input type="text" class="maininfo" id="mobile"  placeholder="手机号码" onkeyup="checkMobileExists(this,this.value)"></td>
+									</tr>
+				<tr>
+				<td class="attribute"><span class="starcolor">* </span>来源(<span style="color:red;">可去设置自定义下拉内容</span>)：</td>
+					<td class="attribute-content">
+						                            <select style="width:29%;float:left;" id="sourceselect">
+                              <option value="请选择">请选择</option>
+                              			            	     <option value="手工添加-转介绍">转介绍</option>
+			            	     <option value="手工添加-陌拜">陌拜</option>
+			            	     <option value="手工添加-预约上门">预约上门</option>
+			            	     <option value="手工添加-广告投放">广告投放</option>
+			            	     <option value="手工添加-企业微信">企业微信</option>
+			            	     <option value="手工添加-公司资源">公司资源</option>
+			            	     <option value="手工添加-线上咨询">线上咨询</option>
+			            	     <option value="手工添加-短信">短信</option>
+			            	     <option value="手工添加-其他">其他</option>
+			            	                              </select>
+                            <input type="text" id="source" placeholder="来源" value="" style="width:24%;margin-left:5px;height:22px;display:none;">   
+                         					</td>
+					<td class="attribute"><span class="starcolor">* </span>城市：</td>
+					<td class="attribute-content">
+						<select name="province" id="profile2_location" class="select1 maininfo" onchange="build_second(this.value,'profile2_sublocation',LOK);" style="margin-left:0;width:25%" ></select>
+						<select name="city" id="profile2_sublocation" class="select2 maininfo" onChange="document.getElementById('change_area_div').style.display='';" style="margin-left:4%;width:24%"></select>
+						<input type="hidden" id="old_cityid" value="0">
+						<script type="text/javascript">init_location("0","0","profile2");</script> 
+					</td>
+				</tr>
+				<tr>
+					<td class="attribute">年龄：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="age" placeholder="年龄(岁)" value="">&nbsp;岁</td>
+					<td class="attribute">性别：</td>
+					<td class="attribute-content">
+						<label><input type="radio" name="sex" value='1' />先生</label>
+		            	<label><input type="radio" name="sex" value='2' />女士</label>
+					</td>
+				</tr>
+				<tr>
+					<td class="attribute">婚姻：</td>
+					<td class="attribute-content">
+						<label><input type="radio" name="marriageval" value='1' />已婚</label>
+						<label><input type="radio" name="marriageval" value='0' checked="checked"/>未婚/离异</label>
+					</td>
+					<td class="attribute">户籍：</td>
+					<td class="attribute-content">
+						<select name="user_sprovince" id="profile_location" class="select1 maininfo" onchange="build_second(this.value,'profile_sublocation',LOK);" style="margin-left:0;width:25%"></select>
+						<select name="user_scity" id="profile_sublocation" class="select2 maininfo" onChange="document.getElementById('change_area_div').style.display='';" style="margin-left:4%;width:24%"></select>
+						<script type="text/javascript">init_location("","","profile");</script>
+					</td>
+				</tr>
+				<tr>
+					<td class="attribute">学历：</td>
+					<td class="attribute-content">
+						<select id="user_degree" class="maininfo">
+							<option value="">请选择</option>
+							<option value="本科以下">本科以下</option>
+							<option value="本科及以上">本科及以上</option>
+						</select>
+					</td>
+					<td class="attribute">入学类型：</td>
+					<td class="attribute-content">
+						<select id="user_entrytype" class="maininfo">
+							<option value="">请选择</option>
+							<option value="全日制统招">全日制统招</option>
+							<option value="成人自考">成人自考</option>
+							<option value="函授">函授</option>
+							<option value="网络">网络</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="attribute">毕业院校：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="user_school" placeholder="毕业院校" value=""></td>
+					<td class="attribute">客户公司：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="company_whiltelist" placeholder="客户公司" value="">&nbsp;<span style="color: #c1c1c1">(选填)</span></span></td>
+				</tr>
+				<tr>
+					<td class="attribute">身份证：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="idcard" placeholder="身份证" value=""></td>
+					<td class="attribute">申请额度：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="loan_money" placeholder="申请额度" value="">&nbsp;万元</td>
+				</tr>
+				<tr>
+					<td class="attribute">来源类型：</td>
+					<td class="attribute-content"></td>
+					<td class="attribute">是否企业主：</td>
+					<td class="attribute-content">
+                       <select style="width:29%;float:left;" id="company">
+                           <option value="">请选择</option>
+            	           <option value="否" >否</option>
+            	           <option value="是" >是</option>
+                       </select>
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" id="id" value="">
+			<div class="infomation-info-foot"><input type="submit" value="保存"  onClick="edit_client_baseinfo();" id="base_keep"></div>
+		</div>
+	
+		<!-- 身份信息 -->
+		<div class="infomation-info" id="infomation-info2">
+			<h1 class="infomation-info-top">身份信息<span>IDENTITY INFORMATION</span></h1>
+			<table class="infomation-info-main">
+				<tr>
+					<td class="attribute">职业身份：</td>
+					<td class="attribute-content">
+						<select id="work_identity" onChange="definfo('jobinfo',3,$(this).val())" class="maininfo">
+                    	    <option value="">请选择</option>
+                        	<option value="1" >标薪</option>
+                            <option value="1" >优良职业</option>
+                            <option value="2" >自雇</option>
+                            <option value="3" >无固定职业</option>
+                            <option value="4" >企业主</option>
+                        </select>
+					</td>
+					<td class="attribute">
+						<span class="jobinfo1" style="display:none">行业：</span>
+                        <span class="jobinfo2" style="display:none">行业：</span>
+                        <span class="jobinfo3" style="display:none">目前做什么：</span>
+                        <span class="jobinfo4" style="display:none">经营年限：</span>
+					</td>
+					<td class="attribute-content">
+						<select class="jobinfo1 maininfo"  style="display:none" id="work_hangye">
+							<option value="">请选择</option>
+							<option value="常规" >常规</option>
+							<option value="公检法" >公检法</option>
+							<option value="军人" >军人</option>
+							<option value="娱乐" >娱乐</option>
+							<option value="建筑" >建筑</option>
+							<option value="物流快递" >物流快递</option>
+							<option value="房地产中介" >房地产中介</option>
+						</select>
+						<select class="jobinfo2 maininfo"  style="display:none" id="work_hangye2">
+							<option value="">请选择</option>
+							<option value="常规" >常规</option>
+							<option value="皮具" >皮具</option>
+							<option value="美容美发" >美容美发</option>
+							<option value="沐足" >沐足</option>
+							<option value="建筑" >建筑</option>
+							<option value="百货" >百货</option>
+							<option value="物流快递" >物流快递</option>
+							<option value="房地产中介" >房地产中介</option>
+						</select>
+                        <input type="text" class="jobinfo3 maininfo" style="display:none" id="nowork_dowhat" value="">
+                        <select class="jobinfo4 maininfo"  style="display:none" id="business_years">
+							<option value="">请选择</option>
+							<option value="1" >1年以下</option>
+							<option value="2" >1~2年</option>
+							<option value="3" >2年及以上</option>
+						</select>
+					</td>
+				</tr>
+				<!-- 工薪族 -->
+				<tr class="jobinfo1" style="display:none">
+					<td class="attribute">工资发放方式：</td>
+					<td class="attribute-content">
+						<select id="work_wage_give_type" class="maininfo">
+							<option value="">请选择</option>
+							<option value="银行转账" >银行转账</option>
+							<option value="银行代发" >银行代发</option>
+							<option value="现金发放" >现金发放</option>
+						</select>
+					</td>
+					<td class="attribute">月收入：</td>
+					<td class="attribute-content">
+						<select id="work_income_taxtype" class="maininfo" style="width:27%;">
+							<option value="">请选择</option>
+							<option value="税前" >税前</option>
+							<option value="税后" >税后</option>
+						</select>
+						<input style="width:25%;height:66%;" type="text" class="maininfo" id="work_wage_bank_money" value="">&nbsp;元
+					</td>
+				</tr>
+				<tr class="jobinfo1" style="display:none">
+					<td class="attribute">工资连续发放时长：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="work_income_long" value="">&nbsp;月</td>
+					<td class="attribute">个人+公司公积金缴存额：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="work_gongjijin_jiaocunmoney" value="">&nbsp;元</td>
+				</tr>
+				<tr class="jobinfo1" style="display:none">
+					<td class="attribute">公积金缴存基数：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="work_gongjijin" value="">&nbsp;元</td>
+					<td class="attribute">公积金缴存时长：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="work_gongjijin_long" value="">&nbsp;月</td>
+				</tr>
+				<tr class="jobinfo1" style="display:none">
+					<td class="attribute">社保缴存基数：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="work_shebao_money" value="">&nbsp;元</td>
+					<td class="attribute">社保缴存时长：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="work_shebao_long" value="">&nbsp;月</td>
+				</tr>
+				<!-- 企业主 -->
+				<tr class="jobinfo2" style="display:none">
+					<td class="attribute">有无营业执照：</td>
+					<td class="attribute-content">
+						<select id="enterprise_operate" class="maininfo">
+                             <option value="">请选择</option>
+                             <option value="有" >有</option>
+                             <option value="无" >无</option>
+                         </select>
+					</td>
+					<td class="attribute">经营年限：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="operate_age" value="">&nbsp;年</td>
+				</tr>
+				<tr class="jobinfo2" style="display:none">
+					<td class="attribute">占股比例：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="business_gufen" value="">&nbsp;%</td>
+				</tr>
+				<tr class="jobinfo3" style="display:none">
+					<td class="attribute">月收入：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="nowork_monthincome" value="">&nbsp;元</td>
+					<td class="attribute"></td>
+					<td class="attribute-content"></td>
+				</tr>
+				<!-- 企业主-->
+				<tr class="jobinfo4" style="display:none">
+					<td class="attribute">信用评级：</td>
+					<td class="attribute-content">
+						<select id="grade" class="maininfo">
+                             <option value="0">请选择</option>
+                             <option value="1" >A级</option>
+                             <option value="2" >B级</option>
+                             <option value="3" >C级</option>
+                             <option value="4" >D级</option>
+                             <option value="5" >M级</option>
+                         </select>
+					</td>
+				</tr>
+			</table>
+			<div class="infomation-info-foot"><input type="submit" value="保存" onClick="edit_client_identityinfo();"></div>
+		</div>
+		
+		<!-- 房产信息 -->
+		<div class="infomation-info" id="infomation-info3">
+			<table class="infomation-info-main">
+				<tr>
+					<td class="attribute">名下房产情况：</td>
+					<td class="attribute-content">
+						<select id="house" onChange="definfo('houseinfo',2,$(this).find('option:selected').attr('_style'))" class="maininfo">
+	                   	    <option value="">请选择</option>
+	                       	<option value="无" _style='1' >无房产</option>
+                            <option value="有" _style='2' >有房产</option>
+                        </select>
+						
+					</td>
+					<td class="attribute"><span class=" houseinfo2 houseinfo3" style="display:none">房产类型：</span></td>
+					<td class="attribute-content houseinfo2 houseinfo3">
+						<select id="house_type" class="maininfo">
+						<option value="">请选择</option>
+						<option value="商品房" >商品房</option>
+						<option value="居民住房" >居民住房</option>
+						<option value="商住两用" >商住两用</option>
+						<option value="商铺" >商铺</option>
+						<option value="公寓" >公寓</option>
+						<option value="写字楼" >写字楼</option>
+						<option value="别墅" >别墅</option>
+						<option value="宅基地" >宅基地</option>
+						<option value="安置房" >安置房</option>
+						<option value="安置房" >自建房</option>
+						<option value="集资房" >集资房</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="attribute">
+					<span class="houseinfo2 houseinfo3" style="display:none">房产所在地：</span>
+					</td>
+					<td class="attribute-content houseinfo2 houseinfo3" style="display:none">
+					<select name="user_sprovince" id="profile3_location" class="maininfo houseinfo2 houseinfo3" onchange="build_second(this.value,'profile3_sublocation',LOK);" style="margin-left:0;width:73px"></select>
+					<select name="user_scity" id="profile3_sublocation" class="maininfo houseinfo2 houseinfo3" onChange="document.getElementById('change_area_div').style.display='';" style="margin-left:1%;width:73px"></select>
+
+					<script type="text/javascript">init_location("","","profile3");</script>
+					<!--<input type="text" placeholder="购买总价" id="house_buy_money" value="" class="maininfo houseinfo2">-->
+						<input type="text" name="house_area_small" id="house_area_small" style="width: 45px;height: 25px;" value="">区
+					</td>
+					<td class="attribute houseinfo2"><span class="houseinfo">房产现价：</span></td>
+					<td class="attribute-content houseinfo2"><input type="text" placeholder="房产现价" id="house_now_money" value="" class="maininfo">&nbsp;万</td>
+				</tr>
+				<tr class="houseinfo2" style="display:none">
+					<td class="attribute houseinfo2 houseinfo3"><span class="houseinfo">房产面积：</span></td>
+					<td class="attribute-content houseinfo2 houseinfo3"><input type="text" placeholder="房产面积" id="house_area" value="" class="maininfo">&nbsp;平方米</td>
+
+					<td class="attribute">房产证持有时间：</td>
+					<td class="attribute-content">
+						<input type="text" style="width:37%" id="house_buy_time" size="12" name="house_buy_time"   value=""/>&nbsp;月
+					</td>
+				</tr>
+				<tr class="houseinfo2 houseinfo3" style="display:none">
+					<td class="attribute houseinfo2 houseinfo3" style="display:none">房产状态：</td>
+					<td class="attribute-content houseinfo2 houseinfo3" style="display:none">
+						<select id="house_status" class="maininfo" onchange="house_buytype()">
+							<option value="">请选择：</option>
+							<option value="抵押给私人" >抵押给私人</option>
+							<option value="抵押给银行" >抵押给银行</option>
+							<option value="购房按揭中" >购房按揭中</option>
+							<option value="全款红本在手" >全款红本在手</option>
+						</select>
+					</td>
+					<td class="attribute house_status">月供时间：</td>
+					<td class="attribute-content house_status">
+							<input type="text" id="house_repayment_month" class="maininfo house_status" value="">&nbsp;月
+					</td>
+				</tr>
+				
+				<tr class="houseinfo3" style="display:none">
+					<td class="attribute">月租收入：</td>
+					<td class="attribute-content"><input type="text" placeholder="月租收入" class=" houseinfo maininfo" id="house_rent_monthmoney" value="">&nbsp;元</td>
+					<td class="attribute"><span class="houseinfo3" style="display:none"><span class="starcolor">* </span>是否出租：</span></td>
+					<td class="attribute-content"><select class="maininfo houseinfo3" style="display:none" id="house_is_rent">
+						<option value="">请选择</option>
+						<option value="是" >是</option>
+						<option value="否" >否</option>
+					</select></td>
+				</tr>
+				<tr class="houseinfo2" style="display:none">
+					<td class="attribute"><span class="houseinfo house_status">月供金额：</span></td>
+					<td class="attribute-content house_status"><input type="text" placeholder="月供金额" class="houseinfo maininfo house_status" id="house_mortgage_money" value="">&nbsp;元</td>
+				</tr>
+			</table>
+			<div class="infomation-info-foot"><input type="submit" value="保存"  onClick="edit_client_houseinfo_new();"></div>
+		</div>
+		
+		<!-- 车产信息 -->
+		<div class="infomation-info" id="infomation-info4">
+			<table class="infomation-info-main">
+				<tr>
+					<td class="redcolorstr">名下车产情况：</td>
+					<td class="attribute-content">
+						<select onChange="definfo('carinfo',2,$(this).val())" id="car" class="maininfo">
+                    	    <option value="">请选择</option>
+                        	<option value="1" >无车产</option>
+                            <option value="2" >有车产</option>
+                        </select>
+						
+					</td>
+					<td class="redcolorstr carinfo2"><span class="carinfo2" style="display:none">车辆类型：</span></td>
+					<td class="attribute-content carinfo2">
+					<select id="car_type" class="maininfo" >
+                    	    <option value="">请选择</option>
+                        	<option value="小轿车" >小轿车</option>
+                            <option value="房车" >房车</option>
+                            <option value="货车" >货车</option>
+                            <option value="工程车" >工程车</option>
+                    </select>
+                    </td>
+				</tr>
+				<tr class="carinfo2" style="display:none">
+					<td class="redcolorstr">车牌所在地：</td>
+					<td class="attribute-content">
+						<select name="car_sprovince" id="profile4_location" class="maininfo" onchange="build_second(this.value,'profile4_sublocation',LOK);" style="margin-left:0;width:75px"></select>
+						<select name="car_scity" id="profile4_sublocation" class="maininfo" onChange="document.getElementById('change_area_div').style.display='';" style="margin-left:11%;width:75px"></select>
+
+						<script type="text/javascript">init_location("","","profile4");</script>
+					</td>
+					<td class="attribute">车辆评估价值：</td>
+					<td class="attribute-content">
+						<input type="text" class="houseinfo maininfo" id="car_valuation_money" value="">&nbsp;万
+					</td>
+
+				</tr>
+				<tr class="carinfo2" style="display:none">
+					<td class="redcolorstr">使用年限：</td>
+					<td class="attribute-content">
+						<input type="text" name="car_age" id="car_age" value="" class="maininfo">&nbsp;年
+					</td>
+					<td class="attribute">保险公司：</td>
+					<td class="attribute-content">
+						<select id="car_insurance_company" onChange="house(this,'carinfo')" class="maininfo">
+							<option value="">请选择</option>
+							<option value="中国平安">中国平安</option>
+							<option value="中国人保">中国人保</option>
+							<option value="中国人寿">中国人寿</option>
+							<option value="泰康">泰康</option>
+							<option value="新华保险">新华保险</option>
+							<option value="太平洋保险">太平洋保险</option>
+							<option value="友邦保险">友邦保险</option>
+							<option value="阳光保险">阳光保险</option>
+							<option value="太平人寿">太平人寿</option>
+							<option value="生命人寿">生命人寿</option>
+							<option value="工银安盛人寿">工银安盛人寿</option>
+							<option value="中英人寿">中英人寿</option>
+							<option value="大都会人寿">大都会人寿</option>
+							<option value="陆家嘴人寿">陆家嘴人寿</option>
+							<option value="民生人寿">民生人寿</option>
+							<option value="农银人寿">农银人寿</option>
+							<option value="华泰人寿">华泰人寿</option>
+							<option value="中宏人寿">中宏人寿</option>
+							<option value="中意人寿">中意人寿</option>
+							<option value="招商信诺人寿">招商信诺人寿</option>
+							<option value="信泰人寿">信泰人寿</option>
+							<option value="中德安联人寿">中德安联人寿</option>
+							<option value="建信人寿">建信人寿</option>
+							<option value="利安人寿">利安人寿</option>
+							<option value="华夏人寿">华夏人寿</option>
+							<option value="光大永明人寿">光大永明人寿</option>
+							<option value="合众人寿">合众人寿</option>
+							<option value="国华人寿">国华人寿</option>
+							<option value="长城人寿">长城人寿</option>
+							<option value="同方全球人寿">同方全球人寿</option>
+							<option value="恒安人寿">恒安人寿</option>
+							<option value="恒大人寿">恒大人寿</option>
+							<option value="东吴人寿">东吴人寿</option>
+							<option value="幸福人寿">幸福人寿</option>
+							<option value="北大方正">北大方正</option>
+							<option value="百年人寿">百年人寿</option>
+							<option value="君龙人寿">君龙人寿</option>
+							<option value="前海人寿">前海人寿</option>
+						</select>
+					</td>
+					<!--<td class="redcolorstr">车牌代号：</td>
+					<td class="attribute-content">
+                     	<input type="text" placeholder="车牌代号" class="houseinfo maininfo" id="car_code" value="">
+					</td>-->
+				</tr>
+				<tr class="carinfo2" style="display:none">
+					<td class="redcolorstr">当前保单缴费次数：</td>
+					<td class="attribute-content">
+                     	<input type="text" class="houseinfo maininfo" id="car_baodan_paynum" value="" style="width: 20%">&nbsp;次
+					</td>
+					<td class="redcolorstr">车辆状态：</td>
+					<td class="attribute-content">
+						<select id="car_status" class="maininfo" onchange="hidecarinfo();">
+							<option value="">请选择</option>
+							<option value="1" >按揭车</option>
+							<option value="2" >全款车</option>
+						</select>
+					</td>
+
+				</tr>
+				<tr class="carinfo2">
+					<td class="attribute">月供时间（月）：</td>
+					<td class="attribute-content">
+						<input type="text" id="car_repayment_month" value="">&nbsp;月
+					</td>
+					<td class="attribute">月供金额：</td>
+					<td class="attribute-content">
+                    	<input type="text" id="car_mortgage_money" value="">&nbsp;元
+					</td>
+			</table>
+			<div class="infomation-info-foot"><input type="submit" value="保存" onClick="edit_client_carinfo_new();"></div>
+		</div>
+		
+		<!-- 保单公积金 -->
+		<div class="infomation-info" id="infomation-info5">
+			<table class="infomation-info-main">
+			    <tr>
+                    <td class="attribute">有无公积金：</td>
+                    <td class="attribute-content">
+                        <select class="maininfo" id="gongjijin">
+                            <option value="">请选择</option>
+                            <option value="有" >有</option>
+                            <option value="无" >无</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="attribute">有无社保：</td>
+                    <td class="attribute-content">
+                        <select class="maininfo" id="work_shebao">
+                            <option value="">请选择</option>
+                            <option value="有" >有</option>
+                            <option value="无" >无</option>
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+				<tr>
+					<td class="attribute">有无保单：</td>
+					<td class="attribute-content">
+						<select onChange="policy($(this).val())" id="baodan_is" class="maininfo">
+                    	    <option value="">请选择</option>
+                        	<option value="有" >有保单</option>
+                            <option value="无" >无保单</option>
+                        </select>
+						
+					</td>
+					<td class="attribute"><span class="havepolicy" style="display:none;">保险公司：</span></td>
+					<td class="attribute-content">
+						<select class="havepolicy maininfo" style="display:none" id="baodan_company">
+                    	    <option value="">请选择</option>
+                        	<option value="中国平安">中国平安</option>
+                        	<option value="中国人保">中国人保</option>
+                        	<option value="中国人寿">中国人寿</option>
+                        	<option value="泰康">泰康</option>
+                        	<option value="新华保险">新华保险</option>
+                        	<option value="太平洋保险">太平洋保险</option>
+                        	<option value="友邦保险">友邦保险</option>
+                        	<option value="阳光保险">阳光保险</option>
+                        	<option value="太平人寿">太平人寿</option>
+                        	<option value="生命人寿">生命人寿</option>
+                        	<option value="工银安盛人寿">工银安盛人寿</option>
+                        	<option value="中英人寿">中英人寿</option>
+                        	<option value="大都会人寿">大都会人寿</option>
+                        	<option value="陆家嘴人寿">陆家嘴人寿</option>
+                        	<option value="民生人寿">民生人寿</option>
+                        	<option value="农银人寿">农银人寿</option>
+                        	<option value="华泰人寿">华泰人寿</option>
+                        	<option value="中宏人寿">中宏人寿</option>
+                        	<option value="中意人寿">中意人寿</option>
+                        	<option value="招商信诺人寿">招商信诺人寿</option>
+                        	<option value="信泰人寿">信泰人寿</option>
+                        	<option value="中德安联人寿">中德安联人寿</option>
+                        	<option value="建信人寿">建信人寿</option>
+                        	<option value="利安人寿">利安人寿</option>
+                        	<option value="华夏人寿">华夏人寿</option>
+                        	<option value="光大永明人寿">光大永明人寿</option>
+                        	<option value="合众人寿">合众人寿</option>
+                        	<option value="国华人寿">国华人寿</option>
+                        	<option value="长城人寿">长城人寿</option>
+                        	<option value="同方全球人寿">同方全球人寿</option>
+                        	<option value="恒安人寿">恒安人寿</option>
+                        	<option value="恒大人寿">恒大人寿</option>
+                        	<option value="东吴人寿">东吴人寿</option>
+                        	<option value="幸福人寿">幸福人寿</option>
+                        	<option value="北大方正">北大方正</option>
+                        	<option value="百年人寿">百年人寿</option>
+                        	<option value="君龙人寿">君龙人寿</option>
+                        	<option value="前海人寿">前海人寿</option>
+                        </select>
+					</td>
+				</tr>
+				<tr class="havepolicy" style="display:none">
+					<td class="attribute">年缴额：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" placeholder="年缴额" id="baodan_year_money" value="">&nbsp;元</td>
+					<td class="attribute"><span class="havepolicy" style="display:none;">保单状态：</span></td>
+					<td class="attribute-content">
+						<select class="havepolicy maininfo" style="display:none" id="baodan_status" onchange="chchange_baodan_status()">
+							<option value="">请选择</option>
+							<option value="结清2个月以内" >结清2个月以内</option>
+							<option value="结清半年以内" >结清半年以内</option>
+							<option value="结清1年以内" >结清1年以内</option>
+							<option value="结清1年以上" >结清1年以上</option>
+							<option value="正常在供" >正常在供</option>
+						</select>
+					</td>
+				</tr>
+				<tr class="havepolicy chchange_baodan_status" style="display:none">
+					<td class="attribute">已缴次数</td>
+					<td class="attribute-content"><input type="text" class="maininfo" placeholder="已缴次数" id="baodan_times" value="">&nbsp;次</td>
+				</tr>
+				
+			</table>
+			<div class="infomation-info-foot"><input type="submit" value="保存" onClick="edit_client_policyinfo();"></div>
+		</div>
+		
+		<!-- 信用信息 -->
+		<div class="infomation-info" id="infomation-info6">
+			<table class="infomation-info-main">
+				<tr>
+					<td class="attribute">2个月内查询次数：</td>
+					<td class="attribute-content">
+						<input class="maininfo" type="text" name="credit_check_twomonth_num" id="credit_check_twomonth_num" value="" style="width: 20%;">&nbsp;次
+					</td>
+					<td class="attribute">3个月内查询次数：</td>
+                    <td class="attribute-content">
+						<input class="maininfo" type="text" name="credit_check_thirdmonth_num" id="credit_check_thirdmonth_num" value="" style="width: 20%;">&nbsp;次
+					</td>
+				</tr>
+				<tr>
+					<td class="attribute" style="width:13%">6个月内查询次数：</td>
+                    <td class="attribute-content">
+						<input class="maininfo" type="text" name="credit_check_sixdmonth_num" id="credit_check_sixdmonth_num" value="" style="width: 20%;">&nbsp;次
+					</td>
+					<td class="attribute" style="width:13%">信用记录时长：</td>
+					<td class="attribute-content">
+						<select class="credits maininfo" id="credit_record_time" style="width: 31%;">
+							<option value="">请选择</option>
+							<option value="0"  >0</option>
+							<option value="6" >1-6</option>
+							<option value="7" >＞6</option>
+						</select>&nbsp;月
+					</td>
+				</tr>
+				<tr>
+					<td class="attribute">两年内最严重的逾期：</td>
+                    <td class="attribute-content">
+						<select class="credits maininfo" id="creditoverdue_twoyear" style="width: 31%;">
+						    <option value="">请选择</option>
+							<option value="1"  >1</option>
+							<option value="2"  >2</option>
+							<option value="3" >3</option>
+							<option value="4" >4</option>
+							<option value="5" >5及以上</option>
+						</select>
+					</td>
+					<td class="attribute">一年内最严重的逾期：</td>
+					<td class="attribute-content">
+						<select class="credits maininfo" id="creditoverdue_oneyear" style="width: 31%;">
+							<option value="">请选择</option>
+							<option value="1"  >1</option>
+							<option value="2"  >2</option>
+							<option value="3" >3</option>
+							<option value="4" >4</option>
+							<option value="5" >5及以上</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="attribute">半年内最严重的逾期：</td>
+					<td class="attribute-content">
+						<select class="credits maininfo" id="creditoverdue_halfyear" style="width: 31%;">
+							<option value="">请选择</option>
+							<option value="1"  >1</option>
+							<option value="2"  >2</option>
+							<option value="3" >3</option>
+							<option value="4" >4</option>
+							<option value="5" >5及以上</option>
+						</select>
+					</td>
+					<td class="attribute">当前是否逾期：</td>
+					<td class="attribute-content">
+						&nbsp;<label onclick="getcreditoverdue_is()"><input type="radio" value="0" name="creditoverdue_is" checked>否</label>
+						&nbsp;<label onclick="getcreditoverdue_is()"><input type="radio" value="1" name="creditoverdue_is" >有</label>
+					</td>
+				</tr>
+				<tr class="credits creditoverdue">
+					<td class="attribute">当前逾期类型：</td>
+					<td class="attribute-content">
+						&nbsp;<label><input type="radio" value="贷记卡"  name="creditoverdue_type" >贷记卡</label>
+						&nbsp;<label><input type="radio" value="贷款" name="creditoverdue_type" >贷款</label>
+					</td>
+					<td class="attribute">当前逾期金额：</td>
+					<td class="attribute-content">
+						<input type="text" name="creditoverdue_money" id="creditoverdue_money" value="" />&nbsp;元
+					</td>
+				</tr>
+				<tr>
+					<td class="attribute">微粒贷：</td>
+					<td class="attribute-content">
+						<select class="credits maininfo" id="weili" name="weili" style="width: 31%;">
+							<option value="">请选择</option>
+							<option value="0"  >无</option>
+							<option value="1"  >5000</option>
+							<option value="2"  >10000</option>
+							<option value="3"  >20000</option>
+							<option value="4"  >30000</option>
+							<option value="5"  >50000</option>
+							<option value="6"  >50000以上</option>
+						</select>
+					</td>
+					<td class="attribute">芝麻信用分：</td>
+					<td class="attribute-content">
+						<!--&nbsp;<label><input type="radio" value="1"  name="zhima" >350~550</label>-->
+						<!--&nbsp;<label><input type="radio" value="2" name="zhima" >550~650</label>-->
+						<!--<br>-->
+						<!--&nbsp;<label><input type="radio" value="3" name="zhima" >650以上</label>-->
+						<!--&nbsp;<label><input type="radio" value="4" name="zhima" >其他</label>-->
+						<input class="maininfo" type="text" id="zhima"  name="zhima" value="" style="width: 20%;">
+					</td>
+				</tr>
+			</table>
+			<div class="infomation-info-foot">
+				<input type="submit" value="保存" onClick="edit_client_credioverduetinfo()" />
+			</div>
+		</div>
+		
+		<!-- 负债情况 -->
+		<div class="infomation-info" id="infomation-info7">
+			<h1 class="infomation-info-top">负债情况<span>CREDIT CARD INFORMATION</span></h1>
+			<table class="infomation-info-main">
+				<tr>
+					<td class="attribute">信用卡情况：</td>
+					<td class="attribute-content">
+						&nbsp;<label onclick="havecredit_situation()"><input type="radio" name="creditcard_situation" value="有" >有</label> &nbsp;
+						<label onclick="havecredit_situation()"><input type="radio" name="creditcard_situation" value="无" >无</label>
+						
+					</td>
+					<td class="attribute credit_situation_cs">贷记卡总额总额度：</td>
+					<td class="attribute-content credit_situation_cs"><input class="maininfo" type="text" id="creditcard_totalmoney"  value="">&nbsp;元</td>
+
+				</tr>
+				<tr class="credit credit_situation_cs">
+					<td class="attribute">贷记卡当前使用额度：</td>
+					<td class="attribute-content"><input class="maininfo" type="text" id="credit_has_use_money"  value="">&nbsp;元</td>
+					<td class="attribute">贷记卡近半年使用额度：</td>
+					<td class="attribute-content"><input class="maininfo" type="text" id="credit_has_bannian_usemoney"  value="">&nbsp;元</td>
+				</tr>
+				<tr class="credit credit_situation_cs">
+					<td class="attribute">单张贷记卡最高负债率：</td>
+					<td class="attribute-content"><input class="maininfo" type="text" id="credit_has_maxuse_money"  value="">&nbsp;%</td>
+					<td class="attribute"></td>
+					<td class="attribute-content"></td>
+				</tr>
+				<tr>
+					<td class="attribute">有无信用贷款：</td>
+					<td class="attribute-content">
+						&nbsp;<label onclick="havecredit()"><input type="radio" name="credit_situation" value="有" >有</label> &nbsp;
+						<label onclick="havecredit()"><input type="radio" name="credit_situation" value="无" >无</label>
+
+					</td>
+					<td class="attribute"><span class="creditloan">信用贷款总额：</span></td>
+					<td class="attribute-content creditloan"><input type="text" placeholder="信用贷款总额" class="creditloan maininfo" id="credit_total_money" value="">&nbsp;元</td>
+				</tr>
+				<tr class="creditloan">
+					<td class="attribute">信用贷款余额：</td>
+					<td class="attribute-content"><input type="text" placeholder="信用贷款余额" class="maininfo" id="credit_left_money" value="">&nbsp;元</td>
+					<td class="attribute">月还款总额：</td>
+					<td class="attribute-content"><input type="text" placeholder="信用贷款月还款总额" class="maininfo" id="credit_repayment_monthmoney" value="">&nbsp;元</td>
+				</tr>
+				<tr>
+					<td class="attribute">有无房抵贷款：</td>
+					<td class="attribute-content">
+						&nbsp;<label onclick="credit_house_status()"><input type="radio" name="credit_house_is" value="1" >有</label> &nbsp;
+						<label onclick="credit_house_status()"><input type="radio" name="credit_house_is" value="0" checked>无</label>
+					</td>
+					<td class="attribute"><span class="credit_house_status">房产类型：</span></td>
+					<td class="attribute-content">
+						<select id="credit_house_status" class="maininfo credit_house_status">
+							<option value="">请选择</option>
+							<option value="商品房" >商品房</option>
+							<option value="居民住房" >居民住房</option>
+							<option value="商住两用" >商住两用</option>
+							<option value="商铺" >商铺</option>
+							<option value="公寓" >公寓</option>
+							<option value="写字楼" >写字楼</option>
+							<option value="别墅" >别墅</option>
+							<option value="宅基地" >宅基地</option>
+							<option value="安置房" >安置房</option>
+							<option value="安置房" >自建房</option>
+							<option value="集资房" >集资房</option>
+						</select>
+					</td>
+				</tr>
+				<tr class="credit_house_status">
+					<td class="attribute">房产现价：</td>
+					<td class="attribute-content">
+						<input type="text" name="credit_house_money" id="credit_house_money" value="">&nbsp;万
+					</td>
+					<td class="attribute"><span>贷款总额：</span></td>
+					<td class="attribute-content">
+						<input type="text" name="credit_house_loan_moneys" id="credit_house_loan_moneys" value="">&nbsp;万
+					</td>
+				</tr>
+				<tr class="credit_house_status">
+					<td class="attribute">贷款余额：</td>
+					<td class="attribute-content">
+						<input type="text" name="credit_house_loan_lave" id="credit_house_loan_lave" value="">&nbsp;万
+					</td>
+					<td class="attribute"></td>
+					<td class="attribute-content">
+					</td>
+				</tr>
+			</table>
+			<div class="infomation-info-foot"><input type="submit" value="保存" onClick="edit_client_creditinfo()"></div>
+		</div>
+		
+
+	
+		<!-- 需求信息 -->
+		<div class="infomation-info" id="infomation-info9">
+			<table class="infomation-info-main">
+				<tr>
+					<td class="attribute">还款方式：</td>
+					<td class="attribute-content">
+						<select id="repayment_type" class="maininfo">
+                    		<option value="">请选择</option>
+                        	<option value="等额本息" >等额本息</option>
+                            <option value="先息后本" >先息后本</option>
+                        </select>
+					</td>
+					<td class="attribute">贷款用途：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="loan_use" value=""></td>
+				</tr>
+				<tr>
+					<td class="attribute">用款时间：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="loan_use_time" value=""></td>
+					<td class="attribute">期限：</td>
+					<td class="attribute-content"><input type="text" class="maininfo" id="loan_month" value="">&nbsp;月</td>
+				</tr>
+			</table>
+			<div class="infomation-info-foot"><input type="submit" value="保存" onClick="edit_client_loaninfo();"></div>
+		</div>
+		
+		<!-- 全部信息 -->
+		<div class="infomation-info" id="infomation-info10" style="display:block">
+			<!-- 基本信息 -->
+			<div>
+				<h1 class="infomation-info-top">基本信息<span>BASIC INFORMATION</span></h1>
+				<ul class="showdetails">
+					<li class="showdetailsli">
+						<div class="showdetailsname">姓名：</div>
+						<div class="showdetailsinfo">
+							
+							<!--<textarea cols="7" rows="1"></textarea>-->
+						</div>
+					</li>
+					<li class="showdetailsli">
+						<div class="showdetailsname">手机号码：</div>
+						<div class="showdetailsinfo">
+												  						  <div class="common-tips-container common-tips-top-right" title="客户未投诉过未知电话，可放心拨打！">安全号码</div>
+						      						<p><a href="##" onclick="call_send('');" style="" title="使用条件:&#10;1、需安装点拨通&#10;2、建议使用华为、荣耀、oppo手机">点击拨打</a></p>
+												</div>
+					</li>
+															<li class="showdetailsli">
+						<div class="showdetailsname">学历：</div>
+						<div class="showdetailsinfo"></div>
+					</li>
+					<li class="showdetailsli">
+						<div class="showdetailsname">户籍：</div>
+						<div class="showdetailsinfo">&nbsp&nbsp</div>
+					</li>
+					<li class="showdetailsli">
+						<div class="showdetailsname">年龄：</div>
+						<div class="showdetailsinfo">&nbsp;岁</div>
+					</li>
+										<li class="showdetailsli">
+						<div class="showdetailsname">身份证：</div>
+						<div class="showdetailsinfo"></div>
+					</li>
+					<li class="showdetailsli">
+						<div class="showdetailsname">性别：</div>
+						<div class="showdetailsinfo"></div>
+					</li>
+					
+
+					<li class="showdetailsli">
+						<div class="showdetailsname">毕业院校：</div>
+						<div class="showdetailsinfo"></div>
+					</li>
+					<li class="showdetailsli">
+						<div class="showdetailsname">客户公司：</div>
+						<div class="showdetailsinfo"></div>
+					</li>
+					<li class="showdetailsli">
+						<div class="showdetailsname">申请额度：</div>
+						<div class="showdetailsinfo">&nbsp;万元</div>
+					</li>
+										<li class="showdetailsli">
+						<div class="showdetailsname">是否企业主：</div>
+						<div class="showdetailsinfo"></div>
+					</li>
+					<div style="clear:both;"></div>
+				</ul>
+			</div>
+			<!-- 身份信息 -->
+						<!-- 房产信息 -->
+						<!-- 车产信息 -->
+						<!-- 保单公积金 -->
+			
+			<!-- 信用信息 -->
+						<div>
+				<h1 class="infomation-info-top">信用信息<span>CREDIT INFORMATION</span></h1>
+				<ul class="showdetails">
+																																								
+															<li class="showdetailsli">
+						<div class="showdetailsname">芝麻信用分：</div>
+						<div class="showdetailsinfo"></div>
+					</li>
+					<div style="clear:both;"></div>
+				</ul>
+			</div>
+			
+			<!--负债情况-->
+			
+			<!-- 需求信息 -->
+					</div>
+	</div>
+
+    <div class="infobottom opxia">
+    	<ul class="tolinfobottom" style="background:#E8E8E8;">
+    		<li class="wbac" style="margin-left:0;" onClick="infobottom(this,1)">客户跟踪</li>
+    		<li onClick="infobottom(this,8)">通话录音</li>
+			<li onClick="infobottom(this,9)">面签视频</li>
+    		<li onClick="infobottom(this,5)">分配记录</li> 
+    		<li style="float:right;background:none"><img src="https://guwen.zhudaicms.com/default/manage/images/cloxia.png" align="absmiddle" onClick="cloinfobot(this)"></li>
+    	</ul>
+		<div id="tabs-content">
+			<div class="tabs-content">
+				<div class="bottop" id="bottop">
+					<span class="bottit">ID:</span>
+					<input type="hidden" id="starsval" value="">
+					<span class="bottit" style="display:inline;position:relative;margin-left:5px;">星级<img src="https://guwen.zhudaicms.com/default/manage/images/explain_icon01.jpg" class="eximg" id="1">:
+						<select class="kezhuangtai" id="stars" onchange="update_stars();" style="width:5%;">
+							<option value="请选择">请选择</option>
+							<option value="0">0星</option>
+							<option value="1">1星</option>
+							<option value="2">2星</option>
+							<option value="3">3星</option>
+							<option value="4">4星</option>
+							<option value="5">5星</option>
+						</select>
+						<ul class="exinfo" id="ex1">
+							<li><span class="cr">0&nbsp;&nbsp;星</span>：系统默认的未了解过信息的客户 ；</li>
+							<li><span class="cr">1&nbsp;&nbsp;星</span>：本人无可贷点的客户；</li>
+							<li><span class="cr">2&nbsp;&nbsp;星</span>：本人有可贷点但暂时进不了件的客户； </li>
+							<li><span class="cr">3&nbsp;&nbsp;星</span>：可以做主流小贷，需邀约上门的客户； </li>
+							<li><span class="cr">4&nbsp;&nbsp;星</span>：本人有可贷点，可以做银行的客户；</li>
+							<li><span class="cr">5&nbsp;&nbsp;星</span>：有可贷点，且马上需要或条件优质，可以做银行的客户； </li>
+						</ul>
+						
+					</span>
+					<span class="bottit" style="position:relative;margin-left:5px;">状态<img src="https://guwen.zhudaicms.com/default/manage/images/explain_icon01.jpg" class="eximg" id="2">:
+						<select class="kezhuangtai" id="status" onchange="update_status($(this).val());" style="width:8%">
+							<option value="请选择">请选择</option>
+														 <option value="0" selected='selected'><span style="color:#0000E3">已受理</span></option>
+														 <option value="2" ><span style="color:#28FF28">待签约</span></option>
+														 <option value="4" ><span style="color:#006030">银行已放款</span></option>
+														 <option value="7" ><span style="color:#0066CC">待跟进</span></option>
+														 <option value="8" ><span style="color:#00DB00">已上门</span></option>
+														 <option value="11" ><span style="color:#891197">外地申请</span></option>
+														 <option value="17" ><span style="color:#891197">空号</span></option>
+														 <option value="20" ><span style="color:#891197">停机</span></option>
+													</select>
+						 <input type="hidden" id="statusnumval">
+						<ul class="exinfo" style="width:455px;top:-205px;left:47px" id="ex2">
+							<li><span class="cr">0.待跟进</span>：尝试联系，但未了解客户信息；</li>
+							<li><span class="cr">1.贷款资质不符</span>：该客户或身边人士无可贷点，或同行、骚扰等无效申请；</li>
+							<li><span class="cr">2.待签约</span>：联系后，并判定该客户或身边人士有可贷点； </li>
+							<li><span class="cr">3.已签约</span>：已上门签约；</li>
+							<li><span class="cr">4.审核中</span>：客户已经完成进件，银行审核中，请备注进件银行、申请金额、审核进度； </li>
+							<li><span class="cr">5.银行已放款</span>：银行审批结束，批放款成功，请备注放款银行、到账金额； </li>
+							<li><span class="cr">6.银行已拒绝</span>：银行审批结束，贷款被拒（包含初审），请备注被拒的原因； </li>
+						</ul>
+						<ul class="exinfo" style="width:245px;top:25px;left:50px" id="ex3">
+							<li><span class="cr">备忘解析：</span>每3分钟提示一次,提醒后按确定就会自动关闭，也可以手动关闭；</li>
+						</ul>
+					</span>
+					 <span class="bottit" style="margin-left: 3px;">
+						<span>当前顾问:</span>
+						<span></span>
+					</span>
+										<input class="btn_cont" type="button" value="备忘新增▼" style="margin-left:2px;" id="showkefuforget" onclick="showforget();">
+																									 <span style="margin-left: 3px">					 </span>
+										<form method="post" action="/manage/kefu_againclientslist/addggc_do.html" onsubmit="if(!confirm('确定要将这个的客户加入公共池？'))return false;" style="display: inline-block;margin-left: 3px">
+						<input type="hidden" name="chboxarr" value="">
+						<input class="btn_cont" type="submit" value="加入公共池" style="cursor:pointer">
+					</form>
+										
+					<!-- 拉黑客户开始  -->
+										<span style="margin-left: 3px">					</span>
+										<!-- 拉黑客户结束  -->
+					
+										
+					&nbsp;&nbsp;
+										<script>    
+    
+    function next_common(fromtype,type,page_start){
+        var url,param;
+        switch(fromtype){
+            case 'is_myself_kefu'://我的客户
+            case 'myclient_orderbytime'://我的客户排序
+                url = '/manage/kefu_clients/index.html?is_myself_kefu=1';
+                break;
+            case 'is_search_myclients'://我的客户-搜索页面
+                url = '/manage/kefu_clients/search_myclients.html?is_search_myclients=1';
+                break;
+            case 'is_kefu_againclientslist'://再分配客户首页
+                url = '/manage/kefu_againclientslist/index.html?is_kefu_againclientslist=1';
+                break;
+            case 'is_kefu_againclientslist_search': //再分配客户搜索页面
+                url = '/manage/kefu_againclientslist/search.html?is_kefu_againclientslist_search=1';
+                break;
+            case 'is_kefu_clientsggc'://公共池
+                url = '/manage/kefu_clientsggc/index.html?is_kefu_clientsggc=1';
+                break;
+            case 'is_kefu_clientsggc_search'://公共池-搜索页面
+                url = '/manage/kefu_clientsggc/search.html?is_kefu_clientsggc_search=1';
+                break;
+            case 'is_kefu_againclients'://团队客户
+                url = '/manage/kefu_tuanduiclients/index.html?is_kefu_againclients=1';
+                break;
+            case 'is_kefu_againclients_search'://团队客户->搜索页面
+                url = '/manage/kefu_tuanduiclients/search.html?is_kefu_againclients_search=1';
+                break;
+            case 'is_bigenjin'://必跟进
+                url = '/manage/kefu_bigenjin/index.html?is_bigenjin=1';
+                break;
+        }
+        
+        param = [
+            'type='+type,
+            'page_start='+page_start,
+            ""
+        ].join('&');        
+        url+= (url.indexOf('?')==-1 ? '?' : '&') + param;
+        
+        $.get(url,function(d){
+            if(d.type == 'last'){
+                alert('已没有上一位了！')
+            }else if(d.type == 'next'){
+                alert('已没有下一位了！')
+            }else{
+                window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+'&page_start='+d.page_startnum+'&'+fromtype+"=1&_s=",true);
+            }
+        },'json');
+    }
+    
+	function next_month_detail(next_type,page_start){
+		var	stars = '';
+		var	status = '';
+		var	month = '';
+		var	loan = '';
+		var	special = '';
+		var	tjagain = '';
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_month_detail':1,
+			'stars':stars, 'status':status, 'month':month, 'loan':loan,
+			'special':special, 'tjagain':tjagain
+		};
+		$.get('/manage/kefu_statistics/month_detail.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_month_detail=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+	function next_search_month_detail(next_type,page_start){
+		var	type = '';
+		var	day = '';
+		var	month = '';
+		var	tjagaintype = '';
+		var	bulletintype = '';
+		var	bulletinstatus = '';
+		var	bulletindate = '';
+		var	name = '';
+		var	mobile = '';
+		var	id = '';
+		var	timetype = '';
+		var	stime = '';
+		var	etime = '';
+		var	stars = '';
+		var	status = '';
+		var	kefu = '';
+		var	callstatus_ch = '';
+		var	loan_type = '';
+		var	work_shebao = '';
+		var	baodan_is = '';
+		var	car = '';
+		var	work_wage_give_type = '';
+		var	search_myself = '';
+		var	search_again = '';
+		var	notupdate_clients = '';
+		var	is_noto_ggc = '';
+		var	kefu_manage_id = '';
+		var	timeset = '';
+		var	city = '';
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_search_month_detail':1,
+			'type':type, 'day':day, 'month':month, 'tjagaintype':tjagaintype,
+			'bulletintype':bulletintype, 'bulletinstatus':bulletinstatus, 'bulletindate':bulletindate, 'name':name,
+			'mobile':mobile, 'id':id, 'timetype':timetype, 'stime':stime,
+			'etime':etime, 'stars':stars, 'status':status, 'kefu':kefu,
+			'callstatus_ch':callstatus_ch, 'loan_type':loan_type, 'work_shebao':work_shebao, 'baodan_is':baodan_is,
+			'car':car, 'work_wage_give_type':search_myself, 'search_myself':work_shebao, 'search_again':search_again,
+			'notupdate_clients':notupdate_clients, 'is_noto_ggc':is_noto_ggc, 'kefu_manage_id':kefu_manage_id, 'timeset':timeset,
+			'city':city
+		};
+		$.get('/manage/kefu_clients/search.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_search_month_detail=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+
+	function next_search_kefu_statisticsclients(next_type,page_start){
+		var	type = '';
+		var	day = '';
+		var	month = '';
+		var	tjagaintype = '';
+		var	name = '';
+		var	mobile = '';
+		var	kefu_statistics_id = '';
+		var	timetype = '';
+		var	stime = '';
+		var	etime = '';
+		var	stars = '';
+		var	status = '';
+		var	kefu = '';
+		var	callstatus_ch = '';
+		var	loan_type = '';
+		var	work_shebao = '';
+		var	baodan_is = '';
+		var	house = '';
+		var	car = '';
+		var	work_wage_give_type = '';
+		var	search_myself = '';
+		var	search_again = '';
+		var	notupdate_clients = '';
+		var	is_noto_ggc = '';
+		var	kefu_manage_id = '';
+		var	timeset = '';
+		var	city = '';
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_search_kefu_statisticsclients':1,
+			'type':type, 'day':day, 'month':month, 'tjagaintype':tjagaintype,
+			'name':name, 'mobile':mobile, 'id':kefu_statistics_id, 'timetype':timetype,
+			'stime':stime, 'etime':etime, 'stars':stars, 'status':status,
+			'kefu':kefu, 'callstatus_ch':callstatus_ch, 'loan_type':loan_type, 'work_shebao':work_shebao,
+			'baodan_is':baodan_is, 'house':house, 'car':car, 'work_wage_give_type':work_wage_give_type,
+			'search_myself':search_myself, 'search_again':search_again, 'notupdate_clients':notupdate_clients, 'is_noto_ggc':is_noto_ggc,
+			'kefu_manage_id':kefu_manage_id, 'timeset':timeset, 'city':city
+		};
+		$.get('/manage/kefu_statistics/search.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_search_kefu_statisticsclients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+	function next_kefu_statisticsclients(next_type,page_start){
+		var	stars = '';
+		var	status = '';
+		var	day = '';
+		var	loan = '';
+		var	special = '';
+		var	tjagain = '';
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_kefu_statisticsclients':1,
+			'stars':stars, 'status':status, 'day':day, 'loan':loan,
+			'special':special, 'tjagain':tjagain
+		};
+		$.get('/manage/kefu_statistics/detail.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_kefu_statisticsclients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+
+	function next_search_kefu_bulletinclients(next_type,page_start){
+		var	name = '';
+		var	mobile = '';
+		var	id = '';
+		var	timetype = '';
+		var	stime = '';
+		var	etime = '';
+		var	stars = '';
+		var	status = '';
+		var	kefu = '';
+		var	callstatus_ch = '';
+		var	loan_type = '';
+		var	work_shebao = '';
+		var	baodan_is = '';
+		var	house = '';
+		var	car = '';
+		var	work_wage_give_type = '';
+		var	search_myself = '';
+		var	search_again = '';
+		var	notupdate_clients = '';
+		var	is_noto_ggc = '';
+		var	kefu_manage_id = '';
+		var	timeset = '';
+		var	city = '';
+		var	type = '';
+		var	day = '';
+		var	bulletintype = '';
+		var	bulletinstatus = '';
+		var	bulletindate = '';
+		var	month = '';
+
+
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_search_kefu_bulletinclients':1,
+			'name':name, 'mobile':mobile,'id':id,
+			'timetype':timetype, 'stime':stime,'etime':etime,
+			'stars':stars, 'status':status,'kefu':kefu,
+			'callstatus_ch':callstatus_ch, 'loan_type':loan_type,'work_shebao':work_shebao,
+			'baodan_is':baodan_is, 'house':house,'car':car,
+			'work_wage_give_type':work_wage_give_type, 'search_myself':search_myself,'search_again':search_again,
+			'notupdate_clients':notupdate_clients, 'is_noto_ggc':is_noto_ggc,'kefu_manage_id':kefu_manage_id,
+			'timeset':timeset, 'city':city,'type':type,
+			'day':day, 'bulletintype':bulletintype,'bulletinstatus':bulletinstatus,
+			'bulletindate':bulletindate, 'month':month
+		};
+		$.get('/manage/kefu_dailysimple/search.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_search_kefu_bulletinclients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+	function next_kefu_bulletinclients(next_type,page_start){
+		var	type = '';
+		var	date = '';
+		var	status = '';
+		var	isdeal = '';
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_kefu_bulletinclients':1,
+			'type':type, 'date':date, 'status':status, 'isdeal':isdeal
+
+		};
+		$.get('/manage/kefu_statistics/bulletin_detail_list.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_kefu_bulletinclients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+
+	function next_search_kefu_notfollowing_teamclients(next_type,page_start){
+		var	clientField = '';
+		var	clientFieldValue = '';
+		var	otherField = '';
+		var	otherFieldValue = '';
+		var	status = '';
+		var	stars = '';
+		var	is_again = '';
+		var	typeof2 = '';
+		var	loan_type = '';
+		var	loanField = '';
+		var	loanFieldValue = '';
+		var	timeField = '';
+		var	timeFieldValue = '';
+		var	stime = '';
+		var	etime = '';
+		var	notupdate_clients = '';
+		var	remark = '';
+		var	house = '';
+		var	notdotype = '';
+		var	starstype = '';
+
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_search_kefu_notfollowing_teamclients':1,
+			'clientField':clientField, 'clientFieldValue':clientFieldValue,'otherField':otherField,
+			'otherFieldValue':otherFieldValue, 'status':status,'stars':stars,'is_again':is_again,
+			'typeof':typeof2, 'loan_type':loan_type,'loanField':loanField,
+			'loanFieldValue':loanFieldValue, 'timeField':timeField,'timeFieldValue':timeFieldValue,
+			'stime':stime, 'etime':etime,'notupdate_clients':notupdate_clients,
+			'remark':remark, 'house':house,'notdotype':notdotype,'starstype':starstype,
+
+
+
+		};
+		$.get('/manage/kefu_tuanduiclients/search_notfollowing_clients.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_search_kefu_notfollowing_teamclients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+	function next_kefu_notfollowing_teamclients(next_type,page_start){
+		var	notdotype = '';
+		var	starstype = '';
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_kefu_notfollowing_teamclients':1,
+			'notdotype':notdotype, 'starstype':starstype
+
+		};
+		$.get('/manage/kefu_tuanduiclients/notfollowing_clients.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_kefu_notfollowing_teamclients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+
+	function next_search_kefu_notfollowing_againfenpeiclients(next_type,page_start){
+		var	clientField = '';
+		var	clientFieldValue = '';
+		var	status = '';
+		var	stars = '';
+		var	loan_type = '';
+		var	notupdate_clients = '';
+		var	timetype = '';
+		var	timeset = '';
+		var	stime = '';
+		var	etime = '';
+		var	loanField = '';
+		var	loanFieldValue = '';
+		var	is_noto_ggc = '';
+		var	search_myself = '';
+		var	search_again = '';
+		var	type = '';
+		var	remark = '';
+		var	house = '';
+		var	starstype = '';
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_searh_kefu_notfollowing_againfenpeiclients':1,
+			'clientField':clientField, 'clientFieldValue':clientFieldValue,'status':status,
+			'stars':stars, 'loan_type':loan_type,'notupdate_clients':notupdate_clients,
+			'timetype':timetype, 'timeset':timeset,'stime':stime,
+			'etime':etime, 'loanField':loanField,'loanFieldValue':loanFieldValue,
+			'is_noto_ggc':is_noto_ggc, 'search_myself':search_myself,'search_again':search_again,
+			'type':type, 'remark':remark,'house':house,'starstype':starstype
+
+		};
+		$.get('/manage/kefu_againclientslist/search_notfollowing_clients.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_searh_kefu_notfollowing_againfenpeiclients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+	function next_kefu_notfollowing_againfenpeiclients(next_type,page_start){
+		var	type = '';
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_kefu_notfollowing_againfenpeiclients':1,
+			'type':type
+
+		};
+		$.get('/manage/kefu_againclientslist/notfollowing_clients.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_kefu_notfollowing_againfenpeiclients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+
+	function next_search_notfollowing_clients(next_type,page_start){
+		var	clientField = '';
+		var	clientFieldValue = '';
+		var	status = '';
+		var	stars = '';
+		var	loan_type = '';
+		var	notupdate_clients = '';
+		var	timeField = '';
+		var	timeFieldValue = '';
+		var	stime = '';
+		var	etime = '';
+		var	loanField = '';
+		var	loanFieldValue = '';
+		var	is_noto_ggc = '';
+		var	search_myself = '';
+		var	search_again = '';
+		var	type = '';
+		var	remark = '';
+		var	house = '';
+		var	starstype = '';
+
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start,'is_search_notfollowing_clients':1,
+			'clientField':clientField, 'clientFieldValue':clientFieldValue,'status':status,
+			'stars':stars, 'loan_type':loan_type,'notupdate_clients':notupdate_clients,
+			'timeField':timeField, 'timeFieldValue':timeFieldValue,'stime':stime,
+			'etime':etime, 'loanField':loanField,'loanFieldValue':loanFieldValue,
+			'is_noto_ggc':is_noto_ggc, 'search_myself':search_myself,'search_again':search_again,
+			'type':type, 'remark':remark,'house':house,'starstype':starstype
+		};
+		$.get('/manage/kefu_clients/search_notfollowing_clients.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_search_notfollowing_clients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+	function next_notfollowing_clients(next_type,page_start){
+		var	type = '';
+		var	starstype = '';
+		var json_data = {
+			'next_type':next_type, 'page_start':page_start , 'is_notfollowing_clients':1,
+			'type':type, 'starstype':starstype
+		};
+		$.get('/manage/kefu_clients/notfollowing_clients.html',json_data,function(d){
+			if(d.next_type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.next_type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_notfollowing_clients=1&"+ d.url_params_str,true);
+
+			}
+		},'json');
+	}
+	
+	function next_myself_kefu(type,page_start){
+        next_common('is_myself_kefu',type,page_start);
+	}
+	
+	function next_myself_ordertime(type, page_start, ordertime){
+        next_common('myclient_orderbytime',type,page_start);
+	}
+	
+	function next_search_myclients(type,page_start){
+		next_common('is_search_myclients',type,page_start);
+	}
+	
+	function next_kefu_againclientslist(type,page_start){
+        next_common('is_kefu_againclientslist',type,page_start);
+	}
+
+	function next_againclients_ordertime(type,page_start,ordertime){
+		var json_data = {
+			'type':type, 'page_start':page_start, 'againclient_orderbytime':ordertime
+		};
+		$.get('/manage/kefu_againclientslist/index.html',json_data,function(d){
+			if(d.type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_kefu_againclientslist=1&againclient_orderbytime="+ordertime,true);
+
+			}
+		},'json');
+	}
+	function next_kefu_againclientslist_search(type,page_start){
+        next_common('is_kefu_againclientslist_search',type,page_start);
+	}
+
+	function next_kefu_againclients(type,page_start){
+        next_common('is_kefu_againclients',type,page_start);
+	}
+	function next_kefu_againclients_search(type,page_start){
+        next_common('is_kefu_againclients_search',type,page_start);
+	}
+    
+	function chooseImportantClient(type,page_start){
+		var formData = null  || {};
+		formData["searchType"] = type;
+		formData["page_start"] = page_start;
+		$.ajax({			
+			url:"/manage/kefu_clients/search_important.html",
+			type:"GET",
+			data:formData,
+			dataType:"json",
+			cache:false,			
+			success:function(d){
+				if(d.data){
+					window.Open(d.data.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.data.id+"&page_start="+d.data.page_startnum+"&is_important=1&"+ d.data.url_params_str,true);
+				}else{
+					type=='next' ? alert('已没有下一位了！') : alert('已没有上一位了！'); 
+				}
+			},
+			error:function(){
+				alert('系统繁忙,请稍后再试!');
+			}
+		});
+	}
+	
+	/*公共池上下一位*/
+	function next_ggc_kefu(type,page_start){
+        next_common('is_kefu_clientsggc',type,page_start);
+	}
+	
+	/*公共池搜索上下一位*/
+	function next_ggc_kefu_search(type,page_start){
+        next_common('is_kefu_clientsggc_search',type,page_start);
+	}
+	
+	/*主管点评上下一位*/
+	function next_reviews_kefu(type,page_start){
+		var json_data = {
+			'type':type, 'page_start':page_start, 'is_kefu_reviews':1
+		};
+		$.get('/manage/kefu_againclientslist/manager_reviews.html',json_data,function(d){
+			if(d.type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_kefu_clientsreviews=1",true);
+
+			}
+		},'json');
+	}
+	
+	/*即将抓入公共池上下一位*/
+	function next_nextdayggc(type,page_start){
+		var formData = null  || {};
+		formData['type'] = type;
+		formData['page_start'] = page_start;
+		formData['is_nextdayggc_clients'] = 1;
+		$.get('/manage/kefu_clients/nextdayggc_clients.html',formData,function(d){
+			if(d.type == 'last'){
+				alert('已没有上一位了！')
+			}else if(d.type == 'next'){
+				alert('已没有下一位了！')
+			}else{
+				window.Open(d.truename,'/manage/kefu_clients/edit_client_info.html?id='+ d.id+"&page_start="+d.page_startnum+"&is_nextdayggc_clients=1&",true);
+
+			}
+		},'json');
+	}
+	</script>
+
+														</div>
+								<div id="followedup" style="display:none" class="followedown">
+									<span> 
+						   是否邀约上门:
+							<input type="radio" name="godoor" value='1' onClick="daytime($(this).val());" />是
+							<input type="radio" name="godoor" value='2' onClick="daytime($(this).val());" />否
+					   </span>
+					   <input type="hidden" id="faceval" value="">
+						<span id="daytime" style="display:none">
+						   上门日期：<input type="text" id="stime" style="width: 85px;" size="12" name="stime" onclick="return showCalendar('stime', 'y-mm-dd');" class="daytime" value="" />
+						   <select class="kezhuangtai" onchange="facetalk_time();" id="facetalk_hour"  style="height: 22px;">
+							   <option value="">请选择</option>
+							   <option >上午9点</option>
+							   <option >上午10点</option>
+							   <option >上午11点</option>
+							   <option >上午12点</option>
+							   <option >下午1点</option>
+							   <option >下午2点</option>
+							   <option >下午3点</option>
+							   <option >下午4点</option>
+							   <option >下午5点</option>
+							   <option >下午6点</option>
+							   <option >下午7点</option>
+						   </select>
+							<select name="minute" id="minute03" style="width: 65px;height: 21px;">
+								<option value="00" >00</option>
+								<option value="01" >01</option>
+								<option value="02" >02</option>
+								<option value="03" >03</option>
+								<option value="04" >04</option>
+								<option value="05" >05</option>
+								<option value="06" >06</option>
+								<option value="07" >07</option>
+								<option value="08" >08</option>
+								<option value="09" >09</option>
+								<option value="10" >10</option>
+								<option value="11" >11</option>
+								<option value="12" >12</option>
+								<option value="13" >13</option>
+								<option value="14" >14</option>
+								<option value="15" >15</option>
+								<option value="16" >16</option>
+								<option value="17" >17</option>
+								<option value="18" >18</option>
+								<option value="19" >19</option>
+								<option value="20" >20</option>
+								<option value="21" >21</option>
+								<option value="22" >22</option>
+								<option value="23" >23</option>
+								<option value="24" >24</option>
+								<option value="25" >25</option>
+								<option value="26" >26</option>
+								<option value="27" >27</option>
+								<option value="28" >28</option>
+								<option value="29" >29</option>
+								<option value="30" >30</option>
+								<option value="31" >31</option>
+								<option value="32" >32</option>
+								<option value="33" >33</option>
+								<option value="34" >34</option>
+								<option value="35" >35</option>
+								<option value="36" >36</option>
+								<option value="37" >37</option>
+								<option value="38" >38</option>
+								<option value="39" >39</option>
+								<option value="40" >40</option>
+								<option value="41" >41</option>
+								<option value="42" >42</option>
+								<option value="43" >43</option>
+								<option value="44" >44</option>
+								<option value="45" >45</option>
+								<option value="46" >46</option>
+								<option value="47" >47</option>
+								<option value="48" >48</option>
+								<option value="49" >49</option>
+								<option value="50" >50</option>
+								<option value="51" >51</option>
+								<option value="52" >52</option>
+								<option value="53" >53</option>
+								<option value="54" >54</option>
+								<option value="55" >55</option>
+								<option value="56" >56</option>
+								<option value="57" >57</option>
+								<option value="58" >58</option>
+								<option value="59" >59</option>
+							</select>
+							分
+					   </span>
+						<input type="submit" value="确定" class="botsub" onclick="addfacetalk();" style="margin-left:3px;">
+				</div>
+				<div class="followedown" style="margin-left:2%;margin-top: 1px;display:none;" id="facetalk_day_todo">
+					上门时间：
+					<input style="width: 180px;" type="text" id="etime" size="12" name="etime"  onclick="return showCalendar('etime', 'y-mm-dd');" value="" class="daytime" />
+					<select name="hour" id="hour02" style="width: 50px;height: 21px;">
+						<option value="00" >00</option>
+						<option value="01" >01</option>
+						<option value="02" >02</option>
+						<option value="03" >03</option>
+						<option value="04" >04</option>
+						<option value="05" >05</option>
+						<option value="06" >06</option>
+						<option value="07" >07</option>
+						<option value="08" >08</option>
+						<option value="09" >09</option>
+						<option value="10" >10</option>
+						<option value="11" >11</option>
+						<option value="12" >12</option>
+						<option value="13" >13</option>
+						<option value="14" >14</option>
+						<option value="15" >15</option>
+						<option value="16" >16</option>
+						<option value="17" >17</option>
+						<option value="18" >18</option>
+						<option value="19" >19</option>
+						<option value="20" >20</option>
+						<option value="21" >21</option>
+						<option value="22" >22</option>
+						<option value="23" >23</option>
+					</select>
+					<select name="minute" id="minute02" style="width: 50px;height: 21px;">
+						<option value="00" >00</option>
+						<option value="01" >01</option>
+						<option value="02" >02</option>
+						<option value="03" >03</option>
+						<option value="04" >04</option>
+						<option value="05" >05</option>
+						<option value="06" >06</option>
+						<option value="07" >07</option>
+						<option value="08" >08</option>
+						<option value="09" >09</option>
+						<option value="10" >10</option>
+						<option value="11" >11</option>
+						<option value="12" >12</option>
+						<option value="13" >13</option>
+						<option value="14" >14</option>
+						<option value="15" >15</option>
+						<option value="16" >16</option>
+						<option value="17" >17</option>
+						<option value="18" >18</option>
+						<option value="19" >19</option>
+						<option value="20" >20</option>
+						<option value="21" >21</option>
+						<option value="22" >22</option>
+						<option value="23" >23</option>
+						<option value="24" >24</option>
+						<option value="25" >25</option>
+						<option value="26" >26</option>
+						<option value="27" >27</option>
+						<option value="28" >28</option>
+						<option value="29" >29</option>
+						<option value="30" >30</option>
+						<option value="31" >31</option>
+						<option value="32" >32</option>
+						<option value="33" >33</option>
+						<option value="34" >34</option>
+						<option value="35" >35</option>
+						<option value="36" >36</option>
+						<option value="37" >37</option>
+						<option value="38" >38</option>
+						<option value="39" >39</option>
+						<option value="40" >40</option>
+						<option value="41" >41</option>
+						<option value="42" >42</option>
+						<option value="43" >43</option>
+						<option value="44" >44</option>
+						<option value="45" >45</option>
+						<option value="46" >46</option>
+						<option value="47" >47</option>
+						<option value="48" >48</option>
+						<option value="49" >49</option>
+						<option value="50" >50</option>
+						<option value="51" >51</option>
+						<option value="52" >52</option>
+						<option value="53" >53</option>
+						<option value="54" >54</option>
+						<option value="55" >55</option>
+						<option value="56" >56</option>
+						<option value="57" >57</option>
+						<option value="58" >58</option>
+						<option value="59" >59</option>
+					</select>
+					分
+					<input type="submit" value="确定" class="botsub" onclick="addfacetalk02();" style="margin-left:3px;">
+				</div>
+				<div class="ydlqbz" style="display:none" id="sign">
+					<span>是否已经签约:
+						<input type="radio" name="havesign" value="1"  disabled="disabled" onClick="haveintopieces($(this).val())"/>是
+						<input type="radio" name="havesign" value="2"  disabled="disabled" onClick="haveintopieces($(this).val())"/>否
+					</span>
+				</div> 
+				<div class="ydlqbz" style="display:none" id="intopieces">
+					<span>是否已经进件:
+						<input type="radio" name="haveintopieces" value="1"  disabled="disabled"  onClick="material();"/>是
+						<input type="radio" name="haveintopieces" value="2"   disabled="disabled" onClick="material();"/>否
+					</span>
+				</div>
+				
+				<!-- 客户跟踪 -->
+				<div id="bottominfo1">    
+					<div class="bottommain">
+						<div id="kefuforget" style="display:none;">
+							<span class="botmale">新增备忘</span>
+							<span style="margin-left:1%;">日期：</span>
+							<input type="text" id="forgettime"  size="12" name="forgettime" onclick="return showCalendar('forgettime', 'y-mm-dd');" class="daytime" AUTOCOMPLETE="off"/>
+							
+							<select name="hour" id="hour" style="width: 50px;height: 21px;">
+															</select>
+							<select name="minute" id="minute" style="width: 50px;height: 21px;">
+															</select>&nbsp分&nbsp&nbsp
+							<span>提醒内容<img src="https://guwen.zhudaicms.com/default/manage/images/explain_icon01.jpg" class="eximg" id="3">：</span>
+							<input type="text" class="botshu" id="addforget" style="width:50.6%">
+							<input type="submit" value="确定" class="botsub" onclick="addkefuforget();">
+						</div>
+						
+						<!-- 标签开始 -->
+						<div style="margin-top:5px;">
+							<span class="botmale" style="vertical-align:top;">客户标签</span>
+							<span class="labels" style="margin-left:12px;" id="custom_label">
+																																																																																							</span>
+							<a href="javascript:;" class="md-trigger btn btn-danger btn-xs" data-modal="modal-1">+标签</a>
+						</div>
+						<style>
+							.labels{
+								margin:0 5px;
+							}
+							.labels b{
+								margin-left:3px;color:#00f;background:#eee;border-radius: 10px;border:none;padding:3px;font-weight: normal;
+							}
+						</style>
+						<!-- 标签结束 -->
+						
+												 <!-- 新增 start -->				
+						 <div style="margin-top:5px;">
+							<span class="botmale" style="vertical-align:top;">客户资质</span>
+							<textarea class="botshu border-radius-6" rows="2" style="width:79.5%;padding-left:5px;" id="zhizi"  placeholder="有利于客户放款的条件可以记录在这里，如 社保15年，公积金单边1200，按揭房7年前还清了，全款车..." disabled></textarea> 
+						 </div>
+												 
+												<!--该逻辑给[主管顾问]使用 -->
+						<div style="margin-top:5px;">
+							<span class="botmale">新增点评</span>
+							<input type="text" class="botshu" id="review" style="width:79.7%">
+							<input type="hidden" class="mename" id="mename" value="">
+							<input type="button" value="确定" class="botsub" onclick="addreview()">
+						</div>
+								
+						<div class="kefu" style="width: 100%;display: inline-block;">
+							 <div class="hisreco" style="margin-top:5px;font-size:14px">
+								 <span class="botmale" style="float:left">备忘记录</span>
+								 								 <ul class="hisul border-radius-6" id="hisul4" style="float:left;margin-left:1.3%;height: auto; min-height:30px;width:90%;">
+									  <li style="height:auto;float:left;width:100%">
+										   暂无备忘记录
+								   </li>
+								 </ul> 
+								 								 								 <div class="clearfix"></div>
+								 								<div style="clear: both;"></div>
+								   <span class="botmale" style="float:left">顾问记录</span>
+								   <ul class="hisul border-radius-6" id="hisul" style="float:left;margin-left:1.3%;height: auto; min-height:85px;width:90%;margin-top:6px;">
+									  								   <li style="color:blue;"></li>
+									 <li></li>					     </ul>
+									 <div style="clear: both;"></div>
+								 <!--主管点评定位-->
+								 								 <!-- 主管点评区域开始 -->
+								 <span class="botmale" style="float:left;margin-top:6px;" id="kefu_reviews">主管点评</span>
+																	 <ul class="hisul border-radius-6" id="hisul4" style="float:left;margin-left:1.3%;margin-top:6px;height: auto; min-height:30px;width:90%;">
+									  <li style="height:auto;float:left;width:100%">
+										   暂无主管点评
+								   </li>
+								 </ul> 
+								 								 <!-- 主管点评区域结束 -->
+								
+								 															  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tabs-content">
+				<div id="bottominfo4" style="display:none">
+					<div class="bottommain">
+						<div>
+							<span class="botmale">发送短信</span>
+							<!-- <input type="text" class="botshu"> -->
+							<select id="smscontent" class="botshu" style="height:25px;">
+								<option value="0">请选择</option>
+								<option value="1">工薪贷资料</option>
+								<option value="2">保单贷资料</option>
+								<option value="3">房贷资料</option>
+								<option value="4">车贷资料</option>
+								<option value="5">学历贷资料</option>
+								<option value="6">抵押贷资料</option>
+							</select>
+							<input type="hidden" value="" id="smsmobile">
+							<input type="hidden" value="" id="smsname">
+							<input type="submit" value="发送" class="botsub" onclick="sendsms();" style="height:25px;margin-left:0.3%">
+						</div>
+						<div class="hisreco" style="margin-top:5px">
+							<span class="botmale" style="float:left">历史记录</span>
+							<ul class="hisul" id="hisul1"style="float:left;margin-left:1.3%;height: auto; min-height:90px;">
+							  							</ul>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+			<div class="tabs-content">
+				<!-- 分配记录 -->
+				<div id="bottominfo5" style="display:none">
+					<div class="bottommain">
+						<div class="hisreco" style="margin-top:5px;display: flex;align-items: start;">
+							<span class="botmale" style="display:none;" id="fenpei">分配记录</span>
+							<ul class="hisul" id="hisul5" style="flex:1;margin-left:1.3%;height: auto; min-height:90px;display:none;">
+							  								<br>
+								<li style="color:blue;">注意：分配记录会不定期清理只保留最近三个月的记录。</li>
+							</ul>
+						</div>
+					</div>
+				
+				</div>
+				<!-- end 分配记录 -->
+			</div>
+			<div class="tabs-content">
+				<!-- 匹配产品 -->
+				<div id="bottominfo6" style="display:none">
+					<div class="bottommain">
+						<div id='lk_scrollBox' sty>
+							<div id="lk_scrollInner">
+							  <div id="lk_content">
+								<table border="0" cellpadding="0" cellspacing="0" class="customer-table">
+									<tr class="customer-table-tr">
+										<td width=3%">产品名称</td>
+										   <td width="3%">产品类型</td>
+										   <td width="5%">月利息</td>
+										   <td width="3%">还款方式</td>
+										   <td width="3%">放款时间</td>
+										   <td width="3%">预审额度(元)</td>
+									</tr>
+									   
+								</table>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end 匹配产品 -->
+			</div>
+			<div class="tabs-content">
+				 <!-- 录音文件列表 begin -->
+				 <div id="bottominfo8" style="display:none">
+					<div class="bottommain"  style="width: 100%;padding: 10px 0 0 0;">
+						<div id='lk_scrollBox' style="padding: 0;margin: 0;">
+							<div id="lk_scrollInner" style="margin: 0;">
+							  <div id="lk_content">
+								<table border="0" cellpadding="0" cellspacing="0" class="customer-table">
+									<tr class="customer-table-tr">
+										<td>ID</td>
+										<td>日期</td>
+										<td>时间</td>
+										<td>录音时长</td>
+										<td>顾问名称</td>
+										<td>区-部门</td>
+										<td>岗位</td>
+										<td>录音</td>
+									</tr>
+									<tbody id="videoList">
+									</tbody>
+									<tr>
+										<td colspan="8">温馨提示：只保留最近1个月的录音记录</td>
+									</tr>
+								</table>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 录音文件列表 end -->
+			</div>
+			<div class="tabs-content" style="min-height: 100%;">
+				<!-- 面签视频开始 -->
+				<div id="bottominfo9" style="display: none;min-height:100%;">
+					<div class="vlist-page" style="min-height: 100%;">
+						<div class="vlist-page-wrap">
+							<div style="display: flex;align-items: center;padding: 6px 18px;border-bottom: 1px dotted;">
+								<div class="vlist-tip">
+									<div style="display:flex;align-items:center;">
+										提示：使用此功能需下载APP点拨通，<a style="cursor: pointer;" onclick="Open('点拨通下载','/manage/call_manager/zdtdown.html')">点击下载</a> 
+								  <div src="https://guwen.zhudaicms.com/default/manage_2025/image/faceCover.png?v=1.1" class="preview-image view-img">点击查看教程</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								  <span style="font-size:11px;">功能描述：全程视频记录客户签合同对一些关键问题的问答知晓过程</span>
+								  &nbsp;&nbsp;
+									</div>
+								  <a href="javascript:void(0);" style="margin-left: 240px;" onClick="Open('面签视频审核','/manage/kefu_trialclients/facevideo_check.html')">视频列表</a>
+								 </div>
+							</div>
+							<div class="vlist-table-card">
+								<table>
+									<thead>
+										<tr>
+											<th class="vlist-col-video">视频</th>
+											<th class="vlist-col-name">客户姓名</th>
+											<th>面签顾问</th>
+											<th>申请额度</th>
+											<th>审核状态</th>
+											<th>审核意见</th>
+											<th>面签日期</th>
+										</tr>
+									</thead>
+                                    <tbody id="signvideoList">
+                                    </tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+    $(document).ready(function () {
+        var currentScale = 1;
+        var maxScale = 5;
+        var minScale = 0.2;
+        var scaleStep = 0.2;
+
+        var offsetX = 0, offsetY = 0;
+        var isDragging = false, startX = 0, startY = 0;
+
+
+        function applyTransform() {
+            $('#previewImage').css('transform', 'translate(' + offsetX + 'px,' + offsetY + 'px) scale(' + currentScale + ')');
+        }
+
+
+        function updateZoomLevel() {
+            $('#zoomLevel').text(Math.round(currentScale * 100) + '%');
+        }
+
+
+        $('.preview-image').click(function (e) {
+            e.preventDefault();
+            var imgSrc = $(this).attr('src');
+
+
+            if (imgSrc.indexOf('notimg.gif') !== -1) {
+                alert('暂无图片可预览');
+                return;
+            }
+
+            $('#previewImage').attr('src', imgSrc);
+            currentScale = 1;
+            offsetX = 0; offsetY = 0;
+            applyTransform();
+            updateZoomLevel();
+            $('#imagePreviewModal').fadeIn(300);
+
+
+            return false;
+        });
+
+
+        $('#closePreview, #imagePreviewModal').click(function (e) {
+            if (e.target === this) {
+                $('#imagePreviewModal').fadeOut(300);
+            }
+        });
+
+
+        $('#closePreview').hover(
+            function () { $(this).css('color', '#ff6b6b'); },
+            function () { $(this).css('color', 'white'); }
+        );
+
+
+        $('#previewImage').click(function (e) {
+            e.stopPropagation();
+        });
+
+
+        function zoomIn() {
+            if (currentScale < maxScale) {
+                currentScale += scaleStep;
+                applyTransform();
+                updateZoomLevel();
+            }
+        }
+
+
+        function zoomOut() {
+            if (currentScale > minScale) {
+                currentScale -= scaleStep;
+                applyTransform();
+                updateZoomLevel();
+            }
+        }
+
+
+        function resetZoom() {
+            currentScale = 1;
+            offsetX = 0; offsetY = 0;
+            applyTransform();
+            updateZoomLevel();
+        }
+
+
+        $(document).keydown(function (e) {
+            if ($('#imagePreviewModal').is(':visible')) {
+                switch (e.keyCode) {
+                    case 27:
+                        $('#imagePreviewModal').fadeOut(300);
+                        break;
+                    case 187:
+                    case 61:
+                    case 107:
+                        e.preventDefault();
+                        zoomIn();
+                        break;
+                    case 189:
+                    case 173:
+                    case 109:
+                        e.preventDefault();
+                        zoomOut();
+                        break;
+                    case 48:
+                    case 96:
+                        e.preventDefault();
+                        resetZoom();
+                        break;
+                }
+            }
+        });
+
+
+        $('#previewImage').on('wheel', function (e) {
+            e.preventDefault();
+
+            if (e.originalEvent.deltaY < 0) {
+
+                zoomIn();
+            } else {
+
+                zoomOut();
+            }
+        });
+
+
+        $('#previewImage').on('load', function () {
+            $(this).css('opacity', '0').animate({ opacity: 1 }, 300);
+        });
+
+
+        $('#previewImage').dblclick(function (e) {
+            e.stopPropagation();
+            resetZoom();
+        });
+
+
+        $('#previewImage').on('mousedown', function (e) {
+            if (!$('#imagePreviewModal').is(':visible')) return;
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            $('#previewImage').css('cursor', 'grabbing').css('transition', 'none');
+            e.preventDefault();
+        });
+
+        $(document).on('mousemove', function (e) {
+            if (!isDragging) return;
+            var dx = e.clientX - startX;
+            var dy = e.clientY - startY;
+            startX = e.clientX;
+            startY = e.clientY;
+            offsetX += dx;
+            offsetY += dy;
+            applyTransform();
+        });
+
+        $(document).on('mouseup', function () {
+            if (!isDragging) return;
+            isDragging = false;
+            $('#previewImage').css('cursor', 'grab').css('transition', 'transform 0.3s ease');
+        });
+
+
+        $('#previewImage').on('touchstart', function (e) {
+            if (!$('#imagePreviewModal').is(':visible')) return;
+            if (e.touches.length === 1) {
+                isDragging = true;
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                $('#previewImage').css('transition', 'none');
+            }
+        });
+
+        $('#previewImage').on('touchmove', function (e) {
+            if (!isDragging || e.touches.length !== 1) return;
+            var dx = e.touches[0].clientX - startX;
+            var dy = e.touches[0].clientY - startY;
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            offsetX += dx;
+            offsetY += dy;
+            applyTransform();
+            e.preventDefault();
+        });
+
+        $('#previewImage').on('touchend touchcancel', function () {
+            isDragging = false;
+            $('#previewImage').css('transition', 'transform 0.3s ease');
+        });
+
+
+        $('#imagePreviewModal').contextmenu(function (e) {
+            e.preventDefault();
+            return false;
+        });
+
+    });
+</script>
+
+<!-- 图片预览模态框 -->
+<div id="imagePreviewModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); z-index: 9999; cursor: pointer;">
+    <!-- 关闭按钮 -->
+    <div id="closePreview" style="position: absolute; top: 20px; right: 30px; color: white; font-size: 35px; font-weight: bold; cursor: pointer; z-index: 10001; user-select: none; transition: color 0.3s;" title="关闭预览">&times;</div>
+
+    <!-- 图片容器 -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+        <img id="previewImage" src="" style="max-width: 90%; max-height: 80%; border: none; transition: transform 0.3s ease; box-shadow: 0 4px 20px rgba(255,255,255,0.1); will-change: transform; cursor: grab;" />
+    </div>
+    <!-- 缩放比例显示 -->
+    <div id="zoomLevel" style="position: absolute; top: 30px; left: 30px; color: white; font-size: 16px; background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: 4px; font-family: monospace;">100%</div>
+
+    <!-- 操作提示 -->
+    <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.7); font-size: 14px; text-align: center;">
+        <div>提示：ESC 关闭 | 鼠标滚轮缩放 | +/- 键缩放 | 0 键重置 | 双击重置</div>
+    </div>
+</div>
+				<style>
+    .dq-video-preview-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        cursor: pointer;
+    }
+
+    .dq-close-preview {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10001;
+        user-select: none;
+        transition: all 0.3s;
+        background: rgba(0, 0, 0, 0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dq-close-preview:hover {
+        color: #ff6b6b;
+        transform: scale(1.1);
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .dq-video-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease;
+    }
+
+    .dq-preview-video {
+        max-width: 100%;
+        max-height: 100%;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+        background: #000;
+        outline: none;
+    }
+
+    .dq-hint {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        border-radius: 20px;
+        z-index: 10000;
+        max-width: 90%;
+    }
+
+    .dq-loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+        z-index: 10000;
+    }
+
+    .dq-no-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ff6b6b;
+        font-size: 20px;
+        text-align: center;
+        z-index: 10000;
+    }
+
+    @media (max-width: 768px) {
+        .video-grid {
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        .dq-hint {
+            font-size: 12px;
+            bottom: 20px;
+        }
+    }
+</style>
+
+
+<div id="dq-video-preview-modal" class="dq-video-preview-modal">
+
+    <div id="dq-close-preview" class="dq-close-preview" title="关闭预览">&times;</div>
+
+    <div class="dq-video-container">
+        <video id="dq-preview-video" class="dq-preview-video" src="" controls playsinline>
+            您的浏览器不支持视频播放
+        </video>
+    </div>
+
+
+    <div class="dq-loading" style="display: none;">
+        <i class="fas fa-spinner fa-spin"></i> 加载中...
+    </div>
+
+
+    <div class="dq-no-video" style="display: none;">
+        <i class="fas fa-exclamation-circle"></i> 无法加载视频
+    </div>
+
+
+    <div class="dq-hint">
+        提示：ESC 关闭预览 | 点击关闭按钮或背景区域关闭
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var videoElement = document.getElementById('dq-preview-video');
+        var $modal = $('#dq-video-preview-modal');
+        var $loading = $('.dq-loading');
+        var $noVideo = $('.dq-no-video');
+        var $videoContainer = $('.dq-video-container');
+        $(document).on('click', '.video-play', function (e) {
+            console.log("点击了")
+            e.preventDefault();
+            var videoSrc = $(this).data('video-src');
+            var posterSrc = $(this).data('poster');
+
+            if (videoSrc.indexOf('novideo') !== -1) {
+                alert('暂无视频可预览');
+                return;
+            }
+
+      
+            $loading.show();
+            $noVideo.hide();
+            $videoContainer.css('opacity', '0.3');
+
+       
+            $(videoElement).attr('src', videoSrc);
+            if (posterSrc) {
+                $(videoElement).attr('poster', posterSrc);
+            }
+
+       
+            $modal.fadeIn(300);
+
+            videoElement.load();
+
+            return false;
+        })
+
+    
+        $('#dq-close-preview, #dq-video-preview-modal').click(function (e) {
+           
+            if (e.target === this || $(e.target).is('#dq-close-preview')) {
+                closeModal();
+            }
+        });
+
+        function closeModal() {
+            videoElement.pause();
+            $modal.fadeOut(300);
+            
+            setTimeout(function () {
+                $(videoElement).attr('src', '');
+                $(videoElement).removeAttr('poster');
+            }, 300);
+        }
+
+  
+        $('#dq-preview-video').click(function (e) {
+            e.stopPropagation();
+        });
+
+    
+        videoElement.addEventListener('loadeddata', function () {
+            $loading.hide();
+            $videoContainer.css('opacity', '1');
+            videoElement.play().catch(function (e) {
+                console.log('自动播放失败，可能需要用户交互', e);
+            });
+        });
+
+       
+        videoElement.addEventListener('error', function () {
+            $loading.hide();
+            $noVideo.show();
+            $videoContainer.css('opacity', '1');
+        });
+
+    
+        $(document).keydown(function (e) {
+            if ($modal.is(':visible')) {
+                if (e.keyCode === 27) {
+                    var fullscreenElement = document.fullscreenElement ||
+                        document.mozFullScreenElement ||
+                        document.webkitFullscreenElement ||
+                        document.msFullscreenElement;
+
+                    if (fullscreenElement) {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        } else if (document.mozCancelFullScreen) {
+                            document.mozCancelFullScreen();
+                        } else if (document.webkitExitFullscreen) {
+                            document.webkitExitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                            document.msExitFullscreen();
+                        }
+                    } else {
+                        closeModal();
+                    }
+                }
+            }
+        });
+    });
+</script>
+			</div>
+		</div>
+    </div>
+
+ <!--邀约信息弹框开始-->
+ <div class="yaoyue_box" id="call_for" style="display: none;">
+ 	<div class="yaoyue_inner">
+ 		<h4 class="text-center">邀约信息</h4>
+ 		<div class="content">
+			<div class="form-group form-inline">
+				<label><span>*</span>上门时间</label>
+				<div class="pull-right">
+					<input type="text" class="form-control" id="stim1" name="stim1" placeholder="选择时间" value="" onclick="return showCalendar('stim1', 'y-mm-dd');" />
+					<select class="form-control" name="yhour" id="yhour">
+												<option value="0">0</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+												<option value="8">8</option>
+												<option value="9">9</option>
+												<option value="10">10</option>
+												<option value="11">11</option>
+												<option value="12">12</option>
+												<option value="13">13</option>
+												<option value="14">14</option>
+												<option value="15">15</option>
+												<option value="16">16</option>
+												<option value="17">17</option>
+												<option value="18">18</option>
+												<option value="19">19</option>
+												<option value="20">20</option>
+												<option value="21">21</option>
+												<option value="22">22</option>
+												<option value="23">23</option>
+											</select>
+					<span>时</span>
+					<select class="form-control" name="yminute" id="yminute">
+												<option value="0">0</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+												<option value="8">8</option>
+												<option value="9">9</option>
+												<option value="10">10</option>
+												<option value="11">11</option>
+												<option value="12">12</option>
+												<option value="13">13</option>
+												<option value="14">14</option>
+												<option value="15">15</option>
+												<option value="16">16</option>
+												<option value="17">17</option>
+												<option value="18">18</option>
+												<option value="19">19</option>
+												<option value="20">20</option>
+												<option value="21">21</option>
+												<option value="22">22</option>
+												<option value="23">23</option>
+												<option value="24">24</option>
+												<option value="25">25</option>
+												<option value="26">26</option>
+												<option value="27">27</option>
+												<option value="28">28</option>
+												<option value="29">29</option>
+												<option value="30">30</option>
+												<option value="31">31</option>
+												<option value="32">32</option>
+												<option value="33">33</option>
+												<option value="34">34</option>
+												<option value="35">35</option>
+												<option value="36">36</option>
+												<option value="37">37</option>
+												<option value="38">38</option>
+												<option value="39">39</option>
+												<option value="40">40</option>
+												<option value="41">41</option>
+												<option value="42">42</option>
+												<option value="43">43</option>
+												<option value="44">44</option>
+												<option value="45">45</option>
+												<option value="46">46</option>
+												<option value="47">47</option>
+												<option value="48">48</option>
+												<option value="49">49</option>
+												<option value="50">50</option>
+												<option value="51">51</option>
+												<option value="52">52</option>
+												<option value="53">53</option>
+												<option value="54">54</option>
+												<option value="55">55</option>
+												<option value="56">56</option>
+												<option value="57">57</option>
+												<option value="58">58</option>
+												<option value="59">59</option>
+											</select>
+					<span>分</span>
+				</div>
+			</div>
+			<div class="form-group form-inline">
+				<label><span>*</span>邀约信息</label>
+				<div class="pull-right">
+					<input type="text" class="form-control list" name="ycontent" id="ycontent"/>
+				</div>
+			</div>
+			<div class="form-group form-inline">
+				<label><span>*</span>提醒</label>
+				<div class="pull-right">
+					<select class="form-control list" name="yalarmin" id="yalarmin">
+						<option value="0">不提醒</option>
+						<option value="ahour1">提前1小时</option>
+						<option value="aday1">提前1天</option>
+						<option value="aday3">提前3天</option>
+						<option value="aday7">提前1周</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group form-inline">
+				<label><span>*</span>备注</label>
+				<div class="pull-right">
+					<textarea class="form-control list" name="yremark" id="yremark"></textarea>
+				</div>
+			</div>
+			<div class="form-group form-inline">
+				<label></label>
+				<div class="pull-right">
+					<button type="button" class="btn btn-danger" onclick="btn_ysmt()">提交</button>
+					<button type="button" class="btn btn-default" onclick="btn_cancel()">取消</button>
+				</div>
+			</div>
+			
+ 		</div>
+ 	</div>
+ </div>
+ <!--邀约信息弹框结束-->   
+    <!-- 贷款金额入库弹框 -->
+   <form action="/manage/kefu_clients/addbankinfo.html" name="myform" method="post" onsubmit="return tjbankmoney();">
+   <input type="hidden" id="oldstatus" value="">
+   <input type="hidden" name="id" value="">
+<div class="system-mask" style="display:none;">
+<div class="system-popup-box" style="display:none;">
+	<div class="popup-around">
+		<h3 class="top-title">放款信息</h3>
+		<ul class="list-form">
+			<ol>
+				<li>
+					<span>
+						<label>放款银行：</label>
+						<input type="text" name="bankname[]" placeholder="" class="input-box"></span>
+					<span class="form-one-m">
+						<label>放款金额：</label>
+						<input type="text" name="bankmoney[]" placeholder="" class="input-box">				
+						&nbsp;<span style="color:#606565;">元</span>&nbsp;&nbsp; <i class="icon-box add-icon" onclick="addbankinfo();"></i>
+					</span>
+				</li>
+			</ol>
+		</ul>
+		<div class="button-box"><input type="submit" name="myform" class="buton-style" id="loanadd" value="确定"><input type="button" class="buton-style cancel" id="loancancel"  onclick="xqbankmoney();" value="取消"></div>
+		<div class="tip_bottom">备注：如果不填写放款信息，银行已放款状态将不生效。</div>
+	</div>
+</div>
+</div>
+</form>
+<!-- 贷款金额入库弹框end -->
+
+<!--待跟进信息弹出框开始-->
+<div id="daigenjin" class="modale alert fade in" style="position: relative">
+	<div class="modal_inner">
+		<span id="daigenj_msg" style="font-size: 12px;"></span>
+		<div class="btn_anni" style="position: absolute;bottom: 28px;left:46%;transform: translateX(-40%)">
+			<button class="btn_l" type="button" onclick="y_close_alter()">确认</button>
+			<button class="btn_r" type="button" onclick="donot_tips()">不再提示</button>
+		</div>
+	</div>
+</div>
+<!--待跟进信息弹出框结束-->
+ <!-- footer -->
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://guwen.zhudaicms.com/default/css/mycss.css?v=92_5" />
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/manage/js/feedback.js?v=92_5"></script>
+<style type="text/css">
+div.tktb{display:none}
+textarea,input{font-family:微软雅黑;font-size:14px;}
+.suspension{height:48px;width:58px;position:fixed;bottom:12px;right:15px;z-index:99;}
+.suspension-mod{width:58px;height:58px;background:#b71f2e;margin-top:1px;}
+.suspension-mod div{width:48px;height:48px;margin:0 auto;padding-top:5px;text-align:center;cursor:pointer;}
+.suspension1{background:url('https://guwen.zhudaicms.com/default/images/xf-icon.png') no-repeat 8px 10px;}
+.suspension3{background:url('https://guwen.zhudaicms.com/default/images/xf-icon.png') no-repeat 6px -54px;}
+.suspension4{background:url('https://guwen.zhudaicms.com/default/images/xf-icon.png') no-repeat -57px -60px;}
+.suspension-mod div:hover{background:none;}
+.suspension-mod div span{color:#fff;font-size:16px;display:block;margin-top:3px;}
+.suspension-mod div:hover span{display:block}
+.qrcode{position:fixed;bottom:44px;right:82px;display:none;z-index:99}
+.feedback{z-index:999;background:#fff;width:331px;height:297px;border-radius:5px;border:1px solid #b71f2e;position:fixed;bottom:100px;right:100px}
+.feedback-top{width:331px;height:62px;background:#b71f2e;margin:0 auto;color:#fff;font-size:16px;}
+.portrait{float:left;margin:6px 0 0 17px;width:51px;height:49px;}
+.feedback-main{width:304px;height:166px;border-radius:5px;border:1px solid #bfbfbf;margin:6px 6px;resize:none;padding:10px 5px 0 8px;}
+.cont{width:236px;height:34px;padding-left:10px;border-radius:5px;border:1px solid #bfbfbf;float:left;margin-left:6px;}
+.subm{width:66px;height:37px;border-radius:5px;border:none;background:#b71f2e;color:#fff;float:left;margin-left:5px;}
+.chatbox{width:331px;height:453px;border-radius:5px;border:1px solid #b71f2e;position:fixed;background:#fff;top:100px;right:100px}
+.chatbox-top{width:331px;height:62px;background:#b71f2e;}
+.chatbox-main{width:331px;height:288px;font-size:14px;}
+.news-kefu{margin:5px 0 0 10px}
+.news-kefu div{width:auto;height:auto;max-width:276px;min-height:22px;background:#bee6f9;margin:5px 0 0 5px;;border-radius:5px;padding:5px 5px 5px 15px;}
+.close{float:right;margin:18px 18px 0 0}
+.chatbox-foot{width:331px;height:101px;border-top:1px solid #bfbfbf;}
+.chatbox-foot-text{width:316px;height:58px;resize:none;border:none;padding:5px 5px 5px 10px;}
+.expression,.picture{width:30px;height:24px;float:left;margin-left:18px;background:url(https://guwen.zhudaicms.com/default/images/exp-pic.jpg) no-repeat;}
+.picture{background-position:-40px 0;}
+.chatbox-send{width:58px;height:26px;float:right;border:none;background:#b71f2e;border-radius:7px;color:#fff;margin-right:4px;}
+.news-kehu div{float:right;}
+</style>
+<!-- 自动推送链接 -->
+<script>
+$(function(){
+   	$(".suspension-mod div.suspension3").hover(function(){
+   		$("#suspension3").css('display','block');
+   	},function(){
+   		$("#suspension3").css('display','none');
+   	});
+	$(".suspension-mod div").click(function(){
+		for(var i=1;i<5;i++){
+			$("#suspension"+i).css('display','none');
+		}
+		var cla = $(this).attr('class');
+		if(cla == 'suspension4'){
+			document.documentElement.scrollTop = document.body.scrollTop =0;
+		}else if(cla == 'suspension3'){
+			$("#suspension3").css('display','none');
+		}else{
+			$("#"+cla).css('display','block');
+		}
+	});
+	$(".close").click(function(){
+		$(this).parent().parent().css('display','none')
+	});
+})
+function send(){
+	var content = $("#content").val();
+}
+</script>
+<div class="suspension">
+	<div class="suspension-mod">
+		<div class="suspension2"><span>意见<br>反馈</span></div>
+	</div>
+</div>
+<div class="qrcode" id="suspension3"><img src="https://guwen.zhudaicms.com/default/images/qrcode.png"></div>
+<div id="suspension2" class="feedback" style="display:none">
+	<div class="feedback-top">
+		<img src="https://guwen.zhudaicms.com/default/images/feedback.png" class="portrait">
+		<span style="float:left;margin:8px 0 0 5px;">
+			产品经理<br>
+			机器秘书
+		</span>
+		<img src="https://guwen.zhudaicms.com/default/images/close02.png" class="close">
+	</div>
+	<textarea class="feedback-main" name="fkremark_new" id="fkremark_new" placeholder="欢迎提出您在使用过程中遇到的问题和宝贵意见，（200字以内）感谢您对系统的支持。"></textarea>
+	<div class="feedback-foot">
+		<input type="hidden" value="" id="uid_new">
+		<input type="button" value="提交" class="subm" onClick="fankui_new();" style="margin-left:40%">
+	    <a href="javascript:;" onClick="Open('我的反馈','/manage/kefu_feedback/myfeedback.html')" style="margin-left:45px;line-height:55px">我的反馈</a>
+	</div>
+</div>
+     <meta charset="utf-8"/>
+<div id="main">
+	<div id="pop" style="display:none;">
+  		<div id="popHead">
+			<a id="popClose" title="关闭">关闭</a>
+	       	<h2>客帮手：助力小微，贷动中国</h2>
+		</div>
+		<div id="popContent">
+			<p style="text-align:center;" id="lrtsk"></p>
+	  	</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/common/oss_js_h5/plupload-2.1.2/js/plupload.full.min.js?v=92_5"></script>
+<script type="text/javascript" src="https://guwen.zhudaicms.com/default/common/oss_js_h5/upload_mykefu.js?v=92_51"></script>
+<script>
+	//关闭待跟进信息弹出框 -- 弹出10次之后不再弹出
+	function y_close_alter() {
+        $("#daigenjin").hide();
+    }
+    // 永久关闭待跟进的信息弹出框 -- 以后也不会弹出
+	function donot_tips() {
+        $.post('/manage/kefu_clients/ajax_update_daigejin_is_pop.html',"",function(d){
+            console.log(d);
+            if(d.status == 1){
+                $("#daigenjin").hide();
+            }else{
+                alert('系统错误');
+            }
+        },'json');
+    }
+	
+	//提交邀约计划
+	function btn_ysmt(){
+		var id = $('#id').val();
+		if(id==''){alert('请先填写基本信息!');return false;}
+		
+		var ydate = $('#stim1').val();//日期
+		var yhour = $('#yhour').val();//时
+		var yminute = $('#yminute').val();//分
+		var ycontent=$('#ycontent').val();//邀约信息
+		var yalarmin = $('#yalarmin').val();//提醒方式
+		var yremark = $('#yremark').val();
+		
+		if(!ydate){alert('请选择上门日期');return false;}
+		if(!ycontent){alert('请填写邀约信息');return false;}
+		if(!yremark){alert('请邀约备注');return false;}
+		var json = {
+			id:id,
+			ydate:ydate,
+			yhour:yhour,
+			yminute:yminute,
+			ycontent:ycontent,
+			yalarmin:yalarmin,
+			yremark:yremark,
+		};
+		
+		$.post('/manage/kefu_clientssd/ajax_addyao.html',json,function(res){
+			alert(res.msg);
+			if(res.code=='0'){
+				window.location.reload();
+			}
+		},'json');
+	}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--客户详情页面标签弹框-->
+<div class="md-modal md-effect-1" id="modal-1">
+    <div class="md-content">
+      <h3>选择标签</h3>
+      <form method="post" id="labelForm">
+      	<ul class="hbox-list">
+      		<li>
+      			<strong>费用</strong>
+      			<div class="label-list">
+      			    <label><input type="radio" name="feiyong" value="10" />2%</label>
+					<label><input type="radio" name="feiyong" value="11" />3%</label>
+					<label><input type="radio" name="feiyong" value="12" />4%</label>
+					<label><input type="radio" name="feiyong" value="13" />5%</label>
+					<label><input type="radio" name="feiyong" value="14" />6%</label>
+					<label><input type="radio" name="feiyong" value="15" />7%</label>
+					<label><input type="radio" name="feiyong" value="16" />8%</label>
+					<label><input type="radio" name="feiyong" value="17" />9%</label>
+					<label><input type="radio" name="feiyong" value="18" />10%</label>
+					<label><input type="radio" name="feiyong" value="19" />11%</label>
+					<label><input type="radio" name="feiyong" value="100" />12%</label>
+					<label><input type="radio" name="feiyong" value="101" />13%</label>
+					<label><input type="radio" name="feiyong" value="102" />14%</label>
+					<label><input type="radio" name="feiyong" value="103" />15%</label>
+					<label><input type="radio" name="feiyong" value="104" />不接受费用</label>
+      			</div>
+      		</li>
+			<li>
+				<strong>营业执照</strong>
+				<div class="label-list">
+					<label><input type="radio" name="zhizhao" value="70"  />有限公司</label>
+					<label><input type="radio" name="zhizhao" value="71"  />个体工商户</label>
+				</div>
+			</li>
+			<li>
+				<strong>经营情况</strong>
+				<div class="label-list">
+					<label><input type="radio" name="jingying" value="80"  />真实经营</label>
+					<label><input type="radio" name="jingying" value="81"  />银联收款</label>
+				</div>
+			</li>
+			<li>
+				<strong>需求时间</strong>
+				<div class="label-list">
+				    <label><input type="radio" name="needtime" value="90"  />1月</label>
+					<label><input type="radio" name="needtime" value="91"  />2月</label>
+					<label><input type="radio" name="needtime" value="92"  />3月</label>
+					<label><input type="radio" name="needtime" value="93"  />4月</label>
+					<label><input type="radio" name="needtime" value="94"  />5月</label>
+					<label><input type="radio" name="needtime" value="95"  />6月</label>
+					<label><input type="radio" name="needtime" value="96"  />7月</label>
+					<label><input type="radio" name="needtime" value="97"  />8月</label>
+					<label><input type="radio" name="needtime" value="98"  />9月</label>
+					<label><input type="radio" name="needtime" value="99"  />10月</label>
+					<label><input type="radio" name="needtime" value="901"  />11月</label>
+					<label><input type="radio" name="needtime" value="902"  />12月</label>
+				</div>
+			</li>
+			<li>
+				<strong>开票纳税流水</strong>
+				<div class="label-list">
+					<label><input type="radio" name="nashui" value="110"  />有开票纳税</label>
+					<label><input type="radio" name="nashui" value="111"  />年流水100万以上</label>
+					<label><input type="radio" name="nashui" value="112"  />年流水200万以上</label>
+				    <label><input type="radio" name="nashui" value="113"  />年流水500万以上</label>
+				    <label><input type="radio" name="nashui" value="114"  />纳税3万以上</label>
+				    <label><input type="radio" name="nashui" value="115"  />纳税5万以上</label>
+				    <label><input type="radio" name="nashui" value="116"  />纳税10万以上</label>
+				</div>
+			</li>
+			<li>
+      			<strong>工薪族</strong>
+      			<div class="label-list">
+      			    <label><input type="radio" name="work" value="20"  />有社保公积金</label>
+					<label><input type="radio" name="work" value="21" />单社保</label>
+					<label><input type="radio" name="work" value="22" >有打卡</label>
+				    <label><input type="radio" name="work" value="23" >有个税</label>
+				    <label><input type="radio" name="work" value="24" >国企事业单位</label>
+      			</div>
+      		</li>
+			<li>
+				<strong>房产</strong>
+				<div class="label-list">
+					<label><input type="radio" name="house" value="30"  />全款房</label>
+					<label><input type="radio" name="house" value="31"  />按揭房</label>
+					<label><input type="radio" name="house" value="32"  />抵押房</label>
+					<label><input type="radio" name="house" value="33"  />公寓房</label>
+					<label><input type="radio" name="house" value="34"  />抵押民间房</label>
+					<label><input type="radio" name="house" value="35"  />共有房</label>
+					<label><input type="radio" name="house" value="36"  />外地按揭房</label>
+					<label><input type="radio" name="house" value="37"  />自建房</label>
+				</div>
+			</li>
+			<li>
+				<strong>车产</strong>
+				<div class="label-list">
+					<label><input type="radio" name="car" value="40"  />有车</label>
+					<label><input type="radio" name="car" value="41"  />按揭车</label>
+					<label><input type="radio" name="car" value="42"  />8年以上</label>
+				    <label><input type="radio" name="car" value="43"  />抵押车</label>
+				</div>
+			</li>
+			<li>
+				<strong>保单</strong>
+				<div class="label-list">
+					<label><input type="radio" name="baodan" value="50"  />保单年缴2400以上</label>
+				</div>
+			</li>
+			<li>
+				<strong>婚姻情况</strong>
+				<div class="label-list">
+					<label><input type="radio" name="marriage" value="60"  />已婚双签</label>
+					<label><input type="radio" name="marriage" value="61"  />已婚单签</label>
+					<label><input type="radio" name="marriage" value="62"  />离异单身</label>
+				</div>
+			</li>
+      		<input type="hidden" value="" id="hid" name="hid">
+      		<input type="button" value="清除" class="cleanBtn" onclick="uncheckAll();" >
+      		<input type="button" value="确定" class="submitBtn" >
+			<input class="md-close btn-sm btn-primary outBtn" value="取消">
+      	</ul>
+      </form>
+    </div>
+  </div>
+  <div class="md-overlay"></div>
+
+<link href="https://guwen.zhudaicms.com/default/manage/css/modal_clientinfo.css?5" rel="stylesheet">
+<script src="https://guwen.zhudaicms.com/default/manage/js/classie.js"></script>
+<script src="https://guwen.zhudaicms.com/default/manage/js/modalEffects.js"></script>
+<script language="javascript">
+/**
+ * 清除选择
+ */
+ function uncheckAll() 
+ { 
+ 	// 获取页面上所有的复选框
+ 	const checkboxes = document.querySelectorAll('.hbox-list input[type="radio"]');
+ 	 
+ 	// 遍历并取消选中所有复选框
+ 	checkboxes.forEach(checkbox => {
+ 	  checkbox.checked = false;
+ 	});
+ }
+
+/**
+ * 表单提交
+ */
+$('.submitBtn').click(function(){
+    var formData = $('#labelForm').serialize(); // 序列化表单数据
+    $.ajax({
+        type: 'POST', // 请求类型
+        url: '/manage/kefu_clients/biaoqian_save', // 表单提交地址
+        data: formData,
+        dataType:'json',
+        success: function(d) {
+            if(~~d['code']==200){
+            	html = [];
+            	for(var i in d['data']){
+            		html.push('<b>'+d['data'][i]+'</b>');	
+            	}
+            	$('#custom_label').html(html.join(''));
+            }else{
+                alert(d['msg']);
+            }
+        },
+        error: function(xhr, status, error) {
+            alert('请求异常,请刷新后重试!');
+        },
+        complete:function(){
+        	$('#modal-1').removeClass('md-show');
+        }
+    });
+});
+</script>
+
+</form>
+</html>
