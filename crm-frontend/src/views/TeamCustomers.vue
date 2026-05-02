@@ -167,23 +167,15 @@
         />
       </div>
     </el-card>
-
-    <!-- 客户详情抽屉 -->
-    <CustomerDetail
-      :visible="detailVisible"
-      :customer-id="curId"
-      @close="detailVisible = false"
-      @updated="loadData()"
-    />
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { Search, Refresh, Download } from '@element-plus/icons-vue'
 import api from '../api'
-import CustomerDetail from './customers/CustomerDetail.vue'
 
 // 筛选参数
 const params = reactive({
@@ -203,8 +195,6 @@ const loading = ref(false)
 const departments = ref([])
 const allUsers = ref([])
 const assignTo = reactive({})
-const detailVisible = ref(false)
-const curId = ref(null)
 const exporting = ref(false)
 
 // 在职顾问
@@ -233,11 +223,12 @@ const poolTagText = (pt) => {
   return map[pt] || '其他'
 }
 
+const router = useRouter()
+
 const fmt = (t) => t ? t.replace('T', ' ').substring(0, 16) : '—'
 
 const openDetail = (row) => {
-  curId.value = row.id
-  detailVisible.value = true
+  router.push({ path: '/customer-detail', query: { id: row.id } })
 }
 
 // 加载数据

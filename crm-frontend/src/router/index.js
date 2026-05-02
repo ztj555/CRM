@@ -17,6 +17,7 @@ const routes = [
       { path: 'revenue', name: 'Revenue', component: () => import('../views/Revenue.vue') },
       { path: 'performance', name: 'Performance', component: () => import('../views/Performance.vue') },
       { path: 'team', name: 'Team', component: () => import('../views/Team.vue') },
+      { path: 'customer-detail', name: 'CustomerDetail', component: () => import('../views/customers/CustomerDetail.vue') },
       { path: 'team-customers', name: 'TeamCustomers', component: () => import('../views/TeamCustomers.vue') },
       { path: 'settings', name: 'Settings', component: () => import('../views/Settings.vue') },
       { path: 'statistics', name: 'Statistics', component: () => import('../views/Statistics.vue') },
