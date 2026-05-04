@@ -314,6 +314,9 @@
             <el-button size="small" type="info" @click="batchToPool">
               <el-icon><Upload /></el-icon> 批量转公共池
             </el-button>
+            <el-button size="small" type="warning" @click="batchToRedistribute">
+              <el-icon><Share /></el-icon> 批量加入再分配
+            </el-button>
             <el-button v-if="isManager" size="small" type="primary" @click="batchAssignVisible = true">
               <el-icon><User /></el-icon> 批量分配
             </el-button>
@@ -353,7 +356,7 @@
           <template #default="{row}"><el-tag size="small" :type="statusTagType[row.status]">{{ row.statusText }}</el-tag></template>
         </el-table-column>
         <el-table-column label="星级" width="55">
-          <template #default="{row}"><span style="color:#E6A23C">★</span>{{ row.star_level }}</template>
+          <template #default="{row}"><span style="color:#E6A23C">★</span>{{ row.star_level }}星</template>
         </el-table-column>
         <el-table-column label="额度" prop="apply_amount" width="60" v-if="!hiddenColumns.includes('apply_amount')">
           <template #default="{row}">{{ row.apply_amount ? row.apply_amount + '万' : '—' }}</template>
@@ -399,6 +402,18 @@
         </el-table-column>
         <el-table-column label="最后备注" width="130">
           <template #default="{row}">{{ fmt(row.last_remark_at) }}</template>
+        </el-table-column>
+        <el-table-column label="操作" width="220" fixed="right">
+          <template #default="{row}">
+            <el-button size="small" type="primary" link @click.stop="openCustomerDetail(row.id)">查看</el-button>
+            <el-button size="small" type="warning" link @click.stop="doToPool(row)">转公共池</el-button>
+            <el-button size="small" :type="row.is_important ? 'danger' : 'default'" link @click.stop="doMarkImportant(row)">
+              {{ row.is_important ? '取消重要' : '重要' }}
+            </el-button>
+            <el-button size="small" :type="row.is_locked ? 'info' : 'default'" link @click.stop="doLock(row)">
+              {{ row.is_locked ? '解锁' : '锁定' }}
+            </el-button>
+          </template>
         </el-table-column>
       </el-table>
 
@@ -653,8 +668,9 @@
 import { ref, reactive, computed, onMounted, inject } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { getCustomers, getAllOptions, createCustomer, checkPhone, getMyCustomerCount, createReminder, getTeam, getRemarks, addRemark, getTransferHistory, getSettings,
-  updateCustomer, getInactiveCustomers, activateCustomer, getTeamImportantCustomers } from '../../api'
-import { Connection, Loading, Edit, Upload, User, CircleCheck } from '@element-plus/icons-vue'
+  updateCustomer, getInactiveCustomers, activateCustomer, getTeamImportantCustomers,
+  toPool, markImportant, lockCustomer } from '../../api'
+import { Connection, Loading, Edit, Upload, User, CircleCheck, Share } from '@element-plus/icons-vue'
 import { Star, Refresh, Search, Bell, Wallet, Close } from '@element-plus/icons-vue'
 
 // 从 Layout 注入打开详情的方法
@@ -680,7 +696,7 @@ const quickDate = ref(0)  // 0=自定义,1=今日,2=昨天,3=最近7天,4=本月
 const params = reactive({
   keyword:'', status:-1, star:-1, loan_type:-1, locked:-1, important:-1, repay_status:-1,
   source:'', start_date:'', end_date:'', remark_keyword:'',
-  no_remark_days:0, time_type:'created', data_type:0,
+  no_remark_days:0, time_type:'created', data_type:1,  // 1=原始数据(仅pool_type=1)，与再分配池完全独立
   has_house:-1, has_car:-1, has_social_security:-1, has_housing_fund:-1, has_enterprise:-1,
   has_salary_payment:-1, has_insurance:-1, has_credit_card:-1,
   qual_keyword:'', tag:'',
@@ -718,7 +734,7 @@ const activeFilterCount = computed(() => {
   if (params.remark_history !== -1) count++
   if (params.qual_keyword) count++
   if (params.tag) count++
-  if (params.data_type !== 0) count++
+  if (params.data_type !== 1) count++
   if (params.time_type !== 'created') count++
   return count
 })
@@ -726,6 +742,32 @@ const activeFilterCount = computed(() => {
 const statusTagType = {0:'',1:'success',2:'info',3:'warning',4:'warning',5:'',6:'',7:'success',8:'success',9:'danger',10:'',11:'info',12:'danger',13:'danger',14:'danger',15:'',16:'danger',17:'danger',18:''}
 
 const fmt = (t) => t ? t.replace('T',' ').substring(0,16) : '—'
+
+// ==================== 行内操作 ====================
+const doToPool = async (row) => {
+  try {
+    await ElMessageBox.confirm(`确定将客户「${row.name || row.id}」加入公共池？`, '加入公共池', { type: 'warning' })
+    await toPool(row.id)
+    ElMessage.success('已加入公共池')
+    loadData(params.page)
+  } catch (e) {
+    if (e !== 'cancel') { ElMessage.error('操作失败'); console.error(e) }
+  }
+}
+const doMarkImportant = async (row) => {
+  try {
+    await markImportant(row.id)
+    ElMessage.success(row.is_important ? '已取消重要' : '已标记重要')
+    loadData(params.page)
+  } catch (e) { ElMessage.error('操作失败'); console.error(e) }
+}
+const doLock = async (row) => {
+  try {
+    await lockCustomer(row.id)
+    ElMessage.success(row.is_locked ? '已解锁' : '已锁定')
+    loadData(params.page)
+  } catch (e) { ElMessage.error('操作失败'); console.error(e) }
+}
 
 const onDateChange = (val) => {
   if (val && val.length === 2) {
@@ -824,7 +866,7 @@ const resetParams = () => {
   Object.assign(params, {
     keyword:'', status:-1, star:-1, loan_type:-1, locked:-1, important:-1, repay_status:-1,
     source:'', start_date:'', end_date:'', remark_keyword:'',
-    no_remark_days:0, time_type:'created', data_type:0, page:1,
+    no_remark_days:0, time_type:'created', data_type:1, page:1,
     has_house:-1, has_car:-1, has_social_security:-1, has_housing_fund:-1, has_enterprise:-1,
     has_salary_payment:-1, has_insurance:-1, has_credit_card:-1,
     qual_keyword:'', tag:'',
@@ -1105,6 +1147,27 @@ const batchToPool = async () => {
   finally { batchLoading.value = false }
 }
 
+const batchToRedistribute = async () => {
+  if (!selectedRows.value.length) return
+  const me = JSON.parse(localStorage.getItem('user') || '{}')
+  if (!me.id) return ElMessage.warning('无法获取当前用户信息')
+  await ElMessageBox.confirm(`确定将选中的 ${selectedRows.value.length} 个客户加入再分配？`, '批量加入再分配', { type: 'warning' })
+  batchLoading.value = true
+  try {
+    const res = await fetch('/api/customers/batch-to-redistribute', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+      body: JSON.stringify({ customer_ids: selectedRows.value.map(r => r.id) })
+    })
+    const d = await res.json()
+    ElMessage.success(`已将 ${d.assigned} 个客户加入再分配`)
+    selectedRows.value = []
+    tableRef.value?.clearSelection()
+    loadData(1)
+  } catch(e) { if (e !== 'cancel') ElMessage.error(e.detail || '批量操作失败') }
+  finally { batchLoading.value = false }
+}
+
 const doBatchAssign = async () => {
   if (!batchAssignAdvisor.value) return ElMessage.warning('请选择目标顾问')
   batchLoading.value = true
@@ -1141,6 +1204,7 @@ onMounted(async () => {
     hiddenColumns.value = s.hidden_columns || []
   } catch(e) {}
 })
+
 </script>
 
 <style scoped>

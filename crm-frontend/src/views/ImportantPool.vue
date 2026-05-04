@@ -69,7 +69,7 @@
           <template #default="{row}"><el-tag size="small" :type="statusTagType[row.status]">{{ row.statusText }}</el-tag></template>
         </el-table-column>
         <el-table-column label="星级" width="55">
-          <template #default="{row}"><span style="color:#E6A23C">★</span>{{ row.star_level }}</template>
+          <template #default="{row}"><span style="color:#E6A23C">★</span>{{ row.star_level }}星</template>
         </el-table-column>
         <el-table-column label="额度" prop="apply_amount" width="60">
           <template #default="{row}">{{ row.apply_amount ? row.apply_amount + '万' : '—' }}</template>

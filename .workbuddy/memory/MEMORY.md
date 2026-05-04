@@ -115,3 +115,59 @@
 - `PUT /api/users/{uid}/status` - 启用/禁用用户
 - `add_remark()` 新增 `new_status: Optional[int]` 字段支持备注同时改状态
 - `get_remarks()` JOIN User 返回 advisor_name
+
+## GitHub仓库
+- URL: https://github.com/ztj555/CRM
+- 分支: main
+- v1.0.0 (498f22e) — 初始版本
+- v1.1 (c3c4d70) — 客户详情页重构为全页面ERP风格
+
+## v1.1 客户详情页重构（2026-05-02）
+
+### 重大变更
+- 移除外层 el-dialog，改为完整页面路由 `/customer-detail?id=xxx`
+- 路由：`/customer-detail`（新增，router/index.js）
+- TeamCustomers.vue：点击客户名改为 `router.push({ path: '/customer-detail', query: { id } })`
+
+### 新布局结构
+- 顶部 `.cd-topbar`：紧凑横排，ID+姓名标签+星级+状态下拉+7个操作按钮
+- 主体 `.cd-body`：flex布局，left 75% / right 25%
+- 左侧 `.cd-main`：Tab栏(9项)+双列Grid网格密集展示
+- 右侧 `.cd-sidebar`：状态+资质摘要+快捷红色标签组+备注表单+历史记录Tab(跟进/备忘/分配)
+- 配色：灰白底#f0f2f5 + 蓝色Tab(#409eff) + 红色快捷标签(#c0392b)
+- 详情页通过 `useRoute().query.id` 获取客户ID
+
+## 开发进度（2026-05-04）- 导入系统完善
+
+### 问题
+- 导入Excel显示"成功0条"，根因：手机号解析未兼容科学计数法/Excel数字格式
+- 无效手机号被静默跳过，前端无明细提示
+- 导入日志Tab缺少"无效跳过"列
+
+### 后端改进
+- 新增 `_parse_phone()` 函数：兼容数字/字符串/科学计数法（如 `1.3800138E+10`），截取前11位
+- `ImportBatch` 表新增 `skip_detail` 字段（JSON，记录每行跳过原因）
+- `to_dict()` 新增返回 `skip_count` 和 `skip_detail`
+- 导入端点新增：记录所有跳过原因、返回 `skip_reasons`/`skip_count`/`missing_columns`
+- 全部失败时（success=0且有data_rows）返回 HTTP 400 并提示示例原因
+
+### 前端新增/改进
+- **Import.vue（新建）**：独立数据导入页面（路径 `/import`）
+  - 左侧：上传区 + 模板下载 + 导入结果卡片（成功/重复/无效跳过/异常）
+  - 右侧：导入批次历史列表（含跳过数列，操作：详情/转公共池/撤销）
+  - 跳过原因详情弹窗
+- **Redistribution.vue**：导入弹窗重写，展示详细结果 + 可展开跳过原因
+- **Logs.vue**：导入日志Tab新增"无效跳过"列 + "详情"按钮 + 跳过原因弹窗
+
+### 路由/菜单
+- `router/index.js` 新增 `path: 'import'` 路由
+- `Layout.vue`：`customerMenu` 新增"数据导入"条目；`menuComponentMap` 新增 `menu-import`
+
+### 文件变更
+- `backend/main.py`：新增 `_parse_phone()` + 改进 `import-file` 端点 + 改进 `ImportBatch.to_dict()`
+- `crm-frontend/src/views/customers/Import.vue`：（新建）
+- `crm-frontend/src/views/customers/Redistribution.vue`：导入弹窗改进
+- `crm-frontend/src/views/Logs.vue`：导入日志Tab改进
+- `crm-frontend/src/router/index.js`：新增import路由
+- `crm-frontend/src/views/Layout.vue`：菜单新增"数据导入"
+

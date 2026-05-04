@@ -393,7 +393,7 @@ import { fmt } from '../utils/format'
 import api from '../api'
 import {
   getStatsDaily, getStatsRemarkCounts, getStatsMyRemarks,
-  getStatsUpcomingPool, getStatsNewCustomerStats,
+  getStatsUpcomingPool, getStatsNewCustomerStats, getStatsPerformance,
   getLoginLogs, getOperationLogs, getOperationActionList,
   getTransferLogs, getImportLogs, getSmsLogs,
   getVisitScanLogs, getSourceDetailStats, getSocialMediaStats, getApiSourceStats

@@ -25,6 +25,7 @@ const routes = [
       { path: 'ranking', name: 'Ranking', component: () => import('../views/Ranking.vue') },
       { path: 'notice', name: 'Notice', component: () => import('../views/Notice.vue') },
       { path: 'call-records', name: 'CallRecords', component: () => import('../views/CallRecords.vue') },
+      { path: 'import', name: 'Import', component: () => import('../views/customers/Import.vue') },
       { path: '', redirect: '/dashboard' }
     ]
   }

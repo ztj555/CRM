@@ -109,6 +109,14 @@
             <el-option label="近半年" :value="180" />
           </el-select>
         </div>
+        <!-- 备注顾问 -->
+        <div class="filter-group">
+          <span class="filter-label">备注顾问</span>
+          <el-select v-model="params.remark_advisor_id" clearable filterable placeholder="不限" style="width:120px" size="small">
+            <el-option label="不限" :value="-1" />
+            <el-option v-for="u in remarkAdvisorList" :key="u.id" :label="u.name || u.username" :value="u.id" />
+          </el-select>
+        </div>
         <!-- 锁定客户 -->
         <div class="filter-group">
           <span class="filter-label">锁定客户</span>
@@ -170,8 +178,16 @@
     </el-card>
 
     <el-card>
-      <el-table :data="customers" v-loading="loading" @row-click="openDetail" row-class-name="clickable-row" size="small" :stripe="true">
-        <el-table-column label="ID" prop="id" width="60" />
+      <!-- 批量操作栏 -->
+      <div v-if="selectedRows.length > 0" class="batch-bar">
+        <span style="font-size:13px">已选 <b style="color:#E91E63">{{ selectedRows.length }}</b> 条</span>
+        <el-button type="primary" size="small" @click="batchClaim">批量领取</el-button>
+        <el-button v-if="isAdmin" type="warning" size="small" @click="openBatchAssignDialog">批量分配</el-button>
+      </div>
+
+      <el-table :data="customers" v-loading="loading" @row-click="openDetail" row-class-name="clickable-row" size="small" :stripe="true"
+        @selection-change="onSelectionChange">
+        <el-table-column type="selection" width="40" />
         <el-table-column label="姓名" prop="name" width="90">
           <template #default="{row}">
             <span :style="{color: row.is_important ? '#F56C6C' : ''}">{{ row.name || '—' }}</span>
@@ -188,7 +204,7 @@
           </template>
         </el-table-column>
         <el-table-column label="星级" width="70">
-          <template #default="{row}"><span style="color:#E6A23C">★</span>{{ row.star_level }}</template>
+          <template #default="{row}"><span style="color:#E6A23C">★</span>{{ row.star_level }}星</template>
         </el-table-column>
         <el-table-column label="额度(万)" prop="apply_amount" width="80" />
         <el-table-column label="贷款类型" prop="loanTypeText" width="80" />
@@ -196,32 +212,63 @@
         <el-table-column label="创建时间" prop="created_at" width="140">
           <template #default="{row}">{{ fmt(row.created_at) }}</template>
         </el-table-column>
-        <el-table-column label="操作" width="80">
+        <el-table-column label="操作" width="160">
           <template #default="{row}">
             <el-button type="primary" size="small" @click.stop="handleFromPool(row)">领取</el-button>
+            <el-button v-if="isAdmin" type="warning" size="small" @click.stop="openAssignDialog(row)">分配</el-button>
           </template>
         </el-table-column>
       </el-table>
       <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center">
-        <span style="color:#888; font-size:13px">共 {{ total }} 条</span>
-        <el-pagination
-          background
-          layout="prev,pager,next"
-          :total="total"
-          :page-size="params.page_size"
-          v-model:current-page="params.page"
-          @current-change="loadData"
-        />
+        <div style="display:flex; align-items:center; gap:8px">
+          <span style="color:#888; font-size:13px">共 <b style="color:#E91E63">{{ total }}</b> 条</span>
+          <span style="color:#888; font-size:13px">每页</span>
+          <el-select v-model="params.page_size" size="small" style="width:80px" @change="loadData(1)">
+            <el-option :label="10" :value="10" /><el-option :label="20" :value="20" />
+            <el-option :label="50" :value="50" /><el-option :label="100" :value="100" /><el-option :label="200" :value="200" />
+          </el-select>
+        </div>
+        <el-pagination background layout="prev,pager,next" :total="total" :page-size="params.page_size" v-model:current-page="params.page" @current-change="loadData" />
       </div>
     </el-card>
+
+    <!-- 单个分配对话框 -->
+    <el-dialog v-model="assignDialogVisible" title="分配给顾问" width="420px" :close-on-click-modal="false">
+      <div style="padding:8px 0">
+        <span style="font-size:14px">选择目标顾问：</span>
+        <el-select v-model="assignTargetUserId" placeholder="请选择顾问" style="width:100%;margin-top:12px" size="large">
+          <el-option v-for="u in allUsersList" :key="u.id" :label="u.real_name || u.username" :value="u.id" />
+        </el-select>
+      </div>
+      <template #footer>
+        <el-button @click="assignDialogVisible = false">取消</el-button>
+        <el-button type="primary" @click="doAssign">确认分配</el-button>
+      </template>
+    </el-dialog>
+
+    <!-- 批量分配对话框 -->
+    <el-dialog v-model="batchAssignDialogVisible" title="批量分配给顾问" width="420px" :close-on-click-modal="false">
+      <div style="padding:8px 0">
+        <span style="font-size:14px">已选 <b>{{ selectedRows.length }}</b> 条客户，选择目标顾问：</span>
+        <el-select v-model="batchAssignTargetUserId" placeholder="请选择顾问" style="width:100%;margin-top:12px" size="large">
+          <el-option v-for="u in allUsersList" :key="u.id" :label="u.real_name || u.username" :value="u.id" />
+        </el-select>
+      </div>
+      <template #footer>
+        <el-button @click="batchAssignDialogVisible = false">取消</el-button>
+        <el-button type="warning" @click="doBatchAssign">确认批量分配</el-button>
+      </template>
+    </el-dialog>
+
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted, inject } from 'vue'
+import { ref, reactive, computed, onMounted, onUnmounted, inject } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search } from '@element-plus/icons-vue'
-import { getPool, fromPool, getPoolCount, getAllOptions, getDepts, getTeamMembers } from '../api'
+import { getPool, fromPool, getPoolCount, getAllOptions, getDepts, getTeamMembers, getUsers, poolAssign, poolBatchAssign } from '../api'
+import { useRouter } from 'vue-router'
 
 const openCustomerDetail = inject('openCustomerDetail', null)
 
@@ -229,14 +276,24 @@ const customers = ref([])
 const total = ref(0)
 const loading = ref(false)
 const poolCount = ref(0)
+const selectedRows = ref([])
 const statusMap = ref({})
 const loanTypeMap = ref({})
 const sourcesList = ref([])
 const deptList = ref([])
 const memberList = ref([])
+const remarkAdvisorList = ref([])
 const selectedStatuses = ref([])
 const selectedStars = ref([])
 const selectedSources = ref([])
+const currentUser = ref({})
+const allUsersList = ref([])
+const isAdmin = computed(() => (currentUser.value?.role || 0) >= 2)
+const assignDialogVisible = ref(false)
+const assignTargetUserId = ref(null)
+const assignCustomerId = ref(null)
+const batchAssignDialogVisible = ref(false)
+const batchAssignTargetUserId = ref(null)
 
 const params = reactive({
   kw_type: '',
@@ -263,6 +320,7 @@ const params = reactive({
   remark_count_min: 0,
   remark_count_max: 0,
   remark_history: -1,
+  remark_advisor_id: -1,
   dept_id: -1,
   other_condition: -1,
   quals_keyword: '',
@@ -290,6 +348,7 @@ const activeFilterCount = computed(() => {
   if (params.remark_keyword) c++
   if (params.remark_count_min > 0 || params.remark_count_max > 0) c++
   if (params.remark_history !== -1) c++
+  if (params.remark_advisor_id !== -1) c++
   if (params.dept_id !== -1) c++
   if (params.other_condition !== -1) c++
   if (params.quals_keyword) c++
@@ -316,12 +375,13 @@ const resetParams = () => {
     age_min: 0, age_max: 0, marital_status: -1,
     has_insurance: -1, has_credit_card: -1,
     no_remark_days: 0, remark_keyword: '',
-    remark_count_min: 0, remark_count_max: 0, remark_history: -1,
+    remark_count_min: 0, remark_count_max: 0, remark_history: -1, remark_advisor_id: -1,
     dept_id: -1, other_condition: -1, quals_keyword: ''
   })
   selectedStatuses.value = []
   selectedStars.value = []
   selectedSources.value = []
+  selectedRows.value = []
   memberList.value = []
   loadData(1)
 }
@@ -361,6 +421,7 @@ const loadData = async (page = params.page) => {
     if (p.remark_count_min <= 0) delete p.remark_count_min
     if (p.remark_count_max <= 0) delete p.remark_count_max
     if (p.remark_history < 0) delete p.remark_history
+    if (p.remark_advisor_id < 0) delete p.remark_advisor_id
     if (p.dept_id < 0) delete p.dept_id
     if (p.other_condition < 0) delete p.other_condition
     if (!p.quals_keyword) delete p.quals_keyword
@@ -379,13 +440,94 @@ const handleFromPool = async (row) => {
   await ElMessageBox.confirm(`确定领取客户「${row.name || row.phone}」？`, '领取确认', { type: 'warning' })
   try {
     await fromPool(row.id)
-    ElMessage.success('领取成功！该客户已进入您的「我的客户」列表')
+    ElMessage.success('领取成功！该客户已进入再分配池')
     poolCount.value = (await getPoolCount()).count
     loadData()
   } catch(e) { ElMessage.error(e.detail || e || '领取失败') }
 }
 
+// 多选变化
+const onSelectionChange = (selection) => {
+  selectedRows.value = selection
+}
+
+// 批量领取
+const batchClaim = async () => {
+  if (selectedRows.value.length === 0) return
+  await ElMessageBox.confirm(
+    `确定批量领取选中的 ${selectedRows.value.length} 名客户？`,
+    '批量领取确认',
+    { type: 'warning' }
+  )
+  try {
+    const promises = selectedRows.value.map(row => fromPool(row.id))
+    await Promise.all(promises)
+    ElMessage.success(`成功领取 ${selectedRows.value.length} 名客户！`)
+    selectedRows.value = []
+    poolCount.value = (await getPoolCount()).count
+    loadData()
+  } catch(e) { ElMessage.error(e.detail || e || '批量领取失败') }
+}
+
+// ============ 管理员分配功能 ============
+// 单个分配
+const openAssignDialog = (row) => {
+  assignCustomerId.value = row.id
+  assignTargetUserId.value = null
+  assignDialogVisible.value = true
+}
+
+const doAssign = async () => {
+  if (!assignTargetUserId.value) {
+    ElMessage.warning('请选择目标顾问')
+    return
+  }
+  try {
+    await poolAssign(assignCustomerId.value, assignTargetUserId.value)
+    ElMessage.success('分配成功！客户已归入再分配池')
+    assignDialogVisible.value = false
+    poolCount.value = (await getPoolCount()).count
+    loadData()
+  } catch(e) { ElMessage.error(e.detail || e || '分配失败') }
+}
+
+// 批量分配
+const openBatchAssignDialog = () => {
+  if (selectedRows.value.length === 0) {
+    ElMessage.warning('请先选择客户')
+    return
+  }
+  batchAssignTargetUserId.value = null
+  batchAssignDialogVisible.value = true
+}
+
+const doBatchAssign = async () => {
+  if (!batchAssignTargetUserId.value) {
+    ElMessage.warning('请选择目标顾问')
+    return
+  }
+  try {
+    await poolBatchAssign(selectedRows.value.map(r => r.id), batchAssignTargetUserId.value)
+    ElMessage.success('批量分配成功！客户已归入再分配池')
+    batchAssignDialogVisible.value = false
+    selectedRows.value = []
+    poolCount.value = (await getPoolCount()).count
+    loadData()
+  } catch(e) { ElMessage.error(e.detail || e || '批量分配失败') }
+}
+
 onMounted(async () => {
+  // 加载当前用户
+  try {
+    const u = JSON.parse(localStorage.getItem('user') || '{}')
+    currentUser.value = u
+    // 管理员/主管：加载所有用户用于分配
+    if ((u.role || 0) >= 2) {
+      const allRes = await getUsers()
+      allUsersList.value = Array.isArray(allRes) ? allRes : (allRes.items || [])
+    }
+  } catch(e) {}
+
   const opts = await getAllOptions()
   statusMap.value = opts.statusMap || {}
   loanTypeMap.value = opts.loanTypeMap || {}
@@ -396,8 +538,14 @@ onMounted(async () => {
     const deptRes = await getDepts()
     deptList.value = deptRes.departments || deptRes.items || []
   } catch(e) {}
+  // 加载所有顾问列表（用于备注顾问筛选）
+  try {
+    const usersRes = await getUsers()
+    remarkAdvisorList.value = Array.isArray(usersRes) ? usersRes : (usersRes.items || [])
+  } catch(e) {}
   loadData()
 })
+onUnmounted(() => {})
 </script>
 
 <style scoped>
@@ -407,4 +555,10 @@ onMounted(async () => {
 
 :deep(.clickable-row) { cursor: pointer; }
 :deep(.clickable-row:hover) { background: #f0f9ff !important; }
+
+.batch-bar {
+  display: flex; align-items: center; gap: 12px;
+  background: #fff7ed; border: 1px solid #f59e0b;
+  border-radius: 6px; padding: 8px 16px; margin-bottom: 12px;
+}
 </style>

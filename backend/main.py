@@ -105,6 +105,7 @@ class Customer(Base):
     created_at = Column(DateTime, default=datetime.now)
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
     qualifications = Column(JSON, default=dict)
+    import_batch_id = Column(Integer, ForeignKey("import_batches.id"), nullable=True)
 
     assignments = relationship("CustomerAssignment", back_populates="customer", cascade="all, delete-orphan")
     remarks = relationship("CustomerRemark", back_populates="customer", cascade="all, delete-orphan", order_by="desc(CustomerRemark.created_at)")
@@ -120,7 +121,8 @@ class Customer(Base):
                 "status": self.status, "star_level": self.star_level, "is_blacklisted": self.is_blacklisted,
                 "is_locked": self.is_locked, "is_important": self.is_important,
                 "last_remark_at": self.last_remark_at, "created_at": self.created_at,
-                "updated_at": self.updated_at, "qualifications": self.qualifications}
+                "updated_at": self.updated_at, "qualifications": self.qualifications,
+                "import_batch_id": self.import_batch_id}
 
 class CustomerAssignment(Base):
     __tablename__ = "customer_assignments"
@@ -131,6 +133,7 @@ class CustomerAssignment(Base):
     assigned_at = Column(DateTime, default=datetime.now)
     assigned_by = Column(BigInteger, default=0)
     status = Column(Integer, default=1)  # 1有效 0失效
+    import_batch_id = Column(Integer, ForeignKey("import_batches.id"), nullable=True)
 
     customer = relationship("Customer", back_populates="assignments")
     advisor = relationship("User", back_populates="assignments")
@@ -139,7 +142,8 @@ class CustomerAssignment(Base):
     def to_dict(self):
         return {"id": self.id, "customer_id": self.customer_id, "advisor_id": self.advisor_id,
                 "pool_type": self.pool_type, "assigned_at": self.assigned_at,
-                "assigned_by": self.assigned_by, "status": self.status}
+                "assigned_by": self.assigned_by, "status": self.status,
+                "import_batch_id": self.import_batch_id}
 
 class CustomerRemark(Base):
     __tablename__ = "customer_remarks"
@@ -417,6 +421,31 @@ class ImportLog(Base):
                 "error_msg": self.error_msg, "created_at": self.created_at}
 
 
+class ImportBatch(Base):
+    """导入批次"""
+    __tablename__ = "import_batches"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    operator_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    filename = Column(String(200), nullable=False)
+    total_count = Column(Integer, default=0)
+    success_count = Column(Integer, default=0)
+    duplicate_count = Column(Integer, default=0)
+    error_count = Column(Integer, default=0)
+    skip_count = Column(Integer, default=0)
+    skip_detail = Column(JSON, default=list)
+    status = Column(Integer, default=1)  # 1进行中 2完成 3已撤销
+    created_at = Column(DateTime, default=datetime.now)
+
+    def to_dict(self):
+        return {
+            "id": self.id, "operator_id": self.operator_id, "filename": self.filename,
+            "total_count": self.total_count, "success_count": self.success_count,
+            "duplicate_count": self.duplicate_count, "error_count": self.error_count,
+            "skip_count": self.skip_count, "skip_detail": self.skip_detail,
+            "status": self.status, "created_at": self.created_at
+        }
+
+
 class SmsLog(Base):
     """短信发送日志"""
     __tablename__ = "sms_logs"
@@ -587,6 +616,37 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+def _parse_phone(raw) -> str:
+    """兼容科学计数法解析手机号"""
+    s = str(raw).strip()
+    if not s or s in ('None', ''):
+        return ''
+    # 处理科学计数法：如 1.3800138E+10 → 13800138000
+    upper = s.upper()
+    if 'E' in upper or 'e' in upper:
+        try:
+            e_idx = max(upper.find('E'), upper.find('e'))
+            coeff_str = s[:e_idx]
+            exp_str = s[e_idx + 1:].strip()
+            coeff = float(coeff_str)
+            exp = int(exp_str)
+            digits = ''.join(c for c in coeff_str if c.isdigit())
+            dot_pos = coeff_str.find('.')
+            if dot_pos >= 0:
+                digits = digits[:dot_pos] + digits[dot_pos:]
+            exp_adj = exp - (len(coeff_str) - dot_pos - 1)
+            if exp_adj >= 0:
+                result = digits + '0' * exp_adj
+            else:
+                result = digits[:exp_adj] + '.' + digits[exp_adj:]
+            result = result.lstrip('0').lstrip('.')
+            return result[:11]
+        except Exception:
+            pass
+    # 普通处理：去掉所有非数字字符
+    return ''.join(c for c in s if c.isdigit())[:11]
 
 
 def hash_phone(phone: str) -> str:
@@ -2687,9 +2747,9 @@ async def import_file(file: UploadFile = File(...), user: User = Depends(get_cur
     if not file.filename.endswith(('.xlsx', '.xls')):
         raise HTTPException(400, "仅支持 xlsx/xls 格式")
 
-    content = await file.read()
+    file_content = await file.read()
     try:
-        wb = openpyxl.load_workbook(BytesIO(content))
+        wb = openpyxl.load_workbook(BytesIO(file_content))
     except Exception:
         raise HTTPException(400, "文件格式错误，无法读取")
 
@@ -2700,6 +2760,16 @@ async def import_file(file: UploadFile = File(...), user: User = Depends(get_cur
 
     headers = [str(h).strip() if h else '' for h in rows[0]]
     data_rows = rows[1:]
+
+    # 先创建导入批次
+    batch = ImportBatch(
+        operator_id=user.id,
+        filename=file.filename,
+        total_count=len(data_rows),
+        status=1
+    )
+    db.add(batch)
+    db.flush()
 
     # 列索引映射
     def col(name):
@@ -2720,20 +2790,29 @@ async def import_file(file: UploadFile = File(...), user: User = Depends(get_cur
     GENDER_MAP_R = {'男': 1, '女': 2, '未知': 0}
     LOAN_TYPE_MAP_R = {'信用贷': 1, '车抵贷': 2, '房抵贷': 3, '保单贷': 4, '学历贷': 5, '抵押贷': 6, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6}
 
-    count = 0
-    errors = []
+    success_count = 0
+    duplicate_count = 0
+    skip_count = 0
+    skip_detail = []
+
     for i, row in enumerate(data_rows, 2):
         try:
-            phone = str(row[phone_i]).strip() if phone_i >= 0 else ''
-            if not phone or phone in ('None', ''):
+            raw_phone = row[phone_i] if phone_i >= 0 else None
+            phone = _parse_phone(raw_phone)
+            if not phone:
+                skip_detail.append({"row": i, "reason": "手机号为空"})
+                skip_count += 1
                 continue
-            phone = ''.join(c for c in phone if c.isdigit())
             if len(phone) < 11:
+                skip_detail.append({"row": i, "reason": f"手机号位数不足({phone})"})
+                skip_count += 1
                 continue
 
             ph = hash_phone(phone)
             existing = db.query(Customer).filter(Customer.phone_hash == ph).first()
             if existing:
+                skip_detail.append({"row": i, "reason": "手机号已存在"})
+                duplicate_count += 1
                 continue
 
             gender = GENDER_MAP_R.get(str(row[gender_i]).strip() if gender_i >= 0 else '', 0)
@@ -2757,19 +2836,109 @@ async def import_file(file: UploadFile = File(...), user: User = Depends(get_cur
                 age=age,
                 loan_type=loan_type,
                 apply_amount=amount,
-                source=str(row[source_i]).strip() if source_i >= 0 else 'BXMJ-excel'
+                source=str(row[source_i]).strip() if source_i >= 0 else 'BXMJ-excel',
+                import_batch_id=batch.id
             )
             db.add(c)
             db.flush()
 
-            assign = CustomerAssignment(customer_id=c.id, advisor_id=user.id, pool_type=1)
+            assign = CustomerAssignment(
+                customer_id=c.id, advisor_id=user.id, pool_type=1,
+                import_batch_id=batch.id
+            )
             db.add(assign)
-            count += 1
+            success_count += 1
         except Exception as e:
-            errors.append(f"行{i}: {str(e)}")
+            skip_detail.append({"row": i, "reason": str(e)})
+            skip_count += 1
+
+    batch.success_count = success_count
+    batch.duplicate_count = duplicate_count
+    batch.skip_count = skip_count
+    batch.skip_detail = skip_detail[:200]  # 最多记录200条
+    batch.status = 2
 
     db.commit()
-    return {"count": count, "errors": errors[:10]}
+    return {
+        "batch_id": batch.id,
+        "success": success_count,
+        "duplicate": duplicate_count,
+        "skip": skip_count,
+        "total": len(data_rows),
+        "skip_detail": skip_detail[:20],
+        "msg": f"成功{success_count}条，重复{duplicate_count}条，无效跳过{skip_count}条"
+    }
+
+
+# ===================== 导入批次管理 =====================
+
+@app.get("/api/import/batches")
+def list_import_batches(
+    user: User = Depends(get_current_user), db: Session = Depends(get_db)
+):
+    """获取导入批次列表"""
+    batches = db.query(ImportBatch).filter(
+        ImportBatch.operator_id == user.id
+    ).order_by(ImportBatch.created_at.desc()).limit(50).all()
+    return [b.to_dict() for b in batches]
+
+
+@app.get("/api/import/batches/{batch_id}")
+def get_import_batch(batch_id: int, db: Session = Depends(get_db)):
+    """获取导入批次详情"""
+    batch = db.query(ImportBatch).filter(ImportBatch.id == batch_id).first()
+    if not batch:
+        raise HTTPException(404, "批次不存在")
+    return batch.to_dict()
+
+
+@app.post("/api/import/batches/{batch_id}/cancel")
+def cancel_import_batch(batch_id: int, user: User = Depends(require_manager), db: Session = Depends(get_db)):
+    """撤销导入批次：彻底删除该批次所有客户及相关数据"""
+    batch = db.query(ImportBatch).filter(ImportBatch.id == batch_id).first()
+    if not batch:
+        raise HTTPException(404, "批次不存在")
+    if batch.status == 3:
+        raise HTTPException(400, "批次已撤销")
+
+    # 找出该批次所有客户ID
+    cust_ids = [r[0] for r in db.query(Customer.id).filter(Customer.import_batch_id == batch_id).all()]
+
+    # 彻底删除客户（cascade会删关联的assignments、remarks等）
+    if cust_ids:
+        db.query(Customer).filter(Customer.id.in_(cust_ids)).delete(synchronize_session=False)
+
+    batch.status = 3
+    db.commit()
+    return {"msg": f"已撤销批次{batch_id}，删除{len(cust_ids)}条客户"}
+
+
+@app.post("/api/import/batches/{batch_id}/to-pool")
+def import_batch_to_pool(batch_id: int, user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    """将批次中已导入的客户转移到公共池"""
+    batch = db.query(ImportBatch).filter(ImportBatch.id == batch_id).first()
+    if not batch:
+        raise HTTPException(404, "批次不存在")
+
+    cust_ids = [r[0] for r in db.query(Customer.id).filter(Customer.import_batch_id == batch_id).all()]
+    count = 0
+    for cid in cust_ids:
+        # 失效该客户所有当前有效分配
+        db.query(CustomerAssignment).filter(
+            CustomerAssignment.customer_id == cid,
+            CustomerAssignment.status == 1
+        ).update({"status": 0})
+        # 检查是否已在公共池
+        exists = db.query(CustomerAssignment).filter(
+            CustomerAssignment.customer_id == cid,
+            CustomerAssignment.pool_type == 3,
+            CustomerAssignment.status == 1
+        ).first()
+        if not exists:
+            db.add(CustomerAssignment(customer_id=cid, advisor_id=user.id, pool_type=3, assigned_by=user.id))
+            count += 1
+    db.commit()
+    return {"msg": f"已将{count}条客户转入公共池"}
 
 
 # ===================== 系统信息 =====================

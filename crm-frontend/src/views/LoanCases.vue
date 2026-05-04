@@ -48,7 +48,7 @@
     </el-card>
 
     <el-card>
-      <el-table :data="cases" v-loading="loading" size="small" :stripe="true" @row-click="openDetail">
+      <el-table :data="cases" v-loading="loading" size="small" :stripe="true" @row-click="openDetail" :max-height="tableMaxH">
         <el-table-column label="ID" prop="id" width="60" />
         <el-table-column label="客户姓名" width="90">
           <template #default="{row}">
@@ -144,11 +144,30 @@
     </el-dialog>
 
     <!-- 批款/收款弹窗 -->
-    <el-dialog v-model="stageVisible" :title="stageDialogTitle" width="400px">
-      <el-form label-width="100px">
+    <el-dialog v-model="stageVisible" :title="stageDialogTitle" width="480px">
+      <el-form label-width="110px">
         <el-form-item :label="stageDialogTitle + '额度(万)'">
           <el-input-number v-model="stageAmount" :min="0" :precision="2" style="width:100%" />
         </el-form-item>
+        <!-- 收款时才填收款方式+费用 -->
+        <template v-if="stageTarget?.stage === 3">
+          <el-form-item label="收款方式" required>
+            <el-select v-model="stageCollectionMethod" placeholder="请选择收款方式" style="width:100%">
+              <el-option label="代扣" value="代扣" />
+              <el-option label="转账给分公司负责人" value="转账给分公司负责人" />
+              <el-option label="POS机收款" value="POS机收款" />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="渠道费(元)">
+            <el-input-number v-model="stageChannelFee" :min="0" :precision="2" style="width:100%" placeholder="0.00" />
+          </el-form-item>
+          <el-form-item label="诚意金(元)">
+            <el-input-number v-model="stageEarnestMoney" :min="0" :precision="2" style="width:100%" placeholder="0.00" />
+          </el-form-item>
+          <el-form-item label="净收入(元)">
+            <el-input-number v-model="stageNetIncome" :min="0" :precision="2" style="width:100%" placeholder="0.00" />
+          </el-form-item>
+        </template>
         <el-form-item label="备注">
           <el-input v-model="stageNote" type="textarea" :rows="2" placeholder="可选" />
         </el-form-item>
@@ -162,7 +181,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted, inject } from 'vue'
+import { ref, reactive, computed, onMounted, onUnmounted, inject } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { getLoanCases, updateCaseStage } from '../api'
 import { Plus, Refresh, Search } from '@element-plus/icons-vue'
@@ -172,6 +191,8 @@ const openCustomerDetail = inject('openCustomerDetail', null)
 const cases = ref([])
 const total = ref(0)
 const loading = ref(false)
+const tableMaxH = ref(600)
+const calcTableH = () => { tableMaxH.value = window.innerHeight - 280 }
 const dateRange = ref(null)
 
 const stageMap = { 1: '审核中', 2: '已批款', 3: '已收款', 4: '已拒批', 5: '已违约' }
@@ -240,12 +261,20 @@ const stageDialogTitle = ref('')
 const stageAmount = ref(0)
 const stageNote = ref('')
 const stageTarget = ref(null)
+const stageCollectionMethod = ref('')
+const stageChannelFee = ref(0)
+const stageEarnestMoney = ref(0)
+const stageNetIncome = ref(0)
 
-const advance = async (row, stage) => {
-  stageTarget.value = { id: row.id, stage }
-  stageDialogTitle.value = stage === 2 ? '批款' : '收款'
+const advance = async (row, targetStage) => {
+  stageTarget.value = { id: row.id, stage: row.stage }
+  stageDialogTitle.value = targetStage === 2 ? '批款' : '收款'
   stageAmount.value = Number(row.apply_amount || 0)
   stageNote.value = ''
+  stageCollectionMethod.value = row.collection_method || ''
+  stageChannelFee.value = Number(row.channel_fee || 0)
+  stageEarnestMoney.value = Number(row.earnest_money || 0)
+  stageNetIncome.value = Number(row.net_income || 0)
   stageVisible.value = true
 }
 
@@ -260,7 +289,14 @@ const confirmReject = async (row) => {
 
 const confirmStage = async () => {
   try {
-    await updateCaseStage(stageTarget.value.id, stageTarget.value.stage, stageAmount.value)
+    const isCollection = stageTarget.value?.stage === 3
+    const extras = isCollection ? {
+      collection_method: stageCollectionMethod.value,
+      channel_fee: stageChannelFee.value,
+      earnest_money: stageEarnestMoney.value,
+      net_income: stageNetIncome.value,
+    } : {}
+    await updateCaseStage(stageTarget.value.id, stageTarget.value.stage, stageAmount.value, extras)
     ElMessage.success('更新成功')
     stageVisible.value = false
     loadData()
@@ -373,7 +409,12 @@ const handleSave = async () => {
   finally { addLoading.value = false }
 }
 
-onMounted(() => loadData())
+onMounted(() => {
+  calcTableH()
+  window.addEventListener('resize', calcTableH)
+  loadData()
+})
+onUnmounted(() => { window.removeEventListener('resize', calcTableH) })
 </script>
 
 <style scoped>

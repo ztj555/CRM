@@ -172,7 +172,16 @@
 
     <!-- 表格 -->
     <el-card>
-      <el-table :data="customers" v-loading="loading" @row-click="openDetail" row-class-name="clickable-row" :stripe="true" size="small">
+      <!-- 批量操作栏 -->
+      <div v-if="selectedRows.length > 0" class="batch-bar" style="margin-bottom:12px">
+        <span style="font-size:13px">已选 <b style="color:#E91E63">{{ selectedRows.length }}</b> 条</span>
+        <el-button size="small" type="danger" @click="batchToPool">批量转公共池</el-button>
+        <el-button size="small" type="success" @click="batchToMyCustomers">批量加入我的客户</el-button>
+        <el-button size="small" @click="selectedRows=[];onTableRef?.clearSelection()">取消选择</el-button>
+      </div>
+
+      <el-table ref="onTableRef" :data="customers" v-loading="loading" @row-click="openDetail" row-class-name="clickable-row" :stripe="true" size="small" @selection-change="onSelectionChange">
+        <el-table-column type="selection" width="38" @click.stop />
         <el-table-column label="ID" prop="id" width="70" />
         <el-table-column label="姓名" prop="name" width="90">
           <template #default="{row}">
@@ -189,7 +198,7 @@
           <template #default="{row}"><el-tag size="small" :type="statusTagType[row.status]">{{ row.statusText }}</el-tag></template>
         </el-table-column>
         <el-table-column label="星级" prop="star_level" width="70">
-          <template #default="{row}"><span style="color:#E6A23C">★</span>{{ row.star_level }}</template>
+          <template #default="{row}"><span style="color:#E6A23C">★</span>{{ row.star_level }}星</template>
         </el-table-column>
         <el-table-column label="额度(万)" prop="apply_amount" width="80" />
         <el-table-column label="贷款类型" prop="loanTypeText" width="80" />
@@ -201,21 +210,22 @@
 
       <!-- 分页 -->
       <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center">
-        <span style="color:#888; font-size:13px">共 {{ total }} 条</span>
-        <el-pagination
-          background
-          layout="prev,pager,next"
-          :total="total"
-          :page-size="params.page_size"
-          v-model:current-page="params.page"
-          @current-change="loadData"
-        />
+        <div style="display:flex; align-items:center; gap:8px">
+          <span style="color:#888; font-size:13px">共 <b style="color:#E91E63">{{ total }}</b> 条</span>
+          <span style="color:#888; font-size:13px">每页</span>
+          <el-select v-model="params.page_size" size="small" style="width:80px" @change="loadData(1)">
+            <el-option :label="10" :value="10" /><el-option :label="20" :value="20" />
+            <el-option :label="50" :value="50" /><el-option :label="100" :value="100" /><el-option :label="200" :value="200" />
+          </el-select>
+        </div>
+        <el-pagination background layout="prev,pager,next" :total="total" :page-size="params.page_size" v-model:current-page="params.page" @current-change="loadData" />
       </div>
     </el-card>
 
     <!-- 数据导入对话框 -->
-    <el-dialog v-model="importVisible" title="数据导入" width="520px" :close-on-click-modal="false">
-      <div class="import-area" @dragover.prevent @drop.prevent="handleDrop" @click="triggerFile">
+    <el-dialog v-model="importVisible" title="数据导入" width="580px" :close-on-click-modal="false">
+      <!-- 上传区 -->
+      <div v-if="!importResult" class="import-area" @dragover.prevent @drop.prevent="handleDrop" @click="triggerFile">
         <div class="import-icon"><el-icon size="40" color="#E91E63"><Upload /></el-icon></div>
         <div class="import-text">
           <p style="font-size:14px; color:#333; margin:0 0 4px">拖拽 Excel 文件到此处</p>
@@ -224,32 +234,97 @@
         <input ref="fileInput" type="file" accept=".xlsx,.xls" style="display:none" @change="handleFileChange" />
       </div>
 
-      <!-- 导入模板说明 -->
-      <div class="import-template">
+      <!-- 导入结果区 -->
+      <div v-if="importResult">
+        <el-alert
+          v-if="importResult.count > 0"
+          :title="`成功导入 ${importResult.count} 条客户数据`"
+          type="success" :closable="false"
+          style="margin-bottom:12px; border-radius:8px"
+        />
+        <el-alert
+          v-else
+          title="导入失败：未能导入任何有效数据"
+          type="error" :closable="false"
+          style="margin-bottom:12px; border-radius:8px"
+        />
+
+        <!-- 统计卡片 -->
+        <el-row :gutter="10" style="margin-bottom:12px">
+          <el-col :span="6">
+            <div class="result-card" style="border-top:3px solid #67C23A">
+              <div class="result-num" style="color:#67C23A">{{ importResult.count }}</div>
+              <div class="result-label">成功导入</div>
+            </div>
+          </el-col>
+          <el-col :span="6">
+            <div class="result-card" style="border-top:3px solid #E6A23C">
+              <div class="result-num" style="color:#E6A23C">{{ importResult.duplicate }}</div>
+              <div class="result-label">重复跳过</div>
+            </div>
+          </el-col>
+          <el-col :span="6">
+            <div class="result-card" style="border-top:3px solid #F56C6C">
+              <div class="result-num" style="color:#F56C6C">{{ importResult.skip_count }}</div>
+              <div class="result-label">无效跳过</div>
+            </div>
+          </el-col>
+          <el-col :span="6">
+            <div class="result-card" style="border-top:3px solid #909399">
+              <div class="result-num" style="color:#909399">{{ importResult.errors?.length || 0 }}</div>
+              <div class="result-label">处理异常</div>
+            </div>
+          </el-col>
+        </el-row>
+
+        <!-- 跳过原因详情（可展开） -->
+        <div v-if="importResult.skip_reasons?.length > 0">
+          <el-collapse>
+            <el-collapse-item title="查看无效数据详情" name="skip">
+              <el-table :data="importResult.skip_reasons" size="small" max-height="240" style="font-size:12px">
+                <el-table-column label="行号" prop="row" width="60" />
+                <el-table-column label="手机号" prop="phone" width="130" show-overflow-tooltip />
+                <el-table-column label="原因" prop="reason" />
+              </el-table>
+              <div v-if="importResult.skip_count > importResult.skip_reasons.length" style="font-size:12px;color:#999;margin-top:4px">
+                还有 {{ importResult.skip_count - importResult.skip_reasons.length }} 条未显示
+              </div>
+            </el-collapse-item>
+          </el-collapse>
+        </div>
+
+        <!-- 缺失列提示 -->
+        <div v-if="importResult.missing_columns?.length" style="margin-top:10px">
+          <el-alert
+            :title="`文件缺少列：${importResult.missing_columns.join('、')}，` + (importResult.count === 0 ? '请下载最新模板重新填写' : '这些字段将使用默认值')"
+            :type="importResult.count === 0 ? 'error' : 'warning'" :closable="false"
+            style="border-radius:8px"
+          />
+        </div>
+      </div>
+
+      <!-- 导入模板说明（上传前显示） -->
+      <div v-if="!importResult" class="import-template">
         <div class="template-title"><el-icon><InfoFilled /></el-icon> Excel 格式要求</div>
         <div style="font-size:12px; color:#666; line-height:1.8; margin-top:8px">
           <p>Excel 文件需包含以下列（第一行为表头）：</p>
           <div class="template-table">
             <table>
-              <tr><th>手机号</th><th>姓名</th><th>性别</th><th>城市</th><th>年龄</th><th>申请额度</th><th>贷款类型</th><th>来源</th></tr>
-              <tr><td>13800138000</td><td>张三</td><td>男</td><td>杭州</td><td>35</td><td>30</td><td>信用贷</td><td>BXMJ-excel</td></tr>
+              <tr><th>手机号码</th><th>姓名</th><th>性别</th><th>城市</th><th>年龄</th><th>星级</th><th>状态</th><th>申请金额(万)</th><th>来源</th></tr>
+              <tr><td>13800138000</td><td>张三</td><td>男</td><td>杭州</td><td>35</td><td>5</td><td>新客户</td><td>30</td><td>BXMJ-excel</td></tr>
             </table>
           </div>
-          <p style="margin-top:8px; color:#E91E63">* 手机号为必填项，其他字段可选</p>
-        </div>
-      </div>
-
-      <!-- 导入历史 -->
-      <div v-if="importHistory.length" class="import-history">
-        <div class="template-title"><el-icon><Clock /></el-icon> 最近导入记录</div>
-        <div v-for="h in importHistory" :key="h.time" style="font-size:12px; color:#666; padding:4px 0">
-          {{ h.time }} — 成功导入 {{ h.count }} 条客户数据
+          <p style="margin-top:8px; color:#E91E63">* 手机号为必填项（11位数字），其他字段可选。星级填1-5，状态如：新客户/有意向/成交/失败</p>
+          <p style="margin-top:4px">资质字段（公积金/房/车/保单）：填"有"或"无"</p>
         </div>
       </div>
 
       <template #footer>
-        <el-button @click="importVisible=false">关闭</el-button>
-        <el-button type="primary" :loading="importLoading" @click="triggerFile">
+        <el-button @click="closeImportDialog">关闭</el-button>
+        <el-button @click="downloadTemplate" type="info">
+          <el-icon><Download /></el-icon> 下载模板
+        </el-button>
+        <el-button v-if="!importResult" type="primary" :loading="importLoading" @click="triggerFile">
           <el-icon><Upload /></el-icon> 选择文件
         </el-button>
       </template>
@@ -258,10 +333,10 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted, inject } from 'vue'
-import { ElMessage } from 'element-plus'
-import { getCustomers, getAllOptions, getDepts, getTeamMembers } from '../../api'
-import { Upload, Search, InfoFilled, Clock } from '@element-plus/icons-vue'
+import { ref, reactive, computed, onMounted, onUnmounted, inject } from 'vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
+import { getCustomers, getAllOptions, getDepts, getTeamMembers, toPool } from '../../api'
+import { Upload, Search, InfoFilled, Download } from '@element-plus/icons-vue'
 
 const openCustomerDetail = inject('openCustomerDetail', null)
 
@@ -273,7 +348,7 @@ const options = ref({ statusMap: {}, loanTypeMap: {}, sources: [], cityList: [] 
 const importVisible = ref(false)
 const importLoading = ref(false)
 const fileInput = ref()
-const importHistory = ref([])
+const importResult = ref(null)  // 导入结果详情
 const selectedStatuses = ref([])
 const selectedStars = ref([])
 const selectedSources = ref([])
@@ -428,6 +503,13 @@ const openDetail = (row) => {
   if (openCustomerDetail) openCustomerDetail(row.id, row.name)
 }
 
+const downloadTemplate = () => {
+  const a = document.createElement('a')
+  a.href = '/static/template.xlsx'
+  a.download = '客户导入模板.xlsx'
+  a.click()
+}
+
 const triggerFile = () => fileInput.value?.click()
 
 const handleFileChange = async (e) => {
@@ -446,6 +528,7 @@ const processFile = async (file) => {
     return ElMessage.error('请选择 Excel 文件（.xlsx 或 .xls）')
   }
   importLoading.value = true
+  importResult.value = null
   try {
     const formData = new FormData()
     formData.append('file', file)
@@ -454,24 +537,83 @@ const processFile = async (file) => {
       headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
       body: formData
     })
-    if (!response.ok) {
-      const err = await response.json()
-      throw new Error(err.detail || '导入失败')
-    }
     const result = await response.json()
-    ElMessage.success(`成功导入 ${result.count || 0} 条客户数据`)
-    importHistory.value.unshift({
-      time: new Date().toLocaleString(),
-      count: result.count || 0
-    })
-    if (importHistory.value.length > 5) importHistory.value.pop()
-    importVisible.value = false
+    if (!response.ok) {
+      // 文件级错误（如列缺失、全部无效），也显示结果区
+      importResult.value = {
+        count: 0,
+        duplicate: 0,
+        skip_count: 0,
+        errors: result.detail ? [result.detail] : [],
+        skip_reasons: [],
+        missing_columns: [],
+        has_issues: true
+      }
+      ElMessage.error(result.detail || '导入失败')
+      return
+    }
+    // 成功：显示详细结果
+    importResult.value = result
+    if (result.count > 0) {
+      ElMessage.success(`成功导入 ${result.count} 条客户数据`)
+    } else if (result.skip_count > 0) {
+      ElMessage.warning(`未能导入有效数据，共 ${result.skip_count} 行手机号无效`)
+    } else {
+      ElMessage.warning('未检测到有效数据行')
+    }
     loadData(1)
   } catch(e) {
     ElMessage.error(e.message || '导入失败，请检查文件格式')
   } finally {
     importLoading.value = false
   }
+}
+
+const closeImportDialog = () => {
+  importVisible.value = false
+  importResult.value = null
+}
+
+// ====== 批量操作 ======
+const onTableRef = ref(null)
+const selectedRows = ref([])
+
+const onSelectionChange = (selection) => {
+  selectedRows.value = selection
+}
+
+const batchToPool = async () => {
+  if (!selectedRows.value.length) return
+  await ElMessageBox.confirm(`确定将选中的 ${selectedRows.value.length} 个客户批量移入公共池？`, '批量转公共池', { type: 'warning' })
+  try {
+    const res = await fetch('/api/customers/batch-to-pool', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+      body: JSON.stringify({ customer_ids: selectedRows.value.map(r => r.id) })
+    })
+    const d = await res.json()
+    ElMessage.success(`已将 ${d.moved} 个客户移入公共池`)
+    selectedRows.value = []
+    onTableRef.value?.clearSelection()
+    loadData(1)
+  } catch(e) { if (e !== 'cancel') ElMessage.error('批量操作失败') }
+}
+
+const batchToMyCustomers = async () => {
+  if (!selectedRows.value.length) return
+  await ElMessageBox.confirm(`确定将选中的 ${selectedRows.value.length} 个客户加入我的客户？`, '批量加入我的客户', { type: 'success' })
+  try {
+    const res = await fetch('/api/customers/batch-to-mine', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+      body: JSON.stringify({ customer_ids: selectedRows.value.map(r => r.id) })
+    })
+    const d = await res.json()
+    ElMessage.success(`已将 ${d.assigned} 个客户加入我的客户`)
+    selectedRows.value = []
+    onTableRef.value?.clearSelection()
+    loadData(1)
+  } catch(e) { if (e !== 'cancel') ElMessage.error('批量操作失败') }
 }
 
 onMounted(async () => {
@@ -484,6 +626,7 @@ onMounted(async () => {
   } catch(e) {}
   loadData()
 })
+onUnmounted(() => {})
 </script>
 
 <style scoped>
@@ -503,6 +646,9 @@ onMounted(async () => {
 .template-table table { width:100%; border-collapse:collapse; font-size:11px; }
 .template-table th, .template-table td { border:1px solid #eee; padding:4px 8px; text-align:center; }
 .template-table th { background:#FCE4EC; color:#E91E63; }
+.result-card { background:#fff; border:1px solid #eee; border-radius:8px; padding:10px 12px; text-align:center; }
+.result-num { font-size:22px; font-weight:700; }
+.result-label { font-size:11px; color:#888; margin-top:2px; }
 .import-history { background:#F8F8F8; border-radius:8px; padding:12px 16px; }
 
 :deep(.clickable-row) { cursor: pointer; }

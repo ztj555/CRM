@@ -55,15 +55,32 @@ export const blacklist = (cid) => api.post(`/customers/${cid}/blacklist`)
 export const getPool = (params) => api.get('/pool', { params })
 export const getPoolCount = () => api.get('/pool/count')
 export const getImportantPool = (params) => api.get('/important-pool', { params })
+// 管理员从公共池分配客户给指定用户
+export const poolAssign = (customerId, toUserId) => {
+  const data = new URLSearchParams()
+  data.append('customer_id', customerId)
+  data.append('to_user_id', toUserId)
+  return api.post('/pool/assign', data)
+}
+export const poolBatchAssign = (customerIds, toUserId) => {
+  const data = new URLSearchParams()
+  data.append('customer_ids', customerIds.join(','))
+  data.append('to_user_id', toUserId)
+  return api.post('/pool/batch-assign', data)
+}
 
 // ===================== 在审件 =====================
 export const getLoanCases = (params) => api.get('/loan-cases', { params })
 export const createLoanCase = (data) => api.post('/loan-cases', data)
-export const updateCaseStage = (lid, stage, amount) => {
+export const updateCaseStage = (lid, stage, amount, extras = {}) => {
   const data = new URLSearchParams()
   data.append('stage', stage)
   data.append('amount', amount)
-  return api.post(`/loan-cases/${lid}/stage`, data)
+  if (extras.collection_method) data.append('collection_method', extras.collection_method)
+  if (extras.channel_fee !== undefined) data.append('channel_fee', extras.channel_fee)
+  if (extras.earnest_money !== undefined) data.append('earnest_money', extras.earnest_money)
+  if (extras.net_income !== undefined) data.append('net_income', extras.net_income)
+  return api.put(`/loan-cases/${lid}/stage`, data)
 }
 
 // ===================== 统计（数据统计页面）=====================
@@ -72,6 +89,7 @@ export const getStatsRemarkCounts = (params) => api.get('/stats/remark-counts', 
 export const getStatsMyRemarks = (params) => api.get('/stats/my-remarks', { params })
 export const getStatsUpcomingPool = () => api.get('/stats/upcoming-pool')
 export const getStatsNewCustomerStats = () => api.get('/stats/new-customer-stats')
+export const getStatsPerformance = (params) => api.get('/stats/performance', { params })
 
 // ===================== 统计 =====================
 export const getDashboard = () => api.get('/stats/dashboard')
@@ -152,7 +170,9 @@ export const getLoginLogs = (params) => api.get('/stats/login-logs', { params })
 export const getOperationLogs = (params) => api.get('/stats/operation-logs', { params })
 export const getOperationActionList = () => api.get('/stats/operation-logs/actions')
 export const getTransferLogs = (params) => api.get('/stats/transfer-logs', { params })
-export const getImportLogs = (params) => api.get('/stats/import-logs', { params })
+export const getImportLogs = (params) => api.get('/import-batches', { params })
+export const cancelImportBatch = (batchId) => api.post(`/import-batches/${batchId}/cancel`)
+export const importBatchToPool = (batchId) => api.post(`/import-batches/${batchId}/to-pool`)
 export const getSmsLogs = (params) => api.get('/stats/sms-logs', { params })
 export const getVisitScanLogs = (params) => api.get('/stats/visit-scan', { params })
 export const getVisitScanSummary = (params) => api.get('/stats/visit-scan/summary', { params })

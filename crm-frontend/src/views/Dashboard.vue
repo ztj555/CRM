@@ -108,6 +108,10 @@
               <div class="brief-label">批款金额</div>
               <div class="brief-val" style="color:#67C23A; font-size:16px">{{ brief.today?.approve_amount ? (brief.today.approve_amount / 10000).toFixed(1)+'万' : '-' }}</div>
             </div>
+            <div class="brief-cell">
+              <div class="brief-label">创收</div>
+              <div class="brief-val" style="color:#F56C6C; font-size:16px">{{ brief.today?.collection ? (brief.today.collection / 10000).toFixed(1)+'万' : '-' }}</div>
+            </div>
           </div>
           <div v-if="brief.review" class="review-bar">
             <span>主管点评：累计<b style="color:#E91E63">{{ brief.review?.total }}</b>次</span>
@@ -147,6 +151,10 @@
               <div class="brief-label">批款金额</div>
               <div class="brief-val" style="font-size:16px">{{ brief.yesterday?.approve_amount ? (brief.yesterday.approve_amount / 10000).toFixed(1)+'万' : '-' }}</div>
             </div>
+            <div class="brief-cell">
+              <div class="brief-label">创收</div>
+              <div class="brief-val" style="color:#F56C6C; font-size:16px">{{ brief.yesterday?.collection ? (brief.yesterday.collection / 10000).toFixed(1)+'万' : '-' }}</div>
+            </div>
           </div>
           <div class="month-progress">
             <span style="font-size:12px;color:#888">本月进件：</span>
@@ -160,6 +168,47 @@
             <span style="font-size:12px;color:#E6A23C">
               <b>{{ brief.suspended_count || 0 }}</b> 人已暂停
             </span>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <!-- 本周概况 -->
+    <el-row style="margin-bottom:14px" v-if="brief.week">
+      <el-col :span="24">
+        <el-card>
+          <template #header>
+            <div class="card-header-title">
+              <span style="background:#409EFF;color:white;padding:2px 8px;border-radius:4px;font-size:12px">本周</span>
+              <span>工作概况</span>
+              <span style="margin-left:auto;font-size:12px;color:#888">{{ weekDateRange }}</span>
+            </div>
+          </template>
+          <div class="brief-grid">
+            <div class="brief-cell">
+              <div class="brief-label">新申请</div>
+              <div class="brief-val" style="color:#E91E63">{{ brief.week?.new_clients || 0 }}</div>
+            </div>
+            <div class="brief-cell">
+              <div class="brief-label">跟进数</div>
+              <div class="brief-val" style="color:#409EFF">{{ brief.week?.remarks || 0 }}</div>
+            </div>
+            <div class="brief-cell">
+              <div class="brief-label">进件数</div>
+              <div class="brief-val" style="color:#E6A23C">{{ brief.week?.loan_in || 0 }}</div>
+            </div>
+            <div class="brief-cell">
+              <div class="brief-label">批款数</div>
+              <div class="brief-val" style="color:#67C23A">{{ brief.week?.loan_approved || 0 }}</div>
+            </div>
+            <div class="brief-cell">
+              <div class="brief-label">批款金额</div>
+              <div class="brief-val" style="color:#67C23A;font-size:16px">{{ brief.week?.approve_amount ? (brief.week.approve_amount/10000).toFixed(1)+'万' : '-' }}</div>
+            </div>
+            <div class="brief-cell">
+              <div class="brief-label">创收</div>
+              <div class="brief-val" style="color:#F56C6C;font-size:16px">{{ brief.week?.collection ? (brief.week.collection/10000).toFixed(1)+'万' : '-' }}</div>
+            </div>
           </div>
         </el-card>
       </el-col>
@@ -302,6 +351,18 @@ const currentMonth = computed(() => {
 const todayDate = computed(() => {
   const d = new Date()
   return `${d.getMonth()+1}月${d.getDate()}日`
+})
+
+// 本周日期范围（周一 ~ 周日）
+const weekDateRange = computed(() => {
+  const now = new Date()
+  const day = now.getDay()
+  const monday = new Date(now)
+  monday.setDate(now.getDate() - (day === 0 ? 6 : day - 1))
+  const sunday = new Date(monday)
+  sunday.setDate(monday.getDate() + 6)
+  const f = d => `${d.getMonth()+1}/${d.getDate()}`
+  return `${f(monday)} - ${f(sunday)}`
 })
 
 const monthStatsItems = computed(() => [

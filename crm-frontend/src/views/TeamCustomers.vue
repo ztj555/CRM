@@ -79,15 +79,26 @@
 
     <!-- 数据表格 -->
     <el-card class="table-card">
+      <!-- 批量操作栏 -->
+      <div v-if="selectedRows.length > 0" style="margin-bottom:12px; display:flex; align-items:center; gap:10px; flex-wrap:wrap">
+        <span style="font-size:13px">已选 <b style="color:#E91E63">{{ selectedRows.length }}</b> 条</span>
+        <el-button size="small" type="success" @click="batchToMyCustomers">批量加入我的客户</el-button>
+        <el-button size="small" type="warning" @click="batchToRedistribute">批量加入再分配</el-button>
+        <el-button size="small" type="danger" @click="batchToPool">批量转公共池</el-button>
+        <el-button size="small" @click="selectedRows=[];tableRef?.clearSelection()">取消选择</el-button>
+      </div>
+
       <el-table
+        ref="tableRef"
         :data="tableData"
         v-loading="loading"
         size="small"
         :stripe="true"
-        :max-height="620"
         row-class-name="clickable-row"
         @row-click="openDetail"
+        @selection-change="onSelectionChange"
       >
+        <el-table-column type="selection" width="38" @click.stop />
         <el-table-column type="index" label="序号" width="55" align="center" />
         <el-table-column label="顾问姓名" prop="advisor_name" width="90">
           <template #default="{row}">
@@ -114,7 +125,7 @@
         <el-table-column label="星级" width="65" align="center">
           <template #default="{row}">
             <span style="color:#E6A23C; font-size:13px">
-              <span v-for="n in (row.star_level || 0)" :key="n">★</span>
+              <span v-for="n in (row.star_level || 0)" :key="n">★</span>{{ row.star_level }}星
             </span>
           </template>
         </el-table-column>
@@ -153,27 +164,25 @@
       </el-table>
 
       <!-- 分页 -->
-      <div class="pagination-bar">
-        <span class="total-hint">共 <b style="color:#E91E63">{{ total }}</b> 条</span>
-        <el-pagination
-          background
-          layout="prev, pager, next, sizes"
-          :total="total"
-          :page-size="params.page_size"
-          v-model:current-page="params.page"
-          :page-sizes="[20, 50, 100, 200]"
-          @current-change="loadData"
-          @size-change="p => { params.page_size = p; loadData(1) }"
-        />
+      <div class="pagination-bar" style="display:flex; justify-content:space-between; align-items:center">
+        <div style="display:flex; align-items:center; gap:8px">
+          <span class="total-hint">共 <b style="color:#E91E63">{{ total }}</b> 条</span>
+          <span style="color:#888; font-size:13px">每页</span>
+          <el-select v-model="params.page_size" size="small" style="width:80px" @change="loadData(1)">
+            <el-option :label="10" :value="10" /><el-option :label="20" :value="20" />
+            <el-option :label="50" :value="50" /><el-option :label="100" :value="100" /><el-option :label="200" :value="200" />
+          </el-select>
+        </div>
+        <el-pagination background layout="prev,pager,next" :total="total" :page-size="params.page_size" v-model:current-page="params.page" @current-change="loadData" />
       </div>
     </el-card>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, computed, onMounted, inject } from 'vue'
 import { useRouter } from 'vue-router'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search, Refresh, Download } from '@element-plus/icons-vue'
 import api from '../api'
 
@@ -197,8 +206,21 @@ const allUsers = ref([])
 const assignTo = reactive({})
 const exporting = ref(false)
 
-// 在职顾问
-const activeUsers = computed(() => allUsers.value.filter(u => u.status === 1))
+// 在职顾问（含自己，便于上级分配给自己）
+const allUsersList = computed(() => allUsers.value.filter(u => u.status !== 0))
+const activeUsers = computed(() => {
+  const me = JSON.parse(localStorage.getItem('user') || '{}')
+  const meId = me.id
+  // 去重：如果当前用户已在内，不再重复
+  const map = new Map()
+  allUsersList.value.forEach(u => map.set(u.id, u))
+  if (meId && !map.has(meId)) {
+    // 把自己也加进去
+    const meUser = allUsers.value.find(u => u.id === meId)
+    if (meUser) map.set(meId, meUser)
+  }
+  return Array.from(map.values())
+})
 
 // 分配池统计（前端估算，实际以total为准）
 const countByType1 = computed(() => {
@@ -224,11 +246,16 @@ const poolTagText = (pt) => {
 }
 
 const router = useRouter()
+const openCustomerDetail = inject('openCustomerDetail')
 
 const fmt = (t) => t ? t.replace('T', ' ').substring(0, 16) : '—'
 
 const openDetail = (row) => {
-  router.push({ path: '/customer-detail', query: { id: row.id } })
+  if (openCustomerDetail) {
+    openCustomerDetail(row.id, row.name)
+  } else {
+    router.push({ path: '/customer-detail', query: { id: row.id } })
+  }
 }
 
 // 加载数据
@@ -342,6 +369,84 @@ const loadAllUsers = async () => {
       }
     }
   } catch (e) {}
+}
+
+// ====== 批量操作 ======
+const tableRef = ref(null)
+const selectedRows = ref([])
+
+const onSelectionChange = (selection) => {
+  selectedRows.value = selection
+}
+
+const doBatchAssign = async (pool_type) => {
+  if (!selectedRows.value.length) return
+  const me = JSON.parse(localStorage.getItem('user') || '{}')
+  if (!me.id) return ElMessage.warning('无法获取当前用户信息')
+  try {
+    const res = await fetch('/api/customers/batch-assign', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+      body: JSON.stringify({ customer_ids: selectedRows.value.map(r => r.id), advisor_id: me.id, pool_type })
+    })
+    const d = await res.json()
+    const labels = { 1: '我的客户', 2: '再分配', 3: '公共池' }
+    ElMessage.success(`已将 ${d.assigned} 个客户加入${labels[pool_type] || '指定池'}`)
+    selectedRows.value = []
+    tableRef.value?.clearSelection()
+    loadData()
+  } catch(e) { ElMessage.error(e.detail || '批量操作失败') }
+}
+
+const batchToMyCustomers = async () => {
+  if (!selectedRows.value.length) return
+  await ElMessageBox.confirm(`确定将选中的 ${selectedRows.value.length} 个客户加入我的客户？`, '批量加入我的客户', { type: 'success' })
+  try {
+    const res = await fetch('/api/customers/batch-to-mine', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+      body: JSON.stringify({ customer_ids: selectedRows.value.map(r => r.id) })
+    })
+    const d = await res.json()
+    ElMessage.success(`已将 ${d.assigned} 个客户加入我的客户`)
+    selectedRows.value = []
+    tableRef.value?.clearSelection()
+    loadData()
+  } catch(e) { if (e !== 'cancel') ElMessage.error(e.detail || '批量操作失败') }
+}
+
+const batchToRedistribute = async () => {
+  if (!selectedRows.value.length) return
+  await ElMessageBox.confirm(`确定将选中的 ${selectedRows.value.length} 个客户加入再分配？`, '批量加入再分配', { type: 'warning' })
+  try {
+    const res = await fetch('/api/customers/batch-to-redistribute', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+      body: JSON.stringify({ customer_ids: selectedRows.value.map(r => r.id) })
+    })
+    const d = await res.json()
+    ElMessage.success(`已将 ${d.assigned} 个客户加入再分配`)
+    selectedRows.value = []
+    tableRef.value?.clearSelection()
+    loadData()
+  } catch(e) { if (e !== 'cancel') ElMessage.error(e.detail || '批量操作失败') }
+}
+
+const batchToPool = async () => {
+  if (!selectedRows.value.length) return
+  await ElMessageBox.confirm(`确定将选中的 ${selectedRows.value.length} 个客户转公共池？`, '批量转公共池', { type: 'warning' })
+  try {
+    const res = await fetch('/api/customers/batch-to-pool', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+      body: JSON.stringify({ customer_ids: selectedRows.value.map(r => r.id) })
+    })
+    const d = await res.json()
+    ElMessage.success(`已将 ${d.moved} 个客户转公共池`)
+    selectedRows.value = []
+    tableRef.value?.clearSelection()
+    loadData()
+  } catch(e) { ElMessage.error(e.detail || '批量操作失败') }
 }
 
 onMounted(async () => {
